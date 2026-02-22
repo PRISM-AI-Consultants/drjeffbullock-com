@@ -5,6 +5,8 @@ import { Button } from "./button";
 
 export function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [loading, setLoading] = useState(false);
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -12,10 +14,34 @@ export function ContactForm() {
     message: "",
   });
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    console.log("Contact form submitted:", form);
-    setSubmitted(true);
+    setError(null);
+    setLoading(true);
+
+    const formId = process.env.NEXT_PUBLIC_FORMSPREE_ID;
+    if (!formId) {
+      setError("Contact form is not configured yet. Email jeff@prismaiconsultants.com directly.");
+      setLoading(false);
+      return;
+    }
+
+    try {
+      const res = await fetch(`https://formspree.io/f/${formId}`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify(form),
+      });
+      if (res.ok) {
+        setSubmitted(true);
+      } else {
+        setError("Something went wrong. Try emailing jeff@prismaiconsultants.com directly.");
+      }
+    } catch {
+      setError("Something went wrong. Try emailing jeff@prismaiconsultants.com directly.");
+    } finally {
+      setLoading(false);
+    }
   }
 
   if (submitted) {
@@ -86,8 +112,11 @@ export function ContactForm() {
           className="w-full rounded-[var(--radius-md)] border border-border bg-background px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-ring resize-none"
         />
       </div>
-      <Button type="submit" size="lg">
-        Send message
+      {error && (
+        <p className="text-sm text-red-500">{error}</p>
+      )}
+      <Button type="submit" size="lg" disabled={loading}>
+        {loading ? "Sending..." : "Send message"}
       </Button>
     </form>
   );
