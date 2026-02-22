@@ -1,0 +1,35 @@
+---
+title: "Making a Game About Pharmacy"
+slug: "making-pharmageddon"
+date: "2025-09-05"
+tags: ["games", "pharmacy", "development"]
+description: "How a real pharmacist built Pharmageddon - from idea to playable game."
+---
+
+Every pharmacist has a shift that broke them a little. The one where you had 300 prescriptions in queue, two people on staff, the drive-thru ringing nonstop, and a patient at the counter asking why their medication costs $847 when it was $12 last month.
+
+I wanted to capture that. Not as a complaint, but as a game. Something that let people feel what pharmacy is actually like - the multitasking, the pressure, the absurdity, and the moments of genuine human connection that keep people in the profession.
+
+## The Design
+
+PHARMAGEDDON is a time-management game with four meters: Stress, Safety, Corporate Satisfaction, and Community Reputation. Everything you do affects at least two of them, and they often pull in opposite directions. Corporate wants speed. Safety requires slowness. The community wants personal attention. Your stress meter wants you to quit.
+
+That tension is the whole game. It's also the whole job.
+
+I included 26 real medications with accurate dose ranges. When you verify a prescription, the errors are pharmacologically real - wrong doses, drug interactions, incorrect frequencies. This wasn't decoration. It was the point. The game is authentic because the details are authentic.
+
+## The Technical Choice
+
+I built the entire game in vanilla JavaScript. One HTML file. Zero dependencies. No React, no framework, no build step. Just code that runs in any browser.
+
+This was deliberate. I wanted something anyone could play, anywhere, without downloading anything. The Web Audio API handles all sound effects - no audio files to load. The game is fully responsive, works on mobile, and is PWA-ready so you can install it on your phone.
+
+The single-file architecture means the entire game - logic, UI, audio, data - lives in one place. It's not how you'd build a production app, but for a game that needs to be instantly playable and shareable, it's perfect.
+
+## The Reaction
+
+The best feedback has come from pharmacists. They play it and they laugh - not because it's exaggerated, but because it's not. The achievement names hit: "Cried in Honda Civic," "Denied for Albuterol," "Asked if We Have It in the Back." These are inside jokes that aren't really jokes.
+
+Non-pharmacists play it and say some version of "I had no idea." That's the other purpose. Beyond entertainment, the game communicates something about the profession that's hard to explain in words. You have to feel the simultaneous pull of five competing demands to understand what pharmacy work is actually like.
+
+The co-op mode - where two players share one keyboard, one as the Tech and one as the Pharmacist - might be my favorite feature. It forces communication and coordination under pressure. It's also the closest thing to training a new pharmacy employee that you can get without actually being behind the counter.

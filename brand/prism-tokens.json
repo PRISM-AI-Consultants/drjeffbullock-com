@@ -1,0 +1,80 @@
+{
+  "prism": {
+    "colors": {
+      "background": "#FFFFFF",
+      "foreground": "#000000",
+      "accent": "#8d54e3",
+      "text-primary": "rgb(var(--color_15))",
+      "text-secondary": "rgb(var(--color_14))"
+    },
+    "typography": {
+      "fontFamily": "Arial, Helvetica, sans-serif",
+      "baseFontSize": "10px",
+      "headings": "var(--wst-font-style-h2) through h6"
+    },
+    "spacing": {
+      "unit": "CSS variables (--padding, --margin)",
+      "listItemMargin": "12px"
+    },
+    "radii": {
+      "card": "10px",
+      "default": "var(--rd, 10px)"
+    },
+    "shadows": {
+      "card": "0 1px 4px rgba(0,0,0,.6)"
+    },
+    "transitions": {
+      "default": "all .2s ease",
+      "visibility": "visibility 0s"
+    },
+    "focus": {
+      "outline": "2px solid #116dff"
+    }
+  },
+  "drjeffbullock": {
+    "colors": {
+      "background": "#FAFAF9",
+      "foreground": "#1C1917",
+      "primary": "#292524",
+      "primary-foreground": "#FAFAF9",
+      "secondary": "#44403C",
+      "accent": "#7C3AED",
+      "accent-foreground": "#FAFAF9",
+      "muted": "#F5F5F4",
+      "muted-foreground": "#78716C",
+      "card": "#FFFFFF",
+      "card-foreground": "#1C1917",
+      "border": "#E7E5E4",
+      "ring": "#7C3AED",
+      "destructive": "#DC2626"
+    },
+    "typography": {
+      "fontFamily": "Inter, sans-serif",
+      "headingFamily": "Plus Jakarta Sans, sans-serif",
+      "scale": [14, 16, 18, 20, 24, 30, 36, 48, 60, 72],
+      "bodyLineHeight": 1.5,
+      "headingLineHeight": 1.2,
+      "headingWeight": "700-800"
+    },
+    "spacing": {
+      "unit": 4,
+      "scale": [4, 8, 12, 16, 20, 24, 32, 40, 48, 64, 80, 96, 128]
+    },
+    "radii": {
+      "sm": "6px",
+      "md": "8px",
+      "lg": "12px",
+      "xl": "16px"
+    },
+    "shadows": {
+      "sm": "0 1px 2px rgba(0,0,0,.05)",
+      "md": "0 4px 6px rgba(0,0,0,.07)",
+      "lg": "0 10px 15px rgba(0,0,0,.1)"
+    },
+    "transitions": {
+      "fast": "150ms ease-out",
+      "base": "200ms ease-out",
+      "slow": "300ms ease-out"
+    }
+  }
+}

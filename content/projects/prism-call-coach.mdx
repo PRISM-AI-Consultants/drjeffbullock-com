@@ -1,0 +1,31 @@
+---
+title: "PRISM Call Coach"
+slug: "prism-call-coach"
+type: "agent"
+status: "active"
+description: "Real-time AI sales coaching for live calls using Whisper transcription and Claude."
+---
+
+PRISM Call Coach provides real-time AI coaching during live sales calls. It listens, transcribes, and offers coaching suggestions as the conversation happens.
+
+## How It Works
+
+The system captures audio in real-time via BlackHole (a macOS virtual audio driver), routes it through OpenAI's Whisper for live transcription, and feeds the transcript to Claude for analysis and coaching prompts.
+
+During a call, the coach monitors the conversation and provides:
+
+- Suggested talking points based on what the prospect is saying
+- Objection handling recommendations in real-time
+- Pricing and positioning reminders relevant to the conversation
+- Post-call summary with key moments, commitments, and follow-up actions
+
+## Technical Stack
+
+- **Audio Capture** - BlackHole virtual audio driver on macOS
+- **Transcription** - OpenAI Whisper for real-time speech-to-text
+- **Coaching Engine** - Claude for contextual analysis and suggestion generation
+- **Integration** - Feeds into the broader PRISM agent system for transcript storage and follow-up tracking
+
+## Use Case
+
+Built for sales conversations where having a knowledgeable assistant in your ear makes the difference between a good call and a closed deal. The coach doesn't replace preparation - it augments it with real-time intelligence.

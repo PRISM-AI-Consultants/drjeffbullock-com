@@ -1,0 +1,31 @@
+---
+title: "PRISM AI Agent System"
+slug: "prism-agent-system"
+type: "agent"
+status: "active"
+description: "50-module autonomous AI system with sovereign agents, email triage, market intelligence, and session recap."
+featured: true
+---
+
+The PRISM AI Agent System is a 50-module autonomous platform that runs the operational backbone of PRISM AI Consultants and VersAssist. It operates continuously with minimal human intervention.
+
+## Architecture
+
+The system is built in Python with 40+ CLI commands, running across a local Mac environment and a Hostinger VPS. It maintains shared state across four agent personas (CEO, CMO, CFO, COO) and processes 880+ indexed transcripts.
+
+## Core Components
+
+- **Sovereign Agents** - strategic command layer that sits above all advisory agents. PRISM Sovereign handles revenue command; VersAssist Sovereign handles delivery command. Both enforce math-based business thresholds.
+- **Email Triage** - runs three times daily on the Hostinger VPS. Haiku classifies incoming emails by priority and category. Sonnet drafts responses. Most routine emails are handled without human review.
+- **Market Intelligence** - scans 12 RSS feeds twice daily and produces briefings on industry trends, competitor activity, and relevant news.
+- **Session Recap** - operates on 30-minute cycles tied to calendar events. Captures meetings, extracts summaries, and logs action items automatically.
+- **Slack Bot** - an agentic chief-of-staff accessible via Slack. Handles quick queries, status checks, and operational requests.
+- **Watchdog** - monitors all running services and alerts when something breaks or goes offline.
+
+## Technical Details
+
+- 50 Python modules in the source directory
+- 20 automation runners
+- Shared state maintained across 21 state files
+- Separate OAuth tokens and state directories for PRISM and VersAssist
+- Self-hosted on macOS and Hostinger VPS (Docker/n8n)

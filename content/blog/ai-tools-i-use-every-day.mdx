@@ -1,0 +1,47 @@
+---
+title: "AI Tools I Actually Use Every Day"
+slug: "ai-tools-i-use-every-day"
+date: "2025-08-01"
+tags: ["AI", "tools", "productivity"]
+description: "The actual daily toolkit of an AI-first CEO. No sponsored lists."
+---
+
+I run two companies with AI as the operational backbone. Not as a buzzword. As infrastructure. Here's what I actually use every day, what it does, and why it matters.
+
+No affiliate links. No sponsored recommendations. Just the tools that are running right now.
+
+## Claude
+
+Claude is my primary AI. I use it for strategic thinking, content generation, code development, analysis, and decision support. It's the brain behind most of the automated systems I've built.
+
+I chose Claude over GPT for a specific reason: it handles nuance better. When I'm working through complex business strategy or writing content that needs a specific voice, Claude consistently produces output that requires less editing. For code generation, it understands context across large codebases in a way that saves significant time.
+
+I run the Max plan, which means unlimited usage at a flat monthly fee. This matters because it changes the economics of AI usage. Instead of watching token costs, I can use Claude aggressively for analysis, brainstorming, and iteration without budget anxiety.
+
+## n8n
+
+n8n is my automation platform. It's self-hosted on a Hostinger VPS, running in Docker. I currently have 56 workflows handling everything from email processing to data pipeline management.
+
+The advantage of n8n over Zapier or Make is control. Self-hosting means my data stays on my server. The workflow editor is powerful enough for complex logic without writing code for every step. And when I do need code, I can drop JavaScript or Python nodes directly into the workflow.
+
+## The PRISM Agent System
+
+This is the custom-built layer that ties everything together. It's a 50-module Python system that runs autonomously:
+
+- **Email triage** runs three times daily on the Hostinger server. Haiku classifies incoming emails, Sonnet drafts responses. Most emails get handled without me seeing them.
+- **Market intelligence** scans 12 RSS feeds twice daily and delivers briefings on industry trends relevant to my businesses.
+- **Session recap** runs on 30-minute cycles tied to my calendar. Every meeting gets captured, summarized, and stored with extracted action items.
+- **Slack bot** acts as an agentic chief-of-staff, accessible anytime for quick questions or status updates.
+- **Watchdog** monitors all of the above and alerts me when something breaks.
+
+This system processes 880+ transcripts, maintains shared state across four agent personas (CEO, CMO, CFO, COO), and runs sovereign agents that sit above everything with math-enforced business thresholds.
+
+## Suno
+
+I use Suno for AI music generation. It's how I produced the 19-track Mansa Musa concept album. The quality has reached a point where the output is genuinely listenable - not a novelty, but actual music you'd choose to play.
+
+## The Integration Layer
+
+The tools matter less than how they connect. Claude generates the intelligence. n8n orchestrates the automation. The agent system provides the persistent context and autonomous operation. Suno handles creative production. Each tool does what it does best, and the connections between them are where the real leverage lives.
+
+That's the actual stack. No magic. Just systems, built over time, running every day.
