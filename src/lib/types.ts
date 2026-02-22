@@ -9,6 +9,7 @@ export interface Book {
   formats: ("paperback" | "ebook" | "audiobook")[];
   publishDate?: string;
   featured?: boolean;
+  purchaseUrl?: string;
   content: string;
 }
 
@@ -84,6 +85,7 @@ export interface Project {
   status: "active" | "completed";
   description: string;
   url?: string;
+  spotifyUrl?: string;
   featured?: boolean;
   coverImage?: string;
   content: string;

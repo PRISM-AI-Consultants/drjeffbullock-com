@@ -7,7 +7,7 @@ import { Section } from "@/components/ui/section";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { MDXContent } from "@/components/content/mdx-content";
-import { ArrowLeft, ExternalLink } from "lucide-react";
+import { ArrowLeft, ExternalLink, Music } from "lucide-react";
 
 export function generateStaticParams() {
   return getProjects().map((p) => ({ slug: p.slug }));
@@ -41,13 +41,22 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
         <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight">{project.title}</h1>
         <p className="mt-4 text-lg text-muted-foreground">{project.description}</p>
 
-        {project.url && (
-          <div className="mt-6">
-            <a href={project.url} target="_blank" rel="noopener noreferrer">
-              <Button size="md" variant="secondary">
-                Visit Project <ExternalLink className="h-4 w-4 ml-2" />
-              </Button>
-            </a>
+        {(project.url || project.spotifyUrl) && (
+          <div className="mt-6 flex flex-wrap gap-3">
+            {project.url && (
+              <a href={project.url} target="_blank" rel="noopener noreferrer">
+                <Button size="md" variant="secondary">
+                  Visit Project <ExternalLink className="h-4 w-4 ml-2" />
+                </Button>
+              </a>
+            )}
+            {project.spotifyUrl && (
+              <a href={project.spotifyUrl} target="_blank" rel="noopener noreferrer">
+                <Button size="md" variant="secondary">
+                  <Music className="h-4 w-4 mr-2" /> Listen on Spotify
+                </Button>
+              </a>
+            )}
           </div>
         )}
 

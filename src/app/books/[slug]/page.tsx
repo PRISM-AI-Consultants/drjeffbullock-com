@@ -7,7 +7,7 @@ import { Section } from "@/components/ui/section";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { MDXContent } from "@/components/content/mdx-content";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, ShoppingCart } from "lucide-react";
 
 export function generateStaticParams() {
   return getBooks().map((b) => ({ slug: b.slug }));
@@ -50,6 +50,16 @@ export default async function BookPage({ params }: { params: Promise<{ slug: str
             <p className="mt-2 text-sm text-muted-foreground">
               Published {new Date(book.publishDate).toLocaleDateString("en-US", { year: "numeric", month: "long" })}
             </p>
+          )}
+
+          {book.purchaseUrl && (
+            <div className="mt-6">
+              <a href={book.purchaseUrl} target="_blank" rel="noopener noreferrer">
+                <Button size="lg">
+                  <ShoppingCart className="h-4 w-4 mr-2" /> Get This Book
+                </Button>
+              </a>
+            </div>
           )}
 
           <div className="mt-8 pt-8 border-t border-border">
