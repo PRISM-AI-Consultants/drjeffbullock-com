@@ -12,6 +12,8 @@ export interface Book {
   purchaseUrl?: string;
   downloadUrl?: string;
   audioUrl?: string;
+  companionAppUrl?: string;
+  companionAppName?: string;
   content: string;
 }
 

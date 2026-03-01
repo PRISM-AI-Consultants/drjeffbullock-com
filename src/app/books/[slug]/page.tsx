@@ -8,7 +8,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { BookCover } from "@/components/ui/book-cover";
 import { MDXContent } from "@/components/content/mdx-content";
-import { ArrowLeft, ShoppingCart, Download, Headphones } from "lucide-react";
+import { ArrowLeft, ShoppingCart, Download, Headphones, Smartphone } from "lucide-react";
 
 export function generateStaticParams() {
   return getBooks().map((b) => ({ slug: b.slug }));
@@ -66,12 +66,19 @@ export default async function BookPage({ params }: { params: Promise<{ slug: str
                 </p>
               )}
 
-              {(book.purchaseUrl || book.downloadUrl || book.audioUrl) && (
+              {(book.purchaseUrl || book.downloadUrl || book.audioUrl || book.companionAppUrl) && (
                 <div className="mt-6 flex flex-wrap gap-3">
                   {book.purchaseUrl && (
                     <a href={book.purchaseUrl} target="_blank" rel="noopener noreferrer">
                       <Button size="lg">
                         <ShoppingCart className="h-4 w-4 mr-2" /> Get This Book
+                      </Button>
+                    </a>
+                  )}
+                  {book.companionAppUrl && (
+                    <a href={book.companionAppUrl} target="_blank" rel="noopener noreferrer">
+                      <Button size="lg" variant="secondary">
+                        <Smartphone className="h-4 w-4 mr-2" /> {book.companionAppName ? `Try ${book.companionAppName}` : "Companion App"}
                       </Button>
                     </a>
                   )}
