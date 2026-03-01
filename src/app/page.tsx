@@ -129,13 +129,14 @@ export default function HomePage() {
               href="/games/pharmageddon"
               className="group rounded-[var(--radius-lg)] overflow-hidden border border-border bg-card hover:shadow-md transition-all"
             >
-              <div className="aspect-[3/4] bg-gradient-to-br from-red-900 via-orange-900 to-amber-900 relative flex items-center justify-center">
-                <div className="text-center p-4">
-                  <Gamepad2 className="h-12 w-12 text-white/80 mx-auto mb-3" />
-                  <p className="text-white font-bold text-lg">Pharmageddon</p>
-                  <p className="text-white/60 text-xs mt-1">Tower Defense</p>
-                </div>
-                <div className="absolute inset-0 opacity-[0.03] bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0IiBoZWlnaHQ9IjQiPjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiNmZmYiLz48L3N2Zz4=')]" />
+              <div className="aspect-[3/4] relative overflow-hidden bg-black">
+                <Image
+                  src="/images/games/pharmageddon-cover.jpg"
+                  alt="Pharmageddon - Survive the Shift"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 640px) 50vw, 25vw"
+                />
               </div>
               <div className="p-3">
                 <Badge variant="accent">Game</Badge>
