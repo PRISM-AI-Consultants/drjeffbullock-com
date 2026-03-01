@@ -26,6 +26,7 @@ import {
   Clapperboard,
   Microscope,
   Heart,
+  Orbit,
 } from "lucide-react";
 
 const ipCategories = [
@@ -105,7 +106,7 @@ export default function HomePage() {
       {/* Showcase Grid - Visual preview cards */}
       <Section className="bg-muted/30 py-8">
         <Container size="xl">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
             {featuredBook && (
               <Link
                 href={`/books/${featuredBook.slug}`}
@@ -173,6 +174,25 @@ export default function HomePage() {
                   <p className="text-white/60 text-xs mt-1">34 AI Agents - Live</p>
                 </div>
                 <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-cyan-400/40 to-transparent" />
+              </div>
+              <div className="p-3">
+                <Badge variant="accent">Flagship</Badge>
+                <p className="text-sm font-bold group-hover:text-accent transition-colors mt-1">Explore</p>
+              </div>
+            </a>
+            <a
+              href="https://builds.drjeffbullock.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group rounded-[var(--radius-lg)] overflow-hidden border border-border bg-card hover:shadow-md transition-all"
+            >
+              <div className="aspect-[3/4] bg-gradient-to-br from-indigo-900 via-purple-900 to-slate-900 relative flex items-center justify-center">
+                <div className="text-center p-4">
+                  <Orbit className="h-12 w-12 text-purple-300/80 mx-auto mb-3" />
+                  <p className="text-white font-bold text-lg">Build Universe</p>
+                  <p className="text-white/60 text-xs mt-1">79 Builds - Full Portfolio</p>
+                </div>
+                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-purple-400/40 to-transparent" />
               </div>
               <div className="p-3">
                 <Badge variant="accent">Flagship</Badge>
