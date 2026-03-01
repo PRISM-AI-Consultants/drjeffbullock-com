@@ -18,6 +18,9 @@ export default function GamesPage() {
       <PageHeader title="Games" description="Playable games - built, shipped, and ready to play." />
       <Section>
         <Container size="xl">
+          <p className="text-sm text-muted-foreground mb-8 max-w-2xl">
+            Most games below are Progressive Web Apps (PWAs) - browser-based games you can install on your phone or desktop for offline play. No app store needed. Just open the link, tap &quot;Add to Home Screen,&quot; and play anywhere.
+          </p>
           <ContentGrid columns={2}>
             {games.map((game) => (
               <GameCard key={game.slug} game={game} />

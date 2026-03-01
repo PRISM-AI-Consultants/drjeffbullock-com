@@ -27,12 +27,12 @@ const topics = [
   },
   {
     title: "From Pharmacy to AI: A Career Reinvention Story",
-    description: "14 years in healthcare, then a leap into AI entrepreneurship. The lessons learned, the mistakes made, and why the best time to pivot is now.",
+    description: "18 years in healthcare, then a leap into entrepreneurship and AI. The lessons learned, the mistakes made, and why the best time to pivot is now.",
     audience: "Career changers, healthcare professionals, anyone considering a pivot",
   },
   {
     title: "Building with AI: From Idea to Shipped Product",
-    description: "How one person built 54 AI modules, published 8 books, shipped 11 games, and produced a 19-track album - all with AI as a co-pilot.",
+    description: "How one person built 54 AI modules, published 10 books, shipped 11 games, and produced a 19-track album - all with AI as a co-pilot.",
     audience: "Creators, developers, solo founders",
   },
 ];
@@ -67,17 +67,17 @@ const pastEvents = [
   { event: "AI Hustle with Dr. Jeff", date: "Weekly, Tuesdays 2PM ET", venue: "LinkedIn Live", type: "Live Show" },
   { event: "YouTube Live with Dr. Jeff", date: "Weekly, Thursdays 2PM ET", venue: "YouTube", type: "Live Show" },
   { event: "IFEL Verizon Digital Small Business Readiness Workshop", date: "January 29, 2026", venue: "IFEL", type: "Workshop" },
-  { event: "Lehigh Valley Executive Forum", date: "November 19, 2025", venue: "DeSales University", type: "Speaking" },
+  { event: "Faulkner Automotive AI Presentation", date: "November 19, 2025", venue: "DeSales University", type: "Speaking" },
   { event: "SHRM Speaking Event", date: "September 11-13, 2025", venue: "SHRM Conference", type: "Conference" },
   { event: "Gerald Haman / TSPN Keynote Discussion", date: "September 8, 2025", venue: "TSPN (40K Zoom + 60K YouTube viewers)", type: "Keynote" },
   { event: "Jeff and Layla AI Speaking Event", date: "April 26, 2025", venue: "Philadelphia, PA", type: "Speaking" },
 ];
 
 const eventPhotos = [
-  { src: "/images/events/event-presentation.jpg", alt: "Dr. Jeff Bullock presenting AI for Automotive Leaders at DeSales University" },
-  { src: "/images/events/event-audience.jpg", alt: "Audience at Lehigh Valley Executive Forum" },
-  { src: "/images/events/event-networking.jpg", alt: "Dr. Jeff Bullock networking at a speaking event" },
-  { src: "/images/events/event-group.jpg", alt: "Dr. Jeff Bullock with attendees after a speaking event" },
+  { src: "/images/events/carter-1.jpg", alt: "Dr. Jeff Bullock presenting at Faulkner Automotive AI event" },
+  { src: "/images/events/carter-2.jpg", alt: "Dr. Jeff Bullock speaking on AI implementation" },
+  { src: "/images/events/carter-3.jpg", alt: "Dr. Jeff Bullock at a PRISM AI speaking event" },
+  { src: "/images/events/chamber-event.jpg", alt: "Dr. Jeff Bullock at a Chamber of Commerce event" },
 ];
 
 export default function SpeakingPage() {
@@ -96,13 +96,13 @@ export default function SpeakingPage() {
               <h2 className="text-3xl font-extrabold tracking-tight mb-4">About the Speaker</h2>
               <div className="space-y-4 text-muted-foreground">
                 <p>
-                  Dr. Jeff Bullock is the Founder and CEO of PRISM AI Consultants and co-founder of VersAssist. He earned his Doctor of Pharmacy from Xavier University of Louisiana and spent 14 years at CVS Health - a Fortune 10 organization - rising from pharmacy clerk to district leader.
+                  Dr. Jeff Bullock is the Founder and CEO of PRISM AI Consultants and CEO and Co-Founder of VersAssist. He earned his Doctor of Pharmacy from Xavier University of Louisiana and spent 18 years at CVS Health - a Fortune 10 organization - rising from pharmacy clerk to district leader.
                 </p>
                 <p>
-                  In 2021, he left corporate healthcare to become a full-time entrepreneur. When ChatGPT launched, he immediately saw the potential. He founded PRISM AI Consultants in June 2023 and has since personally coached over 75 business leaders on AI implementation.
+                  In 2021, he left corporate healthcare to become a full-time entrepreneur. When ChatGPT launched, he immediately saw the potential. He founded PRISM AI Consultants in June 2023 and has since personally coached hundreds of business leaders on AI implementation.
                 </p>
                 <p>
-                  He is the author of 8 books, creator of 11 playable games, producer of a 19-track concept album, and builder of a 54-module autonomous AI system with 33 agents. He does not just talk about what AI can do - he shows what he has built with it.
+                  He is the author of 10 books, creator of 11 playable games, producer of a 19-track concept album, and builder of a 54-module autonomous AI system with 33 agents. He does not just talk about what AI can do - he shows what he has built with it.
                 </p>
               </div>
             </div>
@@ -120,10 +120,12 @@ export default function SpeakingPage() {
                 <h3 className="font-bold mb-4">Credentials</h3>
                 <ul className="space-y-3 text-sm text-muted-foreground">
                   <li>Doctor of Pharmacy (Pharm.D.), Xavier University of Louisiana</li>
-                  <li>14 years at CVS Health (Fortune 10)</li>
-                  <li>75+ business leaders coached on AI implementation</li>
-                  <li>CEO of PRISM AI Consultants + VersAssist</li>
-                  <li>Author of 8 books (4 published, 4 in progress)</li>
+                  <li>18 years at CVS Health (Fortune 10)</li>
+                  <li>Hundreds of business leaders coached on AI implementation</li>
+                  <li>CEO of PRISM AI Consultants</li>
+                  <li>CEO and Co-Founder of VersAssist</li>
+                  <li>Official IFEL partner for AI education programming</li>
+                  <li>Author of 10 books (4 published, 6 in progress)</li>
                   <li>Builder of 54-module AI agent system with 33 agents</li>
                 </ul>
               </div>
@@ -152,7 +154,7 @@ export default function SpeakingPage() {
             ))}
           </div>
           <p className="mt-4 text-sm text-muted-foreground text-center">
-            Lehigh Valley Executive Forum at DeSales University
+            Faulkner Automotive AI Presentation at DeSales University and PRISM events
           </p>
         </Container>
       </Section>
@@ -251,11 +253,11 @@ export default function SpeakingPage() {
             <p className="text-muted-foreground mb-6">
               Interested in having Dr. Jeff speak at your event or organization?
             </p>
-            <Link href="/contact">
+            <a href="https://calendly.com/prismaiconsultants/introductory-call" target="_blank" rel="noopener noreferrer">
               <Button size="lg">
-                Get in touch <ArrowRight className="h-4 w-4 ml-2" />
+                Book a Call <ArrowRight className="h-4 w-4 ml-2" />
               </Button>
-            </Link>
+            </a>
           </div>
         </Container>
       </Section>

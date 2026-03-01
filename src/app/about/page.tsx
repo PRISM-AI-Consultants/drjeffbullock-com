@@ -25,19 +25,23 @@ export const metadata: Metadata = {
 
 const timeline = [
   { year: "2008", icon: GraduationCap, title: "Doctor of Pharmacy", description: "Graduated from Xavier University of Louisiana with a Pharm.D." },
-  { year: "2008-2021", icon: Briefcase, title: "CVS Health", description: "14 years at a Fortune 10 healthcare organization. Pharmacy clerk to district leader." },
+  { year: "2003-2021", icon: Briefcase, title: "CVS Health", description: "18 years at a Fortune 10 healthcare organization. Pharmacy clerk to district leader." },
   { year: "2021", icon: Lightbulb, title: "Full-Time Entrepreneur", description: "Left corporate healthcare to build businesses full-time." },
   { year: "2023", icon: Building2, title: "Founded PRISM AI Consultants", description: "Launched an AI consulting firm to help businesses implement AI for real results." },
+  { year: "2023", icon: BookOpen, title: "Published A Prompt's Tale", description: "First book - a beginner's guide to AI and prompt engineering." },
   { year: "2024", icon: Building2, title: "Co-Founded VersAssist", description: "Built an AI-enhanced virtual assistant agency - the Uber of labor." },
-  { year: "2025", icon: BookOpen, title: "Published 4 Books", description: "A Prompt's Tale, The Unburdening, The Inheritance, and The Compliant." },
-  { year: "2025", icon: Bot, title: "54-Module AI Agent System", description: "Built a sovereign AI system with 33 autonomous agents running 24/7." },
+  { year: "2025", icon: BookOpen, title: "Speaking Engagements", description: "SHRM Conference, DeSales University, TSPN Keynote (100K+ viewers), IFEL workshops, and more." },
+  { year: "2026", icon: BookOpen, title: "Published 3 More Books", description: "The Unburdening, The Inheritance, and The Compliant." },
+  { year: "2026", icon: Bot, title: "54-Module AI Agent System", description: "Built a sovereign AI system with 33 autonomous agents running 24/7." },
 ];
 
 const socialLinks = [
-  { label: "LinkedIn", href: "https://www.linkedin.com/in/drjeffbullock/" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/drjeffbullock" },
   { label: "YouTube", href: "https://www.youtube.com/@drjeffbullock" },
   { label: "PRISM AI", href: "https://www.prismaiconsultants.com" },
-  { label: "Skool Community", href: "https://www.skool.com/prism-university" },
+  { label: "VersAssist", href: "https://www.versassist.com" },
+  { label: "Skool Community", href: "https://www.skool.com/prism-ai-university" },
+  { label: "Agent World", href: "https://agents.prismaiconsultants.com" },
 ];
 
 export default function AboutPage() {
@@ -65,13 +69,13 @@ export default function AboutPage() {
               <h2 className="text-3xl font-extrabold tracking-tight mb-6">Dr. Jeff Bullock</h2>
               <div className="space-y-4 text-muted-foreground leading-relaxed">
                 <p>
-                  I spent 14 years behind pharmacy counters and in healthcare leadership before walking away to build something different. Not because pharmacy was wrong for me - it taught me systems thinking, pressure management, and how to serve people under impossible constraints. But when AI arrived, I saw something bigger.
+                  I spent 18 years at CVS Health - from pharmacy clerk to district leader at a Fortune 10 organization. It taught me systems thinking, pressure management, and how to serve people under impossible constraints. In 2021, I walked away to build something different. When AI arrived, I saw something bigger.
                 </p>
                 <p>
-                  I founded PRISM AI Consultants in June 2023 to help business leaders implement AI - not as a buzzword, but as a real operational tool. Since then, I have personally coached over 75 executives, entrepreneurs, and business owners on making AI work for their specific situations.
+                  I founded PRISM AI Consultants in June 2023 to help business leaders implement AI - not as a buzzword, but as a real operational tool. Since then, I have personally coached hundreds of executives, entrepreneurs, and business owners on making AI work for their specific situations.
                 </p>
                 <p>
-                  But this site is not about PRISM. This is my personal library - the proof of what happens when you use AI as a force multiplier across every creative and intellectual domain you care about. Eight books (four published, four in progress). Eleven playable games and interactive experiences. A 19-track concept album. Three original research frameworks. A sitcom pilot. Two companies. And a 54-module AI agent system with 33 autonomous agents running 24/7.
+                  But this site is not about PRISM. This is my personal library - the proof of what happens when you use AI as a force multiplier across every creative and intellectual domain you care about. Ten books (four published, six in progress). Playable games and interactive experiences. A 19-track concept album. Three original research frameworks. A sitcom pilot. Two companies. And a 54-module AI agent system with 33 autonomous agents running 24/7.
                 </p>
                 <p>
                   I did not build all of this alone. I built it with AI. And that is the point.
@@ -142,7 +146,7 @@ export default function AboutPage() {
                 <h3 className="mt-3 text-2xl font-bold">PRISM AI Consultants</h3>
               </CardHeader>
               <CardContent>
-                <p className="text-muted-foreground">AI consulting firm helping businesses implement AI for revenue, time savings, and operational ease. 75+ leaders coached.</p>
+                <p className="text-muted-foreground">AI consulting firm helping businesses implement AI for revenue, time savings, and operational ease. Hundreds of leaders coached.</p>
                 <a href="https://www.prismaiconsultants.com" target="_blank" rel="noopener noreferrer" className="mt-4 inline-flex items-center gap-1 text-sm text-accent font-medium hover:underline">
                   Visit PRISM <ExternalLink className="h-3 w-3" />
                 </a>
@@ -155,6 +159,9 @@ export default function AboutPage() {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">The Uber of labor. AI-trained teams that help businesses scale operations without the overhead of traditional hiring.</p>
+                <a href="https://www.versassist.com" target="_blank" rel="noopener noreferrer" className="mt-4 inline-flex items-center gap-1 text-sm text-accent font-medium hover:underline">
+                  Visit VersAssist <ExternalLink className="h-3 w-3" />
+                </a>
               </CardContent>
             </Card>
           </div>

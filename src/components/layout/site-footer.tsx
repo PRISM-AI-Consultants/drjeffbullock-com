@@ -30,13 +30,13 @@ export function SiteFooter() {
               Dr. Jeff Bullock
             </p>
             <p className="mt-3 text-sm text-muted-foreground max-w-xs">
-              Author. Builder. Researcher. Operator.
+              AI Orchestrator. Systems Integrator. Author. Builder.
               <br />
               Proving what one person can build with AI.
             </p>
             <div className="mt-4 flex flex-wrap gap-4">
               <a
-                href="https://www.linkedin.com/in/drjeffbullock/"
+                href="https://www.linkedin.com/in/drjeffbullock"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-sm text-muted-foreground hover:text-foreground flex items-center gap-1 transition-colors"
@@ -68,7 +68,15 @@ export function SiteFooter() {
                 PRISM <ExternalLink className="h-3 w-3" />
               </a>
               <a
-                href="https://www.skool.com/prism-university"
+                href="https://www.versassist.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm text-muted-foreground hover:text-foreground flex items-center gap-1 transition-colors"
+              >
+                VersAssist <ExternalLink className="h-3 w-3" />
+              </a>
+              <a
+                href="https://www.skool.com/prism-ai-university"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-sm text-muted-foreground hover:text-foreground flex items-center gap-1 transition-colors"

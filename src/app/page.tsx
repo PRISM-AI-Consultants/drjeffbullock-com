@@ -29,7 +29,7 @@ import {
 } from "lucide-react";
 
 const ipCategories = [
-  { label: "Books", count: 8, icon: BookOpen, href: "/books" },
+  { label: "Books", count: 10, icon: BookOpen, href: "/books" },
   { label: "Research", count: 3, icon: FlaskConical, href: "/research" },
   { label: "Media", count: "10+", icon: Headphones, href: "/media" },
   { label: "Games", count: 11, icon: Gamepad2, href: "/games" },
@@ -39,7 +39,7 @@ const ipCategories = [
 ];
 
 const achievements = [
-  { icon: BookOpen, text: "8 books (4 published, 4 in progress)" },
+  { icon: BookOpen, text: "10 books (4 published, 6 in progress)" },
   { icon: Building2, text: "2 companies: PRISM AI Consultants + VersAssist" },
   { icon: Bot, text: "54-module AI system with 33 autonomous agents running 24/7" },
   { icon: Gamepad2, text: "11 playable games and interactive experiences" },
@@ -70,7 +70,7 @@ export default function HomePage() {
                 Bullock
               </h1>
               <p className="mt-6 text-xl md:text-2xl text-secondary font-medium">
-                Author. Builder. Researcher. Operator.
+                AI Orchestrator. Systems Integrator. Author. Builder.
               </p>
               <p className="mt-4 text-lg text-muted-foreground max-w-lg">
                 This is what happens when one person uses AI as a force
@@ -81,9 +81,9 @@ export default function HomePage() {
                 <Link href="/books">
                   <Button size="lg">Explore My Work <ArrowRight className="h-4 w-4 ml-2" /></Button>
                 </Link>
-                <Link href="/speaking">
+                <a href="https://calendly.com/prismaiconsultants/introductory-call" target="_blank" rel="noopener noreferrer">
                   <Button size="lg" variant="secondary">Book Me to Speak</Button>
-                </Link>
+                </a>
               </div>
             </div>
             <div className="relative">
@@ -159,25 +159,25 @@ export default function HomePage() {
                 <p className="text-sm font-bold group-hover:text-accent transition-colors mt-1">Listen</p>
               </div>
             </Link>
-            {featuredResearch && (
-              <Link
-                href={`/research/${featuredResearch.slug}`}
-                className="group rounded-[var(--radius-lg)] overflow-hidden border border-border bg-card hover:shadow-md transition-all"
-              >
-                <div className="aspect-[3/4] bg-gradient-to-br from-indigo-900 via-blue-900 to-slate-900 relative flex items-center justify-center">
-                  <div className="text-center p-4">
-                    <FlaskConical className="h-12 w-12 text-sky-300/80 mx-auto mb-3" />
-                    <p className="text-white font-bold text-sm leading-tight">{featuredResearch.title}</p>
-                    <p className="text-white/60 text-xs mt-1">Research Framework</p>
-                  </div>
-                  <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-sky-400/40 to-transparent" />
+            <a
+              href="https://agents.prismaiconsultants.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group rounded-[var(--radius-lg)] overflow-hidden border border-border bg-card hover:shadow-md transition-all"
+            >
+              <div className="aspect-[3/4] bg-gradient-to-br from-cyan-900 via-teal-900 to-slate-900 relative flex items-center justify-center">
+                <div className="text-center p-4">
+                  <Bot className="h-12 w-12 text-cyan-300/80 mx-auto mb-3" />
+                  <p className="text-white font-bold text-lg">Agent World</p>
+                  <p className="text-white/60 text-xs mt-1">34 AI Agents - Live</p>
                 </div>
-                <div className="p-3">
-                  <Badge variant="accent">Research</Badge>
-                  <p className="text-sm font-bold group-hover:text-accent transition-colors mt-1">Explore</p>
-                </div>
-              </Link>
-            )}
+                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-cyan-400/40 to-transparent" />
+              </div>
+              <div className="p-3">
+                <Badge variant="accent">Flagship</Badge>
+                <p className="text-sm font-bold group-hover:text-accent transition-colors mt-1">Explore</p>
+              </div>
+            </a>
           </div>
         </Container>
       </Section>
