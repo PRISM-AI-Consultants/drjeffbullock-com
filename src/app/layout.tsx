@@ -17,6 +17,7 @@ const plusJakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://drjeffbullock.com"),
   title: {
     default: "Dr. Jeff Bullock - Author. Builder. Researcher. Operator.",
     template: "%s | Dr. Jeff Bullock",
@@ -28,6 +29,7 @@ export const metadata: Metadata = {
     description:
       "Author. Builder. Researcher. Operator. Proving what one person can build with AI.",
     type: "website",
+    images: ["/images/jeff-bullock-headshot.jpg"],
   },
 };
 

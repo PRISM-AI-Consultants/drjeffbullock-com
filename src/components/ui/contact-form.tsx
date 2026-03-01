@@ -19,23 +19,25 @@ export function ContactForm() {
     setError(null);
     setLoading(true);
 
-    const formId = process.env.NEXT_PUBLIC_FORMSPREE_ID;
-    if (!formId) {
-      setError("Contact form is not configured yet. Email jeff@prismaiconsultants.com directly.");
-      setLoading(false);
-      return;
-    }
-
     try {
-      const res = await fetch(`https://formspree.io/f/${formId}`, {
+      const res = await fetch("/api/contact", {
         method: "POST",
-        headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body: JSON.stringify(form),
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: form.name,
+          email: form.email,
+          subject: form.subject,
+          message: form.message,
+        }),
       });
       if (res.ok) {
         setSubmitted(true);
       } else {
-        setError("Something went wrong. Try emailing jeff@prismaiconsultants.com directly.");
+        const data = await res.json().catch(() => null);
+        setError(
+          data?.error ||
+            "Something went wrong. Try emailing jeff@prismaiconsultants.com directly."
+        );
       }
     } catch {
       setError("Something went wrong. Try emailing jeff@prismaiconsultants.com directly.");

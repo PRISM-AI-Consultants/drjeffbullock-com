@@ -34,7 +34,31 @@ export function SiteFooter() {
               <br />
               Proving what one person can build with AI.
             </p>
-            <div className="mt-4 flex gap-4">
+            <div className="mt-4 flex flex-wrap gap-4">
+              <a
+                href="https://www.linkedin.com/in/drjeffbullock/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm text-muted-foreground hover:text-foreground flex items-center gap-1 transition-colors"
+              >
+                LinkedIn <ExternalLink className="h-3 w-3" />
+              </a>
+              <a
+                href="https://www.youtube.com/@drjeffbullock"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm text-muted-foreground hover:text-foreground flex items-center gap-1 transition-colors"
+              >
+                YouTube <ExternalLink className="h-3 w-3" />
+              </a>
+              <a
+                href="https://open.spotify.com/album/1iOSi2A5g4LUjSkvniwl4u"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm text-muted-foreground hover:text-foreground flex items-center gap-1 transition-colors"
+              >
+                Spotify <ExternalLink className="h-3 w-3" />
+              </a>
               <a
                 href="https://www.prismaiconsultants.com"
                 target="_blank"

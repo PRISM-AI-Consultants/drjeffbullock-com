@@ -27,20 +27,20 @@ import {
 } from "lucide-react";
 
 const ipCategories = [
-  { label: "Books", count: 4, icon: BookOpen, href: "/books" },
+  { label: "Books", count: 8, icon: BookOpen, href: "/books" },
   { label: "Research", count: 3, icon: FlaskConical, href: "/research" },
   { label: "Media", count: "10+", icon: Headphones, href: "/media" },
-  { label: "Games", count: 2, icon: Gamepad2, href: "/games" },
+  { label: "Games", count: 11, icon: Gamepad2, href: "/games" },
   { label: "Music", count: "1 Album", icon: Music, href: "/media" },
-  { label: "Projects", count: "7+", icon: FolderOpen, href: "/projects" },
+  { label: "Projects", count: "10+", icon: FolderOpen, href: "/projects" },
   { label: "Blog", count: "8+", icon: PenLine, href: "/blog" },
 ];
 
 const achievements = [
-  { icon: BookOpen, text: "4 published books (fiction + educational)" },
+  { icon: BookOpen, text: "8 books (4 published, 4 in progress)" },
   { icon: Building2, text: "2 companies: PRISM AI Consultants + VersAssist" },
-  { icon: Bot, text: "AI agent system with 50+ modules running autonomously" },
-  { icon: Gamepad2, text: "2 playable games (Pharmageddon + Max the Flying Chicken)" },
+  { icon: Bot, text: "54-module AI system with 33 autonomous agents running 24/7" },
+  { icon: Gamepad2, text: "11 playable games and interactive experiences" },
   { icon: Music, text: "A 19-track concept album (Mansa Musa)" },
   { icon: Microscope, text: "3 original research frameworks" },
   { icon: Clapperboard, text: "A sitcom pilot (Pillbox)" },

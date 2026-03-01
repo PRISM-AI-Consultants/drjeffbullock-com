@@ -31,7 +31,7 @@ const topics = [
   },
   {
     title: "Building with AI: From Idea to Shipped Product",
-    description: "How one person built 50+ AI modules, published 4 books, shipped 2 games, and produced a 19-track album - all with AI as a co-pilot.",
+    description: "How one person built 54 AI modules, published 8 books, shipped 11 games, and produced a 19-track album - all with AI as a co-pilot.",
     audience: "Creators, developers, solo founders",
   },
 ];
@@ -57,10 +57,19 @@ const formats = [
   },
 ];
 
-const pastAppearances = [
-  { event: "AI Hustle with Dr. Jeff - LinkedIn Live", date: "Weekly, Tuesdays 2PM ET", type: "Live Show" },
-  { event: "YouTube Live with Dr. Jeff", date: "Weekly, Thursdays 2PM ET", type: "Live Show" },
-  { event: "PRISM AI Business Workshops", date: "Ongoing", type: "Workshop" },
+const upcomingEvents = [
+  { event: "McKinney Media Headshot Happy Hour", date: "March 11, 2026", venue: "The Jone(s) Collective, Allentown, PA", type: "Guest Segment" },
+];
+
+const pastEvents = [
+  { event: "IFEL Ask the Expert: AI Storytelling Techniques", date: "February 26, 2026", venue: "IFEL", type: "Workshop" },
+  { event: "AI Hustle with Dr. Jeff", date: "Weekly, Tuesdays 2PM ET", venue: "LinkedIn Live", type: "Live Show" },
+  { event: "YouTube Live with Dr. Jeff", date: "Weekly, Thursdays 2PM ET", venue: "YouTube", type: "Live Show" },
+  { event: "IFEL Verizon Digital Small Business Readiness Workshop", date: "January 29, 2026", venue: "IFEL", type: "Workshop" },
+  { event: "Lehigh Valley Executive Forum", date: "November 19, 2025", venue: "DeSales University", type: "Speaking" },
+  { event: "SHRM Speaking Event", date: "September 11-13, 2025", venue: "SHRM Conference", type: "Conference" },
+  { event: "Gerald Haman / TSPN Keynote Discussion", date: "September 8, 2025", venue: "TSPN (40K Zoom + 60K YouTube viewers)", type: "Keynote" },
+  { event: "Jeff and Layla AI Speaking Event", date: "April 26, 2025", venue: "Philadelphia, PA", type: "Speaking" },
 ];
 
 export default function SpeakingPage() {
@@ -79,13 +88,13 @@ export default function SpeakingPage() {
               <h2 className="text-3xl font-extrabold tracking-tight mb-4">About the Speaker</h2>
               <div className="space-y-4 text-muted-foreground">
                 <p>
-                  Dr. Jeff Bullock is the Founder and CEO of PRISM AI Consultants and co-founder of VersAssist. He earned his Doctor of Pharmacy from Xavier University of Louisiana and spent 14 years at CVS Health - a Fortune 10 organization - rising from community pharmacist to upper leadership.
+                  Dr. Jeff Bullock is the Founder and CEO of PRISM AI Consultants and co-founder of VersAssist. He earned his Doctor of Pharmacy from Xavier University of Louisiana and spent 14 years at CVS Health - a Fortune 10 organization - rising from pharmacy clerk to district leader.
                 </p>
                 <p>
                   In 2021, he left corporate healthcare to become a full-time entrepreneur. When ChatGPT launched, he immediately saw the potential. He founded PRISM AI Consultants in June 2023 and has since personally coached over 75 business leaders on AI implementation.
                 </p>
                 <p>
-                  He is the author of multiple books, creator of 2 playable games, producer of a 19-track concept album, and builder of a 50-module autonomous AI system. He does not just talk about what AI can do - he shows what he has built with it.
+                  He is the author of 8 books, creator of 11 playable games, producer of a 19-track concept album, and builder of a 54-module autonomous AI system with 33 agents. He does not just talk about what AI can do - he shows what he has built with it.
                 </p>
               </div>
             </div>
@@ -97,8 +106,8 @@ export default function SpeakingPage() {
                   <li>14 years at CVS Health (Fortune 10)</li>
                   <li>75+ business leaders coached on AI implementation</li>
                   <li>CEO of PRISM AI Consultants + VersAssist</li>
-                  <li>Author of 4 published books</li>
-                  <li>Builder of 50+ module AI agent system</li>
+                  <li>Author of 8 books (4 published, 4 in progress)</li>
+                  <li>Builder of 54-module AI agent system with 33 agents</li>
                 </ul>
               </div>
             </div>
@@ -145,20 +154,49 @@ export default function SpeakingPage() {
         </Container>
       </Section>
 
-      {/* Past Appearances */}
+      {/* Appearances */}
       <Section className="bg-muted/30">
         <Container size="xl">
-          <h2 className="text-3xl font-extrabold tracking-tight mb-8">Appearances</h2>
-          <div className="space-y-3">
-            {pastAppearances.map((appearance) => (
-              <div key={appearance.event} className="flex items-center justify-between p-4 rounded-[var(--radius-lg)] border border-border bg-card">
-                <div>
-                  <h3 className="font-bold text-sm">{appearance.event}</h3>
-                  <p className="text-xs text-muted-foreground mt-0.5">{appearance.date}</p>
-                </div>
-                <Badge variant="outline">{appearance.type}</Badge>
+          <h2 className="text-3xl font-extrabold tracking-tight mb-4">Appearances</h2>
+          <p className="text-sm text-muted-foreground mb-8">
+            Featured speaker at IFEL workshops, DeSales University, SHRM conferences, and TSPN - reaching over 100K combined live and replay viewers. Official IFEL partner for AI education programming.
+          </p>
+
+          {/* Upcoming Events */}
+          {upcomingEvents.length > 0 && (
+            <div className="mb-8">
+              <h3 className="text-lg font-bold mb-4 flex items-center gap-2">
+                <Calendar className="h-5 w-5 text-accent" />
+                Upcoming
+              </h3>
+              <div className="space-y-3">
+                {upcomingEvents.map((event) => (
+                  <div key={event.event} className="flex items-center justify-between p-4 rounded-[var(--radius-lg)] border border-green-500/30 bg-green-500/5">
+                    <div>
+                      <h4 className="font-bold text-sm">{event.event}</h4>
+                      <p className="text-xs text-muted-foreground mt-0.5">{event.venue} - {event.date}</p>
+                    </div>
+                    <Badge className="bg-green-500/10 text-green-600 border-green-500/30">Upcoming</Badge>
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
+          )}
+
+          {/* Past Events */}
+          <div>
+            <h3 className="text-lg font-bold mb-4">Past Events</h3>
+            <div className="space-y-3">
+              {pastEvents.map((event) => (
+                <div key={event.event} className="flex items-center justify-between p-4 rounded-[var(--radius-lg)] border border-border bg-card">
+                  <div>
+                    <h4 className="font-bold text-sm">{event.event}</h4>
+                    <p className="text-xs text-muted-foreground mt-0.5">{event.venue} - {event.date}</p>
+                  </div>
+                  <Badge variant="outline">{event.type}</Badge>
+                </div>
+              ))}
+            </div>
           </div>
         </Container>
       </Section>

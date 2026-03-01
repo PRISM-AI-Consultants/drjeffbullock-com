@@ -1,8 +1,8 @@
 export interface Book {
   title: string;
   slug: string;
-  category: "fiction" | "non-fiction" | "short-story";
-  status: "published";
+  category: "fiction" | "non-fiction" | "short-story" | "novel";
+  status: "published" | "in-progress";
   coverImage?: string;
   description: string;
   genres: string[];
@@ -10,6 +10,8 @@ export interface Book {
   publishDate?: string;
   featured?: boolean;
   purchaseUrl?: string;
+  downloadUrl?: string;
+  audioUrl?: string;
   content: string;
 }
 
@@ -43,6 +45,7 @@ export interface MediaItem {
   embedUrl?: string;
   album?: string;
   trackNumber?: number;
+  spotifyUrl?: string;
 }
 
 export interface Game {
@@ -77,12 +80,13 @@ export interface Project {
     | "app"
     | "agent"
     | "game"
+    | "game-app"
     | "sitcom"
     | "music"
     | "experiment"
     | "framework"
     | "platform";
-  status: "active" | "completed";
+  status: "active" | "completed" | "in-development";
   description: string;
   url?: string;
   spotifyUrl?: string;

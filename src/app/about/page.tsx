@@ -25,12 +25,12 @@ export const metadata: Metadata = {
 
 const timeline = [
   { year: "2008", icon: GraduationCap, title: "Doctor of Pharmacy", description: "Graduated from Xavier University of Louisiana with a Pharm.D." },
-  { year: "2008-2021", icon: Briefcase, title: "CVS Health", description: "14 years at a Fortune 10 healthcare organization. Community pharmacist to upper leadership." },
+  { year: "2008-2021", icon: Briefcase, title: "CVS Health", description: "14 years at a Fortune 10 healthcare organization. Pharmacy clerk to district leader." },
   { year: "2021", icon: Lightbulb, title: "Full-Time Entrepreneur", description: "Left corporate healthcare to build businesses full-time." },
   { year: "2023", icon: Building2, title: "Founded PRISM AI Consultants", description: "Launched an AI consulting firm to help businesses implement AI for real results." },
   { year: "2024", icon: Building2, title: "Co-Founded VersAssist", description: "Built an AI-enhanced virtual assistant agency - the Uber of labor." },
   { year: "2025", icon: BookOpen, title: "Published 4 Books", description: "A Prompt's Tale, The Unburdening, The Inheritance, and The Compliant." },
-  { year: "2025", icon: Bot, title: "50+ Module AI Agent System", description: "Built a sovereign AI system with autonomous agents running 24/7." },
+  { year: "2025", icon: Bot, title: "54-Module AI Agent System", description: "Built a sovereign AI system with 33 autonomous agents running 24/7." },
 ];
 
 const socialLinks = [
@@ -71,7 +71,7 @@ export default function AboutPage() {
                   I founded PRISM AI Consultants in June 2023 to help business leaders implement AI - not as a buzzword, but as a real operational tool. Since then, I have personally coached over 75 executives, entrepreneurs, and business owners on making AI work for their specific situations.
                 </p>
                 <p>
-                  But this site is not about PRISM. This is my personal library - the proof of what happens when you use AI as a force multiplier across every creative and intellectual domain you care about. Four published books. Two playable games. A 19-track concept album. Three original research frameworks. A sitcom pilot. Two companies. And a 50-module AI agent system running autonomously.
+                  But this site is not about PRISM. This is my personal library - the proof of what happens when you use AI as a force multiplier across every creative and intellectual domain you care about. Eight books (four published, four in progress). Eleven playable games and interactive experiences. A 19-track concept album. Three original research frameworks. A sitcom pilot. Two companies. And a 54-module AI agent system with 33 autonomous agents running 24/7.
                 </p>
                 <p>
                   I did not build all of this alone. I built it with AI. And that is the point.
