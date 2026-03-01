@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Container } from "@/components/ui/container";
 import { Section } from "@/components/ui/section";
 import { Card, CardHeader, CardContent } from "@/components/ui/card";
@@ -7,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { NewsletterForm } from "@/components/ui/newsletter-form";
 import { CollectionCard } from "@/components/content/collection-card";
 import { BlogCard } from "@/components/content/blog-card";
+import { BookCover } from "@/components/ui/book-cover";
 import { getBooks, getBlogPosts, getResearch } from "@/lib/content";
 import { collections } from "@/data/collections";
 import {
@@ -57,10 +59,10 @@ export default function HomePage() {
 
   return (
     <>
-      {/* Editorial Hero - Asymmetric layout, NOT centered */}
+      {/* Editorial Hero - Asymmetric layout with headshot */}
       <Section className="pt-20 md:pt-28 pb-12">
         <Container size="xl">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div>
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tighter leading-[0.95]">
                 Dr. Jeff
@@ -75,57 +77,107 @@ export default function HomePage() {
                 multiplier. Books, research, games, music, companies, and
                 code - all shipped, all real.
               </p>
-            </div>
-            <div className="grid grid-cols-2 gap-4">
-              {featuredBook && (
-                <Link
-                  href={`/books/${featuredBook.slug}`}
-                  className="aspect-[3/4] rounded-[var(--radius-lg)] bg-muted border border-border flex items-end p-4 hover:shadow-md transition-all group"
-                >
-                  <div>
-                    <Badge>Book</Badge>
-                    <p className="mt-2 text-sm font-bold group-hover:text-accent transition-colors">
-                      {featuredBook.title}
-                    </p>
-                  </div>
+              <div className="mt-8 flex flex-wrap gap-3">
+                <Link href="/books">
+                  <Button size="lg">Explore My Work <ArrowRight className="h-4 w-4 ml-2" /></Button>
                 </Link>
-              )}
+                <Link href="/speaking">
+                  <Button size="lg" variant="secondary">Book Me to Speak</Button>
+                </Link>
+              </div>
+            </div>
+            <div className="relative">
+              <div className="aspect-[3/4] max-w-[420px] mx-auto lg:ml-auto rounded-[var(--radius-lg)] overflow-hidden border border-border shadow-lg">
+                <Image
+                  src="/images/hero/jeff-hero.jpg"
+                  alt="Dr. Jeff Bullock - professional headshot"
+                  fill
+                  className="object-cover object-top"
+                  sizes="(max-width: 1024px) 100vw, 420px"
+                  priority
+                />
+              </div>
+            </div>
+          </div>
+        </Container>
+      </Section>
+
+      {/* Showcase Grid - Visual preview cards */}
+      <Section className="bg-muted/30 py-8">
+        <Container size="xl">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {featuredBook && (
               <Link
-                href="/games/pharmageddon"
-                className="aspect-[3/4] rounded-[var(--radius-lg)] bg-muted border border-border flex items-end p-4 hover:shadow-md transition-all group"
+                href={`/books/${featuredBook.slug}`}
+                className="group rounded-[var(--radius-lg)] overflow-hidden border border-border bg-card hover:shadow-md transition-all"
               >
-                <div>
-                  <Badge variant="accent">Game</Badge>
-                  <p className="mt-2 text-sm font-bold group-hover:text-accent transition-colors">
-                    Pharmageddon
+                <BookCover
+                  title={featuredBook.title}
+                  category={featuredBook.category}
+                  coverImage={featuredBook.coverImage}
+                  className="aspect-[3/4]"
+                />
+                <div className="p-3">
+                  <Badge className="mb-1">Book</Badge>
+                  <p className="text-sm font-bold group-hover:text-accent transition-colors line-clamp-1">
+                    {featuredBook.title}
                   </p>
                 </div>
               </Link>
+            )}
+            <Link
+              href="/games/pharmageddon"
+              className="group rounded-[var(--radius-lg)] overflow-hidden border border-border bg-card hover:shadow-md transition-all"
+            >
+              <div className="aspect-[3/4] bg-gradient-to-br from-red-900 via-orange-900 to-amber-900 relative flex items-center justify-center">
+                <div className="text-center p-4">
+                  <Gamepad2 className="h-12 w-12 text-white/80 mx-auto mb-3" />
+                  <p className="text-white font-bold text-lg">Pharmageddon</p>
+                  <p className="text-white/60 text-xs mt-1">Tower Defense</p>
+                </div>
+                <div className="absolute inset-0 opacity-[0.03] bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0IiBoZWlnaHQ9IjQiPjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiNmZmYiLz48L3N2Zz4=')]" />
+              </div>
+              <div className="p-3">
+                <Badge variant="accent">Game</Badge>
+                <p className="text-sm font-bold group-hover:text-accent transition-colors mt-1">Play Now</p>
+              </div>
+            </Link>
+            <Link
+              href="/media"
+              className="group rounded-[var(--radius-lg)] overflow-hidden border border-border bg-card hover:shadow-md transition-all"
+            >
+              <div className="aspect-[3/4] bg-gradient-to-br from-amber-800 via-yellow-900 to-orange-950 relative flex items-center justify-center">
+                <div className="text-center p-4">
+                  <Music className="h-12 w-12 text-amber-300/80 mx-auto mb-3" />
+                  <p className="text-white font-bold text-lg">Mansa Musa</p>
+                  <p className="text-white/60 text-xs mt-1">19-Track Concept Album</p>
+                </div>
+                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-amber-400/40 to-transparent" />
+              </div>
+              <div className="p-3">
+                <Badge>Album</Badge>
+                <p className="text-sm font-bold group-hover:text-accent transition-colors mt-1">Listen</p>
+              </div>
+            </Link>
+            {featuredResearch && (
               <Link
-                href="/media"
-                className="aspect-[3/4] rounded-[var(--radius-lg)] bg-muted border border-border flex items-end p-4 hover:shadow-md transition-all group"
+                href={`/research/${featuredResearch.slug}`}
+                className="group rounded-[var(--radius-lg)] overflow-hidden border border-border bg-card hover:shadow-md transition-all"
               >
-                <div>
-                  <Badge>Album</Badge>
-                  <p className="mt-2 text-sm font-bold group-hover:text-accent transition-colors">
-                    Mansa Musa
-                  </p>
+                <div className="aspect-[3/4] bg-gradient-to-br from-indigo-900 via-blue-900 to-slate-900 relative flex items-center justify-center">
+                  <div className="text-center p-4">
+                    <FlaskConical className="h-12 w-12 text-sky-300/80 mx-auto mb-3" />
+                    <p className="text-white font-bold text-sm leading-tight">{featuredResearch.title}</p>
+                    <p className="text-white/60 text-xs mt-1">Research Framework</p>
+                  </div>
+                  <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-sky-400/40 to-transparent" />
+                </div>
+                <div className="p-3">
+                  <Badge variant="accent">Research</Badge>
+                  <p className="text-sm font-bold group-hover:text-accent transition-colors mt-1">Explore</p>
                 </div>
               </Link>
-              {featuredResearch && (
-                <Link
-                  href={`/research/${featuredResearch.slug}`}
-                  className="aspect-[3/4] rounded-[var(--radius-lg)] bg-muted border border-border flex items-end p-4 hover:shadow-md transition-all group"
-                >
-                  <div>
-                    <Badge variant="accent">Research</Badge>
-                    <p className="mt-2 text-sm font-bold group-hover:text-accent transition-colors">
-                      {featuredResearch.title}
-                    </p>
-                  </div>
-                </Link>
-              )}
-            </div>
+            )}
           </div>
         </Container>
       </Section>
@@ -161,8 +213,19 @@ export default function HomePage() {
             {featuredBook && (
               <Card href={`/books/${featuredBook.slug}`} variant="featured">
                 <CardHeader>
-                  <Badge>Featured Book</Badge>
-                  <h3 className="mt-3 text-2xl font-bold">{featuredBook.title}</h3>
+                  <div className="grid grid-cols-3 gap-4 mb-4">
+                    <div className="col-span-1">
+                      <BookCover
+                        title={featuredBook.title}
+                        category={featuredBook.category}
+                        coverImage={featuredBook.coverImage}
+                      />
+                    </div>
+                    <div className="col-span-2 flex flex-col justify-center">
+                      <Badge className="w-fit">Featured Book</Badge>
+                      <h3 className="mt-3 text-2xl font-bold">{featuredBook.title}</h3>
+                    </div>
+                  </div>
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground">{featuredBook.description}</p>
@@ -175,6 +238,13 @@ export default function HomePage() {
             {featuredResearch && (
               <Card href={`/research/${featuredResearch.slug}`} variant="featured">
                 <CardHeader>
+                  <div className="aspect-[21/9] rounded-[var(--radius-md)] mb-4 relative overflow-hidden bg-gradient-to-br from-indigo-900 via-blue-900 to-slate-900 flex items-center justify-center">
+                    <div className="text-center">
+                      <FlaskConical className="h-10 w-10 text-sky-300/70 mx-auto mb-2" />
+                      <p className="text-white/40 text-xs font-medium uppercase tracking-wider">Research</p>
+                    </div>
+                    <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-sky-400/30 to-transparent" />
+                  </div>
                   <Badge variant="accent">Featured Research</Badge>
                   <h3 className="mt-3 text-2xl font-bold">{featuredResearch.title}</h3>
                 </CardHeader>
