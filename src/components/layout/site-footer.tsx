@@ -68,7 +68,7 @@ export function SiteFooter() {
                 PRISM <ExternalLink className="h-3 w-3" />
               </a>
               <a
-                href="https://www.versassist.com"
+                href="https://www.versassists.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-sm text-muted-foreground hover:text-foreground flex items-center gap-1 transition-colors"
