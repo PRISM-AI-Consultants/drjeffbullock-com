@@ -19,7 +19,7 @@ const plusJakarta = Plus_Jakarta_Sans({
 export const metadata: Metadata = {
   metadataBase: new URL("https://drjeffbullock.com"),
   title: {
-    default: "Dr. Jeff Bullock - Author. Builder. Researcher. Operator.",
+    default: "Dr. Jeff Bullock - AI Orchestrator. Systems Integrator. Author. Builder.",
     template: "%s | Dr. Jeff Bullock",
   },
   description:
@@ -27,9 +27,9 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Dr. Jeff Bullock",
     description:
-      "Author. Builder. Researcher. Operator. Proving what one person can build with AI.",
+      "AI Orchestrator. Systems Integrator. Author. Builder. Proving what one person can build with AI.",
     type: "website",
-    images: ["/images/jeff-bullock-headshot.jpg"],
+    images: ["/images/hero/jeff-hero.jpg"],
   },
 };
 
