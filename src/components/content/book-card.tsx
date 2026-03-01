@@ -1,15 +1,18 @@
-import Link from "next/link";
 import { Card, CardHeader, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { BookCover } from "@/components/ui/book-cover";
 import type { Book } from "@/lib/types";
 
 export function BookCard({ book }: { book: Book }) {
   return (
     <Card href={`/books/${book.slug}`} variant={book.featured ? "featured" : "default"}>
       <CardHeader>
-        <div className="aspect-[3/4] rounded-[var(--radius-md)] bg-muted mb-4 flex items-center justify-center">
-          <span className="text-4xl text-muted-foreground/30">📖</span>
-        </div>
+        <BookCover
+          title={book.title}
+          category={book.category}
+          coverImage={book.coverImage}
+          className="mb-4"
+        />
         <div className="flex gap-2 mb-2">
           <Badge>{book.category}</Badge>
           {book.formats.map((f) => (

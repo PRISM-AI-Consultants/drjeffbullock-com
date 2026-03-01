@@ -7,7 +7,7 @@ import { ContentGrid } from "@/components/ui/content-grid";
 import { BookCard } from "@/components/content/book-card";
 import type { Book } from "@/lib/types";
 
-const categories = ["All", "Fiction", "Non-Fiction", "Short Story"];
+const categories = ["All", "Fiction", "Non-Fiction", "Novel", "Short Story"];
 
 export function BooksGrid({ books }: { books: Book[] }) {
   const [activeTag, setActiveTag] = useState("All");

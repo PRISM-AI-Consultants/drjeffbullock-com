@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { Container } from "@/components/ui/container";
 import { Section } from "@/components/ui/section";
@@ -72,6 +73,13 @@ const pastEvents = [
   { event: "Jeff and Layla AI Speaking Event", date: "April 26, 2025", venue: "Philadelphia, PA", type: "Speaking" },
 ];
 
+const eventPhotos = [
+  { src: "/images/events/event-presentation.jpg", alt: "Dr. Jeff Bullock presenting AI for Automotive Leaders at DeSales University" },
+  { src: "/images/events/event-audience.jpg", alt: "Audience at Lehigh Valley Executive Forum" },
+  { src: "/images/events/event-networking.jpg", alt: "Dr. Jeff Bullock networking at a speaking event" },
+  { src: "/images/events/event-group.jpg", alt: "Dr. Jeff Bullock with attendees after a speaking event" },
+];
+
 export default function SpeakingPage() {
   return (
     <>
@@ -80,7 +88,7 @@ export default function SpeakingPage() {
         description="Keynotes and workshops that change how organizations think about AI - and what they do about it the next morning."
       />
 
-      {/* Speaker Intro */}
+      {/* Speaker Intro with Photo */}
       <Section>
         <Container size="xl">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
@@ -98,7 +106,16 @@ export default function SpeakingPage() {
                 </p>
               </div>
             </div>
-            <div className="lg:col-span-2">
+            <div className="lg:col-span-2 space-y-4">
+              <div className="rounded-[var(--radius-lg)] overflow-hidden border border-border">
+                <Image
+                  src="/images/jeff-bullock-speaking.jpg"
+                  alt="Dr. Jeff Bullock speaking"
+                  width={600}
+                  height={400}
+                  className="w-full h-auto object-cover"
+                />
+              </div>
               <div className="rounded-[var(--radius-lg)] border border-border bg-muted/50 p-6">
                 <h3 className="font-bold mb-4">Credentials</h3>
                 <ul className="space-y-3 text-sm text-muted-foreground">
@@ -115,8 +132,33 @@ export default function SpeakingPage() {
         </Container>
       </Section>
 
-      {/* Topics */}
+      {/* Event Photo Gallery */}
       <Section className="bg-muted/30">
+        <Container size="xl">
+          <h2 className="text-3xl font-extrabold tracking-tight mb-8">In Action</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {eventPhotos.map((photo) => (
+              <div key={photo.src} className="rounded-[var(--radius-lg)] overflow-hidden border border-border bg-card">
+                <div className="aspect-[4/3] relative">
+                  <Image
+                    src={photo.src}
+                    alt={photo.alt}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
+          <p className="mt-4 text-sm text-muted-foreground text-center">
+            Lehigh Valley Executive Forum at DeSales University
+          </p>
+        </Container>
+      </Section>
+
+      {/* Topics */}
+      <Section>
         <Container size="xl">
           <h2 className="text-3xl font-extrabold tracking-tight mb-8">Speaking Topics</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -138,7 +180,7 @@ export default function SpeakingPage() {
       </Section>
 
       {/* Formats */}
-      <Section>
+      <Section className="bg-muted/30">
         <Container size="xl">
           <h2 className="text-3xl font-extrabold tracking-tight mb-8">Formats</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -155,7 +197,7 @@ export default function SpeakingPage() {
       </Section>
 
       {/* Appearances */}
-      <Section className="bg-muted/30">
+      <Section>
         <Container size="xl">
           <h2 className="text-3xl font-extrabold tracking-tight mb-4">Appearances</h2>
           <p className="text-sm text-muted-foreground mb-8">
@@ -202,7 +244,7 @@ export default function SpeakingPage() {
       </Section>
 
       {/* Booking CTA */}
-      <Section>
+      <Section className="bg-muted/30">
         <Container size="sm">
           <div className="text-center">
             <h2 className="text-2xl font-extrabold tracking-tight mb-3">Book Dr. Jeff</h2>
