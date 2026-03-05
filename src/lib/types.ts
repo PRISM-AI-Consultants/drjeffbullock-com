@@ -25,6 +25,7 @@ export interface ResearchEntry {
   description: string;
   date: string;
   featured?: boolean;
+  coverImage?: string;
   pdfUrl?: string;
   content: string;
 }

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import { getBlogPosts, getBlogPost } from "@/lib/content";
 import { Container } from "@/components/ui/container";
 import { Section } from "@/components/ui/section";
@@ -38,6 +39,19 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           <time>{new Date(post.date).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}</time>
           <span className="flex items-center gap-1"><Clock className="h-3.5 w-3.5" />{post.readingTime}</span>
         </div>
+
+        {post.coverImage && (
+          <div className="aspect-[16/9] rounded-[var(--radius-lg)] mb-8 relative overflow-hidden">
+            <Image
+              src={post.coverImage}
+              alt={post.title}
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, 720px"
+              priority
+            />
+          </div>
+        )}
 
         <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight">{post.title}</h1>
         <p className="mt-4 text-lg text-muted-foreground">{post.description}</p>

@@ -259,12 +259,24 @@ export default function HomePage() {
             {featuredResearch && (
               <Card href={`/research/${featuredResearch.slug}`} variant="featured">
                 <CardHeader>
-                  <div className="aspect-[21/9] rounded-[var(--radius-md)] mb-4 relative overflow-hidden bg-gradient-to-br from-indigo-900 via-blue-900 to-slate-900 flex items-center justify-center">
-                    <div className="text-center">
-                      <FlaskConical className="h-10 w-10 text-sky-300/70 mx-auto mb-2" />
-                      <p className="text-white/40 text-xs font-medium uppercase tracking-wider">Research</p>
-                    </div>
-                    <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-sky-400/30 to-transparent" />
+                  <div className="aspect-[21/9] rounded-[var(--radius-md)] mb-4 relative overflow-hidden">
+                    {featuredResearch.coverImage ? (
+                      <Image
+                        src={featuredResearch.coverImage}
+                        alt={featuredResearch.title}
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                      />
+                    ) : (
+                      <div className="absolute inset-0 bg-gradient-to-br from-indigo-900 via-blue-900 to-slate-900 flex items-center justify-center">
+                        <div className="text-center">
+                          <FlaskConical className="h-10 w-10 text-sky-300/70 mx-auto mb-2" />
+                          <p className="text-white/40 text-xs font-medium uppercase tracking-wider">Research</p>
+                        </div>
+                        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-sky-400/30 to-transparent" />
+                      </div>
+                    )}
                   </div>
                   <Badge variant="accent">Featured Research</Badge>
                   <h3 className="mt-3 text-2xl font-bold">{featuredResearch.title}</h3>

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import { getProjects, getProject } from "@/lib/content";
 import { Container } from "@/components/ui/container";
 import { Section } from "@/components/ui/section";
@@ -32,6 +33,19 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
         <Link href="/projects" className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground mb-8 transition-colors">
           <ArrowLeft className="h-4 w-4" /> Back to Projects
         </Link>
+
+        {project.coverImage && (
+          <div className="aspect-[16/9] rounded-[var(--radius-lg)] mb-8 relative overflow-hidden">
+            <Image
+              src={project.coverImage}
+              alt={project.title}
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, 720px"
+              priority
+            />
+          </div>
+        )}
 
         <div className="flex flex-wrap gap-2 mb-4">
           <Badge variant="accent">{project.type}</Badge>
