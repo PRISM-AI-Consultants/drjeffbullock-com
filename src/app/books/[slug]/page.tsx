@@ -29,8 +29,32 @@ export default async function BookPage({ params }: { params: Promise<{ slug: str
 
   const allBooks = getBooks().filter((b) => b.slug !== slug).slice(0, 3);
 
+  const bookJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Book",
+    name: book.title,
+    author: { "@type": "Person", name: "Dr. Jeff Bullock" },
+    ...(book.publishDate && { datePublished: book.publishDate }),
+    genre: book.genres?.join(", ") || book.category,
+    ...(book.formats?.length && { bookFormat: book.formats.includes("ebook") ? "EBook" : "Paperback" }),
+    description: book.description,
+    inLanguage: "en",
+    url: `https://drjeffbullock.com/books/${book.slug}`,
+    ...(book.purchaseUrl && {
+      offers: {
+        "@type": "Offer",
+        url: book.purchaseUrl,
+        availability: "https://schema.org/InStock",
+      },
+    }),
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(bookJsonLd) }}
+      />
       <Section className="pt-8">
         <Container size="md">
           <Link href="/books" className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground mb-8 transition-colors">

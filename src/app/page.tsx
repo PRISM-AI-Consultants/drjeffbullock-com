@@ -30,8 +30,8 @@ import {
 } from "lucide-react";
 
 const ipCategories = [
-  { label: "Books", count: 10, icon: BookOpen, href: "/books" },
-  { label: "Research", count: 3, icon: FlaskConical, href: "/research" },
+  { label: "Books", count: 18, icon: BookOpen, href: "/books" },
+  { label: "Research", count: 4, icon: FlaskConical, href: "/research" },
   { label: "Media", count: "10+", icon: Headphones, href: "/media" },
   { label: "Games", count: 16, icon: Gamepad2, href: "/games" },
   { label: "Music", count: "1 Album", icon: Music, href: "/media" },
@@ -40,12 +40,12 @@ const ipCategories = [
 ];
 
 const achievements = [
-  { icon: BookOpen, text: "10 books (4 published, 6 in progress)" },
+  { icon: BookOpen, text: "18 books (5 published, 13 in progress)" },
   { icon: Building2, text: "2 companies: PRISM AI Consultants + VersAssist" },
-  { icon: Bot, text: "54-module AI system with 33 autonomous agents running 24/7" },
+  { icon: Bot, text: "54-module AI system with 24 autonomous agents" },
   { icon: Gamepad2, text: "16 playable games and interactive experiences" },
   { icon: Music, text: "A 19-track concept album (Mansa Musa)" },
-  { icon: Microscope, text: "3 original research frameworks" },
+  { icon: Microscope, text: "4 original research frameworks" },
   { icon: Clapperboard, text: "A sitcom pilot (Pillbox)" },
   { icon: Rocket, text: "All built with AI as a force multiplier" },
 ];
@@ -171,7 +171,7 @@ export default function HomePage() {
                 <div className="text-center p-4">
                   <Bot className="h-12 w-12 text-cyan-300/80 mx-auto mb-3" />
                   <p className="text-white font-bold text-lg">Agent World</p>
-                  <p className="text-white/60 text-xs mt-1">34 AI Agents - Live</p>
+                  <p className="text-white/60 text-xs mt-1">24 AI Agents - Live</p>
                 </div>
                 <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-cyan-400/40 to-transparent" />
               </div>

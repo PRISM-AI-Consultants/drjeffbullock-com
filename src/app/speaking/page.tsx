@@ -32,7 +32,7 @@ const topics = [
   },
   {
     title: "Building with AI: From Idea to Shipped Product",
-    description: "How one person built 54 AI modules, published 10 books, shipped 11 games, and produced a 19-track album - all with AI as a co-pilot.",
+    description: "How one person built 54 AI modules, published 18 books, shipped 16 games, and produced a 19-track album, all with AI as a co-pilot.",
     audience: "Creators, developers, solo founders",
   },
 ];
@@ -102,7 +102,7 @@ export default function SpeakingPage() {
                   In 2021, he left corporate healthcare to become a full-time entrepreneur. When ChatGPT launched, he immediately saw the potential. He founded PRISM AI Consultants in June 2023 and has since personally coached hundreds of business leaders on AI implementation.
                 </p>
                 <p>
-                  He is the author of 10 books, creator of 11 playable games, producer of a 19-track concept album, and builder of a 54-module autonomous AI system with 33 agents. He does not just talk about what AI can do - he shows what he has built with it.
+                  He is the author of 18 books, creator of 16 playable games, producer of a 19-track concept album, and builder of a 54-module autonomous AI system with 24 agents. He does not just talk about what AI can do. He shows what he has built with it.
                 </p>
               </div>
             </div>
@@ -125,8 +125,8 @@ export default function SpeakingPage() {
                   <li>CEO of PRISM AI Consultants</li>
                   <li>CEO and Co-Founder of VersAssist</li>
                   <li>Official IFEL partner for AI education programming</li>
-                  <li>Author of 10 books (4 published, 6 in progress)</li>
-                  <li>Builder of 54-module AI agent system with 33 agents</li>
+                  <li>Author of 18 books (5 published, 13 in progress)</li>
+                  <li>Builder of 54-module AI agent system with 24 agents</li>
                 </ul>
               </div>
             </div>

@@ -31,15 +31,15 @@ const timeline = [
   { year: "2023", icon: BookOpen, title: "Published A Prompt's Tale", description: "First book - a beginner's guide to AI and prompt engineering." },
   { year: "2024", icon: Building2, title: "Co-Founded VersAssist", description: "Built an AI-enhanced virtual assistant agency - the Uber of labor." },
   { year: "2025", icon: BookOpen, title: "Speaking Engagements", description: "SHRM Conference, DeSales University, TSPN Keynote (100K+ viewers), IFEL workshops, and more." },
-  { year: "2026", icon: BookOpen, title: "Published 3 More Books", description: "The Unburdening, The Inheritance, and The Compliant." },
-  { year: "2026", icon: Bot, title: "54-Module AI Agent System", description: "Built a sovereign AI system with 33 autonomous agents running 24/7." },
+  { year: "2026", icon: BookOpen, title: "Published 3 More Books", description: "The Unburdening, The Inheritance, and The Compliant. Continued writing across fiction and non-fiction." },
+  { year: "2026", icon: Bot, title: "54-Module AI Agent System", description: "Built a sovereign AI system with 24 autonomous agents powering operations." },
 ];
 
 const socialLinks = [
   { label: "LinkedIn", href: "https://www.linkedin.com/in/drjeffbullock" },
   { label: "YouTube", href: "https://www.youtube.com/@drjeffbullock" },
   { label: "PRISM AI", href: "https://www.prismaiconsultants.com" },
-  { label: "VersAssist", href: "https://www.versassist.com" },
+  { label: "VersAssist", href: "https://www.versassists.com" },
   { label: "Skool Community", href: "https://www.skool.com/prism-ai-university" },
   { label: "Agent World", href: "https://agents.prismaiconsultants.com" },
 ];
@@ -75,7 +75,7 @@ export default function AboutPage() {
                   I founded PRISM AI Consultants in June 2023 to help business leaders implement AI - not as a buzzword, but as a real operational tool. Since then, I have personally coached hundreds of executives, entrepreneurs, and business owners on making AI work for their specific situations.
                 </p>
                 <p>
-                  But this site is not about PRISM. This is my personal library - the proof of what happens when you use AI as a force multiplier across every creative and intellectual domain you care about. Ten books (four published, six in progress). Playable games and interactive experiences. A 19-track concept album. Three original research frameworks. A sitcom pilot. Two companies. And a 54-module AI agent system with 33 autonomous agents running 24/7.
+                  But this site is not about PRISM. This is my personal library, the proof of what happens when you use AI as a force multiplier across every creative and intellectual domain you care about. Eighteen books (five published, thirteen in progress). Sixteen playable games and interactive experiences. A 19-track concept album. Four original research frameworks. A sitcom pilot. Two companies. And a 54-module AI agent system with 24 autonomous agents.
                 </p>
                 <p>
                   I did not build all of this alone. I built it with AI. And that is the point.
@@ -159,7 +159,7 @@ export default function AboutPage() {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">The Uber of labor. AI-trained teams that help businesses scale operations without the overhead of traditional hiring.</p>
-                <a href="https://www.versassist.com" target="_blank" rel="noopener noreferrer" className="mt-4 inline-flex items-center gap-1 text-sm text-accent font-medium hover:underline">
+                <a href="https://www.versassists.com" target="_blank" rel="noopener noreferrer" className="mt-4 inline-flex items-center gap-1 text-sm text-accent font-medium hover:underline">
                   Visit VersAssist <ExternalLink className="h-3 w-3" />
                 </a>
               </CardContent>

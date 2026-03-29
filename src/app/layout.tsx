@@ -33,6 +33,54 @@ export const metadata: Metadata = {
   },
 };
 
+const personJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Dr. Jeff Bullock",
+  givenName: "Jeff",
+  familyName: "Bullock",
+  honorificPrefix: "Dr.",
+  honorificSuffix: "PharmD",
+  jobTitle: "CEO & Founder",
+  worksFor: {
+    "@type": "Organization",
+    name: "PRISM AI Consultants",
+    url: "https://www.prismaiconsultants.com",
+  },
+  alumniOf: {
+    "@type": "CollegeOrUniversity",
+    name: "Xavier University of Louisiana",
+  },
+  hasCredential: {
+    "@type": "EducationalOccupationalCredential",
+    credentialCategory: "degree",
+    name: "Doctor of Pharmacy (PharmD)",
+  },
+  knowsAbout: [
+    "Artificial Intelligence",
+    "AI Consulting",
+    "Prompt Engineering",
+    "Systems Integration",
+    "Business Automation",
+    "AI Agent Development",
+  ],
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Allentown",
+    addressRegion: "PA",
+    addressCountry: "US",
+  },
+  url: "https://drjeffbullock.com",
+  sameAs: [
+    "https://www.linkedin.com/in/drjeffbullock",
+    "https://www.youtube.com/@drjeffbullock",
+    "https://www.prismaiconsultants.com",
+    "https://open.spotify.com/album/1iOSi2A5g4LUjSkvniwl4u",
+  ],
+  description:
+    "PharmD turned AI consultant, author of 18 books, and CEO of PRISM AI Consultants. Based in Lehigh Valley, PA. Helps business leaders implement AI operationally.",
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -40,6 +88,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+        />
+      </head>
       <body className={`${inter.variable} ${plusJakarta.variable} antialiased`}>
         <SiteNav />
         <main className="min-h-screen">{children}</main>
