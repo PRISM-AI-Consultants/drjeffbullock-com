@@ -9,7 +9,9 @@ coverImage: "/images/blog/making-pharmageddon-header.jpg"
 
 Every pharmacist has a shift that broke them a little. The one where you had 300 prescriptions in queue, two people on staff, the drive-thru ringing nonstop, and a patient at the counter asking why their medication costs $847 when it was $12 last month.
 
-I wanted to capture that. Not as a complaint, but as a game. Something that let people feel what pharmacy is actually like - the multitasking, the pressure, the absurdity, and the moments of genuine human connection that keep people in the profession.
+I spent 18 years behind that counter. From pharmacy clerk to district leader at CVS Health. I know what 400 prescriptions on a skeleton crew feels like. I know the feeling of verifying a prescription at a pace that compromises safety because corporate set the quota. I know the drive home where you sit in the parking lot for ten minutes before going inside because you need the silence.
+
+I wanted to capture that. Not as a complaint, but as a game. Something that let people feel what pharmacy is actually like. The multitasking, the pressure, the absurdity, and the moments of genuine human connection that keep people in the profession.
 
 ## The Design
 
@@ -17,20 +19,56 @@ PHARMAGEDDON is a time-management game with four meters: Stress, Safety, Corpora
 
 That tension is the whole game. It's also the whole job.
 
-I included 26 real medications with accurate dose ranges. When you verify a prescription, the errors are pharmacologically real - wrong doses, drug interactions, incorrect frequencies. This wasn't decoration. It was the point. The game is authentic because the details are authentic.
+I included 26 real medications with accurate dose ranges. When you verify a prescription, the errors are pharmacologically real. Wrong doses, drug interactions, incorrect frequencies. This wasn't decoration. It was the point. A PharmD designed these scenarios, and every one of them comes from something I either caught or almost missed during a real shift.
+
+The game has three difficulty settings: Easy (patience boosted 30%, stress reduced 30%, customers arrive 20% slower), Normal, and Hard. There are six upgrades you can purchase between shifts, costing between 200 and 350 points each. A good shift earns you 1,500 to 2,500 points. The economy is tight on purpose. You should feel like you're barely keeping up, because that's what pharmacy feels like.
+
+The achievement system is where the authenticity lives. "Cried in Honda Civic." "Denied for Albuterol." "Asked if We Have It in the Back." These are inside jokes that aren't really jokes. Every pharmacist who has sat in their car after a shift knows exactly what "Cried in Honda Civic" means.
 
 ## The Technical Choice
 
-I built the entire game in vanilla JavaScript. One HTML file. Zero dependencies. No React, no framework, no build step. Just code that runs in any browser.
+I built the entire game in vanilla JavaScript. One HTML file. 3,288 lines of code. Zero dependencies. No React, no framework, no build step. Just code that runs in any browser.
 
-This was deliberate. I wanted something anyone could play, anywhere, without downloading anything. The Web Audio API handles all sound effects - no audio files to load. The game is fully responsive, works on mobile, and is PWA-ready so you can install it on your phone.
+This was deliberate. I wanted something anyone could play, anywhere, without downloading anything. The Web Audio API generates all 11 sound effects synthetically. No audio files to load. The game is fully responsive, works on mobile, and is PWA-ready so you can install it on your phone.
 
-The single-file architecture means the entire game - logic, UI, audio, data - lives in one place. It's not how you'd build a production app, but for a game that needs to be instantly playable and shareable, it's perfect.
+The single-file architecture means the entire game lives in one place. Logic, UI, audio, data, everything. The backend is a simple Node.js server that syncs cloud scores through an API endpoint. The whole thing runs in a Docker container on a VPS. It's not how you'd build a production app, but for a game that needs to be instantly playable and shareable, it's perfect.
 
-## The Reaction
+I chose browser-first over Steam for a reason. Steam requires a download, an account, and a $30 purchase decision before someone ever plays. Browser-first means a pharmacist sees the link on Reddit during their lunch break, clicks it, and is playing in three seconds. The friction has to be zero. Pharmacists don't have time for friction. That's literally the point of the game.
 
-The best feedback has come from pharmacists. They play it and they laugh - not because it's exaggerated, but because it's not. The achievement names hit: "Cried in Honda Civic," "Denied for Albuterol," "Asked if We Have It in the Back." These are inside jokes that aren't really jokes.
+## The Reddit Moment
 
-Non-pharmacists play it and say some version of "I had no idea." That's the other purpose. Beyond entertainment, the game communicates something about the profession that's hard to explain in words. You have to feel the simultaneous pull of five competing demands to understand what pharmacy work is actually like.
+I posted Pharmageddon to r/pharmacy on a Saturday. Within days it had 389 upvotes, 89 comments, and 31,000 views. For context, that subreddit rarely gives anything close to that kind of engagement.
 
-The co-op mode - where two players share one keyboard, one as the Tech and one as the Pharmacist - might be my favorite feature. It forces communication and coordination under pressure. It's also the closest thing to training a new pharmacy employee that you can get without actually being behind the counter.
+The comments were the validation. Over 80% of them said some version of "this is accurate and I love it." Pharmacists recognized themselves in the game immediately. The community started requesting features that proved they understood the simulation: a talk-back mode where you can finally say what you're thinking to the rude customer (23 upvotes on that request), a phone hold mechanic with angry hang-ups (17 upvotes), and a bladder meter (68 upvotes, which I built immediately because every pharmacist knows that struggle).
+
+Some feedback taught me about game design discipline. One power gamer wanted a complete overhaul of the upgrade economy. But 95% of players were struggling to survive, not min-maxing. The game's appeal is the pharmacy simulation, not RPG progression. One person's feedback is data. A pattern across many is direction. I built based on patterns.
+
+The Reddit post led to what we called "The Reddit Update," version 3.1, which addressed the community's most-requested features while keeping the core experience intact. The game now has 38 registered players with top scores exceeding 109,000 points.
+
+## The Soundtrack
+
+You can't have a game called Pharmageddon without a soundtrack. I wrote and produced five original tracks using Suno, each designed for a specific moment in the game.
+
+"The Honda Civic" is the lo-fi chill track that plays on the title screen. It sets the tone before you even start. "Wildin" plays during the early shifts, an instrumental that keeps the energy steady while you're learning the mechanics. "Hard Mode" picks up for shifts 6 through 9, matching the escalating difficulty. "Code Red (Code Ozempic)" is the rush hour banger, the track that plays when everything is falling apart and you're just trying to survive. And "Pharmageddon" itself is the flagship track, the finale that plays when you make it through.
+
+The soundtrack is heading to Spotify through DistroKid as "PHARMAGEDDON (Original Game Soundtrack)." The same distribution pipeline we used for the Mansa Musa narrative album.
+
+## The Franchise
+
+Pharmageddon spawned something I didn't fully plan for. District Zero is a strategy spinoff that lives at a subdomain of the main game. The original game captures the chaos of a single pharmacy shift. District Zero zooms out to the district management level, the perspective I had during the later years of my CVS career.
+
+Then there's the VR version. A native Quest 3 build, written in Godot 4.6.1. The APK is 26 megabytes, signed and ready to sideload. Ten waves, three difficulty levels, a combo system, and a full pharmacy arena with VR hand tracking. The idea is simple: hand someone a headset, and they're inside the pharmacy. It's the ultimate demo piece for speaking events and pitches.
+
+The VR build is currently waiting on Meta Developer Mode verification, but the code is complete. Thirteen scripts, the full game loop, all three difficulty modes.
+
+## The Co-Op Mode
+
+The co-op mode, where two players share one keyboard, one as the Tech and one as the Pharmacist, might be my favorite feature. It forces communication and coordination under pressure. One person fills prescriptions while the other verifies them. You have to talk to each other. You have to prioritize together. You have to decide in real time whether to answer the phone or finish the verification.
+
+It's the closest thing to training a new pharmacy employee that you can get without actually being behind the counter.
+
+## Why It Matters
+
+Pharmageddon started as a creative project. A pharmacist making a game about pharmacy. But it became something more than that. It became a communication tool. Non-pharmacists play it and say some version of "I had no idea." They feel the simultaneous pull of five competing demands, and for three minutes they understand what the job is actually like. That's harder to accomplish with a blog post or an infographic.
+
+The game also proved something about what's possible with AI-assisted development. One person, with the right tools, can build a game, write the soundtrack, deploy it globally, and grow a community around it. Not a team. Not a studio. One pharmacist with a laptop and 18 years of material.

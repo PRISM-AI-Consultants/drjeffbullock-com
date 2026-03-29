@@ -3,6 +3,7 @@ import { Inter, Plus_Jakarta_Sans } from "next/font/google";
 import { SiteNav } from "@/components/layout/site-nav";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { CommandPaletteWrapper } from "@/components/layout/command-palette-wrapper";
+import { AudioPlayer } from "@/components/ui/audio-player";
 import "./globals.css";
 
 const inter = Inter({
@@ -127,6 +128,7 @@ export default function RootLayout({
         <main className="min-h-screen">{children}</main>
         <SiteFooter />
         <CommandPaletteWrapper />
+        <AudioPlayer />
       </body>
     </html>
   );
