@@ -168,27 +168,41 @@ export default function SpeakingPage() {
         </Container>
       </Section>
 
-      {/* Event Photo Gallery */}
+      {/* Speaking Reel */}
       <Section className="bg-muted/30">
         <Container size="xl">
           <h2 className="text-3xl font-extrabold tracking-tight mb-8">In Action</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {eventPhotos.map((photo) => (
-              <div key={photo.src} className="rounded-[var(--radius-lg)] overflow-hidden border border-border bg-card">
-                <div className="aspect-[4/3] relative">
-                  <Image
-                    src={photo.src}
-                    alt={photo.alt}
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                  />
-                </div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+            <div className="rounded-[var(--radius-lg)] overflow-hidden border border-border">
+              <div className="aspect-video">
+                <iframe
+                  src="https://www.youtube.com/embed/ailEgmj7N6c"
+                  title="Dr. Jeff Bullock - AI Speaking"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="w-full h-full"
+                  loading="lazy"
+                />
               </div>
-            ))}
+            </div>
+            <div className="grid grid-cols-2 gap-4">
+              {eventPhotos.map((photo) => (
+                <div key={photo.src} className="rounded-[var(--radius-lg)] overflow-hidden border border-border bg-card">
+                  <div className="aspect-[4/3] relative">
+                    <Image
+                      src={photo.src}
+                      alt={photo.alt}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 640px) 50vw, 25vw"
+                    />
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
           <p className="mt-4 text-sm text-muted-foreground text-center">
-            Faulkner Automotive AI Presentation at DeSales University and PRISM events
+            Faulkner Automotive AI Presentation at DeSales University, Chamber events, and LinkedIn Live
           </p>
         </Container>
       </Section>

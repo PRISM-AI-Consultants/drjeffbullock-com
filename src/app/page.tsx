@@ -103,6 +103,18 @@ export default function HomePage() {
         </Container>
       </Section>
 
+      {/* Featured In / Speaking At */}
+      <div className="border-y border-border bg-muted/30">
+        <Container size="xl" className="py-5">
+          <div className="flex items-center justify-center gap-8 md:gap-12 flex-wrap">
+            <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">Speaking at</p>
+            {["SHRM Conference", "DeSales University", "IFEL / Verizon", "TSPN (100K+ viewers)", "Lehigh Valley Chamber"].map((org) => (
+              <span key={org} className="text-sm font-medium text-muted-foreground/70">{org}</span>
+            ))}
+          </div>
+        </Container>
+      </div>
+
       {/* Showcase Grid - Visual preview cards */}
       <Section className="bg-muted/30 py-8">
         <Container size="xl">
@@ -443,10 +455,13 @@ export default function HomePage() {
         <Container size="md">
           <div className="text-center">
             <h2 className="text-2xl font-extrabold tracking-tight mb-2">
-              Stay in the loop
+              The Operator&apos;s Edge
             </h2>
-            <p className="text-muted-foreground mb-6">
-              New books, research, games, and projects - delivered when they ship.
+            <p className="text-muted-foreground mb-2">
+              What I am building, what is working, and the AI tools behind it. No spam, no fluff.
+            </p>
+            <p className="text-xs text-muted-foreground mb-6">
+              Join business owners and operators who get updates when books ship, games launch, and research drops.
             </p>
             <div className="flex justify-center">
               <NewsletterForm />

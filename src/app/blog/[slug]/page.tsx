@@ -88,6 +88,22 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           <MDXContent source={post.content} />
         </div>
 
+        {/* Cross-sell CTA */}
+        <div className="mt-12 p-6 rounded-[var(--radius-lg)] border border-accent/30 bg-accent/5 text-center">
+          <p className="text-sm font-semibold mb-1">Want to go deeper?</p>
+          <p className="text-sm text-muted-foreground mb-4">
+            Book a call to discuss how AI can work for your specific business.
+          </p>
+          <div className="flex gap-3 justify-center flex-wrap">
+            <a href="https://calendly.com/prismaiconsultants/introductory-call" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-5 py-2.5 bg-accent text-white font-semibold rounded-[var(--radius-md)] text-sm hover:bg-accent/90 transition-colors">
+              Book a Call
+            </a>
+            <Link href="/speaking" className="inline-flex items-center gap-2 px-5 py-2.5 border border-border rounded-[var(--radius-md)] text-sm font-medium hover:bg-muted/50 transition-colors">
+              Invite Jeff to Speak
+            </Link>
+          </div>
+        </div>
+
         {relatedPosts.length > 0 && (
           <div className="mt-16 pt-8 border-t border-border">
             <h2 className="text-2xl font-bold mb-6">Related Posts</h2>

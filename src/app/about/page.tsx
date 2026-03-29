@@ -168,10 +168,30 @@ export default function AboutPage() {
         </Container>
       </Section>
 
-      {/* Connect */}
+      {/* Explore More */}
       <Section>
         <Container size="md">
-          <h2 className="text-3xl font-extrabold tracking-tight mb-8 text-center">Connect</h2>
+          <h2 className="text-3xl font-extrabold tracking-tight mb-8 text-center">Explore</h2>
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 mb-8">
+            {[
+              { href: "/research", label: "Research", desc: "4 original frameworks" },
+              { href: "/media", label: "Media", desc: "Talks, music, shows" },
+              { href: "/projects", label: "Projects", desc: "Companies and builds" },
+              { href: "/faq", label: "FAQ", desc: "Common questions" },
+              { href: "/books", label: "Books", desc: "18 titles" },
+              { href: "/games", label: "Games", desc: "16 playable games" },
+            ].map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="p-4 rounded-[var(--radius-lg)] border border-border bg-card hover:shadow-sm hover:border-accent/30 transition-all text-center"
+              >
+                <p className="text-sm font-semibold">{item.label}</p>
+                <p className="text-xs text-muted-foreground mt-1">{item.desc}</p>
+              </Link>
+            ))}
+          </div>
+          <h3 className="text-lg font-bold text-center mb-4">Connect</h3>
           <div className="flex flex-wrap justify-center gap-4">
             {socialLinks.map((link) => (
               <a
