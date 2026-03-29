@@ -1,0 +1,101 @@
+---
+title: "How I Built 33 AI Agents (And What They Actually Do)"
+slug: "how-i-built-33-ai-agents"
+date: "2026-03-25"
+tags: ["AI agents", "automation", "business systems", "PRISM AI"]
+description: "A real breakdown of the 33-agent AI system that runs my two businesses. What each one does, why I built them, and what I learned about building AI infrastructure as a non-engineer."
+featured: false
+coverImage: "/images/blog/how-i-built-33-ai-agents-cover.jpg"
+---
+
+I run two businesses: PRISM AI Consultants and VersAssist LLC. Both are powered by a multi-agent AI platform that I built from scratch. As of this writing, the system has 33 active agents, consolidated down from a peak of 59. The fleet cut happened because I realized that more agents does not mean better operations. It means more things to maintain.
+
+Here is what the system actually looks like, what each layer does, and what I learned building it.
+
+## The Architecture in Plain English
+
+The system is built in Python. It runs on a combination of a Hostinger VPS (a virtual private server) and my local Mac. Agents are orchestrated by cron jobs on the VPS and launchd on the Mac. When something breaks, a watchdog bot sends me a Slack alert. The entire thing is designed to run without my attention for days at a time.
+
+At the highest level, the system does five things: ingests meeting transcripts, manages email, tracks prospects, enforces accountability, and generates executive intelligence. Those five functions used to require multiple people. Now they require multiple agents.
+
+## Layer 1: The Sovereign Agents
+
+At the top of the hierarchy sit the Sovereign Agents. These are math-enforced command agents that sit above all the advisory agents. They read all system data, run threshold calculations, and produce binding directives.
+
+The PRISM Sovereign Agent is the revenue pressure engine. It calculates targets, pipeline coverage, pacing percentage, and pressure mode. If revenue is behind target, the Sovereign does not suggest working harder. It identifies the specific prospect that is closest to conversion, the specific bottleneck in the pipeline, and the specific action that has the highest probability of moving revenue forward.
+
+Its weekly directive is capped at six lines. Top prospects. Bottleneck. Discipline focus. That is it. No fluff. No encouragement. Just the numbers and the next move.
+
+The Sovereign also powers the Daily Intelligence Email that arrives at 5 AM every morning. This single HTML email consolidates sovereign orders, pipeline status, content calendar, and game analytics into one dashboard. I wake up, read one email, and know exactly where everything stands.
+
+Before the Sovereign existed, I was mentally tracking pipeline, revenue pacing, content schedule, and operational status across multiple tools and documents. The cognitive load was enormous. Now the Sovereign does the tracking and serves me the summary. My job is to make decisions on what it surfaces.
+
+## Layer 2: The Operational Agents
+
+Below the Sovereign sit the agents that do the day-to-day work.
+
+**The BizDev Agent** runs at 9 PM daily on the VPS. It manages the full prospect lifecycle: outreach, follow-up, pipeline movement, and email coordination. It absorbed several earlier agents that handled prospect nurture, email pipeline sync, and lead qualification separately. Consolidating them into one agent eliminated the coordination bugs that happened when multiple agents tried to manage the same prospect.
+
+**The Email Triage Agent** processes incoming email, categorizes it by priority, and drafts responses. It absorbed an earlier Inbox Organizer agent. The key capability is separating actionable emails from noise. Revenue-impacting messages get flagged immediately. Newsletters and notifications get archived or deleted. This alone saves me 30 to 45 minutes of email sorting every morning.
+
+**The Speaking Agent** runs twice daily, at 2 PM and 11 PM. It researches conference and speaking opportunities, tracks application deadlines, and manages the pipeline of events. For someone building a speaking practice, this is the equivalent of having a full-time booking coordinator.
+
+**The Session Indexer** runs every 30 minutes. It catalogs coaching sessions, extracts key themes, and maintains a searchable index of every session I have run. When I need to reference what we discussed with a specific client three months ago, I do not dig through files. I query the index.
+
+**The Content Miner** goes through coaching transcripts and extracts "content gold," specific quotes, insights, and stories that can be turned into blog posts, YouTube Shorts, and social media content. This article is a product of that pipeline.
+
+## Layer 3: The Specialist Agents
+
+These agents handle specific domains.
+
+**The Game Studio Agent (The Hype Man)** runs daily at 6:30 AM and weekly on Mondays at 9 AM. It manages marketing for the game portfolio: analytics tracking, Reddit mention monitoring across seven subreddits, social post generation, press pitches, and directory listings. When Pharmageddon went viral on Reddit, this agent tracked the engagement in real time and identified which comments needed responses.
+
+**The Game Health Monitor (The Medic)** runs hourly. It checks all 15 sites in the portfolio and sends Slack alerts when two or more consecutive checks fail. It can auto-restart Docker containers with cooldown throttling to prevent restart loops. This is the agent that ensures the games stay online without me checking manually.
+
+**The BTS Agent** runs twice daily, at 7 AM and 7 PM. It monitors the ARMY Academy venture, a separate project. The Gemini Cost Tracker logs every Gemini API call across all agents and alerts when spending approaches budget thresholds: $5 per day and $50 per month.
+
+**The Security Audit Bot** runs monthly and produces a comprehensive security assessment of all infrastructure. The last audit scored 97 out of 100. It checks Nmap scans, SSL certificates, fail2ban configuration, and UFW firewall rules.
+
+## Layer 4: Client-Deployed Agents
+
+Four agents have been deployed directly to client environments. A Smart Pantry Agent and a Pharma Lit Agent for one client. A BMI Valuation Agent and a BMI Email Triage Agent for another. These agents live in the clients' workflows and serve their specific business needs.
+
+Building agents for clients is the natural evolution of AI coaching. You start by teaching clients to use AI tools. Then you build custom GPTs for their specific tasks. Then you build dedicated agents that run autonomously. Each step increases the value delivered and the stickiness of the relationship.
+
+## The Consolidation Lesson
+
+The fleet peaked at 59 agents. It is now 33. That reduction was one of the most valuable decisions I made.
+
+At 59 agents, the system was fragile. Agents would conflict with each other. One agent would update a file that another agent was reading. Timing issues caused data inconsistencies. The maintenance overhead was enormous. I was spending more time fixing agent interactions than benefiting from agent output.
+
+The consolidation absorbed overlapping capabilities into fewer, more capable agents. The advisory council (CEO, CFO, CMO, COO persona agents) was absorbed into the Sovereign. The BizDev Agent absorbed prospect lifecycle, nurture, and email pipeline sync. Email Triage absorbed the Inbox Organizer. Revenue Scoreboard absorbed Gmail Revenue Sync.
+
+The principle is the same one I teach clients: "My opinion is the least amount of new things as possible. Every time you add a new tool or a new app, it is overwhelming." This applies to agents too. Every new agent adds complexity. The goal is not maximum agents. It is maximum capability per agent.
+
+## What I Learned Building This
+
+**Lesson 1: Start with one agent that solves one problem.** My first agent was the Email Triage. It solved the most painful daily task: sorting through dozens of emails to find the ones that mattered. Everything else was built incrementally after that first win proved the approach.
+
+**Lesson 2: Data flow is more important than intelligence.** The smartest agent in the world is useless if it does not have access to the right data at the right time. Most of my debugging time was spent not on the AI logic but on the data pipelines: making sure transcripts flowed correctly, state files were properly formatted, and agents could read each other's outputs without conflicts.
+
+**Lesson 3: Watchdogs are not optional.** When you have agents running on cron schedules, things will break. APIs will time out. Files will get corrupted. Servers will restart. Without a monitoring agent that alerts you when something fails, you will not know about problems until a client tells you.
+
+**Lesson 4: Consolidation is a feature, not a retreat.** Going from 59 to 33 agents felt like failure at first. It was actually maturity. Fewer, better agents with clearer responsibilities produce better results than a sprawling fleet of specialized agents that cannot coordinate.
+
+**Lesson 5: You do not need to be an engineer.** I am a pharmacist. I learned Python to build this system. I used AI tools to help me write the code, debug the issues, and design the architecture. The technical barrier to building AI agents is lower than most people think. The real barrier is having a clear operational vision of what you need the agents to do.
+
+## The Cost
+
+The entire system runs on infrastructure that costs less than a part-time employee. The VPS hosting, the AI API calls, and the tool subscriptions total a fraction of what even one human hire would cost. And the system runs 24 hours a day, 7 days a week, 365 days a year.
+
+Every Gemini API call across all bots is tracked and budget-capped. I do not use Claude API for automated bots because the cost per call is higher. Bots run on Gemini Flash exclusively. Claude is reserved for coaching sessions and complex analysis work where the quality difference justifies the cost.
+
+This cost discipline is something I enforce rigorously. "Before you know it, you can have seven different tools, $14, $10, $20, and it is expenses for no reason." That advice applies to my own infrastructure just as much as it applies to my clients' tool stacks.
+
+## The Point
+
+I did not build 33 AI agents because I love technology. I built them because the alternative was hiring a team of people to handle email triage, prospect management, content mining, game marketing, security auditing, session indexing, and revenue tracking. My first two businesses taught me what happens when you try to scale with human labor before the revenue supports it.
+
+The agent system is the operator mindset in its purest form. Each agent is a system that handles a specific operational function. Together, they form an operational backbone that lets me focus on the two things that actually require my attention: coaching clients and making strategic decisions.
+
+If you are a business owner doing everything manually, you do not need 33 agents. You need one. Build the first one. Solve the most painful problem. Then build the next. The compounding effect will take care of the rest.
