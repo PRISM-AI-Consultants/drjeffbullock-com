@@ -354,6 +354,65 @@ export default function HomePage() {
         </Section>
       )}
 
+      {/* What Clients Say - Real quotes from real sessions */}
+      <Section>
+        <Container size="xl">
+          <h2 className="text-3xl font-extrabold tracking-tight mb-2">
+            What Clients Say
+          </h2>
+          <p className="text-muted-foreground mb-8">
+            Real quotes from real coaching sessions. No scripts, no actors.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              {
+                quote: "It transformed my job. I never need an assistant. It's cutting so much of my brain power off of busywork and into actually running my business.",
+                role: "Business Owner",
+                context: "After implementing AI workflows",
+              },
+              {
+                quote: "Both of these save us not only a lot of time, but the thing I find even more interesting is it just makes us better. This information we wouldn't have had. We never would have found it all and synthesized it together.",
+                role: "Managing Partner, Professional Services",
+                context: "On AI-powered business analysis",
+              },
+              {
+                quote: "The documents I put together are beautiful. I sent one to the CEO of my other company, and he was amazed that it only took me two minutes. For client deliverables and professional documents, nobody is touching this.",
+                role: "Operations Director",
+                context: "On AI-generated client deliverables",
+              },
+              {
+                quote: "Our board loves you. Everyone was like, we need to have you back. We've had you as our keynote speaker and we want you to come back.",
+                role: "Board Member, Non-Profit",
+                context: "After a keynote presentation",
+              },
+              {
+                quote: "That used to take us all day to put together manually. Does it in five minutes. It's amazing. I've made a list of other things I can do like that now.",
+                role: "Financial Services Executive",
+                context: "On AI-automated financial analysis",
+              },
+              {
+                quote: "I learned so much from you. I proposed making a custom GPT for our workflow, and when I did it, everyone was amazed, asking how I did it. I told them it was Dr. Jeff who taught me.",
+                role: "Director, Healthcare",
+                context: "On applying PRISM coaching",
+              },
+            ].map((t, i) => (
+              <div
+                key={i}
+                className="p-6 rounded-[var(--radius-lg)] border border-border bg-card"
+              >
+                <p className="text-sm text-muted-foreground italic leading-relaxed">
+                  &ldquo;{t.quote}&rdquo;
+                </p>
+                <div className="mt-4 pt-4 border-t border-border">
+                  <p className="text-sm font-semibold">{t.role}</p>
+                  <p className="text-xs text-muted-foreground">{t.context}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </Container>
+      </Section>
+
       {/* The Mission */}
       <Section>
         <Container size="md">

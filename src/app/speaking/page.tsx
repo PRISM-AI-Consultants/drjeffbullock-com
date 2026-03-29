@@ -279,6 +279,33 @@ export default function SpeakingPage() {
         </Container>
       </Section>
 
+      {/* What Audiences Say */}
+      <Section>
+        <Container size="xl">
+          <h2 className="text-3xl font-extrabold tracking-tight mb-8">What Audiences Say</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="p-6 rounded-[var(--radius-lg)] border border-border bg-card">
+              <p className="text-sm text-muted-foreground italic leading-relaxed">
+                &ldquo;Our board loves you. Everyone was like, we need to have you back.&rdquo;
+              </p>
+              <p className="mt-4 text-sm font-semibold">Board Member, Non-Profit</p>
+            </div>
+            <div className="p-6 rounded-[var(--radius-lg)] border border-border bg-card">
+              <p className="text-sm text-muted-foreground italic leading-relaxed">
+                &ldquo;All that you did in that one hour, it was just like, oh my God. I don't get excited about a whole lot of stuff, but I saw something I could do with it.&rdquo;
+              </p>
+              <p className="mt-4 text-sm font-semibold">Entrepreneur, Services</p>
+            </div>
+            <div className="p-6 rounded-[var(--radius-lg)] border border-border bg-card">
+              <p className="text-sm text-muted-foreground italic leading-relaxed">
+                &ldquo;I saw your music video. It was like, amazing. It was Hollywood.&rdquo;
+              </p>
+              <p className="mt-4 text-sm font-semibold">Business Owner</p>
+            </div>
+          </div>
+        </Container>
+      </Section>
+
       {/* Booking CTA */}
       <Section className="bg-muted/30">
         <Container size="sm">

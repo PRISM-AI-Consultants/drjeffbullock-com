@@ -7,14 +7,14 @@ import { BooksGrid } from "./books-grid";
 
 export const metadata: Metadata = {
   title: "Books",
-  description: "Published books by Dr. Jeff Bullock - fiction, non-fiction, and short stories.",
+  description: "Books by Dr. Jeff Bullock - 5 published, 12 in progress. Fiction, non-fiction, and short stories spanning AI, learning science, historical fiction, horror, and more.",
 };
 
 export default function BooksPage() {
   const books = getBooks();
   return (
     <>
-      <PageHeader title="Books" description="Published works spanning fiction, non-fiction, and short stories." />
+      <PageHeader title="Books" description="5 published, 12 in progress. Fiction, non-fiction, and short stories." />
       <Section>
         <Container size="xl">
           <BooksGrid books={books} />

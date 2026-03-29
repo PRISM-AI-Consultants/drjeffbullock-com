@@ -7,13 +7,20 @@ export function BookCard({ book }: { book: Book }) {
   return (
     <Card href={`/books/${book.slug}`} variant={book.featured ? "featured" : "default"}>
       <CardHeader>
-        <BookCover
-          title={book.title}
-          category={book.category}
-          coverImage={book.coverImage}
-          className="mb-4"
-        />
-        <div className="flex gap-2 mb-2">
+        <div className="relative">
+          <BookCover
+            title={book.title}
+            category={book.category}
+            coverImage={book.coverImage}
+            className="mb-4"
+          />
+          {book.status === "published" && (
+            <div className="absolute top-2 right-2">
+              <Badge className="bg-green-600 text-white border-green-600 text-[10px] px-2 py-0.5">Available</Badge>
+            </div>
+          )}
+        </div>
+        <div className="flex gap-2 mb-2 flex-wrap">
           <Badge>{book.category}</Badge>
           {book.formats.map((f) => (
             <Badge key={f} variant="outline">{f}</Badge>
