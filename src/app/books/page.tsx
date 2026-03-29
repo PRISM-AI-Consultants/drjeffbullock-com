@@ -8,6 +8,7 @@ import { BooksGrid } from "./books-grid";
 export const metadata: Metadata = {
   title: "Books",
   description: "Books by Dr. Jeff Bullock - 4 published, 13 in progress. Fiction, non-fiction, and short stories spanning AI, learning science, historical fiction, horror, and more.",
+  openGraph: { images: ["/images/og-books.jpg"] },
 };
 
 export default function BooksPage() {

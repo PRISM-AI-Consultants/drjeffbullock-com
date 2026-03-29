@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     description:
       "AI Orchestrator. Systems Integrator. Author. Builder. Proving what one person can build with AI.",
     type: "website",
-    images: ["/images/hero/jeff-hero.jpg"],
+    images: ["/images/og-home.jpg"],
   },
 };
 

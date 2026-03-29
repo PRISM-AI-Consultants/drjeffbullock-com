@@ -8,7 +8,8 @@ import { GameCard } from "@/components/content/game-card";
 
 export const metadata: Metadata = {
   title: "Games",
-  description: "Playable games built by Dr. Jeff Bullock.",
+  description: "Playable games built by Dr. Jeff Bullock. 16 browser-based games including Pharmageddon, Max the Flying Chicken, and The Breadman.",
+  openGraph: { images: ["/images/og-games.jpg"] },
 };
 
 export default function GamesPage() {

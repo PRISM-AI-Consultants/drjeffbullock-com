@@ -8,6 +8,7 @@ import { BlogGrid } from "./blog-grid";
 export const metadata: Metadata = {
   title: "Blog",
   description: "Writing on AI, business, pharmacy, and building things that matter.",
+  openGraph: { images: ["/images/og-blog.jpg"] },
 };
 
 export default function BlogPage() {

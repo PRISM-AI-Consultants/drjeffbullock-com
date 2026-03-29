@@ -12,6 +12,7 @@ import { Mic, Users, Building2, Calendar, ArrowRight } from "lucide-react";
 export const metadata: Metadata = {
   title: "Speaking",
   description: "Book Dr. Jeff Bullock for keynotes and workshops on AI implementation. Featured at SHRM, DeSales University, IFEL, and TSPN (100K+ viewers). Based in Lehigh Valley, PA.",
+  openGraph: { images: ["/images/og-speaking.jpg"] },
 };
 
 const topics = [

@@ -21,6 +21,7 @@ import {
 export const metadata: Metadata = {
   title: "About",
   description: "Dr. Jeff Bullock, PharmD. 18 years at CVS Health, now CEO of PRISM AI Consultants. Author of 17 books. Builder of 16 games and a 54-module AI agent system. Based in Lehigh Valley, PA.",
+  openGraph: { images: ["/images/og-about.jpg"] },
 };
 
 const timeline = [

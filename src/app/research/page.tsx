@@ -7,7 +7,8 @@ import { ResearchGrid } from "./research-grid";
 
 export const metadata: Metadata = {
   title: "Research",
-  description: "Original research frameworks, white papers, and briefs by Dr. Jeff Bullock.",
+  description: "Original research frameworks, white papers, and briefs by Dr. Jeff Bullock. Including the Attention and Intention Framework, ECAP, and The Abundance Thesis.",
+  openGraph: { images: ["/images/og-research.jpg"] },
 };
 
 export default function ResearchPage() {
