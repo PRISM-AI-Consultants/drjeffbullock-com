@@ -80,9 +80,43 @@ const eventPhotos = [
   { src: "/images/events/chamber-event.jpg", alt: "Dr. Jeff Bullock at a Chamber of Commerce event" },
 ];
 
+const eventsJsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    ...pastEvents.map((evt) => ({
+      "@type": "Event",
+      name: evt.event,
+      description: `Dr. Jeff Bullock ${evt.type.toLowerCase()} at ${evt.venue}`,
+      performer: { "@type": "Person", name: "Dr. Jeff Bullock" },
+      organizer: { "@type": "Organization", name: evt.venue.split(",")[0] },
+      eventAttendanceMode: evt.venue.includes("LinkedIn") || evt.venue.includes("YouTube") || evt.venue.includes("Zoom")
+        ? "https://schema.org/OnlineEventAttendanceMode"
+        : "https://schema.org/OfflineEventAttendanceMode",
+      ...(evt.date.includes("-") && !evt.date.includes("Weekly") && {
+        startDate: evt.date,
+      }),
+    })),
+    ...upcomingEvents.map((evt) => ({
+      "@type": "Event",
+      name: evt.event,
+      startDate: evt.date,
+      location: {
+        "@type": "Place",
+        name: evt.venue,
+      },
+      performer: { "@type": "Person", name: "Dr. Jeff Bullock" },
+      eventStatus: "https://schema.org/EventScheduled",
+    })),
+  ],
+};
+
 export default function SpeakingPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(eventsJsonLd) }}
+      />
       <PageHeader
         title="Speaking"
         description="Keynotes and workshops that change how organizations think about AI - and what they do about it the next morning."

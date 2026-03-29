@@ -56,4 +56,5 @@ export const searchIndex: SearchItem[] = [
   { title: "Speaking", href: "/speaking", type: "Page", description: "Keynotes and workshops on AI implementation." },
   { title: "About", href: "/about", type: "Page", description: "Bio, mission, timeline, and companies." },
   { title: "Contact", href: "/contact", type: "Page", description: "Get in touch for speaking, media, or collaboration." },
+  { title: "FAQ", href: "/faq", type: "Page", description: "Frequently asked questions about Dr. Jeff Bullock, PRISM AI, books, and speaking." },
 ];

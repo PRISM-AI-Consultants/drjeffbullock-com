@@ -17,6 +17,7 @@ const footerLinks = {
     { href: "/speaking", label: "Speaking" },
     { href: "/about", label: "About" },
     { href: "/contact", label: "Contact" },
+    { href: "/faq", label: "FAQ" },
   ],
 };
 

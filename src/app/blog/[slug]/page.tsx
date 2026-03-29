@@ -28,7 +28,29 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
   const relatedPosts = getBlogPosts().filter((p) => p.slug !== slug && p.tags.some((t) => post.tags.includes(t))).slice(0, 3);
 
+  const articleJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: post.title,
+    description: post.description,
+    author: { "@type": "Person", name: "Dr. Jeff Bullock" },
+    datePublished: post.date,
+    publisher: {
+      "@type": "Person",
+      name: "Dr. Jeff Bullock",
+      url: "https://drjeffbullock.com",
+    },
+    mainEntityOfPage: `https://drjeffbullock.com/blog/${post.slug}`,
+    ...(post.coverImage && { image: `https://drjeffbullock.com${post.coverImage}` }),
+    keywords: post.tags.join(", "),
+  };
+
   return (
+    <>
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+    />
     <Section className="pt-8">
       <Container size="md">
         <Link href="/blog" className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground mb-8 transition-colors">
@@ -81,5 +103,6 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         )}
       </Container>
     </Section>
+    </>
   );
 }
