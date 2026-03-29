@@ -8,7 +8,7 @@ import { ExternalLink, ArrowRight, Calendar, MapPin } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Contact",
-  description: "Get in touch with Dr. Jeff Bullock - speaking, media, collaboration, and general inquiries. Based in Lehigh Valley, PA.",
+  description: "Contact Dr. Jeff Bullock for speaking, AI consulting, media, or collaboration. Book a call on Calendly. Based in Lehigh Valley, Pennsylvania. Serving clients nationwide.",
 };
 
 const localBusinessJsonLd = {

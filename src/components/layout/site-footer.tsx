@@ -136,10 +136,13 @@ export function SiteFooter() {
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-border">
+        <div className="mt-12 pt-8 border-t border-border flex flex-col sm:flex-row justify-between gap-4">
           <p className="text-xs text-muted-foreground">
             &copy; {new Date().getFullYear()} Dr. Jeff Bullock. All rights
             reserved.
+          </p>
+          <p className="text-xs text-muted-foreground">
+            Lehigh Valley, Pennsylvania. Serving clients nationwide.
           </p>
         </div>
       </Container>

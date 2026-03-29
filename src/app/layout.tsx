@@ -33,6 +33,25 @@ export const metadata: Metadata = {
   },
 };
 
+const websiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "Dr. Jeff Bullock",
+  url: "https://drjeffbullock.com",
+  description:
+    "The IP library and creator hub of Dr. Jeff Bullock. 18 books, 16 games, 4 research frameworks, and a 54-module AI agent system.",
+  author: {
+    "@type": "Person",
+    name: "Dr. Jeff Bullock",
+    url: "https://drjeffbullock.com/about",
+  },
+  potentialAction: {
+    "@type": "SearchAction",
+    target: "https://drjeffbullock.com/?q={search_term_string}",
+    "query-input": "required name=search_term_string",
+  },
+};
+
 const personJsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
@@ -89,6 +108,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}

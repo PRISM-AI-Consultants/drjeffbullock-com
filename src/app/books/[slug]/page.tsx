@@ -29,6 +29,16 @@ export default async function BookPage({ params }: { params: Promise<{ slug: str
 
   const allBooks = getBooks().filter((b) => b.slug !== slug).slice(0, 3);
 
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://drjeffbullock.com" },
+      { "@type": "ListItem", position: 2, name: "Books", item: "https://drjeffbullock.com/books" },
+      { "@type": "ListItem", position: 3, name: book.title, item: `https://drjeffbullock.com/books/${book.slug}` },
+    ],
+  };
+
   const bookJsonLd = {
     "@context": "https://schema.org",
     "@type": "Book",
@@ -51,6 +61,10 @@ export default async function BookPage({ params }: { params: Promise<{ slug: str
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(bookJsonLd) }}

@@ -11,7 +11,7 @@ import { Mic, Users, Building2, Calendar, ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Speaking",
-  description: "Dr. Jeff Bullock delivers keynotes and workshops on AI implementation, leadership, and building with technology.",
+  description: "Book Dr. Jeff Bullock for keynotes and workshops on AI implementation. Featured at SHRM, DeSales University, IFEL, and TSPN (100K+ viewers). Based in Lehigh Valley, PA.",
 };
 
 const topics = [

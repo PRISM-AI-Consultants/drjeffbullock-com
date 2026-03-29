@@ -20,7 +20,7 @@ import {
 
 export const metadata: Metadata = {
   title: "About",
-  description: "Dr. Jeff Bullock - pharmacist turned AI CEO, author, game developer, music producer, and researcher.",
+  description: "Dr. Jeff Bullock, PharmD. 18 years at CVS Health, now CEO of PRISM AI Consultants. Author of 18 books. Builder of 16 games and a 54-module AI agent system. Based in Lehigh Valley, PA.",
 };
 
 const timeline = [
