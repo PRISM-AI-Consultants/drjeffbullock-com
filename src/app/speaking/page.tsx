@@ -137,7 +137,7 @@ export default function SpeakingPage() {
                   In 2021, he left corporate healthcare to become a full-time entrepreneur. When ChatGPT launched, he immediately saw the potential. He founded PRISM AI Consultants in June 2023 and has since personally coached hundreds of business leaders on AI implementation.
                 </p>
                 <p>
-                  He is the author of 17 books, creator of 16 playable games, producer of a 19-track concept album, and builder of a 54-module autonomous AI system with 24 agents. He does not just talk about what AI can do. He shows what he has built with it.
+                  He is the author of 17 books, creator of 16 playable games, producer of a 19-track concept album, and builder of a 54-module autonomous AI system with 33 agents. He does not just talk about what AI can do. He shows what he has built with it.
                 </p>
               </div>
             </div>
@@ -161,7 +161,7 @@ export default function SpeakingPage() {
                   <li>CEO and Co-Founder of VersAssist</li>
                   <li>Official IFEL partner for AI education programming</li>
                   <li>Author of 17 books (4 published, 13 in progress)</li>
-                  <li>Builder of 54-module AI agent system with 24 agents</li>
+                  <li>Builder of 54-module AI agent system with 33 agents</li>
                 </ul>
                 <a
                   href="https://speaker.prismaiconsultants.com/Dr-Jeff-Bullock-Speaker-Kit-2026.pdf"

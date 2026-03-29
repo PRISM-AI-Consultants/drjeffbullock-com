@@ -32,7 +32,7 @@ const timeline = [
   { year: "2024", icon: Building2, title: "Co-Founded VersAssist", description: "Built an AI-enhanced virtual assistant agency - the Uber of labor." },
   { year: "2025", icon: BookOpen, title: "Speaking Engagements", description: "SHRM Conference, DeSales University, TSPN Keynote (100K+ viewers), IFEL workshops, and more." },
   { year: "2026", icon: BookOpen, title: "Published 3 More Books", description: "The Unburdening, The Inheritance, and The Compliant. Continued writing across fiction and non-fiction." },
-  { year: "2026", icon: Bot, title: "54-Module AI Agent System", description: "Built a sovereign AI system with 24 autonomous agents powering operations." },
+  { year: "2026", icon: Bot, title: "54-Module AI Agent System", description: "Built a sovereign AI system with 33 autonomous agents powering operations." },
 ];
 
 const socialLinks = [
@@ -75,7 +75,7 @@ export default function AboutPage() {
                   I founded PRISM AI Consultants in June 2023 to help business leaders implement AI - not as a buzzword, but as a real operational tool. Since then, I have personally coached hundreds of executives, entrepreneurs, and business owners on making AI work for their specific situations.
                 </p>
                 <p>
-                  But this site is not about PRISM. This is my personal library, the proof of what happens when you use AI as a force multiplier across every creative and intellectual domain you care about. Seventeen books (four published, thirteen in progress). Sixteen playable games and interactive experiences. A 19-track concept album. Four original research frameworks. A sitcom pilot. Two companies. And a 54-module AI agent system with 24 autonomous agents.
+                  But this site is not about PRISM. This is my personal library, the proof of what happens when you use AI as a force multiplier across every creative and intellectual domain you care about. Seventeen books (four published, thirteen in progress). Sixteen playable games and interactive experiences. A 19-track concept album. Four original research frameworks. A sitcom pilot. Two companies. And a 54-module AI agent system with 33 autonomous agents.
                 </p>
                 <p>
                   I did not build all of this alone. I built it with AI. And that is the point.

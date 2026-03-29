@@ -19,6 +19,13 @@ export function BookCard({ book }: { book: Book }) {
               <Badge className="bg-green-600 text-white border-green-600 text-[10px] px-2 py-0.5">Available</Badge>
             </div>
           )}
+          {book.status === "in-progress" && book.editScore && (
+            <div className="absolute top-2 right-2">
+              <Badge className={`text-white border-transparent text-[10px] px-2 py-0.5 ${book.editScore >= 9 ? "bg-amber-600" : "bg-blue-600"}`}>
+                {book.editScore}/10
+              </Badge>
+            </div>
+          )}
         </div>
         <div className="flex gap-2 mb-2 flex-wrap">
           <Badge>{book.category}</Badge>
@@ -30,6 +37,9 @@ export function BookCard({ book }: { book: Book }) {
       </CardHeader>
       <CardContent>
         <p className="text-sm text-muted-foreground line-clamp-2">{book.description}</p>
+        {book.editStatus && (
+          <p className="mt-2 text-xs text-accent font-medium">{book.editStatus}</p>
+        )}
       </CardContent>
     </Card>
   );

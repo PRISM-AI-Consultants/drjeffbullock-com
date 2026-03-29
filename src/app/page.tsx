@@ -42,7 +42,7 @@ const ipCategories = [
 const achievements = [
   { icon: BookOpen, text: "17 books (4 published, 13 in progress)" },
   { icon: Building2, text: "2 companies: PRISM AI Consultants + VersAssist" },
-  { icon: Bot, text: "54-module AI system with 24 autonomous agents" },
+  { icon: Bot, text: "54-module AI system with 33 autonomous agents" },
   { icon: Gamepad2, text: "16 playable games and interactive experiences" },
   { icon: Music, text: "A 19-track concept album (Mansa Musa)" },
   { icon: Microscope, text: "4 original research frameworks" },
@@ -183,7 +183,7 @@ export default function HomePage() {
                 <div className="text-center p-4">
                   <Bot className="h-12 w-12 text-cyan-300/80 mx-auto mb-3" />
                   <p className="text-white font-bold text-lg">Agent World</p>
-                  <p className="text-white/60 text-xs mt-1">24 AI Agents - Live</p>
+                  <p className="text-white/60 text-xs mt-1">33 AI Agents - Live</p>
                 </div>
                 <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-cyan-400/40 to-transparent" />
               </div>

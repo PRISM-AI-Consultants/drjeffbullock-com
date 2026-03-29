@@ -14,6 +14,8 @@ export interface Book {
   audioUrl?: string;
   companionAppUrl?: string;
   companionAppName?: string;
+  editScore?: number;
+  editStatus?: string;
   content: string;
 }
 
