@@ -32,7 +32,7 @@ const topics = [
   },
   {
     title: "Building with AI: From Idea to Shipped Product",
-    description: "How one person built 54 AI modules, published 18 books, shipped 16 games, and produced a 19-track album, all with AI as a co-pilot.",
+    description: "How one person built 54 AI modules, written 17 books, shipped 16 games, and produced a 19-track album, all with AI as a co-pilot.",
     audience: "Creators, developers, solo founders",
   },
 ];
@@ -59,10 +59,11 @@ const formats = [
 ];
 
 const upcomingEvents = [
-  { event: "McKinney Media Headshot Happy Hour", date: "March 11, 2026", venue: "The Jone(s) Collective, Allentown, PA", type: "Guest Segment" },
+  { event: "Lehigh Valley Business Summit", date: "April 30, 2026", venue: "DeSales University, Center Valley, PA", type: "Keynote / Panel" },
 ];
 
 const pastEvents = [
+  { event: "McKinney Media Headshot Happy Hour", date: "March 11, 2026", venue: "The Jone(s) Collective, Allentown, PA", type: "Guest Segment" },
   { event: "IFEL Ask the Expert: AI Storytelling Techniques", date: "February 26, 2026", venue: "IFEL", type: "Workshop" },
   { event: "AI Hustle with Dr. Jeff", date: "Weekly, Tuesdays 2PM ET", venue: "LinkedIn Live", type: "Live Show" },
   { event: "YouTube Live with Dr. Jeff", date: "Weekly, Thursdays 2PM ET", venue: "YouTube", type: "Live Show" },
@@ -136,7 +137,7 @@ export default function SpeakingPage() {
                   In 2021, he left corporate healthcare to become a full-time entrepreneur. When ChatGPT launched, he immediately saw the potential. He founded PRISM AI Consultants in June 2023 and has since personally coached hundreds of business leaders on AI implementation.
                 </p>
                 <p>
-                  He is the author of 18 books, creator of 16 playable games, producer of a 19-track concept album, and builder of a 54-module autonomous AI system with 24 agents. He does not just talk about what AI can do. He shows what he has built with it.
+                  He is the author of 17 books, creator of 16 playable games, producer of a 19-track concept album, and builder of a 54-module autonomous AI system with 24 agents. He does not just talk about what AI can do. He shows what he has built with it.
                 </p>
               </div>
             </div>
@@ -159,7 +160,7 @@ export default function SpeakingPage() {
                   <li>CEO of PRISM AI Consultants</li>
                   <li>CEO and Co-Founder of VersAssist</li>
                   <li>Official IFEL partner for AI education programming</li>
-                  <li>Author of 18 books (5 published, 13 in progress)</li>
+                  <li>Author of 17 books (4 published, 13 in progress)</li>
                   <li>Builder of 54-module AI agent system with 24 agents</li>
                 </ul>
                 <a

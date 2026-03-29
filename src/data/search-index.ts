@@ -38,6 +38,16 @@ export const searchIndex: SearchItem[] = [
   { title: "Making Pharmageddon", href: "/blog/making-pharmageddon", type: "Blog", description: "How Pharmageddon went from idea to playable game." },
   { title: "AI Tools I Actually Use Every Day", href: "/blog/ai-tools-i-use-every-day", type: "Blog", description: "The real daily toolkit, no fluff." },
   { title: "The Attention and Intention Framework", href: "/blog/attention-and-intention-framework", type: "Blog", description: "Introduction to the cognitive framework." },
+  { title: "How I Built 33 AI Agents", href: "/blog/how-i-built-33-ai-agents", type: "Blog", description: "A real breakdown of the AI agent system that runs two businesses." },
+  { title: "What 749 Coaching Sessions Taught Me", href: "/blog/what-749-coaching-sessions-taught-me-about-ai-adoption", type: "Blog", description: "Patterns from 749 real AI coaching sessions." },
+  { title: "The Financial Statement Trick", href: "/blog/financial-statement-trick-saves-all-day", type: "Blog", description: "AI turned an all-day manual task into five minutes." },
+  { title: "Custom GPTs Changed How My Clients Work", href: "/blog/custom-gpts-changed-how-my-clients-work", type: "Blog", description: "Real stories of clients building their own custom GPTs." },
+  { title: "AI for Small Business: 5 Real Use Cases", href: "/blog/ai-for-small-business-5-real-use-cases", type: "Blog", description: "Five real AI implementations from actual coaching clients." },
+  { title: "AI Replaced Her Marketing Agency", href: "/blog/the-day-my-client-said-ai-replaced-her-marketing-agency", type: "Blog", description: "When AI output beat the agency's work." },
+  { title: "From Pharmacy to AI CEO: Full Story", href: "/blog/from-pharmacy-district-leader-to-ai-ceo", type: "Blog", description: "The complete career reinvention story." },
+  { title: "Why I Give Away 16 Free Games", href: "/blog/why-i-give-away-16-free-games", type: "Blog", description: "The thinking behind giving away 16 playable games." },
+  { title: "How AI Wrote a 19-Track Album", href: "/blog/how-ai-wrote-a-19-track-album", type: "Blog", description: "The story behind the Mansa Musa concept album." },
+  { title: "The Operator Mindset", href: "/blog/the-operator-mindset-systems-over-hustle", type: "Blog", description: "Why systems thinking beats hustle culture every time." },
 
   // Projects
   { title: "PRISM AI Consultants", href: "/projects/prism-ai-consultants", type: "Project", description: "AI consulting firm for business implementation." },

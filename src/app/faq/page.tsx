@@ -10,7 +10,7 @@ const faqs = [
   {
     question: "Who is Dr. Jeff Bullock?",
     answer:
-      "Dr. Jeff Bullock is a Doctor of Pharmacy (PharmD) from Xavier University of Louisiana who spent 18 years at CVS Health before founding PRISM AI Consultants in 2023. He is the author of 18 books, creator of 16 browser-based games, producer of a 19-track concept album, and builder of a 54-module AI agent system. He is based in Lehigh Valley, Pennsylvania.",
+      "Dr. Jeff Bullock is a Doctor of Pharmacy (PharmD) from Xavier University of Louisiana who spent 18 years at CVS Health before founding PRISM AI Consultants in 2023. He is the author of 17 books, creator of 16 browser-based games, producer of a 19-track concept album, and builder of a 54-module AI agent system. He is based in Lehigh Valley, Pennsylvania.",
   },
   {
     question: "What is PRISM AI Consultants?",
@@ -20,7 +20,7 @@ const faqs = [
   {
     question: "What books has Dr. Jeff Bullock written?",
     answer:
-      "Dr. Bullock has authored 18 books across fiction and non-fiction. Published titles include A Prompt's Tale (AI/prompt engineering), The Unburdening, The Inheritance, and The Compliant. Books in advanced editing include MANSA (historical fiction, 9.38/10), Far Transfer (learning science, 9.9/10), and 813 (horror thriller, 9.15/10). His catalog spans AI education, learning science, economic frameworks, historical fiction, horror, sci-fi, and manifestation fiction.",
+      "Dr. Bullock has authored 17 books across fiction and non-fiction. Published titles include A Prompt's Tale (AI/prompt engineering), The Unburdening, The Inheritance, and The Compliant. Books in advanced editing include MANSA (historical fiction, 9.38/10), Far Transfer (learning science, 9.9/10), and 813 (horror thriller, 9.15/10). His catalog spans AI education, learning science, economic frameworks, historical fiction, horror, sci-fi, and manifestation fiction.",
   },
   {
     question: "What is prompt engineering?",

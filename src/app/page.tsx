@@ -30,7 +30,7 @@ import {
 } from "lucide-react";
 
 const ipCategories = [
-  { label: "Books", count: 18, icon: BookOpen, href: "/books" },
+  { label: "Books", count: 17, icon: BookOpen, href: "/books" },
   { label: "Research", count: 4, icon: FlaskConical, href: "/research" },
   { label: "Media", count: "10+", icon: Headphones, href: "/media" },
   { label: "Games", count: 16, icon: Gamepad2, href: "/games" },
@@ -40,7 +40,7 @@ const ipCategories = [
 ];
 
 const achievements = [
-  { icon: BookOpen, text: "18 books (5 published, 13 in progress)" },
+  { icon: BookOpen, text: "17 books (4 published, 13 in progress)" },
   { icon: Building2, text: "2 companies: PRISM AI Consultants + VersAssist" },
   { icon: Bot, text: "54-module AI system with 24 autonomous agents" },
   { icon: Gamepad2, text: "16 playable games and interactive experiences" },
