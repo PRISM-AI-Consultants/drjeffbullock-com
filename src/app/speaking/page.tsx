@@ -162,6 +162,14 @@ export default function SpeakingPage() {
                   <li>Author of 18 books (5 published, 13 in progress)</li>
                   <li>Builder of 54-module AI agent system with 24 agents</li>
                 </ul>
+                <a
+                  href="https://speaker.prismaiconsultants.com/Dr-Jeff-Bullock-Speaker-Kit-2026.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-4 inline-flex items-center gap-2 text-sm text-accent font-medium hover:underline"
+                >
+                  Download Speaker Kit (PDF)
+                </a>
               </div>
             </div>
           </div>
@@ -328,11 +336,21 @@ export default function SpeakingPage() {
             <p className="text-muted-foreground mb-6">
               Interested in having Dr. Jeff speak at your event or organization?
             </p>
-            <a href="https://calendly.com/prismaiconsultants/introductory-call" target="_blank" rel="noopener noreferrer">
-              <Button size="lg">
-                Book a Call <ArrowRight className="h-4 w-4 ml-2" />
-              </Button>
-            </a>
+            <div className="flex gap-3 justify-center flex-wrap">
+              <a href="https://calendly.com/prismaiconsultants/introductory-call" target="_blank" rel="noopener noreferrer">
+                <Button size="lg">
+                  Book a Call <ArrowRight className="h-4 w-4 ml-2" />
+                </Button>
+              </a>
+              <a href="https://speaker.prismaiconsultants.com" target="_blank" rel="noopener noreferrer">
+                <Button size="lg" variant="secondary">
+                  Full Speaker Kit
+                </Button>
+              </a>
+            </div>
+            <p className="mt-4 text-xs text-muted-foreground">
+              Includes downloadable speaker one-sheet, bio, session descriptions, and tech requirements.
+            </p>
           </div>
         </Container>
       </Section>

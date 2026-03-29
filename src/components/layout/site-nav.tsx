@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { Menu, X, ExternalLink } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Container } from "../ui/container";
+import { ThemeToggle } from "../ui/theme-toggle";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -50,7 +51,7 @@ export function SiteNav() {
             ))}
           </div>
 
-          <div className="hidden lg:flex items-center gap-3">
+          <div className="hidden lg:flex items-center gap-2">
             <a
               href="https://www.prismaiconsultants.com"
               target="_blank"
@@ -60,19 +61,23 @@ export function SiteNav() {
               PRISM
               <ExternalLink className="h-3 w-3" />
             </a>
+            <ThemeToggle />
           </div>
 
-          <button
-            onClick={() => setMobileOpen(!mobileOpen)}
-            className="lg:hidden p-2 -mr-2 text-muted-foreground hover:text-foreground"
-            aria-label={mobileOpen ? "Close menu" : "Open menu"}
-          >
-            {mobileOpen ? (
-              <X className="h-5 w-5" />
-            ) : (
-              <Menu className="h-5 w-5" />
-            )}
-          </button>
+          <div className="flex lg:hidden items-center gap-1">
+            <ThemeToggle />
+            <button
+              onClick={() => setMobileOpen(!mobileOpen)}
+              className="p-2 -mr-2 text-muted-foreground hover:text-foreground"
+              aria-label={mobileOpen ? "Close menu" : "Open menu"}
+            >
+              {mobileOpen ? (
+                <X className="h-5 w-5" />
+              ) : (
+                <Menu className="h-5 w-5" />
+              )}
+            </button>
+          </div>
         </nav>
       </Container>
 

@@ -22,6 +22,24 @@
   --radius-xl: 16px;
 }
 
+html.dark {
+  --background: #0C0A09;
+  --foreground: #FAFAF9;
+  --primary: #FAFAF9;
+  --primary-foreground: #0C0A09;
+  --secondary: #A8A29E;
+  --secondary-foreground: #0C0A09;
+  --accent: #8B5CF6;
+  --accent-foreground: #FAFAF9;
+  --muted: #1C1917;
+  --muted-foreground: #A8A29E;
+  --card: #1C1917;
+  --card-foreground: #FAFAF9;
+  --border: #292524;
+  --ring: #8B5CF6;
+  --destructive: #EF4444;
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
