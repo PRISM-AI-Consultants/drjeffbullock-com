@@ -14,46 +14,53 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const posts = getBlogPosts();
   const projects = getProjects();
 
+  const now = new Date().toISOString();
+
   const staticPages: MetadataRoute.Sitemap = [
-    { url: BASE_URL, changeFrequency: "weekly", priority: 1.0 },
-    { url: `${BASE_URL}/books`, changeFrequency: "weekly", priority: 0.8 },
-    { url: `${BASE_URL}/research`, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${BASE_URL}/media`, changeFrequency: "weekly", priority: 0.7 },
-    { url: `${BASE_URL}/games`, changeFrequency: "monthly", priority: 0.7 },
-    { url: `${BASE_URL}/blog`, changeFrequency: "weekly", priority: 0.8 },
-    { url: `${BASE_URL}/projects`, changeFrequency: "monthly", priority: 0.7 },
-    { url: `${BASE_URL}/speaking`, changeFrequency: "monthly", priority: 0.6 },
-    { url: `${BASE_URL}/about`, changeFrequency: "monthly", priority: 0.6 },
-    { url: `${BASE_URL}/contact`, changeFrequency: "yearly", priority: 0.5 },
-    { url: `${BASE_URL}/faq`, changeFrequency: "monthly", priority: 0.8 },
+    { url: BASE_URL, lastModified: now, changeFrequency: "weekly", priority: 1.0 },
+    { url: `${BASE_URL}/books`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
+    { url: `${BASE_URL}/research`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${BASE_URL}/media`, lastModified: now, changeFrequency: "weekly", priority: 0.7 },
+    { url: `${BASE_URL}/games`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${BASE_URL}/blog`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
+    { url: `${BASE_URL}/projects`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${BASE_URL}/speaking`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
+    { url: `${BASE_URL}/about`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
+    { url: `${BASE_URL}/contact`, lastModified: now, changeFrequency: "yearly", priority: 0.5 },
+    { url: `${BASE_URL}/faq`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
   ];
 
   const bookPages: MetadataRoute.Sitemap = books.map((book) => ({
     url: `${BASE_URL}/books/${book.slug}`,
+    lastModified: now,
     changeFrequency: "monthly" as const,
     priority: 0.7,
   }));
 
   const researchPages: MetadataRoute.Sitemap = research.map((entry) => ({
     url: `${BASE_URL}/research/${entry.slug}`,
+    lastModified: now,
     changeFrequency: "monthly" as const,
     priority: 0.7,
   }));
 
   const gamePages: MetadataRoute.Sitemap = games.map((game) => ({
     url: `${BASE_URL}/games/${game.slug}`,
+    lastModified: now,
     changeFrequency: "monthly" as const,
     priority: 0.7,
   }));
 
   const blogPages: MetadataRoute.Sitemap = posts.map((post) => ({
     url: `${BASE_URL}/blog/${post.slug}`,
+    lastModified: now,
     changeFrequency: "monthly" as const,
     priority: 0.6,
   }));
 
   const projectPages: MetadataRoute.Sitemap = projects.map((project) => ({
     url: `${BASE_URL}/projects/${project.slug}`,
+    lastModified: now,
     changeFrequency: "monthly" as const,
     priority: 0.6,
   }));

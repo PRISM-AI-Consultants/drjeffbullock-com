@@ -17,7 +17,34 @@ export function generateMetadata({ params }: { params: Promise<{ slug: string }>
   return params.then(({ slug }) => {
     const post = getBlogPost(slug);
     if (!post) return { title: "Not Found" };
-    return { title: post.title, description: post.description };
+    return {
+      title: post.title,
+      description: post.description,
+      openGraph: {
+        title: post.title,
+        description: post.description,
+        type: "article",
+        publishedTime: post.date,
+        authors: ["Dr. Jeff Bullock"],
+        url: `https://drjeffbullock.com/blog/${slug}`,
+        ...(post.coverImage && {
+          images: [{
+            url: `https://drjeffbullock.com${post.coverImage}`,
+            width: 1200,
+            height: 630,
+            alt: post.title,
+          }],
+        }),
+      },
+      twitter: {
+        card: "summary_large_image",
+        title: post.title,
+        description: post.description,
+        ...(post.coverImage && {
+          images: [`https://drjeffbullock.com${post.coverImage}`],
+        }),
+      },
+    };
   });
 }
 
@@ -35,8 +62,9 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     description: post.description,
     author: { "@type": "Person", name: "Dr. Jeff Bullock" },
     datePublished: post.date,
+    dateModified: post.date,
     publisher: {
-      "@type": "Person",
+      "@type": "Organization",
       name: "Dr. Jeff Bullock",
       url: "https://drjeffbullock.com",
     },
@@ -45,11 +73,25 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     keywords: post.tags.join(", "),
   };
 
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://drjeffbullock.com" },
+      { "@type": "ListItem", position: 2, name: "Blog", item: "https://drjeffbullock.com/blog" },
+      { "@type": "ListItem", position: 3, name: post.title, item: `https://drjeffbullock.com/blog/${post.slug}` },
+    ],
+  };
+
   return (
     <>
     <script
       type="application/ld+json"
       dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+    />
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
     />
     <Section className="pt-8">
       <Container size="md">
@@ -86,6 +128,23 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
         <div className="mt-8 pt-8 border-t border-border">
           <MDXContent source={post.content} />
+        </div>
+
+        {/* Author Bio */}
+        <div className="mt-12 flex gap-4 items-start p-6 rounded-[var(--radius-lg)] border border-border bg-muted/30">
+          <div className="shrink-0 h-16 w-16 rounded-full bg-accent/20 flex items-center justify-center">
+            <span className="text-xl font-bold text-accent">JB</span>
+          </div>
+          <div>
+            <p className="font-bold text-foreground">Dr. Jeff Bullock, PharmD</p>
+            <p className="text-sm text-muted-foreground mt-1">
+              CEO of PRISM AI Consultants. PharmD from Xavier University of Louisiana. 18 years at CVS Health, now building AI systems that run real businesses. 749+ coaching sessions delivered, 34 autonomous agents in production.
+            </p>
+            <div className="mt-2 flex gap-3">
+              <a href="https://www.linkedin.com/in/jeffrey-bullock-pharmd/" target="_blank" rel="noopener noreferrer" className="text-xs text-accent hover:underline">LinkedIn</a>
+              <a href="https://prismaiconsultants.com" target="_blank" rel="noopener noreferrer" className="text-xs text-accent hover:underline">PRISM AI</a>
+            </div>
+          </div>
         </div>
 
         {/* Cross-sell CTA */}

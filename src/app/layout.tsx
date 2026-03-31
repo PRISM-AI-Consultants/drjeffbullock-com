@@ -90,6 +90,7 @@ const personJsonLd = {
     addressRegion: "PA",
     addressCountry: "US",
   },
+  image: "https://drjeffbullock.com/images/jeff-bullock-headshot.jpg",
   url: "https://drjeffbullock.com",
   sameAs: [
     "https://www.linkedin.com/in/drjeffbullock",
