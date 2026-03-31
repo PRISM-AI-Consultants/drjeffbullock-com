@@ -37,7 +37,7 @@ export function SiteFooter() {
             </p>
             <div className="mt-4 flex flex-wrap gap-4">
               <a
-                href="https://www.linkedin.com/in/drjeffbullock"
+                href="https://www.linkedin.com/in/jeffrey-bullock-pharmd"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-sm text-muted-foreground hover:text-foreground flex items-center gap-1 transition-colors"

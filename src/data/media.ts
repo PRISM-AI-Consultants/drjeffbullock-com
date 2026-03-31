@@ -16,7 +16,7 @@ export const mediaItems: MediaItem[] = [
     description:
       "Weekly LinkedIn Live show exploring practical AI implementation for business owners. Every Tuesday at 2 PM ET. No theory, just actionable strategies and real examples from consulting work.",
     date: "2026-01-01",
-    externalUrl: "https://www.linkedin.com/in/drjeffbullock",
+    externalUrl: "https://www.linkedin.com/in/jeffrey-bullock-pharmd",
   },
   {
     title: "YouTube Live with Dr. Jeff",

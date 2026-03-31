@@ -34,7 +34,7 @@ const localBusinessJsonLd = {
     { "@type": "Country", name: "United States" },
   ],
   sameAs: [
-    "https://www.linkedin.com/in/drjeffbullock",
+    "https://www.linkedin.com/in/jeffrey-bullock-pharmd",
     "https://www.youtube.com/@drjeffbullock",
     "https://www.prismaiconsultants.com",
   ],
@@ -42,7 +42,7 @@ const localBusinessJsonLd = {
 };
 
 const links = [
-  { label: "LinkedIn", href: "https://www.linkedin.com/in/drjeffbullock/" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/jeffrey-bullock-pharmd/" },
   { label: "YouTube", href: "https://www.youtube.com/@drjeffbullock" },
   { label: "PRISM AI", href: "https://www.prismaiconsultants.com" },
   { label: "Email", href: "mailto:jeff@prismaiconsultants.com" },

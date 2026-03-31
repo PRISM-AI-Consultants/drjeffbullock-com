@@ -37,7 +37,7 @@ const timeline = [
 ];
 
 const socialLinks = [
-  { label: "LinkedIn", href: "https://www.linkedin.com/in/drjeffbullock" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/jeffrey-bullock-pharmd" },
   { label: "YouTube", href: "https://www.youtube.com/@drjeffbullock" },
   { label: "PRISM AI", href: "https://www.prismaiconsultants.com" },
   { label: "VersAssist", href: "https://www.versassists.com" },
