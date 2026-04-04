@@ -39,8 +39,8 @@ export async function POST(req: NextRequest) {
     const resend = new Resend(apiKey);
 
     await resend.emails.send({
-      from: "DrJeffBullock.com <onboarding@resend.dev>",
-      to: "jbbulloc@gmail.com",
+      from: "DrJeffBullock.com <contact@drjeffbullock.com>",
+      to: "info@prismaiconsultants.com",
       replyTo: email,
       subject: `[Contact Form] ${subject || "General"} - ${name}`,
       text: `Name: ${name}\nEmail: ${email}\nSubject: ${subject || "General"}\n\n${message}`,
