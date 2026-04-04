@@ -17,7 +17,26 @@ export function generateMetadata({ params }: { params: Promise<{ slug: string }>
   return params.then(({ slug }) => {
     const entry = getResearchEntry(slug);
     if (!entry) return { title: "Not Found" };
-    return { title: entry.title, description: entry.description };
+    const url = `https://drjeffbullock.com/research/${slug}`;
+    const ogImage = entry.coverImage || "/images/og-research.jpg";
+    return {
+      title: entry.title,
+      description: entry.description,
+      alternates: { canonical: url },
+      openGraph: {
+        title: entry.title,
+        description: entry.description,
+        url,
+        type: "article",
+        images: [ogImage],
+      },
+      twitter: {
+        card: "summary_large_image",
+        title: entry.title,
+        description: entry.description,
+        images: [ogImage],
+      },
+    };
   });
 }
 

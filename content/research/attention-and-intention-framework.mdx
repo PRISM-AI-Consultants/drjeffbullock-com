@@ -1,34 +1,130 @@
 ---
-title: "The Attention and Intention Framework"
+title: "The A2 System: Attention and Intention as Dual Forces in Active Inference"
 slug: "attention-and-intention-framework"
 type: "framework"
 category: "cognition"
-description: "A framework formalizing how directed attention and clear intention create measurable cognitive outcomes."
-date: "2025-06-01"
+description: "A unified framework mapping attention and intention onto the two mathematically separable components of Expected Free Energy, grounded in dissociable neural circuits and measurable via a novel biomarker."
+date: "2026-02-01"
 featured: true
-coverImage: "/images/research/attention-and-intention-framework-header.jpg"
+coverImage: "/images/research/attention-intention-cover.jpg"
 ---
 
-The Attention and Intention Framework formalizes the relationship between where we direct our focus and the outcomes we produce. Drawing from physics-of-cognition research and adult learning theory, this framework provides a structured approach to understanding how attention works as a cognitive force.
+![A2 Master Diagram](/images/research/a2-master-diagram.png)
 
-## Core Premise
+The A2 System formally maps attention and intention onto the two mathematically separable components of Expected Free Energy (EFE) within Karl Friston's Active Inference framework. Intention is identified as the Risk term. Attention is identified as the Ambiguity term. These are not metaphors. They are two terms of one equation.
 
-Attention is not passive. It is a directed force that, when combined with clear intention, creates measurable changes in learning, performance, and decision-making.
+## The Unified Equation
 
-## Key Components
+The Expected Free Energy equation decomposes into two distinct forces:
 
-- **Attention as Force** - treating focused attention as a measurable input, not an abstract concept
-- **Intention as Direction** - how clarity of purpose amplifies the effect of attention
-- **The Attention-Intention Loop** - the feedback mechanism between focus and outcome
-- **Measurement Framework** - practical approaches to tracking cognitive investment
+**G(pi) = Risk (Intention) + Ambiguity (Attention)**
 
-## Applications
+- **Intention (Risk):** The KL divergence between predicted outcomes and preferred outcomes. This is the "goal vector." It acts like gravity in state space, pulling the agent toward preferred future states. Biologically implemented by prefrontal-striatal loops via dopamine.
 
-- Adult learning and skill acquisition
-- Business decision-making under uncertainty
-- AI-assisted cognitive augmentation
-- Educational program design
+- **Attention (Ambiguity):** The expected entropy of observations given hidden states. This is the "precision modulator." It gathers information to reduce uncertainty. Biologically implemented by the Thalamic Reticular Nucleus (TRN) and parietal cortex via norepinephrine and acetylcholine.
 
-## Background
+The relationship is multiplicative, not additive. The belief update equals Precision times prediction error. If attention is zero, sensory error is ignored entirely.
 
-This framework draws from research in cognitive science, physics of the mind, and practical adult learning. It was developed through direct observation of how professionals learn and adapt when given AI tools, and what separates those who gain real skill from those who don't.
+![Expected Free Energy Decomposition](/images/research/efe-decomposition.png)
+
+## Biological Hardware
+
+The framework is grounded in dissociable neural circuits confirmed by pharmacological evidence:
+
+![Neural Circuit Diagram](/images/research/a2-neural-circuits.png)
+
+**The Intention Circuit:** dlPFC (the "blackboard" for goal content) projects through the striatum to the SMA. Driven by phasic dopamine. The ACC monitors the cost function. The Readiness Potential reflects stochastic accumulation of the intention vector via drift-diffusion.
+
+**The Attention Circuit:** PFC projects through the striatum to the GPe to the TRN (the physical sensory gate). The TRN is a sheet of GABAergic neurons wrapping the thalamus, selectively inhibiting or disinhibiting thalamic sectors. Driven by norepinephrine (unexpected uncertainty) and acetylcholine (expected uncertainty).
+
+**The Double Dissociation:** Dopamine manipulation affects willingness to work for rewards (intention) without affecting signal detection. NE/ACh manipulation affects signal detection (attention) without affecting motivation. This confirms they are functionally distinct systems.
+
+Key evidence: Soon et al. (2008) decoded free decisions from prefrontal cortex up to 10 seconds before conscious awareness. Nakajima et al. (2019) mapped the PFC > striatum > GPe > TRN pathway. Wimmer et al. (2015) demonstrated bidirectional optogenetic control of visual TRN neurons.
+
+## The Intention Index
+
+A novel composite biomarker for quantifying intention strength:
+
+![Intention Index Formula](/images/research/intention-index-formula.png)
+
+**I_idx = [integral of (PD(t) - PD_baseline) dt / Task Difficulty] x Fixation Stability**
+
+Uses pupillometry (pupil dilation as a marker of Locus Coeruleus-Norepinephrine activity) combined with task difficulty normalization and eye-tracking fixation stability.
+
+## The Performance Matrix
+
+Four quadrants from the interaction of attention and intention strength:
+
+- **The Drifter** (weak both): Scattered, no direction
+- **The Grinder** (strong attention, weak intention): Efficient execution of the wrong things
+- **The Overplanner** (strong intention, weak attention): Clear goals, no execution clarity
+- **Locked In** (strong both): Peak performance state
+
+The critical insight: "High Intention + Low Matching Attention = Stalled Initiatives." "High Attention + No Intention = Efficient Irrelevance."
+
+## The Intention Engine: AI Architecture
+
+![Intention Engine Blueprint](/images/research/intention-engine-ai.png)
+
+A proposed 4-module architecture for truly agentic AI, wrapping transformer models in an active inference control loop:
+
+1. **Goal Module** (PFC equivalent): stores persistent preferred outcome distributions
+2. **Critic/Planner** (ACC equivalent): calculates Expected Free Energy for candidate policies
+3. **Policy Selector** (Basal Ganglia equivalent): selects actions minimizing G
+4. **Dynamic Attention Heads** (TRN equivalent): modulates transformer attention temperature based on uncertainty
+
+This is a concrete blueprint for moving beyond next-token prediction to goal-directed, uncertainty-aware AI agents.
+
+## Scaling to Organizations: The We-Intention Vector
+
+![Collective Intention Vector](/images/research/collective-intention-vector.png)
+
+Each individual has an intention vector. Collective Intention is the vector sum. When individual vectors are misaligned (high entropy), the resultant approaches zero: collective stagnation. When aligned, magnitude is maximized: collective action. This follows Order Parameter physics, similar to magnetization in spin systems.
+
+## Applied Framework: Adult Professional Learning
+
+A companion paper applies this framework to adult learning, identifying why some professionals adopt AI tools in one session while others struggle for months. Key findings from 800+ coaching sessions:
+
+- **The Inhibition Deficit Theory** (Hasher & Zacks): Adults have a "leaky filter." They are worse at suppressing irrelevant information, not worse at remembering.
+- **Implementation Intentions** (Gollwitzer): "If-Then" protocols produce d = 0.65 effect size across 94 studies (8,000 participants).
+- **The Illusion of Competence:** Adults mistake familiarity for mastery. Re-reading feels like learning but adds almost nothing to retention.
+- **AI as Force Multiplier:** AI amplifies whatever cognitive pattern you bring. Directed focus with clear intention produces categorically different results than scattered exploration.
+
+## Testable Predictions
+
+- Pupil-based TEPR should dissociate between intention strength and attentional load when task difficulty is controlled
+- Pharmacological manipulation of dopamine should affect Risk-related behavior without affecting Ambiguity-related behavior, and vice versa for NE/ACh
+- The PFC > striatum > GPe > TRN pathway should be necessary for intention-driven attentional gating
+
+## Status
+
+Working paper (Bullock, 2026). The formal academic version includes full citations, explicit delineation of novel versus established versus speculative claims, and rigorous mathematical notation.
+
+## Selected References
+
+- Friston, K. (2010). The free-energy principle: a unified brain theory? *Nature Reviews Neuroscience*, 11(2), 127-138.
+- Da Costa, L., et al. (2020). Active inference on discrete state-spaces: A synthesis. *Journal of Mathematical Psychology*, 99, 102447.
+- Soon, C. S., et al. (2008). Unconscious determinants of free decisions in the human brain. *Nature Neuroscience*, 11(5), 543-545.
+- Nakajima, M., et al. (2019). Prefrontal cortex regulates sensory filtering through a basal ganglia-to-thalamus pathway. *Neuron*, 103(3), 445-458.
+- Wimmer, R. D., et al. (2015). Thalamic control of sensory selection in divided attention. *Nature*, 526(7575), 705-709.
+- Gollwitzer, P. M. (1999). Implementation intentions: strong effects of simple plans. *American Psychologist*, 54(7), 493-503.
+- Hasher, L., & Zacks, R. T. (1988). Working memory, comprehension, and aging: A review and a new view. *Psychology of Learning and Motivation*, 22, 193-225.
+- Yu, A. J., & Dayan, P. (2005). Uncertainty, neuromodulation, and attention. *Neuron*, 46(4), 681-692.
+
+Author: Dr. Jeff Bullock, PharmD | [ORCID: 0009-0009-2053-4854](https://orcid.org/0009-0009-2053-4854)
+
+## Access the Research
+
+Full paper available upon request. DOI pending.
+
+## Bibliography
+
+1. Friston, K. (2010). The free-energy principle: a unified brain theory? *Nature Reviews Neuroscience*, 11(2), 127-138.
+2. Da Costa, L., Parr, T., Sajid, N., Vesber, S., Ryan, V., & Friston, K. (2020). Active inference on discrete state-spaces: A synthesis. *Journal of Mathematical Psychology*, 99, 102447.
+3. Posner, M. I., & Petersen, S. E. (1990). The attention system of the human brain. *Annual Review of Neuroscience*, 13(1), 25-42.
+4. Busemeyer, J. R., & Townsend, J. T. (1993). Decision field theory: A dynamic-cognition approach to decision making in an uncertain environment. *Psychological Review*, 100(3), 432-459.
+5. Soon, C. S., Brass, M., Heinze, H. J., & Haynes, J. D. (2008). Unconscious determinants of free decisions in the human brain. *Nature Neuroscience*, 11(5), 543-545.
+6. Nakajima, M., Schmitt, L. I., & Bhatt, D. K. (2019). Prefrontal cortex regulates sensory filtering through a basal ganglia-to-thalamus pathway. *Neuron*, 103(3), 445-458.
+7. Gollwitzer, P. M. (1999). Implementation intentions: Strong effects of simple plans. *American Psychologist*, 54(7), 493-503.
+
+Full bibliography available in the complete working paper.

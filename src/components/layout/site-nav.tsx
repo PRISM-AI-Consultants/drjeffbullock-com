@@ -10,11 +10,14 @@ import { ThemeToggle } from "../ui/theme-toggle";
 
 const navLinks = [
   { href: "/", label: "Home" },
-  { href: "/about", label: "About" },
   { href: "/books", label: "Books" },
+  { href: "/research", label: "Research" },
+  { href: "/media", label: "Media" },
   { href: "/games", label: "Games" },
-  { href: "/speaking", label: "Speaking" },
   { href: "/blog", label: "Blog" },
+  { href: "/projects", label: "Projects" },
+  { href: "/speaking", label: "Speaking" },
+  { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
 ];
 
