@@ -27,7 +27,7 @@ export async function POST(req: NextRequest) {
     // Notify Jeff of new subscriber
     await resend.emails.send({
       from: "DrJeffBullock.com <onboarding@resend.dev>",
-      to: "info@prismaiconsultants.com",
+      to: "jbbulloc@gmail.com",
       subject: `[Newsletter Signup] ${email}`,
       text: `New newsletter subscriber from DrJeffBullock.com:\n\n${email}\n\nAdd to your newsletter list.`,
     });
