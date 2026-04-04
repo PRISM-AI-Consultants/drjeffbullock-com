@@ -1,6 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-
-const GHL_API_URL = "https://services.leadconnectorhq.com/contacts/";
+import { Resend } from "resend";
 
 export async function POST(req: NextRequest) {
   try {
@@ -14,37 +13,24 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    const apiKey = process.env.GHL_API_KEY;
+    const apiKey = process.env.RESEND_API_KEY;
     if (!apiKey) {
-      console.error("GHL_API_KEY is not configured");
+      console.error("RESEND_API_KEY is not configured");
       return NextResponse.json(
         { error: "Newsletter signup is temporarily unavailable." },
         { status: 500 }
       );
     }
 
-    const ghlResponse = await fetch(GHL_API_URL, {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${apiKey}`,
-        "Content-Type": "application/json",
-        Version: "2021-07-28",
-      },
-      body: JSON.stringify({
-        email,
-        tags: ["drjeffbullock-newsletter"],
-        source: "DrJeffBullock.com Newsletter",
-      }),
-    });
+    const resend = new Resend(apiKey);
 
-    if (!ghlResponse.ok) {
-      const errorData = await ghlResponse.text();
-      console.error("GHL API error:", ghlResponse.status, errorData);
-      return NextResponse.json(
-        { error: "Failed to subscribe. Please try again later." },
-        { status: 502 }
-      );
-    }
+    // Notify Jeff of new subscriber
+    await resend.emails.send({
+      from: "DrJeffBullock.com <onboarding@resend.dev>",
+      to: "info@prismaiconsultants.com",
+      subject: `[Newsletter Signup] ${email}`,
+      text: `New newsletter subscriber from DrJeffBullock.com:\n\n${email}\n\nAdd to your newsletter list.`,
+    });
 
     return NextResponse.json(
       { success: true, message: "Successfully subscribed to the newsletter." },
