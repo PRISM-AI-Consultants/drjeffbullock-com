@@ -109,7 +109,14 @@ export default async function BookPage({ params }: { params: Promise<{ slug: str
                   {book.purchaseUrl && (
                     <a href={book.purchaseUrl} target="_blank" rel="noopener noreferrer">
                       <Button size="lg">
-                        <ShoppingCart className="h-4 w-4 mr-2" /> Get This Book
+                        <ShoppingCart className="h-4 w-4 mr-2" /> Buy Direct {book.price && `— ${book.price}`}
+                      </Button>
+                    </a>
+                  )}
+                  {book.amazonUrl && (
+                    <a href={book.amazonUrl} target="_blank" rel="noopener noreferrer">
+                      <Button size="lg" variant="secondary">
+                        Also on Amazon
                       </Button>
                     </a>
                   )}

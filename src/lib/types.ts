@@ -10,6 +10,8 @@ export interface Book {
   publishDate?: string;
   featured?: boolean;
   purchaseUrl?: string;
+  amazonUrl?: string;
+  price?: string;
   downloadUrl?: string;
   audioUrl?: string;
   companionAppUrl?: string;
