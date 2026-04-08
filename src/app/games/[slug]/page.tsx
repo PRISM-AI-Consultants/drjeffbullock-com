@@ -57,13 +57,17 @@ export default async function GameDetailPage({ params }: { params: Promise<{ slu
         <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight">{game.title}</h1>
         <p className="mt-4 text-lg text-muted-foreground">{game.description}</p>
 
-        {game.playUrl && (
+        {game.playUrl ? (
           <div className="mt-6">
             <a href={game.playUrl} target="_blank" rel="noopener noreferrer">
               <Button size="lg" variant="accent">
                 Play Now <ExternalLink className="h-4 w-4 ml-2" />
               </Button>
             </a>
+          </div>
+        ) : (
+          <div className="mt-6">
+            <Badge variant="outline" className="text-sm px-4 py-2">Coming Soon</Badge>
           </div>
         )}
 

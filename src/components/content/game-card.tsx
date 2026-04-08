@@ -49,6 +49,7 @@ export function GameCard({ game }: { game: Game }) {
           {game.platforms.map((p) => (
             <Badge key={p} variant="outline">{p}</Badge>
           ))}
+          {!game.playUrl && <Badge variant="outline">Coming Soon</Badge>}
         </div>
         <h3 className="text-lg font-bold leading-tight">{game.title}</h3>
       </CardHeader>

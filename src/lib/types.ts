@@ -62,6 +62,7 @@ export interface Game {
   playUrl?: string;
   featured?: boolean;
   coverImage?: string;
+  status?: string;
   content: string;
 }
 
