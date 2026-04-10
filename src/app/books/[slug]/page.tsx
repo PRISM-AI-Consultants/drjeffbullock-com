@@ -8,7 +8,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { BookCover } from "@/components/ui/book-cover";
 import { MDXContent } from "@/components/content/mdx-content";
-import { ArrowLeft, ShoppingCart, Download, Headphones, Smartphone } from "lucide-react";
+import { ArrowLeft, ShoppingCart, Download, Headphones, Smartphone, BookOpen } from "lucide-react";
 
 export function generateStaticParams() {
   return getBooks().map((b) => ({ slug: b.slug }));
@@ -18,13 +18,7 @@ export function generateMetadata({ params }: { params: Promise<{ slug: string }>
   return params.then(({ slug }) => {
     const book = getBook(slug);
     if (!book) return { title: "Not Found" };
-    return {
-      title: book.title,
-      description: book.description,
-      alternates: {
-        canonical: `https://drjeffbullock.com/books/${slug}`,
-      },
-    };
+    return { title: book.title, description: book.description };
   });
 }
 
@@ -35,46 +29,8 @@ export default async function BookPage({ params }: { params: Promise<{ slug: str
 
   const allBooks = getBooks().filter((b) => b.slug !== slug).slice(0, 3);
 
-  const breadcrumbJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: "https://drjeffbullock.com" },
-      { "@type": "ListItem", position: 2, name: "Books", item: "https://drjeffbullock.com/books" },
-      { "@type": "ListItem", position: 3, name: book.title, item: `https://drjeffbullock.com/books/${book.slug}` },
-    ],
-  };
-
-  const bookJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "Book",
-    name: book.title,
-    author: { "@type": "Person", name: "Dr. Jeff Bullock" },
-    ...(book.publishDate && { datePublished: book.publishDate }),
-    genre: book.genres?.join(", ") || book.category,
-    ...(book.formats?.length && { bookFormat: book.formats.includes("ebook") ? "EBook" : "Paperback" }),
-    description: book.description,
-    inLanguage: "en",
-    url: `https://drjeffbullock.com/books/${book.slug}`,
-    ...(book.purchaseUrl && {
-      offers: {
-        "@type": "Offer",
-        url: book.purchaseUrl,
-        availability: "https://schema.org/InStock",
-      },
-    }),
-  };
-
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(bookJsonLd) }}
-      />
       <Section className="pt-8">
         <Container size="md">
           <Link href="/books" className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground mb-8 transition-colors">
@@ -110,19 +66,12 @@ export default async function BookPage({ params }: { params: Promise<{ slug: str
                 </p>
               )}
 
-              {(book.purchaseUrl || book.downloadUrl || book.audioUrl || book.companionAppUrl) && (
+              {(book.purchaseUrl || book.downloadUrl || book.audioUrl || book.companionAppUrl || book.researchUrl) && (
                 <div className="mt-6 flex flex-wrap gap-3">
                   {book.purchaseUrl && (
                     <a href={book.purchaseUrl} target="_blank" rel="noopener noreferrer">
                       <Button size="lg">
-                        <ShoppingCart className="h-4 w-4 mr-2" /> Buy Direct {book.price && `— ${book.price}`}
-                      </Button>
-                    </a>
-                  )}
-                  {book.amazonUrl && (
-                    <a href={book.amazonUrl} target="_blank" rel="noopener noreferrer">
-                      <Button size="lg" variant="secondary">
-                        Also on Amazon
+                        <ShoppingCart className="h-4 w-4 mr-2" /> Get This Book
                       </Button>
                     </a>
                   )}
@@ -144,6 +93,13 @@ export default async function BookPage({ params }: { params: Promise<{ slug: str
                     <a href={book.audioUrl} target="_blank" rel="noopener noreferrer">
                       <Button size="lg" variant="secondary">
                         <Headphones className="h-4 w-4 mr-2" /> Listen to Audiobook
+                      </Button>
+                    </a>
+                  )}
+                  {book.researchUrl && (
+                    <a href={book.researchUrl} target="_blank" rel="noopener noreferrer">
+                      <Button size="lg" variant="secondary">
+                        <BookOpen className="h-4 w-4 mr-2" /> Open Research Archive
                       </Button>
                     </a>
                   )}

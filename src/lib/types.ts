@@ -10,12 +10,11 @@ export interface Book {
   publishDate?: string;
   featured?: boolean;
   purchaseUrl?: string;
-  amazonUrl?: string;
-  price?: string;
   downloadUrl?: string;
   audioUrl?: string;
   companionAppUrl?: string;
   companionAppName?: string;
+  researchUrl?: string;
   editScore?: number;
   editStatus?: string;
   content: string;
@@ -29,8 +28,8 @@ export interface ResearchEntry {
   description: string;
   date: string;
   featured?: boolean;
-  coverImage?: string;
   pdfUrl?: string;
+  coverImage?: string;
   content: string;
 }
 
@@ -64,7 +63,6 @@ export interface Game {
   playUrl?: string;
   featured?: boolean;
   coverImage?: string;
-  status?: string;
   content: string;
 }
 
