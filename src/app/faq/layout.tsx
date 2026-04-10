@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "FAQ",
+  title: "Frequently Asked Questions",
   description:
     "Frequently asked questions about Dr. Jeff Bullock, PRISM AI Consultants, books, games, research, speaking engagements, and AI consulting.",
 };

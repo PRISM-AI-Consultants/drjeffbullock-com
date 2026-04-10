@@ -18,7 +18,13 @@ export function generateMetadata({ params }: { params: Promise<{ slug: string }>
   return params.then(({ slug }) => {
     const game = getGame(slug);
     if (!game) return { title: "Not Found" };
-    return { title: game.title, description: game.description };
+    return {
+      title: game.title,
+      description: game.description,
+      alternates: {
+        canonical: `https://drjeffbullock.com/games/${slug}`,
+      },
+    };
   });
 }
 

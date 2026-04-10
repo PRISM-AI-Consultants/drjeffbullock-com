@@ -1,10 +1,13 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Inter, Plus_Jakarta_Sans } from "next/font/google";
 import { SiteNav } from "@/components/layout/site-nav";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { CommandPaletteWrapper } from "@/components/layout/command-palette-wrapper";
 import { AudioPlayer } from "@/components/ui/audio-player";
 import "./globals.css";
+
+const GA_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
 
 const inter = Inter({
   variable: "--font-inter",
@@ -31,6 +34,19 @@ export const metadata: Metadata = {
       "AI Orchestrator. Systems Integrator. Author. Builder. Proving what one person can build with AI.",
     type: "website",
     images: ["/images/og-home.jpg"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Dr. Jeff Bullock",
+    description:
+      "AI Orchestrator. Systems Integrator. Author. Builder.",
+    images: ["/images/og-home.jpg"],
+  },
+  alternates: {
+    canonical: "https://drjeffbullock.com",
+  },
+  verification: {
+    google: process.env.NEXT_PUBLIC_GSC_VERIFICATION,
   },
 };
 
@@ -125,6 +141,17 @@ export default function RootLayout({
         />
       </head>
       <body className={`${inter.variable} ${plusJakarta.variable} antialiased`}>
+        {GA_ID && (
+          <>
+            <Script
+              src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+              strategy="afterInteractive"
+            />
+            <Script id="ga4-init" strategy="afterInteractive">
+              {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${GA_ID}');`}
+            </Script>
+          </>
+        )}
         <SiteNav />
         <main className="min-h-screen">{children}</main>
         <SiteFooter />

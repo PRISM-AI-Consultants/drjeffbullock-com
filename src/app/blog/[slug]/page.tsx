@@ -44,6 +44,9 @@ export function generateMetadata({ params }: { params: Promise<{ slug: string }>
           images: [`https://drjeffbullock.com${post.coverImage}`],
         }),
       },
+      alternates: {
+        canonical: `https://drjeffbullock.com/blog/${slug}`,
+      },
     };
   });
 }
