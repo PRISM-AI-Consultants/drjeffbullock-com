@@ -18,7 +18,13 @@ export function generateMetadata({ params }: { params: Promise<{ slug: string }>
   return params.then(({ slug }) => {
     const book = getBook(slug);
     if (!book) return { title: "Not Found" };
-    return { title: book.title, description: book.description };
+    return {
+      title: book.title,
+      description: book.description,
+      alternates: {
+        canonical: `https://drjeffbullock.com/books/${slug}`,
+      },
+    };
   });
 }
 
@@ -55,6 +61,14 @@ export default async function BookPage({ params }: { params: Promise<{ slug: str
                 {book.formats.map((f) => (
                   <Badge key={f} variant="outline">{f}</Badge>
                 ))}
+                {book.editScore && (
+                  <Badge className={`text-white border-transparent ${book.editScore >= 9 ? "bg-amber-600" : "bg-blue-600"}`}>
+                    Forge Score: {book.editScore}/10
+                  </Badge>
+                )}
+                {book.editStatus && (
+                  <Badge variant="outline">{book.editStatus}</Badge>
+                )}
               </div>
 
               <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight">{book.title}</h1>
