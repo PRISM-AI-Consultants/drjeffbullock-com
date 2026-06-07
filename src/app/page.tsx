@@ -1,3 +1,5 @@
+import fs from "fs";
+import path from "path";
 import Link from "next/link";
 import Image from "next/image";
 import { Container } from "@/components/ui/container";
@@ -23,10 +25,11 @@ import {
   Rocket,
   Building2,
   Bot,
-  Clapperboard,
   Microscope,
   Heart,
   Orbit,
+  Users,
+  Brain,
 } from "lucide-react";
 
 const ipCategories = [
@@ -39,15 +42,57 @@ const ipCategories = [
   { label: "Blog", count: "8+", icon: PenLine, href: "/blog" },
 ];
 
-const achievements = [
-  { icon: BookOpen, text: "17 books (4 published, 13 in progress)" },
-  { icon: Building2, text: "2 companies: PRISM AI Consultants + VersAssist" },
-  { icon: Bot, text: "54-module AI system with 33 autonomous agents" },
-  { icon: Gamepad2, text: "16 playable games and interactive experiences" },
-  { icon: Music, text: "A 19-track concept album (Mansa Musa)" },
-  { icon: Microscope, text: "4 original research frameworks" },
-  { icon: Clapperboard, text: "A sitcom pilot (Pillbox)" },
-  { icon: Rocket, text: "All built with AI as a force multiplier" },
+const dreams = [
+  {
+    label: "Dream 1",
+    title: "Make giving go viral",
+    body: "Instagram, Facebook, and Meta engineered the most powerful habit loops in human history, and they pointed them at consumption. I want to point that same machine at generosity. When you give of yourself, you touch something bigger than you. The goal is to make that feeling as common, as shareable, and as addictive as the scroll. Giving, hacked for good.",
+    icon: Heart,
+  },
+  {
+    label: "Dream 2",
+    title: "Solve poverty. For everyone. Starting with my community.",
+    body: "I am starting with African Americans because that is where I have the credibility to lead, and because the abundance economy can flip generational wealth in one generation instead of three. Once it is proven there, it spreads. To poor whites in Appalachia, to opioid-affected towns, to anyone the old economy locked out. One community is the start. Everybody is the goal.",
+    icon: Rocket,
+  },
+];
+
+const playbook = [
+  {
+    name: "David Steward",
+    initials: "DS",
+    image: "/images/lineage/david-steward.jpg",
+    worth: "Est. $11 billion+",
+    owns: "Founder of World Wide Technology, a company doing roughly $20 billion a year. Forbes has ranked him the wealthiest Black person in America.",
+    mine: "I am building the implementation layer for AI.",
+  },
+  {
+    name: "Robert F. Smith",
+    initials: "RS",
+    image: "/images/lineage/robert-smith.jpg",
+    worth: "Est. $10 billion+",
+    owns: "Founder of Vista Equity Partners, with around $107 billion under management. He made operational excellence the moat.",
+    mine: "I built a system that turns affordable talent into expert-level output.",
+  },
+  {
+    name: "Tyler Perry",
+    initials: "TP",
+    image: "/images/lineage/tyler-perry.jpg",
+    worth: "Est. $1.4 billion",
+    owns: "Owns his studio and nearly everything he has created outright. No gatekeeper could tell him no.",
+    mine: "I own an AI studio outright, for the cost of a laptop and a subscription.",
+  },
+];
+
+const proof = [
+  { text: "The Black Advantage, book and movement", serves: "Dream 2", icon: BookOpen },
+  { text: "Generosity Platform, in build", serves: "Dream 1", icon: Heart },
+  { text: "PRISM AI Consultants", serves: "The engine", icon: Building2 },
+  { text: "VersAssist", serves: "The engine", icon: Users },
+  { text: "Pharmageddon, Escape Velocity, and 16 games", serves: "Behavior change", icon: Gamepad2 },
+  { text: "Mansa Musa and 17 books", serves: "The culture", icon: Music },
+  { text: "The research, from the Abundance Thesis to human performance", serves: "Best self", icon: Microscope },
+  { text: "Agent World, 33 live AI agents", serves: "How one person runs it all", icon: Bot },
 ];
 
 export default function HomePage() {
@@ -57,44 +102,56 @@ export default function HomePage() {
   const featuredBook = books.find((b) => b.featured) || books[0];
   const featuredResearch = research.find((r) => r.featured) || research[0];
   const latestPosts = posts.slice(0, 3);
+  const lineage = playbook.map((p) => ({
+    ...p,
+    hasImage: fs.existsSync(path.join(process.cwd(), "public", p.image)),
+  }));
 
   return (
     <>
-      {/* Editorial Hero - Asymmetric layout with headshot */}
-      <Section className="pt-20 md:pt-28 pb-12">
-        <Container size="xl">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            <div>
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tighter leading-[0.95]">
-                Dr. Jeff
-                <br />
-                Bullock
-              </h1>
-              <p className="mt-6 text-xl md:text-2xl text-secondary font-medium">
-                AI Orchestrator. Systems Integrator. Author. Builder.
+      {/* Editorial Hero - purpose first */}
+      <Section className="relative overflow-hidden pt-20 md:pt-28 pb-14">
+        <div
+          aria-hidden
+          className="pointer-events-none absolute -top-44 -right-40 h-[36rem] w-[36rem] rounded-full opacity-[0.10]"
+          style={{ background: "radial-gradient(closest-side, var(--accent), transparent)" }}
+        />
+        <Container size="xl" className="relative">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+            <div className="lg:col-span-7">
+              <p className="text-sm font-semibold text-accent uppercase tracking-[0.18em]">
+                Dr. Jeff Bullock, PharmD
               </p>
-              <p className="mt-4 text-lg text-muted-foreground max-w-lg">
-                This is what happens when one person uses AI as a force
-                multiplier. Books, research, games, music, companies, and
-                code - all shipped, all real.
+              <h1 className="mt-5 font-heading font-extrabold tracking-tight leading-[0.98] text-[clamp(2.5rem,6vw,4.75rem)]">
+                I&apos;m using AI to chase two dreams.
+              </h1>
+              <p className="mt-6 text-xl md:text-2xl text-secondary font-medium max-w-xl">
+                Make giving as powerful as social media. End poverty, starting in my own community.
+              </p>
+              <p className="mt-4 text-lg text-muted-foreground max-w-xl">
+                Everything on this page is proof it is working. The books, the games, the research, the companies. They all point at the same two things.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
-                <Link href="/books">
-                  <Button size="lg">Explore My Work <ArrowRight className="h-4 w-4 ml-2" /></Button>
-                </Link>
+                <a href="#dreams">
+                  <Button size="lg">See the mission <ArrowRight className="h-4 w-4 ml-2" /></Button>
+                </a>
                 <a href="https://calendly.com/prismaiconsultants/introductory-call" target="_blank" rel="noopener noreferrer">
                   <Button size="lg" variant="secondary">Book Me to Speak</Button>
                 </a>
               </div>
             </div>
-            <div className="relative">
-              <div className="aspect-[3/4] max-w-[420px] mx-auto lg:ml-auto rounded-[var(--radius-lg)] overflow-hidden border border-border shadow-lg">
+            <div className="lg:col-span-5 relative">
+              <div
+                aria-hidden
+                className="absolute -inset-3 -z-10 rounded-[var(--radius-xl)] bg-accent/10"
+              />
+              <div className="aspect-[3/4] max-w-[400px] mx-auto lg:ml-auto rounded-[var(--radius-lg)] overflow-hidden border border-border shadow-lg">
                 <Image
                   src="/images/hero/jeff-hero.jpg"
                   alt="Dr. Jeff Bullock - professional headshot"
                   fill
                   className="object-cover object-top"
-                  sizes="(max-width: 1024px) 100vw, 420px"
+                  sizes="(max-width: 1024px) 100vw, 400px"
                   priority
                 />
               </div>
@@ -115,8 +172,169 @@ export default function HomePage() {
         </Container>
       </div>
 
-      {/* Showcase Grid - Visual preview cards */}
-      <Section className="bg-muted/30 py-8">
+      {/* THE TWO DREAMS - the why, up top */}
+      <Section id="dreams">
+        <Container size="xl">
+          <p className="text-sm font-semibold text-accent uppercase tracking-wider mb-2">Why I do all of this</p>
+          <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-8">
+            Two dreams
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {dreams.map((d) => (
+              <div key={d.label} className="p-7 rounded-[var(--radius-lg)] border border-border bg-card">
+                <d.icon className="h-7 w-7 text-accent mb-4" />
+                <Badge className="mb-3">{d.label}</Badge>
+                <h3 className="text-2xl font-bold tracking-tight">{d.title}</h3>
+                <p className="mt-3 text-muted-foreground leading-relaxed">{d.body}</p>
+              </div>
+            ))}
+          </div>
+          <p className="mt-6 text-center text-sm font-semibold text-secondary">
+            The sequence: money first, then programs, then giving. You can&apos;t give what you don&apos;t have.
+          </p>
+        </Container>
+      </Section>
+
+      {/* BEING YOUR BEST SELF - the third thread */}
+      <Section className="bg-muted/30">
+        <Container size="md">
+          <div className="text-center">
+            <Brain className="h-7 w-7 text-accent mx-auto mb-4" />
+            <p className="text-sm font-semibold text-accent uppercase tracking-wider mb-2">The third piece</p>
+            <h2 className="text-3xl font-extrabold tracking-tight mb-5">Being your best self</h2>
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              People ask why a pharmacist is researching psychedelics, learning science, attention, and human performance. Here is why. You can&apos;t build wealth or give from an empty tank. The research is about unlocking the person first. Unlock the human, and they can build. Build, and poverty falls. Give from that abundance, and it spreads. Giving, sovereignty from poverty, and becoming your best self are three sides of one thing.
+            </p>
+          </div>
+        </Container>
+      </Section>
+
+      {/* THE PLAYBOOK - Steward, Smith, Perry */}
+      <Section>
+        <Container size="xl">
+          <p className="text-sm font-semibold text-accent uppercase tracking-[0.18em] mb-3">It has been done, in one generation</p>
+          <h2 className="font-heading font-extrabold tracking-tight text-[clamp(1.9rem,4vw,3rem)] mb-4 max-w-3xl">
+            The playbook I&apos;m running
+          </h2>
+          <p className="text-muted-foreground max-w-2xl mb-10 text-lg">
+            Three men built billion-dollar fortunes from nothing, in a single generation. All three self-made. All three Black. I am running their playbook with AI, and the cost of entry has dropped from millions to almost nothing.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {lineage.map((p) => (
+              <div key={p.name} className="group p-6 rounded-[var(--radius-lg)] border border-border bg-card flex flex-col transition-shadow hover:shadow-md">
+                <div className="flex items-center gap-4">
+                  <div className="h-20 w-20 flex-shrink-0 rounded-full overflow-hidden border border-border bg-gradient-to-br from-accent/20 to-secondary/10 flex items-center justify-center">
+                    {p.hasImage ? (
+                      <Image
+                        src={p.image}
+                        alt={p.name}
+                        width={80}
+                        height={80}
+                        className="h-full w-full object-cover object-top"
+                      />
+                    ) : (
+                      <span className="text-xl font-extrabold text-secondary">{p.initials}</span>
+                    )}
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-bold leading-tight">{p.name}</h3>
+                    <p className="mt-0.5 font-heading text-2xl font-extrabold tracking-tight">{p.worth}</p>
+                  </div>
+                </div>
+                <p className="mt-5 text-sm text-muted-foreground leading-relaxed flex-1">{p.owns}</p>
+                <p className="mt-5 pt-4 border-t border-border text-sm font-semibold text-secondary">{p.mine}</p>
+              </div>
+            ))}
+          </div>
+          <p className="mt-6 text-xs text-muted-foreground/70">
+            Photos: Robert F. Smith (public domain). Tyler Perry by Philip Romano, CC BY-SA 4.0.
+          </p>
+        </Container>
+      </Section>
+
+      {/* THE THROUGH-LINE - build to give */}
+      <Section className="bg-secondary text-secondary-foreground">
+        <Container size="md">
+          <div className="text-center">
+            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-secondary-foreground/60 mb-4">The whole point</p>
+            <h2 className="font-heading font-extrabold tracking-tight text-[clamp(1.75rem,4vw,2.75rem)] mb-5">
+              Here is the point.
+            </h2>
+            <p className="text-lg md:text-2xl leading-relaxed opacity-90 max-w-2xl mx-auto">
+              I am following their blueprint for one reason. Capital. You have to build it before you can give it, and capital is what changes the math for everyone. When you have it, you stop asking for permission and start making things happen. The wealth is the engine. The giving is where it leads.
+            </p>
+          </div>
+        </Container>
+      </Section>
+
+      {/* THE PROOF - mission made tangible */}
+      <Section className="bg-muted/30">
+        <Container size="xl">
+          <p className="text-sm font-semibold text-accent uppercase tracking-wider mb-2">The mission, made tangible</p>
+          <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4">
+            Every build serves a dream
+          </h2>
+          <p className="text-muted-foreground max-w-2xl mb-8">
+            This is not a list of cool things. Each one points at the mission. Here is how it maps.
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {proof.map((p, i) => (
+              <div
+                key={i}
+                className="flex items-start gap-4 p-4 rounded-[var(--radius-lg)] border border-border bg-card"
+              >
+                <p.icon className="h-5 w-5 text-accent mt-0.5 flex-shrink-0" />
+                <div className="flex-1">
+                  <p className="text-sm font-medium">{p.text}</p>
+                  <Badge variant="accent" className="mt-2">{p.serves}</Badge>
+                </div>
+              </div>
+            ))}
+          </div>
+        </Container>
+      </Section>
+
+      {/* THE ENGINE - how you win */}
+      <Section>
+        <Container size="xl">
+          <p className="text-sm font-semibold text-accent uppercase tracking-wider mb-2">The engine</p>
+          <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4">
+            How you win
+          </h2>
+          <p className="text-muted-foreground max-w-2xl mb-8">
+            Two things have to be true to scale in the AI era. You have to know how to use AI, and you have to have a team that can execute it. PRISM is the knowledge. VersAssist is the team. Together, that is the whole game.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <Link href="/prism" className="group block">
+              <Card className="h-full">
+                <CardHeader>
+                  <Badge variant="accent" className="w-fit mb-2">The knowledge</Badge>
+                  <h3 className="text-xl font-bold">PRISM</h3>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground">Your AI business partner. Know how to use AI, the right tools, and the workflows that move the needle in your business.</p>
+                  <p className="mt-4 text-sm text-accent font-medium flex items-center gap-1">See PRISM <ArrowRight className="h-3.5 w-3.5" /></p>
+                </CardContent>
+              </Card>
+            </Link>
+            <Link href="/versassist" className="group block">
+              <Card className="h-full">
+                <CardHeader>
+                  <Badge variant="accent" className="w-fit mb-2">The team</Badge>
+                  <h3 className="text-xl font-bold">VersAssist</h3>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground">The Uber of labor. AI-trained team members at an economical rate, so one person can build like a company.</p>
+                  <p className="mt-4 text-sm text-accent font-medium flex items-center gap-1">See VersAssist <ArrowRight className="h-3.5 w-3.5" /></p>
+                </CardContent>
+              </Card>
+            </Link>
+          </div>
+        </Container>
+      </Section>
+
+      {/* Showcase Grid - visual proof */}
+      <Section className="py-8">
         <Container size="xl">
           <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
             {featuredBook && (
@@ -322,29 +540,9 @@ export default function HomePage() {
         </Container>
       </Section>
 
-      {/* What I've Built */}
-      <Section>
-        <Container size="xl">
-          <h2 className="text-3xl font-extrabold tracking-tight mb-8">
-            What I&apos;ve Built
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {achievements.map((a, i) => (
-              <div
-                key={i}
-                className="flex items-start gap-4 p-4 rounded-[var(--radius-lg)] border border-border bg-card"
-              >
-                <a.icon className="h-5 w-5 text-accent mt-0.5 flex-shrink-0" />
-                <p className="text-sm font-medium">{a.text}</p>
-              </div>
-            ))}
-          </div>
-        </Container>
-      </Section>
-
       {/* Latest Posts */}
       {latestPosts.length > 0 && (
-        <Section className="bg-muted/30">
+        <Section>
           <Container size="xl">
             <div className="flex items-center justify-between mb-8">
               <h2 className="text-3xl font-extrabold tracking-tight">
@@ -367,7 +565,7 @@ export default function HomePage() {
       )}
 
       {/* What Clients Say - Real quotes from real sessions */}
-      <Section>
+      <Section className="bg-muted/30">
         <Container size="xl">
           <h2 className="text-3xl font-extrabold tracking-tight mb-2">
             What Clients Say
@@ -425,33 +623,8 @@ export default function HomePage() {
         </Container>
       </Section>
 
-      {/* The Mission */}
-      <Section>
-        <Container size="md">
-          <div className="text-center">
-            <h2 className="text-3xl font-extrabold tracking-tight mb-8">
-              The Mission
-            </h2>
-            <div className="space-y-6">
-              <div className="p-6 rounded-[var(--radius-lg)] border border-border bg-card">
-                <Heart className="h-6 w-6 text-accent mx-auto mb-3" />
-                <p className="text-lg font-semibold">
-                  Make giving as popular as social media
-                </p>
-              </div>
-              <div className="p-6 rounded-[var(--radius-lg)] border border-border bg-card">
-                <Rocket className="h-6 w-6 text-accent mx-auto mb-3" />
-                <p className="text-lg font-semibold">
-                  Solve poverty starting with African Americans
-                </p>
-              </div>
-            </div>
-          </div>
-        </Container>
-      </Section>
-
       {/* Newsletter */}
-      <Section className="bg-muted/30">
+      <Section>
         <Container size="md">
           <div className="text-center">
             <h2 className="text-2xl font-extrabold tracking-tight mb-2">

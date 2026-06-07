@@ -61,6 +61,19 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
         <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight">{project.title}</h1>
         <p className="mt-4 text-lg text-muted-foreground">{project.description}</p>
 
+        {project.ctaUrl && (
+          <div className="mt-8 rounded-[var(--radius-lg)] border border-accent/30 bg-accent/5 p-6">
+            <a href={project.ctaUrl} target="_blank" rel="noopener noreferrer">
+              <Button size="lg" variant="accent">
+                {project.ctaLabel || "Try it free"} <ExternalLink className="h-4 w-4 ml-2" />
+              </Button>
+            </a>
+            {project.ctaNote && (
+              <p className="mt-3 text-sm text-muted-foreground">{project.ctaNote}</p>
+            )}
+          </div>
+        )}
+
         {(project.url || project.spotifyUrl) && (
           <div className="mt-6 flex flex-wrap gap-3">
             {project.url && (

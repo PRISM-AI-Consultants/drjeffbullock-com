@@ -98,6 +98,9 @@ export interface Project {
   spotifyUrl?: string;
   featured?: boolean;
   coverImage?: string;
+  ctaUrl?: string;
+  ctaLabel?: string;
+  ctaNote?: string;
   content: string;
 }
 
