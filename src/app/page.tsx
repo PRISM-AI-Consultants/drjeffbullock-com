@@ -243,7 +243,7 @@ export default function HomePage() {
                     {p.hasImage ? (
                       <Image src={p.image} alt={p.name} width={64} height={64} className="h-full w-full object-cover object-top grayscale group-hover:grayscale-0 transition-all duration-500" />
                     ) : (
-                      <span className="flex h-full w-full items-center justify-center font-display text-lg font-bold text-muted-foreground">{p.initials}</span>
+                      <span className="flex h-full w-full items-center justify-center bg-accent font-display text-xl font-extrabold tracking-tight text-white">{p.initials}</span>
                     )}
                   </div>
                   <div>
