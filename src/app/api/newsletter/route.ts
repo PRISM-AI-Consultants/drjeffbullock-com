@@ -4,7 +4,7 @@ import { Resend } from "resend";
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
-    const { email } = body;
+    const { email, source } = body;
 
     if (!email || typeof email !== "string") {
       return NextResponse.json(
@@ -25,11 +25,16 @@ export async function POST(req: NextRequest) {
     const resend = new Resend(apiKey);
 
     // Notify Jeff of new subscriber
+    const cleanSource = typeof source === "string" ? source.trim().slice(0, 120) : "";
     await resend.emails.send({
       from: "DrJeffBullock.com <contact@drjeffbullock.com>",
       to: "info@prismaiconsultants.com",
-      subject: `[Newsletter Signup] ${email}`,
-      text: `New newsletter subscriber from DrJeffBullock.com:\n\n${email}\n\nAdd to your newsletter list.`,
+      subject: cleanSource
+        ? `[Book Waitlist: ${cleanSource}] ${email}`
+        : `[Newsletter Signup] ${email}`,
+      text: cleanSource
+        ? `New book waitlist signup from DrJeffBullock.com:\n\nEmail: ${email}\nBook: ${cleanSource}\n\nNotify this person when "${cleanSource}" releases, and add to your newsletter list.`
+        : `New newsletter subscriber from DrJeffBullock.com:\n\n${email}\n\nAdd to your newsletter list.`,
     });
 
     return NextResponse.json(

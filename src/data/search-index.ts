@@ -16,9 +16,9 @@ export const searchIndex: SearchItem[] = [
   { title: "A Prompt's Power", href: "/books/prompt-power", type: "Book", description: "Advanced prompt engineering strategies and multi-step workflows." },
   { title: "The Sentinel", href: "/books/the-sentinel", type: "Book", description: "Post-apocalyptic thriller set in Allentown, PA." },
   { title: "Tongues of Ash", href: "/books/tongues-of-ash", type: "Book", description: "A horror novel about language, power, and survival." },
-  { title: "The Risen Few", href: "/books/the-risen-few", type: "Book", description: "Fiction exploring what happens when a select group rises above the collapse." },
-  { title: "Step Into the Truth", href: "/books/step-into-the-truth", type: "Book", description: "A novel about confronting reality and building from what is." },
   { title: "The Black Advantage", href: "/books/the-black-advantage", type: "Book", description: "An economic framework for ending African American poverty." },
+  { title: "Transcript Alchemy", href: "/books/transcript-alchemy", type: "Book", description: "101 ways to turn any recorded conversation into money, insight, and legacy, with the exact prompts." },
+  { title: "Hacked for Good", href: "/books/hacked-for-good", type: "Book", description: "How the most selfish thing you can do becomes the thing that saves us. Turning attention into giving." },
 
   // Research
   { title: "The Attention and Intention Framework", href: "/research/attention-and-intention-framework", type: "Research", description: "How directed attention and clear intention create measurable cognitive outcomes." },

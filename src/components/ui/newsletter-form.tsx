@@ -3,7 +3,17 @@
 import { useState } from "react";
 import { Button } from "./button";
 
-export function NewsletterForm() {
+export function NewsletterForm({
+  source,
+  submitLabel = "Stay in the loop",
+  loadingLabel = "Signing up...",
+  successLabel = "You're in. Watch your inbox.",
+}: {
+  source?: string;
+  submitLabel?: string;
+  loadingLabel?: string;
+  successLabel?: string;
+} = {}) {
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -20,7 +30,7 @@ export function NewsletterForm() {
       const res = await fetch("/api/newsletter", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email }),
+        body: JSON.stringify({ email, source }),
       });
 
       if (res.ok) {
@@ -41,9 +51,7 @@ export function NewsletterForm() {
 
   if (submitted) {
     return (
-      <p className="text-sm text-accent font-medium">
-        You&apos;re in. Watch your inbox.
-      </p>
+      <p className="text-sm text-accent font-medium">{successLabel}</p>
     );
   }
 
@@ -58,7 +66,7 @@ export function NewsletterForm() {
         className="flex-1 rounded-[var(--radius-md)] border border-border bg-background px-4 py-2.5 text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring"
       />
       <Button type="submit" size="md" disabled={loading}>
-        {loading ? "Signing up..." : "Stay in the loop"}
+        {loading ? loadingLabel : submitLabel}
       </Button>
       {error && (
         <p className="text-sm text-red-500 mt-1">{error}</p>

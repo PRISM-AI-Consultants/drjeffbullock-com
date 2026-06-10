@@ -21,8 +21,8 @@ export function BooksGrid({ books }: { books: Book[] }) {
     });
   }, [books, activeTag, search]);
 
-  const published = filtered.filter((b) => b.status === "published");
-  const inProgress = filtered.filter((b) => b.status === "in-progress");
+  const comingSoon = filtered.filter((b) => !b.purchaseUrl && b.expectedDate);
+  const available = filtered.filter((b) => !comingSoon.includes(b));
 
   return (
     <div>
@@ -31,23 +31,23 @@ export function BooksGrid({ books }: { books: Book[] }) {
         <SearchInput placeholder="Search books..." value={search} onChange={setSearch} className="sm:ml-auto sm:w-64" />
       </div>
 
-      {published.length > 0 && (
+      {available.length > 0 && (
         <div className="mb-12">
           <h2 className="text-2xl font-extrabold tracking-tight mb-6">Available Now</h2>
           <ContentGrid columns={4}>
-            {published.map((book) => (
+            {available.map((book) => (
               <BookCard key={book.slug} book={book} />
             ))}
           </ContentGrid>
         </div>
       )}
 
-      {inProgress.length > 0 && (
+      {comingSoon.length > 0 && (
         <div>
-          <h2 className="text-2xl font-extrabold tracking-tight mb-2">In Progress</h2>
-          <p className="text-sm text-muted-foreground mb-6">Manuscripts in active editing through The Forge pipeline.</p>
+          <h2 className="text-2xl font-extrabold tracking-tight mb-2">Coming Soon</h2>
+          <p className="text-sm text-muted-foreground mb-6">New releases on the way. Get notified the day each one lands.</p>
           <ContentGrid columns={4}>
-            {inProgress.map((book) => (
+            {comingSoon.map((book) => (
               <BookCard key={book.slug} book={book} />
             ))}
           </ContentGrid>

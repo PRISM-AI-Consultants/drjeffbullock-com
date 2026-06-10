@@ -28,6 +28,13 @@ function readFile(dir: string, filename: string) {
   return { data, content, slug };
 }
 
+// A book is public only if a visitor can do something with it:
+// buy it (purchaseUrl) or be told when it lands (expectedDate).
+// Drafts with neither are kept in the repo but never shown, linked, or indexed.
+export function isPublicBook(b: Book): boolean {
+  return Boolean(b.purchaseUrl || b.bookSiteUrl || b.expectedDate);
+}
+
 export function getBooks(): Book[] {
   return getFiles("books")
     .map((f) => {
@@ -38,6 +45,7 @@ export function getBooks(): Book[] {
         content,
       } as Book;
     })
+    .filter(isPublicBook)
     .sort((a, b) => (a.featured ? -1 : 1) - (b.featured ? -1 : 1));
 }
 
@@ -46,7 +54,8 @@ export function getBook(slug: string): Book | undefined {
   const file = files.find((f) => f.replace(/\.mdx?$/, "") === slug);
   if (!file) return undefined;
   const { data, content } = readFile("books", file);
-  return { ...data, slug, content } as Book;
+  const book = { ...data, slug, content } as Book;
+  return isPublicBook(book) ? book : undefined;
 }
 
 export function getResearch(): ResearchEntry[] {

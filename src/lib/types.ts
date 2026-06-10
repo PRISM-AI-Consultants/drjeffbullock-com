@@ -8,10 +8,12 @@ export interface Book {
   genres: string[];
   formats: ("paperback" | "ebook" | "audiobook")[];
   publishDate?: string;
+  expectedDate?: string;
   featured?: boolean;
   purchaseUrl?: string;
   downloadUrl?: string;
   audioUrl?: string;
+  bookSiteUrl?: string;
   companionAppUrl?: string;
   companionAppName?: string;
   researchUrl?: string;

@@ -8,7 +8,8 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { BookCover } from "@/components/ui/book-cover";
 import { MDXContent } from "@/components/content/mdx-content";
-import { ArrowLeft, ShoppingCart, Download, Headphones, Smartphone, BookOpen } from "lucide-react";
+import { NewsletterForm } from "@/components/ui/newsletter-form";
+import { ArrowLeft, ShoppingCart, Download, Headphones, Smartphone, BookOpen, Globe } from "lucide-react";
 
 export function generateStaticParams() {
   return getBooks().map((b) => ({ slug: b.slug }));
@@ -61,13 +62,8 @@ export default async function BookPage({ params }: { params: Promise<{ slug: str
                 {book.formats.map((f) => (
                   <Badge key={f} variant="outline">{f}</Badge>
                 ))}
-                {book.editScore && (
-                  <Badge className={`text-white border-transparent ${book.editScore >= 9 ? "bg-amber-600" : "bg-blue-600"}`}>
-                    Forge Score: {book.editScore}/10
-                  </Badge>
-                )}
-                {book.editStatus && (
-                  <Badge variant="outline">{book.editStatus}</Badge>
+                {!book.purchaseUrl && book.expectedDate && (
+                  <Badge className="bg-blue-600 text-white border-transparent">Coming Soon</Badge>
                 )}
               </div>
 
@@ -80,12 +76,19 @@ export default async function BookPage({ params }: { params: Promise<{ slug: str
                 </p>
               )}
 
-              {(book.purchaseUrl || book.downloadUrl || book.audioUrl || book.companionAppUrl || book.researchUrl) && (
+              {(book.purchaseUrl || book.bookSiteUrl || book.downloadUrl || book.audioUrl || book.companionAppUrl || book.researchUrl) && (
                 <div className="mt-6 flex flex-wrap gap-3">
                   {book.purchaseUrl && (
                     <a href={book.purchaseUrl} target="_blank" rel="noopener noreferrer">
                       <Button size="lg">
                         <ShoppingCart className="h-4 w-4 mr-2" /> Get This Book
+                      </Button>
+                    </a>
+                  )}
+                  {book.bookSiteUrl && (
+                    <a href={book.bookSiteUrl} target="_blank" rel="noopener noreferrer">
+                      <Button size="lg" variant={book.purchaseUrl ? "secondary" : "primary"}>
+                        <Globe className="h-4 w-4 mr-2" /> Visit the Book Site
                       </Button>
                     </a>
                   )}
@@ -117,6 +120,23 @@ export default async function BookPage({ params }: { params: Promise<{ slug: str
                       </Button>
                     </a>
                   )}
+                </div>
+              )}
+
+              {!book.purchaseUrl && book.expectedDate && (
+                <div className="mt-6 rounded-[var(--radius-lg)] border border-border bg-muted/30 p-5">
+                  <p className="text-sm font-semibold">Expected {book.expectedDate}</p>
+                  <p className="mt-1 text-sm text-muted-foreground">
+                    Drop your email and we&apos;ll tell you the day it&apos;s available.
+                  </p>
+                  <div className="mt-4">
+                    <NewsletterForm
+                      source={book.title}
+                      submitLabel="Notify Me"
+                      loadingLabel="Adding you..."
+                      successLabel="Done. You&apos;ll be the first to know."
+                    />
+                  </div>
                 </div>
               )}
             </div>
