@@ -39,7 +39,7 @@ export function SiteNav() {
             Dr. Jeff Bullock
           </Link>
 
-          <div className="hidden lg:flex items-center gap-1">
+          <div className="hidden xl:flex items-center gap-1">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
@@ -57,7 +57,16 @@ export function SiteNav() {
             ))}
           </div>
 
-          <div className="hidden lg:flex items-center gap-2">
+          <div className="hidden xl:flex items-center gap-2">
+            <a
+              href="https://dailyimpact.drjeffbullock.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ backgroundColor: "var(--primary)", color: "var(--primary-foreground)" }}
+              className="flex items-center gap-1.5 px-4 py-2 text-sm font-semibold rounded-[var(--radius-md)] hover:opacity-90 transition-opacity"
+            >
+              Give
+            </a>
             <a
               href="https://www.prismaiconsultants.com"
               target="_blank"
@@ -70,7 +79,7 @@ export function SiteNav() {
             <ThemeToggle />
           </div>
 
-          <div className="flex lg:hidden items-center gap-1">
+          <div className="flex xl:hidden items-center gap-1">
             <ThemeToggle />
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
@@ -88,7 +97,7 @@ export function SiteNav() {
       </Container>
 
       {mobileOpen && (
-        <div className="lg:hidden border-t border-border bg-background">
+        <div className="xl:hidden border-t border-border bg-background">
           <Container>
             <div className="py-4 space-y-1">
               {navLinks.map((link) => (
@@ -107,6 +116,16 @@ export function SiteNav() {
                   {link.label}
                 </Link>
               ))}
+              <a
+                href="https://dailyimpact.drjeffbullock.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setMobileOpen(false)}
+                style={{ backgroundColor: "var(--primary)", color: "var(--primary-foreground)" }}
+                className="flex items-center gap-1.5 px-3 py-2.5 text-sm font-semibold rounded-[var(--radius-md)]"
+              >
+                Give with Daily Impact
+              </a>
               <a
                 href="https://www.prismaiconsultants.com"
                 target="_blank"

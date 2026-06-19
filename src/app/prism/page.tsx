@@ -11,7 +11,7 @@ import { Compass, Wrench, Workflow, GraduationCap, ArrowUpRight, ArrowRight } fr
 export const metadata: Metadata = {
   title: "PRISM - Your AI Business Partner",
   description:
-    "The AI tools are powerful and costly. Knowing how to use them is the difference. PRISM is the strategy layer that teaches you how to use AI inside your real business.",
+    "The AI tools are powerful and costly. Knowing how to use them is the difference. PRISM teaches you to operate AI inside your real business, then builds and runs the systems with you.",
   openGraph: {
     title: "PRISM - Your AI Business Partner",
     description:
@@ -82,7 +82,7 @@ export default function PrismPage() {
               Your AI business partner
             </h2>
             <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
-              PRISM shows you how to use AI inside your actual business, with the right tools, the right workflows, and weekly strategy. You walk in unsure where to start. You walk out running.
+              PRISM teaches you to operate AI inside your actual business, then builds and runs the systems with you. The right tools, the right workflows, weekly strategy, and working software that ships in days. You walk in unsure where to start. You walk out running.
             </p>
           </div>
         </Container>

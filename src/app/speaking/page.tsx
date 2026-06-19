@@ -33,7 +33,7 @@ const topics = [
   },
   {
     title: "Building with AI: From Idea to Shipped Product",
-    description: "How one person built 54 AI modules, written 17 books, shipped 16 games, and produced a 19-track album, all with AI as a co-pilot.",
+    description: "How one person built a 34-agent AI system, written 17 books, shipped 15 games, and produced a 19-track album, all with AI as a co-pilot.",
     audience: "Creators, developers, solo founders",
   },
 ];
@@ -135,10 +135,10 @@ export default function SpeakingPage() {
                   Dr. Jeff Bullock is the Founder and CEO of PRISM AI Consultants and CEO and Co-Founder of VersAssist. He earned his Doctor of Pharmacy from Xavier University of Louisiana and spent 18 years at CVS Health - a Fortune 10 organization - rising from pharmacy clerk to district leader.
                 </p>
                 <p>
-                  In 2021, he left corporate healthcare to become a full-time entrepreneur. When ChatGPT launched, he immediately saw the potential. He founded PRISM AI Consultants in June 2023 and has since personally coached hundreds of business leaders on AI implementation.
+                  In 2021, he left corporate healthcare to become a full-time entrepreneur. When ChatGPT launched, he immediately saw the potential. He founded PRISM AI Consultants in June 2023 and has since personally coached business leaders across more than 750 coaching sessions on AI implementation.
                 </p>
                 <p>
-                  He is the author of 17 books, creator of 16 playable games, producer of a 19-track concept album, and builder of a 54-module autonomous AI system with 33 agents. He does not just talk about what AI can do. He shows what he has built with it.
+                  He is the author of 17 books, creator of 15 playable games, producer of a 19-track concept album, and builder of an autonomous AI system with 34 agents. He does not just talk about what AI can do. He shows what he has built with it.
                 </p>
               </div>
             </div>
@@ -162,7 +162,7 @@ export default function SpeakingPage() {
                   <li>CEO and Co-Founder of VersAssist</li>
                   <li>Official IFEL partner for AI education programming</li>
                   <li>Author of 17 books (4 published, 13 in progress)</li>
-                  <li>Builder of 54-module AI agent system with 33 agents</li>
+                  <li>Builder of AI agent system with 34 autonomous agents</li>
                 </ul>
                 <a
                   href="https://speaker.prismaiconsultants.com/Dr-Jeff-Bullock-Speaker-Kit-2026.pdf"

@@ -67,7 +67,7 @@ const websiteJsonLd = {
   name: "Dr. Jeff Bullock",
   url: "https://drjeffbullock.com",
   description:
-    "The IP library and creator hub of Dr. Jeff Bullock. 17 books, 16 games, 4 research frameworks, and a 54-module AI agent system.",
+    "The IP library and creator hub of Dr. Jeff Bullock. 17 books, 15 games, 4 research frameworks, and an AI agent system with 34 autonomous agents.",
   author: {
     "@type": "Person",
     name: "Dr. Jeff Bullock",

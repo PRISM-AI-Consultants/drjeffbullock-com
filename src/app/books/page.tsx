@@ -7,12 +7,15 @@ import { BooksGrid } from "./books-grid";
 
 export const metadata: Metadata = {
   title: "Books",
-  description: "Books by Dr. Jeff Bullock - 4 published, 13 in progress. Fiction, non-fiction, and short stories spanning AI, learning science, historical fiction, horror, and more.",
+  description: "Books by Dr. Jeff Bullock - 9 published, 8 in progress. Fiction, non-fiction, and short stories spanning AI, learning science, historical fiction, horror, and more.",
   openGraph: { images: ["/images/og-books.jpg"] },
 };
 
 export default function BooksPage() {
   const books = getBooks();
+  // Derive the published / in-progress split so the header never drifts from the actual catalog.
+  const published = books.filter((b) => b.purchaseUrl || b.bookSiteUrl).length;
+  const inProgress = books.length - published;
 
   const itemListJsonLd = {
     "@context": "https://schema.org",
@@ -37,7 +40,7 @@ export default function BooksPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }}
       />
-      <PageHeader title="Books" description="4 published, 13 in progress. Fiction, non-fiction, and short stories." />
+      <PageHeader title="Books" description={`${published} published, ${inProgress} in progress. Fiction, non-fiction, and short stories.`} />
       <Section>
         <Container size="xl">
           <BooksGrid books={books} />

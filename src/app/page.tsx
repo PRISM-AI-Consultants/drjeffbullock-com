@@ -9,19 +9,10 @@ import { NewsletterForm } from "@/components/ui/newsletter-form";
 import { CollectionCard } from "@/components/content/collection-card";
 import { BlogCard } from "@/components/content/blog-card";
 import { BookCover } from "@/components/ui/book-cover";
-import { getBooks, getBlogPosts, getResearch } from "@/lib/content";
+import { getBooks, getBlogPosts, getResearch, getGames, getProjects } from "@/lib/content";
 import { collections } from "@/data/collections";
+import { mediaItems } from "@/data/media";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
-
-const ipCategories = [
-  { label: "Books", count: 17, href: "/books" },
-  { label: "Research", count: 4, href: "/research" },
-  { label: "Media", count: "10+", href: "/media" },
-  { label: "Games", count: 16, href: "/games" },
-  { label: "Music", count: "1 Album", href: "/media" },
-  { label: "Projects", count: "10+", href: "/projects" },
-  { label: "Blog", count: "8+", href: "/blog" },
-];
 
 const dreams = [
   {
@@ -65,18 +56,18 @@ const playbook = [
 
 const proof = [
   { text: "The Black Advantage, book and movement", serves: "Dream 2" },
-  { text: "Generosity Platform, in build", serves: "Dream 1" },
+  { text: "Daily Impact, the giving app, live", serves: "Dream 1" },
   { text: "PRISM AI Consultants", serves: "The engine" },
   { text: "VersAssist", serves: "The engine" },
-  { text: "Pharmageddon, Escape Velocity, and 16 games", serves: "Behavior change" },
+  { text: "Pharmageddon, Escape Velocity, and 15 games", serves: "Behavior change" },
   { text: "Mansa Musa and 17 books", serves: "The culture" },
   { text: "The research, from the Abundance Thesis to human performance", serves: "Best self" },
-  { text: "Agent World, 33 live AI agents", serves: "How one person runs it all" },
+  { text: "Agent World, 34 live AI agents", serves: "How one person runs it all" },
 ];
 
 const flagships = [
   { name: "Mansa Musa", sub: "19-track concept album", href: "/media", label: "Album" },
-  { name: "Agent World", sub: "33 AI agents, live", href: "https://agents.prismaiconsultants.com", label: "Flagship", external: true },
+  { name: "Agent World", sub: "34 AI agents, live", href: "https://agents.prismaiconsultants.com", label: "Flagship", external: true },
   { name: "Build Universe", sub: "79 builds, full portfolio", href: "https://builds.drjeffbullock.com", label: "Flagship", external: true },
 ];
 
@@ -103,6 +94,18 @@ export default function HomePage() {
   const books = getBooks();
   const posts = getBlogPosts();
   const research = getResearch();
+  const games = getGames();
+  const projects = getProjects();
+  // Counts derive from real content so the roll-up can never drift from the destination pages.
+  const ipCategories = [
+    { label: "Books", count: books.length, href: "/books" },
+    { label: "Research", count: research.length, href: "/research" },
+    { label: "Media", count: mediaItems.length, href: "/media" },
+    { label: "Games", count: games.length, href: "/games" },
+    { label: "Music", count: "1 Album", href: "/media" },
+    { label: "Projects", count: projects.length, href: "/projects" },
+    { label: "Blog", count: posts.length, href: "/blog" },
+  ];
   const featuredBook = books.find((b) => b.featured) || books[0];
   const featuredResearch = research.find((r) => r.featured) || research[0];
   const latestPosts = posts.slice(0, 3);
@@ -206,6 +209,45 @@ export default function HomePage() {
           <p className="mt-8 font-serif italic text-lg text-muted-foreground max-w-2xl">
             The sequence: money first, then programs, then giving. You can&apos;t give what you don&apos;t have.
           </p>
+        </Container>
+      </Section>
+
+      {/* ============ DAILY IMPACT (Dream 1, live) ============ */}
+      <Section id="give" className="border-t border-border">
+        <Container size="xl">
+          <SectionLabel no="→">Dream 1, live now</SectionLabel>
+          <div className="grid grid-cols-1 md:grid-cols-[1.3fr_1fr] gap-10 md:gap-16 items-center">
+            <div>
+              <h2 className="font-display font-extrabold tracking-[-0.03em] text-[clamp(2rem,5vw,3.5rem)] leading-[0.97] max-w-2xl">
+                The giving dream is already running. It is called Daily Impact.
+              </h2>
+              <p className="mt-6 font-serif text-[1.1rem] leading-relaxed text-foreground/75 max-w-xl">
+                One tap sends a real, tax-deductible dollar to a vetted charity through Every.org. It is free, the app never holds your money, and it makes giving as easy and contagious as the scroll. Dream 1, built and live, not a someday.
+              </p>
+              <div className="mt-8 flex flex-wrap gap-3">
+                <a
+                  href="https://give.drjeffbullock.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ backgroundColor: "var(--primary)", color: "var(--primary-foreground)" }}
+                  className="inline-flex items-center px-6 py-3 text-base font-semibold rounded-[var(--radius-md)] hover:opacity-90 transition-opacity"
+                >
+                  Give your first dollar
+                </a>
+                <a
+                  href="https://dailyimpact.drjeffbullock.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center px-6 py-3 text-base font-semibold rounded-[var(--radius-md)] border border-border text-foreground hover:bg-muted transition-colors"
+                >
+                  See how it works
+                </a>
+              </div>
+            </div>
+            <blockquote className="font-serif italic text-xl md:text-2xl leading-relaxed text-foreground/70 border-l-2 border-accent pl-6">
+              Make giving as powerful as social media. Then point that machine at generosity.
+            </blockquote>
+          </div>
         </Container>
       </Section>
 
@@ -317,6 +359,19 @@ export default function HomePage() {
                 </span>
               </Link>
             ))}
+          </div>
+          <div className="mt-10 flex flex-col items-start gap-3 sm:flex-row sm:items-center">
+            <a
+              href="https://prismaiconsultants.com/activation"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-[var(--radius-md)] bg-accent px-6 py-3 text-base font-semibold text-accent-foreground transition-opacity hover:opacity-90"
+            >
+              Get AI implemented in your business <ArrowRight className="h-4 w-4" />
+            </a>
+            <span className="font-serif text-sm text-muted-foreground">
+              Start with a PRISM Activation. $1,500.
+            </span>
           </div>
         </Container>
       </Section>
