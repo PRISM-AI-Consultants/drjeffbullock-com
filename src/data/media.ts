@@ -11,6 +11,16 @@ export const mediaItems: MediaItem[] = [
     spotifyUrl: "https://open.spotify.com/album/1iOSi2A5g4LUjSkvniwl4u",
   },
   {
+    title: "The Black Advantage",
+    type: "music-album",
+    description:
+      "A 20-track concept album scoring the book of the same name. From 'Greenwood (1921)' and 'Silver Tsunami' to 'Dollar Router' and 'The Flywheel,' the album turns the economic thesis into anthems. Companion to the book The Black Advantage.",
+    date: "2026-06-18",
+    duration: "20 tracks",
+    externalUrl: "https://theblackadvantage.drjeffbullock.com",
+    thumbnailUrl: "/images/books/the-black-advantage-cover.jpg",
+  },
+  {
     title: "AI Hustle with Dr. Jeff",
     type: "podcast",
     description:

@@ -17,9 +17,10 @@ export default function MediaPage() {
     <>
       <PageHeader title="Media" description="Talks, interviews, podcasts, music, and video." />
 
-      {/* Featured: Mansa Musa Album with Spotify Embed */}
+      {/* Featured Albums */}
       <Section>
         <Container size="xl">
+          <h2 className="text-2xl font-extrabold tracking-tight mb-8">Featured Albums</h2>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
             <div>
               <Badge variant="accent" className="mb-4">Featured Album</Badge>
@@ -54,6 +55,48 @@ export default function MediaPage() {
                 allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
                 loading="lazy"
               />
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+            <div className="rounded-[var(--radius-lg)] overflow-hidden order-2 lg:order-1 max-w-sm">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/images/books/the-black-advantage-cover.jpg"
+                alt="The Black Advantage album cover"
+                className="w-full h-auto rounded-[var(--radius-lg)]"
+                loading="lazy"
+              />
+            </div>
+            <div className="order-1 lg:order-2">
+              <Badge variant="accent" className="mb-4">Featured Album</Badge>
+              <h2 className="text-3xl font-extrabold tracking-tight mb-4">The Black Advantage</h2>
+              <p className="text-muted-foreground mb-4">
+                A 20-track concept album scoring the book. From &ldquo;Greenwood (1921)&rdquo; and &ldquo;Silver Tsunami&rdquo; to &ldquo;Dollar Router&rdquo; and &ldquo;The Flywheel,&rdquo; the album turns the economic thesis into anthems.
+              </p>
+              <div className="flex items-center gap-3 text-sm text-muted-foreground">
+                <Music className="h-4 w-4" />
+                <span>20 tracks</span>
+                <span className="text-border">|</span>
+                <span>Companion to the book</span>
+              </div>
+              <div className="flex flex-wrap items-center gap-3 mt-6">
+                <a
+                  href="https://theblackadvantage.drjeffbullock.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 bg-foreground text-background font-semibold rounded-full text-sm hover:opacity-90 transition-opacity"
+                >
+                  <Music className="h-4 w-4" />
+                  Listen to the Album
+                </a>
+                <a
+                  href="/books/the-black-advantage"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 border border-border font-semibold rounded-full text-sm hover:bg-muted transition-colors"
+                >
+                  Read the Book
+                </a>
+              </div>
             </div>
           </div>
         </Container>
