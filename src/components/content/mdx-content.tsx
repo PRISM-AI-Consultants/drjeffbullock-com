@@ -6,7 +6,7 @@ interface MDXContentProps {
 
 export function MDXContent({ source }: MDXContentProps) {
   return (
-    <div className="prose prose-stone max-w-none prose-headings:font-heading prose-headings:tracking-tight prose-a:text-accent prose-a:no-underline hover:prose-a:underline prose-img:rounded-[var(--radius-lg)]">
+    <div className="article-body">
       <MDXRemote source={source} />
     </div>
   );

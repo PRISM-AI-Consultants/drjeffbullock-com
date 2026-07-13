@@ -19,9 +19,18 @@ export default function GamesPage() {
       <PageHeader title="Games" description="Playable games - built, shipped, and ready to play." />
       <Section>
         <Container size="xl">
-          <p className="text-sm text-muted-foreground mb-8 max-w-2xl">
+          <p className="text-sm text-muted-foreground mb-6 max-w-2xl">
             Most games below are Progressive Web Apps (PWAs) - browser-based games you can install on your phone or desktop for offline play. No app store needed. Just open the link, tap &quot;Add to Home Screen,&quot; and play anywhere.
           </p>
+          <a
+            href="https://prismstudios.app/gallery/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-full border border-border px-5 py-2.5 mb-10 text-sm font-semibold transition-colors hover:border-foreground hover:bg-foreground hover:text-background"
+          >
+            View the Game Art Gallery
+            <span aria-hidden>→</span>
+          </a>
           <ContentGrid columns={2}>
             {games.map((game) => (
               <GameCard key={game.slug} game={game} />

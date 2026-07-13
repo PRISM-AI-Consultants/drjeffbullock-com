@@ -55,20 +55,29 @@ const playbook = [
 ];
 
 const proof = [
-  { text: "The Black Advantage, book and movement", serves: "Dream 2" },
-  { text: "Daily Impact, the giving app, live", serves: "Dream 1" },
-  { text: "PRISM AI Consultants", serves: "The engine" },
-  { text: "VersAssist", serves: "The engine" },
-  { text: "Pharmageddon, Escape Velocity, and 15 games", serves: "Behavior change" },
-  { text: "Mansa Musa and 17 books", serves: "The culture" },
-  { text: "The research, from the Abundance Thesis to human performance", serves: "Best self" },
-  { text: "Agent World, 34 live AI agents", serves: "How one person runs it all" },
+  { text: "The Black Advantage, book and movement", serves: "Dream 2", href: "/books/the-black-advantage" },
+  { text: "Daily Impact, the giving app, live", serves: "Dream 1", href: "https://dailyimpact.drjeffbullock.com" },
+  { text: "PRISM AI Consultants", serves: "The engine", href: "https://www.prismaiconsultants.com" },
+  { text: "VersAssist", serves: "The engine", href: "/versassist" },
+  { text: "Pharmageddon, Escape Velocity, and 15 games", serves: "Behavior change", href: "/games" },
+  { text: "Mansa Musa and 17 books", serves: "The culture", href: "/books" },
+  { text: "The research, from the Abundance Thesis to human performance", serves: "Best self", href: "/research" },
+  { text: "Agent World, 34 live AI agents", serves: "How one person runs it all", href: "https://agents.prismaiconsultants.com" },
 ];
 
 const flagships = [
-  { name: "Mansa Musa", sub: "19-track concept album", href: "/media", label: "Album" },
-  { name: "Agent World", sub: "34 AI agents, live", href: "https://agents.prismaiconsultants.com", label: "Flagship", external: true },
-  { name: "Build Universe", sub: "79 builds, full portfolio", href: "https://builds.drjeffbullock.com", label: "Flagship", external: true },
+  { name: "Mansa Musa", sub: "19-track concept album", href: "/media", label: "Album", cover: "/images/projects/mansa-musa-project-cover.jpg" },
+  { name: "Agent World", sub: "34 AI agents, live", href: "https://agents.prismaiconsultants.com", label: "Flagship", external: true, cover: "/images/projects/agent-world-cover.jpg" },
+  { name: "Build Universe", sub: "79 builds, full portfolio", href: "https://builds.drjeffbullock.com", label: "Flagship", external: true, cover: "/images/projects/build-world-cover.jpg" },
+];
+
+// The giving canon: one idea, told across books, a novel, and an album. Statuses verified against content frontmatter.
+const givingCanon = [
+  { title: "The Black Advantage", kind: "The framework", sub: "Architected giving", cover: "/images/books/the-black-advantage-cover.jpg", href: "/books/the-black-advantage", status: "Published" },
+  { title: "Hacked for Good", kind: "The habit", sub: "Giving, made personal", cover: "/images/books/hacked-for-good-cover.jpg", href: "/books/hacked-for-good", status: "Summer 2026" },
+  { title: "MANSA", kind: "The legend", sub: "A novel", cover: "/images/books/mansa-cover.jpg", href: "/books/mansa", status: "Aug 2026" },
+  { title: "What You Don't Give Away", kind: "The future", sub: "A novel", cover: "/images/books/what-you-dont-give-away-cover.jpg", href: "/books/what-you-dont-give-away", status: "Aug 2026" },
+  { title: "Mansa Musa: More Than Gold", kind: "The album", sub: "19 tracks, live", cover: "/images/projects/mansa-musa-project-cover.jpg", href: "/media", status: "Live" },
 ];
 
 const testimonials = [
@@ -207,7 +216,7 @@ export default function HomePage() {
             ))}
           </div>
           <p className="mt-8 font-serif italic text-lg text-muted-foreground max-w-2xl">
-            The sequence: money first, then programs, then giving. You can&apos;t give what you don&apos;t have.
+            The order is money first, then programs, then giving. You cannot give what you do not have. So we build the wealth to open the hand. Giving is where all of it was always headed.
           </p>
         </Container>
       </Section>
@@ -247,6 +256,86 @@ export default function HomePage() {
             <blockquote className="font-serif italic text-xl md:text-2xl leading-relaxed text-foreground/70 border-l-2 border-accent pl-6">
               Make giving as powerful as social media. Then point that machine at generosity.
             </blockquote>
+          </div>
+        </Container>
+      </Section>
+
+      {/* ============ THE ORIGIN: MANSA MUSA (Dream 1 anchor) ============ */}
+      <Section className="border-t border-border bg-foreground text-background">
+        <Container size="xl">
+          <div className="flex items-center gap-3 mb-6">
+            <span className="font-display text-sm font-semibold text-accent">◆</span>
+            <span className="h-px w-8 bg-accent" />
+            <span className="eyebrow text-background/50">Dream 1, the origin</span>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-[1fr_1.1fr] gap-10 md:gap-16 items-center">
+            <figure className="relative">
+              <span aria-hidden className="absolute -left-3 -top-3 h-16 w-16 border-l-2 border-t-2 border-accent" />
+              <div className="relative aspect-[4/3] overflow-hidden bg-background/10">
+                <Image
+                  src="/images/blog/what-mansa-musa-taught-me-header.jpg"
+                  alt="Mansa Musa"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 45vw"
+                />
+              </div>
+            </figure>
+            <div>
+              <h2 className="font-display font-extrabold tracking-[-0.03em] text-[clamp(2rem,5vw,3.5rem)] leading-[0.97]">
+                The most powerful thing a man ever did was give his money away.
+              </h2>
+              <p className="mt-6 font-serif text-[1.1rem] leading-relaxed text-background/75">
+                In 1324, Mansa Musa, the richest human who ever lived, crossed a continent on his pilgrimage to Mecca and gave gold away at every stop. He gave so freely that he moved markets across three countries. Seven hundred years later we still tell the story. That is what giving looks like when it becomes a force of nature. Proof it can be done.
+              </p>
+              <p className="mt-5 font-serif text-[1.1rem] leading-relaxed text-background/75">
+                The attention machine was engineered to make us consume. I want to hack the same loops and aim them at generosity, so giving becomes as common and contagious as the scroll. Same engine, pointed at good.
+              </p>
+              <p className="mt-7 font-display text-xl md:text-2xl font-bold text-accent">
+                Giving, hacked for good.
+              </p>
+            </div>
+          </div>
+        </Container>
+      </Section>
+
+      {/* ============ THE GIVING CANON (Dream 1 shelf) ============ */}
+      <Section className="border-t border-border">
+        <Container size="xl">
+          <SectionLabel no="◆">One story, told five ways</SectionLabel>
+          <h2 className="font-display font-extrabold tracking-[-0.03em] text-[clamp(2rem,5vw,3.5rem)] leading-[0.97] max-w-2xl">
+            The giving canon.
+          </h2>
+          <p className="mt-6 font-serif text-lg leading-relaxed text-foreground/70 max-w-2xl">
+            One idea runs through all of it. Build the wealth, open the hand, and give with architecture so the good actually lasts. From the framework, to the legend, to the app in your pocket.
+          </p>
+          <div className="mt-12 grid grid-cols-2 md:grid-cols-5 gap-4">
+            {givingCanon.map((c) => {
+              const inner = (
+                <>
+                  <div className="aspect-[3/4] relative overflow-hidden bg-muted">
+                    <Image
+                      src={c.cover}
+                      alt={c.title}
+                      fill
+                      className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                      sizes="(max-width: 640px) 50vw, 20vw"
+                    />
+                    <span className="absolute top-2 left-2 rounded-sm bg-background/90 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-foreground">
+                      {c.status}
+                    </span>
+                  </div>
+                  <p className="mt-2 eyebrow text-accent">{c.kind}</p>
+                  <p className="text-sm font-semibold leading-tight group-hover:text-accent transition-colors">{c.title}</p>
+                  <p className="text-xs text-muted-foreground mt-0.5">{c.sub}</p>
+                </>
+              );
+              return c.href.startsWith("http") ? (
+                <a key={c.title} href={c.href} target="_blank" rel="noopener noreferrer" className="group">{inner}</a>
+              ) : (
+                <Link key={c.title} href={c.href} className="group">{inner}</Link>
+              );
+            })}
           </div>
         </Container>
       </Section>
@@ -327,7 +416,15 @@ export default function HomePage() {
           <ul className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-x-12">
             {proof.map((p, i) => (
               <li key={i} className="flex items-baseline justify-between gap-4 py-4 border-b border-border">
-                <span className="text-[15px] font-medium">{p.text}</span>
+                {p.href ? (
+                  p.href.startsWith("http") ? (
+                    <a href={p.href} target="_blank" rel="noopener noreferrer" className="text-[15px] font-medium underline-offset-4 hover:underline hover:text-accent transition-colors">{p.text}</a>
+                  ) : (
+                    <Link href={p.href} className="text-[15px] font-medium underline-offset-4 hover:underline hover:text-accent transition-colors">{p.text}</Link>
+                  )
+                ) : (
+                  <span className="text-[15px] font-medium">{p.text}</span>
+                )}
                 <span className="eyebrow text-accent whitespace-nowrap">{p.serves}</span>
               </li>
             ))}
@@ -360,18 +457,33 @@ export default function HomePage() {
               </Link>
             ))}
           </div>
-          <div className="mt-10 flex flex-col items-start gap-3 sm:flex-row sm:items-center">
-            <a
-              href="https://prismaiconsultants.com/activation"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-[var(--radius-md)] bg-accent px-6 py-3 text-base font-semibold text-accent-foreground transition-opacity hover:opacity-90"
-            >
-              Get AI implemented in your business <ArrowRight className="h-4 w-4" />
-            </a>
-            <span className="font-serif text-sm text-muted-foreground">
-              Start with a PRISM Activation. $1,500.
-            </span>
+          <div className="mt-10 flex flex-col gap-4">
+            <div className="flex flex-col items-start gap-3 sm:flex-row sm:items-center">
+              <a
+                href="https://prismaiconsultants.com/activation"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-[var(--radius-md)] bg-accent px-6 py-3 text-base font-semibold text-accent-foreground transition-opacity hover:opacity-90"
+              >
+                Get AI implemented in your business <ArrowRight className="h-4 w-4" />
+              </a>
+              <span className="font-serif text-sm text-muted-foreground">
+                Start with a PRISM Activation. $1,500.
+              </span>
+            </div>
+            <div className="flex flex-col items-start gap-3 sm:flex-row sm:items-center">
+              <a
+                href="https://calendly.com/versassist/30min"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-[var(--radius-md)] border border-border px-6 py-3 text-base font-semibold text-foreground transition-colors hover:border-accent hover:text-accent"
+              >
+                Build with a VersAssist team <ArrowRight className="h-4 w-4" />
+              </a>
+              <span className="font-serif text-sm text-muted-foreground">
+                Start with a VersAssist Starter Pack. $750.
+              </span>
+            </div>
           </div>
         </Container>
       </Section>
@@ -400,13 +512,17 @@ export default function HomePage() {
             {flagships.map((f) => {
               const inner = (
                 <>
-                  <div className="aspect-[3/4] relative overflow-hidden bg-foreground text-background flex flex-col justify-between p-4">
-                    <span className="h-0.5 w-8 bg-accent" />
-                    <div>
-                      <p className="font-display text-lg font-bold leading-tight">{f.name}</p>
-                      <p className="text-xs text-background/55 mt-1">{f.sub}</p>
+                  <div className="aspect-[3/4] relative overflow-hidden bg-black">
+                    <Image src={f.cover} alt={f.name} fill className="object-cover transition-transform duration-500 group-hover:scale-[1.03]" sizes="(max-width: 640px) 50vw, 20vw" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/15 to-black/10" />
+                    <div className="absolute inset-0 flex flex-col justify-between p-4">
+                      <span className="h-0.5 w-8 bg-accent" />
+                      <div>
+                        <p className="font-display text-lg font-bold leading-tight text-white">{f.name}</p>
+                        <p className="text-xs text-white/70 mt-1">{f.sub}</p>
+                      </div>
                     </div>
-                    <ArrowUpRight className="h-5 w-5 text-background/40 self-end group-hover:text-accent transition-colors" />
+                    <ArrowUpRight className="absolute top-4 right-4 h-5 w-5 text-white/60 group-hover:text-accent transition-colors" />
                   </div>
                   <p className="mt-2 eyebrow text-accent">{f.label}</p>
                   <p className="text-sm font-semibold group-hover:text-accent transition-colors">Explore</p>
@@ -530,6 +646,40 @@ export default function HomePage() {
               </figure>
             ))}
           </div>
+        </Container>
+      </Section>
+
+      {/* ============ WHERE TO SEE ME ============ */}
+      <Section className="border-t border-border">
+        <Container size="xl">
+          <SectionLabel no="10">Where to see me</SectionLabel>
+          <h2 className="font-display font-extrabold tracking-[-0.03em] text-[clamp(2rem,5vw,3.5rem)] leading-[0.97] max-w-2xl">
+            Come find me in the room.
+          </h2>
+          <p className="mt-6 font-serif text-lg text-foreground/70 max-w-2xl">
+            Almost everything I build starts with a conversation, face to face. Here is where I will be. You are welcome as my guest.
+          </p>
+          <ul className="mt-10 divide-y divide-border border-y border-border">
+            {[
+              { when: "Jul 25–26", title: "The Weekend: User-to-Operator Live Install", tag: "Workshop", where: "Lehigh Valley, PA", note: "Two days installing AI directly into your business. Limited seats." },
+              { when: "Wed · Jul 29", title: "BNI Feature Presentation", tag: "BNI", where: "Lehigh Valley, PA", note: "My chapter spotlight. Visitors welcome, come see how referral works." },
+              { when: "Wednesdays", title: "BNI Chapter Meeting", tag: "BNI", where: "Lehigh Valley, PA", note: "Weekly. Want to visit? Reach out and come as my guest." },
+              { when: "Wednesdays", title: "1 Million Cups", tag: "Networking", where: "Lehigh Valley, PA", note: "Free and open. Founders, coffee, and real conversation." },
+              { when: "Ongoing", title: "AABLC Events", tag: "Community", where: "Lehigh Valley, PA", note: "African American Business Leaders Council. Events throughout the season." },
+            ].map((e, i) => (
+              <li key={i} className="grid grid-cols-[5.5rem_1fr] sm:grid-cols-[8rem_1fr] gap-x-5 sm:gap-x-8 py-6 items-baseline">
+                <div className="font-display font-bold text-accent text-[15px] sm:text-lg leading-tight">{e.when}</div>
+                <div>
+                  <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+                    <h3 className="font-display font-bold text-lg sm:text-xl tracking-tight">{e.title}</h3>
+                    <span className="eyebrow text-accent">{e.tag}</span>
+                  </div>
+                  <p className="mt-1 text-sm text-muted-foreground">{e.where}</p>
+                  <p className="mt-2 font-serif text-foreground/70">{e.note}</p>
+                </div>
+              </li>
+            ))}
+          </ul>
         </Container>
       </Section>
 

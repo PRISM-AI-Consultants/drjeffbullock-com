@@ -142,6 +142,22 @@ export default async function BookPage({ params }: { params: Promise<{ slug: str
             </div>
           </div>
 
+          {book.videoUrl && (
+            <div className="mt-8">
+              <div className="mx-auto max-w-3xl overflow-hidden rounded-[var(--radius-lg)] border border-border shadow-lg">
+                <div className="relative aspect-video">
+                  <iframe
+                    className="absolute inset-0 h-full w-full"
+                    src={"https://www.youtube.com/embed/" + (book.videoUrl.split("youtu.be/")[1] || book.videoUrl.split("v=")[1] || "").split(/[?&]/)[0]}
+                    title={`${book.title} video`}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                  />
+                </div>
+              </div>
+            </div>
+          )}
+
           <div className="mt-8 pt-8 border-t border-border">
             <MDXContent source={book.content} />
           </div>

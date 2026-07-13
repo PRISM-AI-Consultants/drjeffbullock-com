@@ -41,7 +41,7 @@ const socialLinks = [
   { label: "YouTube", href: "https://www.youtube.com/@drjeffbullock" },
   { label: "PRISM AI", href: "https://www.prismaiconsultants.com" },
   { label: "VersAssist", href: "https://www.versassists.com" },
-  { label: "Skool Community", href: "https://www.skool.com/prism-ai-university" },
+  { label: "Skool Community", href: "https://www.skool.com/prism-ai-consultants" },
   { label: "Agent World", href: "https://agents.prismaiconsultants.com" },
 ];
 

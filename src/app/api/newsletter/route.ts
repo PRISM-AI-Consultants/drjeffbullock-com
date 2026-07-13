@@ -1,6 +1,16 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
 
+const CORS = {
+  "Access-Control-Allow-Origin": "*",
+  "Access-Control-Allow-Methods": "POST, OPTIONS",
+  "Access-Control-Allow-Headers": "Content-Type",
+};
+
+export function OPTIONS() {
+  return new NextResponse(null, { status: 204, headers: CORS });
+}
+
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
@@ -9,7 +19,7 @@ export async function POST(req: NextRequest) {
     if (!email || typeof email !== "string") {
       return NextResponse.json(
         { error: "A valid email address is required." },
-        { status: 400 }
+        { status: 400, headers: CORS }
       );
     }
 
@@ -18,7 +28,7 @@ export async function POST(req: NextRequest) {
       console.error("RESEND_API_KEY is not configured");
       return NextResponse.json(
         { error: "Newsletter signup is temporarily unavailable." },
-        { status: 500 }
+        { status: 500, headers: CORS }
       );
     }
 
@@ -39,13 +49,13 @@ export async function POST(req: NextRequest) {
 
     return NextResponse.json(
       { success: true, message: "Successfully subscribed to the newsletter." },
-      { status: 200 }
+      { status: 200, headers: CORS }
     );
   } catch (error) {
     console.error("Newsletter signup error:", error);
     return NextResponse.json(
       { error: "An unexpected error occurred. Please try again." },
-      { status: 500 }
+      { status: 500, headers: CORS }
     );
   }
 }
