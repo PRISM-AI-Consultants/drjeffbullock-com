@@ -12,6 +12,7 @@ import { BookCover } from "@/components/ui/book-cover";
 import { getBooks, getBlogPosts, getResearch, getGames, getProjects } from "@/lib/content";
 import { collections } from "@/data/collections";
 import { mediaItems } from "@/data/media";
+import { getEvents } from "@/lib/events";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 
 const dreams = [
@@ -99,7 +100,8 @@ function SectionLabel({ no, children }: { no: string; children: React.ReactNode 
   );
 }
 
-export default function HomePage() {
+export default async function HomePage() {
+  const events = await getEvents();
   const books = getBooks();
   const posts = getBlogPosts();
   const research = getResearch();
@@ -660,13 +662,7 @@ export default function HomePage() {
             Almost everything I build starts with a conversation, face to face. Here is where I will be. You are welcome as my guest.
           </p>
           <ul className="mt-10 divide-y divide-border border-y border-border">
-            {[
-              { when: "Jul 25–26", title: "The Weekend: User-to-Operator Live Install", tag: "Workshop", where: "Lehigh Valley, PA", note: "Two days installing AI directly into your business. Limited seats." },
-              { when: "Wed · Jul 29", title: "BNI Feature Presentation", tag: "BNI", where: "Lehigh Valley, PA", note: "My chapter spotlight. Visitors welcome, come see how referral works." },
-              { when: "Wednesdays", title: "BNI Chapter Meeting", tag: "BNI", where: "Lehigh Valley, PA", note: "Weekly. Want to visit? Reach out and come as my guest." },
-              { when: "Wednesdays", title: "1 Million Cups", tag: "Networking", where: "Lehigh Valley, PA", note: "Free and open. Founders, coffee, and real conversation." },
-              { when: "Ongoing", title: "AABLC Events", tag: "Community", where: "Lehigh Valley, PA", note: "African American Business Leaders Council. Events throughout the season." },
-            ].map((e, i) => (
+            {events.map((e, i) => (
               <li key={i} className="grid grid-cols-[5.5rem_1fr] sm:grid-cols-[8rem_1fr] gap-x-5 sm:gap-x-8 py-6 items-baseline">
                 <div className="font-display font-bold text-accent text-[15px] sm:text-lg leading-tight">{e.when}</div>
                 <div>
