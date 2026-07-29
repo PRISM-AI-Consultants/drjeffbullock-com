@@ -57,6 +57,7 @@ const playbook = [
 
 const proof = [
   { text: "The Black Advantage, book and movement", serves: "Dream 2", href: "/books/the-black-advantage" },
+  { text: "AABLC Chair of Engagement, and the Black-Owned Business Directory", serves: "Dream 2", href: "https://aablc.prismaiconsultants.com" },
   { text: "Daily Impact, the giving app, live", serves: "Dream 1", href: "https://dailyimpact.drjeffbullock.com" },
   { text: "PRISM AI Consultants", serves: "The engine", href: "https://www.prismaiconsultants.com" },
   { text: "VersAssist", serves: "The engine", href: "/versassist" },

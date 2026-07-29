@@ -160,6 +160,7 @@ export default function SpeakingPage() {
                   <li>Hundreds of business leaders coached on AI implementation</li>
                   <li>CEO of PRISM AI Consultants</li>
                   <li>CEO and Co-Founder of VersAssist</li>
+                  <li>Chair of Engagement, African American Business Leaders Council (Greater Lehigh Valley Chamber)</li>
                   <li>Official IFEL partner for AI education programming</li>
                   <li>Author of 17 books (4 published, 13 in progress)</li>
                   <li>Builder of AI agent system with 34 autonomous agents</li>

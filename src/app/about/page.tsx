@@ -16,11 +16,12 @@ import {
   Building2,
   BookOpen,
   Bot,
+  Users,
 } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "About",
-  description: "Dr. Jeff Bullock, PharmD. 18 years at CVS Health, now CEO of PRISM AI Consultants. Author of 17 books. Builder of 15 games and an AI agent system with 34 autonomous agents. Based in Lehigh Valley, PA.",
+  description: "Dr. Jeff Bullock, PharmD. 18 years at CVS Health, now CEO of PRISM AI Consultants and Chair of Engagement for the African American Business Leaders Council. Author of 17 books. Builder of 15 games and an AI agent system with 34 autonomous agents. Based in Lehigh Valley, PA.",
   openGraph: { images: ["/images/og-about.jpg"] },
 };
 
@@ -34,6 +35,7 @@ const timeline = [
   { year: "2025", icon: BookOpen, title: "Speaking Engagements", description: "SHRM Conference, DeSales University, TSPN Keynote (100K+ viewers), IFEL workshops, and more." },
   { year: "2026", icon: BookOpen, title: "Published 3 More Books", description: "The Unburdening, The Inheritance, and The Compliant. Continued writing across fiction and non-fiction." },
   { year: "2026", icon: Bot, title: "34-Agent AI System", description: "Built a sovereign AI system with 34 autonomous agents powering operations." },
+  { year: "2026", icon: Users, title: "Chair of Engagement, AABLC", description: "Elected to the African American Business Leaders Council of the Greater Lehigh Valley Chamber. First person to hold the seat. Leads the Events Committee." },
 ];
 
 const socialLinks = [
@@ -79,6 +81,13 @@ export default function AboutPage() {
                   But this site is not about PRISM. This is my personal library, the proof of what happens when you use AI as a force multiplier across every creative and intellectual domain you care about. Seventeen books (nine published, eight in progress). Fifteen playable games and interactive experiences. A 19-track concept album. Four original research frameworks. A sitcom pilot. Two companies. And an AI agent system with 34 autonomous agents.
                 </p>
                 <p>
+                  I also serve as Chair of Engagement for the{" "}
+                  <a href="https://www.lehighvalleychamber.org/africanamericanbusinessleaderscouncil.html" target="_blank" rel="noopener noreferrer" className="text-accent font-medium hover:underline">
+                    African American Business Leaders Council
+                  </a>{" "}
+                  of the Greater Lehigh Valley Chamber. That seat is where the second mission stops being a thesis and becomes a city I can actually move.
+                </p>
+                <p>
                   I did not build all of this alone. I built it with AI. And that is the point.
                 </p>
               </div>
@@ -106,6 +115,32 @@ export default function AboutPage() {
                 <p className="mt-2 text-sm text-muted-foreground">
                   Evidence-based economic empowerment through technology, education, and strategic advantage.
                 </p>
+              </div>
+            </div>
+
+            {/* Where mission 2 gets proven locally */}
+            <div className="mt-10 p-8 rounded-[var(--radius-lg)] border border-accent/30 bg-card text-left">
+              <div className="flex items-start gap-3 mb-4">
+                <Users className="h-6 w-6 text-accent flex-shrink-0 mt-0.5" />
+                <div>
+                  <Badge variant="accent">Chair of Engagement</Badge>
+                  <h3 className="mt-2 text-xl font-bold">African American Business Leaders Council</h3>
+                  <p className="text-xs text-muted-foreground">Greater Lehigh Valley Chamber of Commerce</p>
+                </div>
+              </div>
+              <p className="text-muted-foreground leading-relaxed">
+                A mission that stays a mission is a hobby. The AABLC is where mine gets tested at city scale. The council exists to lead economic empowerment and recognize excellence in the African American business community, and as Chair of Engagement I lead the Events Committee, the calendar that decides who gets in the room and what happens when they do.
+              </p>
+              <p className="mt-4 text-muted-foreground leading-relaxed">
+                The thesis is simple. AI collapsed the cost of starting a real business, so the barrier is no longer capital or credentials, it is knowing where the doors are. So we build the doors. The Black-Owned Business Directory makes it easy to find and spend money with Black-owned businesses across the Lehigh Valley, which keeps the dollar circulating instead of leaving on the first pass.
+              </p>
+              <div className="mt-6 flex flex-wrap gap-4">
+                <a href="https://www.lehighvalleychamber.org/africanamericanbusinessleaderscouncil.html" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-sm text-accent font-medium hover:underline">
+                  Visit the AABLC <ExternalLink className="h-3 w-3" />
+                </a>
+                <a href="https://aablc.prismaiconsultants.com" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-sm text-accent font-medium hover:underline">
+                  Black-Owned Business Directory <ExternalLink className="h-3 w-3" />
+                </a>
               </div>
             </div>
           </div>
