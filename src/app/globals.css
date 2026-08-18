@@ -200,3 +200,14 @@ a {
   .article-body p:first-of-type { font-size: 1.16rem; }
   .article-body h2 { font-size: 1.35rem; }
 }
+
+/* ------------------------------------------------------------------ */
+/* Label sitting on the violet accent (the /after CTA).
+   No single label color clears WCAG AA on both accent values: white is
+   5.46:1 on the light-mode #7C3AED but only 4.05:1 on the lighter dark-mode
+   #8B5CF6, where near-black gets 4.62:1. So the label flips with the theme.
+   This is a plain rule rather than a Tailwind dark: variant because the
+   project never declares @custom-variant dark, so dark: would follow
+   prefers-color-scheme and ignore the ThemeToggle. */
+.on-accent { color: #FAFAF9; }
+html.dark .on-accent { color: #0C0A09; }

@@ -106,12 +106,12 @@ export function BookCta({ children }: { children: React.ReactNode }) {
       rel="noopener noreferrer"
       className="inline-flex items-center justify-center bg-accent px-7 py-4 font-display text-base font-bold tracking-tight transition-opacity duration-200 hover:opacity-90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring motion-reduce:transition-none"
     >
-      {/* The color lives on the span, not the anchor. globals.css has an
-          unlayered `a { color: inherit }`, and unlayered rules beat Tailwind's
-          layered utilities regardless of specificity, so text-accent-foreground
-          on the <a> silently loses and the label renders near-black on violet
-          (3.07:1, fails AA). A span is not matched by that selector. */}
-      <span className="text-accent-foreground">{children}</span>
+      {/* globals.css has an unlayered `a { color: inherit }`, and unlayered
+          rules beat Tailwind's layered utilities regardless of specificity, so
+          a text utility on the <a> silently loses. The .on-accent class also
+          flips the label with the theme, because neither white nor near-black
+          clears AA on both accent values. See globals.css. */}
+      <span className="on-accent">{children}</span>
     </a>
   );
 }
