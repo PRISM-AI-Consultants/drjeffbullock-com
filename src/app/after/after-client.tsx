@@ -104,9 +104,14 @@ export function BookCta({ children }: { children: React.ReactNode }) {
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="inline-flex items-center justify-center bg-accent px-7 py-4 font-display text-base font-bold tracking-tight text-accent-foreground transition-opacity duration-200 hover:opacity-90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring motion-reduce:transition-none"
+      className="inline-flex items-center justify-center bg-accent px-7 py-4 font-display text-base font-bold tracking-tight transition-opacity duration-200 hover:opacity-90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring motion-reduce:transition-none"
     >
-      {children}
+      {/* The color lives on the span, not the anchor. globals.css has an
+          unlayered `a { color: inherit }`, and unlayered rules beat Tailwind's
+          layered utilities regardless of specificity, so text-accent-foreground
+          on the <a> silently loses and the label renders near-black on violet
+          (3.07:1, fails AA). A span is not matched by that selector. */}
+      <span className="text-accent-foreground">{children}</span>
     </a>
   );
 }
