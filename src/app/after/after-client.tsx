@@ -34,14 +34,32 @@ export function PromptCard() {
   const [copied, setCopied] = useState(false);
 
   async function copy() {
-    try {
-      await navigator.clipboard.writeText(THE_PROMPT);
-    } catch {
-      // Clipboard can be blocked. The text is on screen either way, so fall
-      // through to the confirmed state rather than showing a scary error.
-    }
+    // Confirm optimistically. This page gets scanned off a QR code on whatever
+    // phone is in someone's hand, and navigator.clipboard can be blocked or
+    // hang outright in an in-app browser. Feedback must never depend on it.
     setCopied(true);
     setTimeout(() => setCopied(false), 2400);
+
+    try {
+      await navigator.clipboard.writeText(THE_PROMPT);
+      return;
+    } catch {
+      // fall through to the legacy path below
+    }
+
+    try {
+      const el = document.createElement("textarea");
+      el.value = THE_PROMPT;
+      el.setAttribute("readonly", "");
+      el.style.position = "fixed";
+      el.style.opacity = "0";
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand("copy");
+      document.body.removeChild(el);
+    } catch {
+      // The prompt is fully visible and selectable on screen either way.
+    }
   }
 
   return (
