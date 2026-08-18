@@ -119,14 +119,43 @@ const personJsonLd = {
   },
   image: "https://drjeffbullock.com/images/jeff-bullock-headshot.jpg",
   url: "https://drjeffbullock.com",
+  // ⛔ DISAMBIGUATION (added 2026-08-06). Measured that day: asking an answer
+  // engine "Who is Dr. Jeff Bullock?" returned healthgrades, gastroconsa,
+  // wellmedhealthcare, sahealth and ssrinstitute — every cited source a
+  // PHYSICIAN directory for a different person with the same name. Jeff was
+  // named in the prose while every citation was about somebody else.
+  // disambiguatingDescription is the schema.org property for exactly this.
+  // Do not remove it, and keep it explicit that the doctorate is a PharmD and
+  // that he does not practice medicine.
+  disambiguatingDescription:
+    "AI implementation consultant and technology entrepreneur in Allentown, Pennsylvania. Not a physician. His doctorate is a Doctor of Pharmacy (PharmD) from Xavier University of Louisiana; he does not practice medicine and is unaffiliated with any medical practice or hospital system. Founder and CEO of PRISM AI Consultants.",
   sameAs: [
+    // ⛔ VERIFIED 2026-08-06 by live HTTP check. Never add a URL you have not
+    // loaded. An Amazon author-page URL was guessed during this build, returned
+    // 404, and was removed. sameAs is the mechanism knowledge graphs use to
+    // decide these profiles are ONE entity — a dead link poisons the graph.
     "https://www.linkedin.com/in/jeffrey-bullock-pharmd",
+    "https://www.linkedin.com/company/prism-ai-consultants",
     "https://www.youtube.com/@drjeffbullock",
+    "https://www.instagram.com/prismaiconsultant/",
+    "https://substack.com/@drjeffbullock",
     "https://www.prismaiconsultants.com",
+    // Amazon author page, supplied by Jeff 2026-08-06, verified 200. High value
+    // against the physician collision: a strong third-party signal that this
+    // Dr. Jeff Bullock is an AUTHOR, not a doctor.
+    "https://www.amazon.com/stores/Dr.-Jeff-Bullock/author/B0H7TCDNGS",
     "https://open.spotify.com/album/1iOSi2A5g4LUjSkvniwl4u",
+    // Earned + local authority. Earned media drives ~84% of AI citations
+    // (Muck Rack, 25M links, May 2026), and these are the pages that already
+    // get cited for PRISM. Naming them here ties them to the entity.
+    "https://madeinthelehighvalley.com/prismaiconsultants/",
+    "https://web.lehighvalleychamber.org/Consulting-Services-Training/PRISM-AI-Consultants-17842",
+    "https://www.alignable.com/allentown-pa/prism-ai-consultants",
+    "https://www.bizapedia.com/pa/prism-ai-consultants-llc.html",
+    "https://valiantceo.com/closing-the-ai-implementation-gap-jeffrey-bullock-of-prism-ai-consultants-on-turning-spend-into-revenue/",
   ],
   description:
-    "PharmD turned AI consultant, author of 17 books, and CEO of PRISM AI Consultants. Based in Lehigh Valley, PA. Helps business leaders implement AI operationally.",
+    "PharmD turned AI implementation consultant, author of 17 books, and CEO of PRISM AI Consultants in Allentown, Pennsylvania. Helps business owners implement AI operationally. Not a medical doctor.",
 };
 
 export default function RootLayout({
