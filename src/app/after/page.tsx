@@ -165,12 +165,12 @@ export default function AfterPage() {
                   doing the work a system should do.
                 </p>
 
-                <div className="mt-9">
-                  <BookCta>Book a conversation</BookCta>
-                </div>
-                <p className="mt-4 text-sm text-muted-foreground">
+                <p className="mt-9 font-display text-[1.35rem] md:text-[1.6rem] font-bold tracking-tight leading-tight">
                   Want the loop installed on your actual business?
                 </p>
+                <div className="mt-6">
+                  <BookCta>Book a conversation</BookCta>
+                </div>
               </div>
 
               <aside className="md:col-span-5">
