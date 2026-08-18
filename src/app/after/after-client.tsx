@@ -10,7 +10,7 @@ export const THE_PROMPT = `Here is the transcript of a meeting I just ran. Answe
 4. What is the ONE thing I should do differently in the next meeting?`;
 
 const CALENDLY = "https://calendly.com/prismaiconsultants/introductory-call";
-const ALLOWED_SOURCES = ["bni", "keynote", "li", "email", "card"];
+const ALLOWED_SOURCES = ["bni", "keynote", "li", "email", "card", "yt"];
 
 /**
  * Reads the ?s= source tag so a booking can be traced back to the room it came
