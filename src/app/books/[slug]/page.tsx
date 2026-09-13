@@ -76,7 +76,7 @@ export default async function BookPage({ params }: { params: Promise<{ slug: str
                 </p>
               )}
 
-              {(book.purchaseUrl || book.bookSiteUrl || book.downloadUrl || book.audioUrl || book.companionAppUrl || book.researchUrl) && (
+              {(book.purchaseUrl || book.bookSiteUrl || book.downloadUrl || book.audioUrl || book.companionAppUrl || book.comicUrl || book.researchUrl) && (
                 <div className="mt-6 flex flex-wrap gap-3">
                   {book.purchaseUrl && (
                     <a href={book.purchaseUrl} target="_blank" rel="noopener noreferrer">
@@ -89,6 +89,13 @@ export default async function BookPage({ params }: { params: Promise<{ slug: str
                     <a href={book.bookSiteUrl} target="_blank" rel="noopener noreferrer">
                       <Button size="lg" variant={book.purchaseUrl ? "secondary" : "primary"}>
                         <Globe className="h-4 w-4 mr-2" /> Visit the Book Site
+                      </Button>
+                    </a>
+                  )}
+                  {book.comicUrl && (
+                    <a href={book.comicUrl} target="_blank" rel="noopener noreferrer">
+                      <Button size="lg" variant="secondary">
+                        <BookOpen className="h-4 w-4 mr-2" /> {book.comicLabel ?? "Read the Comic"}
                       </Button>
                     </a>
                   )}

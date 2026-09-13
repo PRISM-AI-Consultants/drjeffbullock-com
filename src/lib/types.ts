@@ -16,6 +16,8 @@ export interface Book {
   bookSiteUrl?: string;
   companionAppUrl?: string;
   companionAppName?: string;
+  comicUrl?: string;
+  comicLabel?: string;
   researchUrl?: string;
   videoUrl?: string;
   editScore?: number;
