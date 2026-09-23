@@ -188,8 +188,8 @@ export default function SpeakingPage() {
               <div className="rounded-[var(--radius-lg)] overflow-hidden border border-border">
                 <div className="aspect-video">
                   <iframe
-                    src="https://www.youtube.com/embed/3LB8w6F0sgM"
-                    title="Dr. Jeff Bullock - AI Speaker Sizzle Reel"
+                    src="https://www.youtube.com/embed/YqxD3QP6QL4"
+                    title="Dr. Jeff Bullock - PA SHRM 2026 Opening Keynote Recap"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
                     className="w-full h-full"
@@ -197,14 +197,14 @@ export default function SpeakingPage() {
                   />
                 </div>
               </div>
-              <p className="mt-2 text-sm font-medium text-center">Speaker Sizzle Reel</p>
+              <p className="mt-2 text-sm font-medium text-center">PA SHRM 2026 Opening Keynote Recap</p>
             </div>
             <div>
               <div className="rounded-[var(--radius-lg)] overflow-hidden border border-border">
                 <div className="aspect-video">
                   <iframe
-                    src="https://www.youtube.com/embed/7tljObHbvP0"
-                    title="Dr. Jeff Bullock - Live AI Build on Stage"
+                    src="https://www.youtube.com/embed/CmFcmdVt-8k"
+                    title="Dr. Jeff Bullock - Live AI Build on Stage, PA SHRM 2026"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
                     className="w-full h-full"
@@ -212,7 +212,7 @@ export default function SpeakingPage() {
                   />
                 </div>
               </div>
-              <p className="mt-2 text-sm font-medium text-center">Live AI Build on Stage</p>
+              <p className="mt-2 text-sm font-medium text-center">Live AI Build on Stage, PA SHRM 2026</p>
             </div>
           </div>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
@@ -326,6 +326,21 @@ export default function SpeakingPage() {
       <Section>
         <Container size="xl">
           <h2 className="text-3xl font-extrabold tracking-tight mb-8">What Audiences Say</h2>
+          <div className="mb-10 mx-auto max-w-3xl">
+            <div className="rounded-[var(--radius-lg)] overflow-hidden border border-border">
+              <div className="aspect-video">
+                <iframe
+                  src="https://www.youtube.com/embed/emD7VLaE3cI"
+                  title="What HR leaders said after the PA SHRM 2026 keynote"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="w-full h-full"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+            <p className="mt-2 text-sm font-medium text-center">HR leaders, right after the PA SHRM 2026 keynote</p>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="p-6 rounded-[var(--radius-lg)] border border-border bg-card">
               <p className="text-sm text-muted-foreground italic leading-relaxed">
