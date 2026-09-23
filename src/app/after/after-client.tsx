@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Check, Copy } from "lucide-react";
+import { Check, Copy, Download } from "lucide-react";
 
 export const THE_PROMPT = `Here is the transcript of a meeting I just ran. Answer four things:
 1. What did they actually say they wanted, in their own words?
@@ -113,5 +113,54 @@ export function BookCta({ children }: { children: React.ReactNode }) {
           clears AA on both accent values. See globals.css. */}
       <span className="on-accent">{children}</span>
     </a>
+  );
+}
+
+/**
+ * Shown only to people who scanned the code from the keynote stage. Everyone
+ * else on /after sees the page unchanged. The deck and the printed handout both
+ * promise a template, so this is the thing that has to actually be here when
+ * 350 people scan at once.
+ */
+export function KeynoteKit() {
+  const source = useSource();
+  if (source !== "keynote") return null;
+
+  return (
+    <div className="mt-8 border border-border bg-card">
+      <div className="h-[3px] bg-accent" />
+      <div className="px-5 py-6 sm:px-7 sm:py-7">
+        <span className="eyebrow text-muted-foreground">
+          From the PA SHRM stage
+        </span>
+        <p className="mt-3 font-display text-[1.3rem] md:text-[1.5rem] font-bold tracking-tight leading-tight">
+          The Monday Morning Workflow Template
+        </p>
+        <p className="mt-3 text-base leading-relaxed text-foreground/80">
+          The four steps with blanks to fill in, one fully worked HR example, the
+          tool and cost map, and the do-not list for employee data. Six pages, no
+          form, no email.
+        </p>
+        <a
+          href="/downloads/monday-morning-workflow-template.pdf"
+          className="mt-6 inline-flex items-center gap-2 bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground transition-opacity duration-200 hover:opacity-85 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring motion-reduce:transition-none"
+        >
+          <Download className="h-4 w-4" aria-hidden />
+          Download the template
+        </a>
+        <p className="mt-5 text-sm leading-relaxed text-muted-foreground">
+          Want the deep version of step one?{" "}
+          <a
+            href="https://www.amazon.com/dp/B0HD9GXT13"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline underline-offset-4 hover:text-foreground"
+          >
+            Transcript Alchemy
+          </a>{" "}
+          is 101 ways to turn a transcript into money, insight, and legacy.
+        </p>
+      </div>
+    </div>
   );
 }

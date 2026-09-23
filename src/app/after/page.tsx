@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Container } from "@/components/ui/container";
 import { Section } from "@/components/ui/section";
-import { BookCta, PromptCard } from "./after-client";
+import { BookCta, KeynoteKit, PromptCard } from "./after-client";
 
 export const metadata: Metadata = {
   title: "The After",
@@ -142,6 +142,8 @@ export default function AfterPage() {
           <div className="mt-8">
             <PromptCard />
           </div>
+
+          <KeynoteKit />
 
           <p className="mt-7 font-serif text-[1.1rem] md:text-[1.25rem] leading-relaxed text-foreground/80 max-w-xl">
             Question 3 is the one that stings. It is also the one that changes
