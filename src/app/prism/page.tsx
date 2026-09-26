@@ -39,6 +39,23 @@ const whatYouGet = [
   },
 ];
 
+// The name is the values. Each line says what the value looks like in the work,
+// so it reads as a promise, not a poster.
+const values = [
+  { letter: "P", name: "Positivity", color: "#FF1493", body: "We start from what is possible in your business, not from what is wrong with it." },
+  { letter: "R", name: "Resilience", color: "#FF4D2A", body: "When a build breaks, we fix it and stay until it runs." },
+  { letter: "I", name: "Innovation", color: "#FFB347", body: "We run the newest tools on our own business first, then bring you what works." },
+  { letter: "S", name: "Service", color: "#00C2D1", body: "The work is judged by what it does for you, not by how it looks." },
+  { letter: "M", name: "Mastery", color: "#0099FF", body: "Every session teaches your team to run it without us." },
+];
+
+// Only proof that can be checked. No estimated values, no hours-saved figures.
+const proof = [
+  { stat: "750+", label: "Coaching sessions delivered", note: "Counted from our own recorded session log." },
+  { stat: "Since 2023", label: "Inside real businesses", note: "PRISM AI Consultants, founded June 2023." },
+  { stat: "Live", label: "Systems, not slide decks", note: "Click through working client builds.", href: "https://www.prismaiconsultants.com/portfolio" },
+];
+
 export default function PrismPage() {
   return (
     <>
@@ -166,6 +183,33 @@ export default function PrismPage() {
         </Container>
       </Section>
 
+      {/* Proof — only checkable facts */}
+      <section className="bg-[#0A0A0A] text-[#F5F5F4]">
+        <Container size="xl">
+          <div className="grid gap-px bg-white/10 py-px sm:grid-cols-3">
+            {proof.map((p) => {
+              const inner = (
+                <>
+                  <span className="block text-4xl font-extrabold tracking-tight md:text-5xl">{p.stat}</span>
+                  <span className="mt-3 block text-sm font-semibold uppercase tracking-[0.18em] text-[#FF1493]">{p.label}</span>
+                  <span className="mt-2 block text-sm leading-relaxed text-white/60">
+                    {p.note}
+                    {p.href && <ArrowUpRight className="ml-1 inline h-3.5 w-3.5" aria-hidden />}
+                  </span>
+                </>
+              );
+              return p.href ? (
+                <a key={p.label} href={p.href} target="_blank" rel="noopener noreferrer" className="bg-[#0A0A0A] px-6 py-10 transition-colors hover:bg-white/[0.04] md:px-10">
+                  {inner}
+                </a>
+              ) : (
+                <div key={p.label} className="bg-[#0A0A0A] px-6 py-10 md:px-10">{inner}</div>
+              );
+            })}
+          </div>
+        </Container>
+      </section>
+
       {/* What you get — editorial numbered list */}
       <Section>
         <Container size="xl">
@@ -191,6 +235,30 @@ export default function PrismPage() {
                 ))}
               </div>
             </div>
+          </div>
+        </Container>
+      </Section>
+
+      {/* Values — the name is the promise */}
+      <Section className="bg-muted/30">
+        <Container size="xl">
+          <div className="max-w-2xl">
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-muted-foreground">The name is the promise</p>
+            <h2 className="mt-4 text-3xl font-extrabold tracking-tight md:text-4xl">Five values. One word.</h2>
+            <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
+              PRISM is not just a name. Every letter is a standard we hold ourselves to on every engagement.
+            </p>
+          </div>
+          <div className="mt-12 grid gap-px border-y border-border bg-border sm:grid-cols-2 lg:grid-cols-5">
+            {values.map((v) => (
+              <div key={v.name} className="bg-background p-6 md:p-7 sm:last:col-span-2 lg:last:col-span-1">
+                <span className="block text-5xl font-extrabold leading-none" style={{ color: v.color }} aria-hidden>
+                  {v.letter}
+                </span>
+                <h3 className="mt-4 text-lg font-bold">{v.name}</h3>
+                <p className="mt-2 leading-relaxed text-muted-foreground">{v.body}</p>
+              </div>
+            ))}
           </div>
         </Container>
       </Section>
