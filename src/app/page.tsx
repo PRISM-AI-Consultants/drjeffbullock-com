@@ -62,7 +62,7 @@ const proof = [
   { text: "PRISM AI Consultants", serves: "The engine", href: "https://www.prismaiconsultants.com" },
   { text: "VersAssist", serves: "The engine", href: "/versassist" },
   { text: "Pharmageddon, Escape Velocity, and 15 games", serves: "Behavior change", href: "/games" },
-  { text: "Mansa Musa and 17 books", serves: "The culture", href: "/books" },
+  { text: "Mansa Musa and 16 published books", serves: "The culture", href: "/books" },
   { text: "The research, from the Abundance Thesis to human performance", serves: "Best self", href: "/research" },
   { text: "Agent World, 34 live AI agents", serves: "How one person runs it all", href: "https://agents.prismaiconsultants.com" },
 ];
@@ -149,7 +149,7 @@ export default async function HomePage() {
                 Make giving as powerful as social media. End poverty, starting in my own community.
               </p>
               <p className="mt-5 text-base md:text-lg text-muted-foreground max-w-lg leading-relaxed">
-                Everything on this page is proof it is working. The books, the games, the research, the companies. They all point at the same two things.
+                Everything on this page is a step toward them. The books, the games, the research, the companies. They all point at the same two things.
               </p>
               <div className="mt-9 flex flex-wrap items-center gap-3">
                 <a href="#dreams">

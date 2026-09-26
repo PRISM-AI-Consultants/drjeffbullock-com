@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { getBooks } from "@/lib/content";
+import { getBooks, getBookCounts } from "@/lib/content";
 import { PageHeader } from "@/components/ui/page-header";
 import { Container } from "@/components/ui/container";
 import { Section } from "@/components/ui/section";
@@ -7,15 +7,14 @@ import { BooksGrid } from "./books-grid";
 
 export const metadata: Metadata = {
   title: "Books",
-  description: "Books by Dr. Jeff Bullock - 9 published, 8 in progress. Fiction, non-fiction, and short stories spanning AI, learning science, historical fiction, horror, and more.",
+  description: "Books by Dr. Jeff Bullock - 16 published, 3 in progress. Fiction, non-fiction, and short stories spanning AI, learning science, historical fiction, horror, and more.",
   openGraph: { images: ["/images/og-books.jpg"] },
 };
 
 export default function BooksPage() {
   const books = getBooks();
   // Derive the published / in-progress split so the header never drifts from the actual catalog.
-  const published = books.filter((b) => b.purchaseUrl || b.bookSiteUrl).length;
-  const inProgress = books.length - published;
+  const { published, inProgress } = getBookCounts();
 
   const itemListJsonLd = {
     "@context": "https://schema.org",

@@ -67,7 +67,7 @@ const websiteJsonLd = {
   name: "Dr. Jeff Bullock",
   url: "https://drjeffbullock.com",
   description:
-    "The IP library and creator hub of Dr. Jeff Bullock. 17 books, 15 games, 4 research frameworks, and an AI agent system with 34 autonomous agents.",
+    "The IP library and creator hub of Dr. Jeff Bullock. 16 published books, 15 games, 4 research frameworks, and an AI agent system with 34 autonomous agents.",
   author: {
     "@type": "Person",
     name: "Dr. Jeff Bullock",
@@ -155,7 +155,7 @@ const personJsonLd = {
     "https://valiantceo.com/closing-the-ai-implementation-gap-jeffrey-bullock-of-prism-ai-consultants-on-turning-spend-into-revenue/",
   ],
   description:
-    "PharmD turned AI implementation consultant, author of 17 books, and CEO of PRISM AI Consultants in Allentown, Pennsylvania. Helps business owners implement AI operationally. Not a medical doctor.",
+    "PharmD turned AI implementation consultant, author of 16 published books, and CEO of PRISM AI Consultants in Allentown, Pennsylvania. Helps business owners implement AI operationally. Not a medical doctor.",
 };
 
 export default function RootLayout({

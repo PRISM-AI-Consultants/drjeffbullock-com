@@ -6,6 +6,7 @@ import { Section } from "@/components/ui/section";
 import { PageHeader } from "@/components/ui/page-header";
 import { Card, CardHeader, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { getBookCounts } from "@/lib/content";
 import {
   Heart,
   Rocket,
@@ -21,7 +22,7 @@ import {
 
 export const metadata: Metadata = {
   title: "About",
-  description: "Dr. Jeff Bullock, PharmD. 18 years at CVS Health, now CEO of PRISM AI Consultants and Chair of Engagement for the African American Business Leaders Council. Author of 17 books. Builder of 15 games and an AI agent system with 34 autonomous agents. Based in Lehigh Valley, PA.",
+  description: "Dr. Jeff Bullock, PharmD. 18 years at CVS Health, now CEO of PRISM AI Consultants and Chair of Engagement for the African American Business Leaders Council. Author of 16 published books. Builder of 15 games and an AI agent system with 34 autonomous agents. Based in Lehigh Valley, PA.",
   openGraph: { images: ["/images/og-about.jpg"] },
 };
 
@@ -48,6 +49,7 @@ const socialLinks = [
 ];
 
 export default function AboutPage() {
+  const bookCounts = getBookCounts();
   return (
     <>
       <PageHeader title="About" description="Pharmacist. CEO. Author. Builder. Proving what one person can build with AI." />
@@ -78,7 +80,7 @@ export default function AboutPage() {
                   I founded PRISM AI Consultants in June 2023 to help business leaders implement AI - not as a buzzword, but as a real operational tool. Since then, I have personally coached business leaders across more than 750 coaching sessions on making AI work for their specific situations.
                 </p>
                 <p>
-                  But this site is not about PRISM. This is my personal library, the proof of what happens when you use AI as a force multiplier across every creative and intellectual domain you care about. Seventeen books (nine published, eight in progress). Fifteen playable games and interactive experiences. A 19-track concept album. Four original research frameworks. A sitcom pilot. Two companies. And an AI agent system with 34 autonomous agents.
+                  But this site is not about PRISM. This is my personal library, the proof of what happens when you use AI as a force multiplier across every creative and intellectual domain you care about. {bookCounts.published} published books, with {bookCounts.inProgress} more in progress. Fifteen playable games and interactive experiences. A 19-track concept album. Four original research frameworks. A sitcom pilot. Two companies. And an AI agent system with 34 autonomous agents.
                 </p>
                 <p>
                   I also serve as Chair of Engagement for the{" "}

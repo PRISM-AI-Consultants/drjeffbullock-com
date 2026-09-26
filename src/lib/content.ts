@@ -49,6 +49,14 @@ export function getBooks(): Book[] {
     .sort((a, b) => (a.featured ? -1 : 1) - (b.featured ? -1 : 1));
 }
 
+// One source for every book count on the site. "published" = live on Amazon
+// (status: "published" in the mdx). Checked against the Amazon author page.
+export function getBookCounts() {
+  const books = getBooks();
+  const published = books.filter((b) => b.status === "published").length;
+  return { total: books.length, published, inProgress: books.length - published };
+}
+
 export function getBook(slug: string): Book | undefined {
   const files = getFiles("books");
   const file = files.find((f) => f.replace(/\.mdx?$/, "") === slug);
