@@ -48,6 +48,9 @@ function isActive(pathname: string, href: string) {
 function DesktopGroup({ group, pathname }: { group: NavGroup; pathname: string }) {
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
+  // Hover opens the menu on desktop. A click that lands right after a hover-open
+  // must not toggle it shut again, or a mouse user sees nothing happen.
+  const hoverOpenedAt = useRef(0);
   const active = group.links.some((l) => isActive(pathname, l.href));
 
   useEffect(() => setOpen(false), [pathname]);
@@ -70,12 +73,18 @@ function DesktopGroup({ group, pathname }: { group: NavGroup; pathname: string }
     <div
       ref={ref}
       className="relative"
-      onMouseEnter={() => setOpen(true)}
+      onMouseEnter={() => {
+        if (!open) hoverOpenedAt.current = Date.now();
+        setOpen(true);
+      }}
       onMouseLeave={() => setOpen(false)}
     >
       <button
         type="button"
-        onClick={() => setOpen((v) => !v)}
+        onClick={() => {
+          if (Date.now() - hoverOpenedAt.current < 600) return;
+          setOpen((v) => !v);
+        }}
         aria-expanded={open}
         aria-haspopup="true"
         className={cn(
