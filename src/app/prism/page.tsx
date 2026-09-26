@@ -246,7 +246,7 @@ export default function PrismPage() {
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-muted-foreground">The name is the promise</p>
             <h2 className="mt-4 text-3xl font-extrabold tracking-tight md:text-4xl">Five values. One word.</h2>
             <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
-              PRISM is not just a name. Every letter is a standard we hold ourselves to on every engagement.
+              Every letter of PRISM is a standard we hold ourselves to on every engagement.
             </p>
           </div>
           <div className="mt-12 grid gap-px border-y border-border bg-border sm:grid-cols-2 lg:grid-cols-5">
