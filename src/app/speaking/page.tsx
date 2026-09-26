@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { getBookCounts } from "@/lib/content";
 import { Container } from "@/components/ui/container";
 import { Section } from "@/components/ui/section";
 import { PageHeader } from "@/components/ui/page-header";
@@ -33,7 +34,7 @@ const topics = [
   },
   {
     title: "Building with AI: From Idea to Shipped Product",
-    description: "How one person built a 34-agent AI system, written 17 books, shipped 15 games, and produced a 19-track album, all with AI as a co-pilot.",
+    description: "How one person built a 34-agent AI system, written 16 published books, shipped 15 games, and produced a 19-track album, all with AI as a co-pilot.",
     audience: "Creators, developers, solo founders",
   },
 ];
@@ -59,11 +60,11 @@ const formats = [
   },
 ];
 
-const upcomingEvents = [
-  { event: "Lehigh Valley Business Summit", date: "April 30, 2026", venue: "DeSales University, Center Valley, PA", type: "Keynote / Panel" },
-];
+const upcomingEvents: { event: string; date: string; venue: string; type: string }[] = [];
 
 const pastEvents = [
+  { event: "PA SHRM 2026 Opening Keynote", date: "September 11, 2026", venue: "Lancaster, PA", type: "Keynote" },
+  { event: "Lehigh Valley Business Summit", date: "April 30, 2026", venue: "DeSales University, Center Valley, PA", type: "Keynote / Panel" },
   { event: "McKinney Media Headshot Happy Hour", date: "March 11, 2026", venue: "The Jone(s) Collective, Allentown, PA", type: "Guest Segment" },
   { event: "IFEL Ask the Expert: AI Storytelling Techniques", date: "February 26, 2026", venue: "IFEL", type: "Workshop" },
   { event: "AI Hustle with Dr. Jeff", date: "Weekly, Tuesdays 2PM ET", venue: "LinkedIn Live", type: "Live Show" },
@@ -113,6 +114,7 @@ const eventsJsonLd = {
 };
 
 export default function SpeakingPage() {
+  const bookCounts = getBookCounts();
   return (
     <>
       <script
@@ -138,7 +140,7 @@ export default function SpeakingPage() {
                   In 2021, he left corporate healthcare to become a full-time entrepreneur. When ChatGPT launched, he immediately saw the potential. He founded PRISM AI Consultants in June 2023 and has since personally coached business leaders across more than 750 coaching sessions on AI implementation.
                 </p>
                 <p>
-                  He is the author of 17 books, creator of 15 playable games, producer of a 19-track concept album, and builder of an autonomous AI system with 34 agents. He does not just talk about what AI can do. He shows what he has built with it.
+                  He is the author of {bookCounts.published} published books, creator of 15 playable games, producer of a 19-track concept album, and builder of an autonomous AI system with 34 agents. He does not just talk about what AI can do. He shows what he has built with it.
                 </p>
               </div>
             </div>
@@ -162,7 +164,7 @@ export default function SpeakingPage() {
                   <li>CEO and Co-Founder of VersAssist</li>
                   <li>Chair of Engagement, African American Business Leaders Council (Greater Lehigh Valley Chamber)</li>
                   <li>Official IFEL partner for AI education programming</li>
-                  <li>Author of 17 books (4 published, 13 in progress)</li>
+                  <li>Author of {bookCounts.published} published books ({bookCounts.inProgress} more in progress)</li>
                   <li>Builder of AI agent system with 34 autonomous agents</li>
                 </ul>
                 <a
