@@ -137,7 +137,7 @@ export function KeynoteKit() {
           The Monday Morning Workflow Template
         </p>
         <p className="mt-3 text-base leading-relaxed text-foreground/80">
-          The four steps with blanks to fill in, one fully worked HR example, the
+          The five steps with blanks to fill in, one fully worked HR example, the
           tool and cost map, and the do-not list for employee data. Six pages, no
           form, no email.
         </p>
@@ -145,8 +145,10 @@ export function KeynoteKit() {
           href="/downloads/monday-morning-workflow-template.pdf"
           className="mt-6 inline-flex items-center gap-2 bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground transition-opacity duration-200 hover:opacity-85 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring motion-reduce:transition-none"
         >
-          <Download className="h-4 w-4" aria-hidden />
-          Download the template
+          <span className="inline-flex items-center gap-2 text-primary-foreground">
+            <Download className="h-4 w-4" aria-hidden />
+            Download the template
+          </span>
         </a>
         <p className="mt-5 text-sm leading-relaxed text-muted-foreground">
           Want the deep version of step one?{" "}
