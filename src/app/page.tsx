@@ -91,6 +91,30 @@ const testimonials = [
   { quote: "I learned so much from you. I proposed making a custom GPT for our workflow, and when I did it, everyone was amazed, asking how I did it. I told them it was Dr. Jeff who taught me.", role: "Director, Healthcare", context: "On applying PRISM coaching" },
 ];
 
+const doors = [
+  {
+    eyebrow: "For business owners",
+    title: "Get AI working in your business.",
+    body: "PRISM builds AI into how your business already runs. VersAssist staffs the people who keep it running.",
+    cta: "See how we work",
+    href: "#engine",
+  },
+  {
+    eyebrow: "For readers, players, listeners",
+    title: "Explore the work.",
+    body: "Books, games, music, and research. Start with whatever pulls you in. You do not need the whole map to enjoy one piece.",
+    cta: "Browse the work",
+    href: "#work",
+  },
+  {
+    eyebrow: "For builders and givers",
+    title: "Join the mission.",
+    body: "Give a dollar through Daily Impact, find a Black-owned business in the Lehigh Valley, or help build what comes next.",
+    cta: "See the two dreams",
+    href: "#dreams",
+  },
+];
+
 function SectionLabel({ no, children }: { no: string; children: React.ReactNode }) {
   return (
     <div className="flex items-center gap-3 mb-5">
@@ -195,6 +219,28 @@ export default async function HomePage() {
           </div>
         </Container>
       </div>
+
+      {/* ============ THREE DOORS ============ */}
+      <Section className="pt-14 md:pt-20 pb-0">
+        <Container size="xl">
+          <SectionLabel no="→">Start here</SectionLabel>
+          <h2 className="font-display font-extrabold tracking-[-0.03em] text-[clamp(1.9rem,4.5vw,3rem)] leading-[0.97] max-w-2xl">
+            What brought you here?
+          </h2>
+          <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-px bg-border border-y border-border">
+            {doors.map((d) => (
+              <a key={d.title} href={d.href} className="group bg-background p-7 md:p-9 flex flex-col transition-colors hover:bg-muted/40">
+                <span className="eyebrow text-accent">{d.eyebrow}</span>
+                <h3 className="mt-4 font-display text-2xl md:text-[1.7rem] font-bold tracking-tight leading-[1.1]">{d.title}</h3>
+                <p className="mt-4 font-serif text-[1.02rem] leading-relaxed text-foreground/75 flex-1">{d.body}</p>
+                <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-foreground">
+                  {d.cta} <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </span>
+              </a>
+            ))}
+          </div>
+        </Container>
+      </Section>
 
       {/* ============ TWO DREAMS ============ */}
       <Section id="dreams" className="pt-20 md:pt-28">
@@ -436,7 +482,7 @@ export default async function HomePage() {
       </Section>
 
       {/* ============ THE ENGINE ============ */}
-      <Section className="border-t border-border">
+      <Section id="engine" className="border-t border-border scroll-mt-20">
         <Container size="xl">
           <SectionLabel no="04">The engine</SectionLabel>
           <h2 className="font-display font-extrabold tracking-[-0.03em] text-[clamp(2rem,5vw,3.5rem)] leading-[0.97] max-w-2xl">
@@ -492,7 +538,7 @@ export default async function HomePage() {
       </Section>
 
       {/* ============ SHOWCASE ============ */}
-      <Section className="border-t border-border">
+      <Section id="work" className="border-t border-border scroll-mt-20">
         <Container size="xl">
           <SectionLabel no="05">The work</SectionLabel>
           <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
