@@ -207,6 +207,17 @@ export default function PrismPage() {
               );
             })}
           </div>
+          <div className="py-8 text-center">
+            <a
+              href="https://proof.prismaiconsultants.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-sm font-semibold text-white/80 transition hover:text-white"
+            >
+              See the receipts: recorded testimonials and documented builds at proof.prismaiconsultants.com
+              <ArrowUpRight className="h-4 w-4" aria-hidden />
+            </a>
+          </div>
         </Container>
       </section>
 
