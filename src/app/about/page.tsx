@@ -33,7 +33,7 @@ const timeline = [
   { year: "2023", icon: Building2, title: "Founded PRISM AI Consultants", description: "Launched an AI consulting firm to help businesses implement AI for real results." },
   { year: "2023", icon: BookOpen, title: "Published A Prompt's Tale", description: "First book - a beginner's guide to AI and prompt engineering." },
   { year: "2024", icon: Building2, title: "Co-Founded VersAssist", description: "Built an AI-enhanced virtual assistant agency - the Uber of labor." },
-  { year: "2025", icon: BookOpen, title: "Speaking Engagements", description: "SHRM Conference, DeSales University, TSPN Keynote (100K+ viewers), IFEL workshops, and more." },
+  { year: "2025", icon: BookOpen, title: "Speaking Engagements", description: "Opening keynote at the PA SHRM State Conference, plus the Executive Forum at DeSales University, Lehigh University, and the IFEL / Verizon AI Readiness Series." },
   { year: "2026", icon: BookOpen, title: "Published 3 More Books", description: "The Unburdening, The Inheritance, and The Compliant. Continued writing across fiction and non-fiction." },
   { year: "2026", icon: Bot, title: "34-Agent AI System", description: "Built a sovereign AI system with 34 autonomous agents powering operations." },
   { year: "2026", icon: Users, title: "Chair of Engagement, AABLC", description: "Elected to the African American Business Leaders Council of the Greater Lehigh Valley Chamber. First person to hold the seat. Leads the Events Committee." },
@@ -45,7 +45,6 @@ const socialLinks = [
   { label: "PRISM AI", href: "https://www.prismaiconsultants.com" },
   { label: "VersAssist", href: "https://www.versassists.com" },
   { label: "Skool Community", href: "https://www.skool.com/prism-ai-consultants" },
-  { label: "Agent World", href: "https://agents.prismaiconsultants.com" },
 ];
 
 export default function AboutPage() {

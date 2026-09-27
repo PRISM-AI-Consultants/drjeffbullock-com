@@ -64,13 +64,13 @@ const proof = [
   { text: "Pharmageddon, Escape Velocity, and 15 games", serves: "Behavior change", href: "/games" },
   { text: "Mansa Musa and 16 published books", serves: "The culture", href: "/books" },
   { text: "The research, from the Abundance Thesis to human performance", serves: "Best self", href: "/research" },
-  { text: "Agent World, 34 live AI agents", serves: "How one person runs it all", href: "https://agents.prismaiconsultants.com" },
+  { text: "The Build Universe, 62 public builds in one map", serves: "How one person runs it all", href: "https://builds.drjeffbullock.com" },
 ];
 
 const flagships = [
   { name: "Mansa Musa", sub: "19-track concept album", href: "/media", label: "Album", cover: "/images/projects/mansa-musa-project-cover.jpg" },
-  { name: "Agent World", sub: "34 AI agents, live", href: "https://agents.prismaiconsultants.com", label: "Flagship", external: true, cover: "/images/projects/agent-world-cover.jpg" },
-  { name: "Build Universe", sub: "79 builds, full portfolio", href: "https://builds.drjeffbullock.com", label: "Flagship", external: true, cover: "/images/projects/build-world-cover.jpg" },
+  { name: "Honed", sub: "Training companion to Far Transfer", href: "https://gethoned.app", label: "App", external: true, cover: "/images/projects/honed-cover.jpg" },
+  { name: "Build Universe", sub: "62 builds, full portfolio", href: "https://builds.drjeffbullock.com", label: "Flagship", external: true, cover: "/images/projects/build-world-cover.jpg" },
 ];
 
 // The giving canon: one idea, told across books, a novel, and an album. Statuses verified against content frontmatter.
@@ -213,7 +213,7 @@ export default async function HomePage() {
         <Container size="xl" className="py-5">
           <div className="flex items-center gap-x-8 gap-y-2 flex-wrap">
             <span className="eyebrow text-muted-foreground">Speaking at</span>
-            {["SHRM Conference", "DeSales University", "IFEL / Verizon", "TSPN (100K+ viewers)", "Lehigh Valley Chamber"].map((org) => (
+            {["PA SHRM", "Lehigh University", "DeSales University", "IFEL / Verizon", "Lehigh Valley Chamber"].map((org) => (
               <span key={org} className="font-serif italic text-[15px] text-foreground/70">{org}</span>
             ))}
           </div>

@@ -30,7 +30,7 @@ const faqs = [
   {
     question: "Does Dr. Jeff Bullock speak at events?",
     answer:
-      "Yes. Dr. Bullock delivers keynotes and workshops on AI implementation, leadership, and building with technology. Past events include SHRM Conference, DeSales University, IFEL workshops, and TSPN (reaching over 100K combined live and replay viewers). He offers keynote addresses (60-90 minutes), half-day workshops (3-4 hours), and full-day integrations (6-8 hours).",
+      "Yes. Dr. Bullock delivers keynotes and workshops on AI implementation, leadership, and building with technology. He gave the opening keynote at the PA SHRM State Conference in 2025 and 2026, and has spoken for the Executive Forum of the Lehigh Valley, Lehigh University, the Greater Lehigh Valley Chamber, and the IFEL / Verizon AI Readiness Series. Every talk includes a live AI build. Formats run from 45-minute keynotes to half-day and full-day workshops, in person or virtual. Check a date at drjeffbullock.com/speaking.",
   },
   {
     question: "What is VersAssist?",

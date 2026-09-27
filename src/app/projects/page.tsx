@@ -7,7 +7,7 @@ import { ProjectsGrid } from "./projects-grid";
 
 export const metadata: Metadata = {
   title: "Projects",
-  description: "Companies, apps, agents, and creative projects by Dr. Jeff Bullock. PRISM AI Consultants, VersAssist, Agent World, and more.",
+  description: "Companies, apps, agents, and creative projects by Dr. Jeff Bullock. PRISM AI Consultants, VersAssist, and more.",
   openGraph: { images: ["/images/og-projects.jpg"] },
 };
 

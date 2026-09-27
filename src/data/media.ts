@@ -37,18 +37,19 @@ export const mediaItems: MediaItem[] = [
     externalUrl: "https://www.youtube.com/@drjeffbullock",
   },
   {
-    title: "SHRM Conference Presentation",
+    title: "PA SHRM 2026 Opening Keynote: AI That Actually Works",
     type: "talk",
     description:
-      "AI Implementation for Business Leaders. Delivered at the Society for Human Resource Management conference in September 2025.",
-    date: "2025-09-11",
+      "Opening keynote at the Pennsylvania SHRM Annual Conference, Wyndham Lancaster. Volunteers brought real HR problems to the stage and watched them get solved with AI live. Full keynote on YouTube.",
+    date: "2026-09-11",
+    externalUrl: "https://youtu.be/lAx1SRTICps",
   },
   {
-    title: "Gerald Haman / TSPN Keynote Discussion",
+    title: "PA SHRM 2025 Opening Keynote",
     type: "talk",
     description:
-      "Keynote discussion reaching over 100K combined live and replay viewers across Zoom and YouTube. Covered AI implementation and the operator mindset.",
-    date: "2025-09-08",
+      "Friday opening keynote at the Pennsylvania SHRM State Conference, Penn Stater, State College. AI strategies for HR productivity.",
+    date: "2025-09-12",
   },
   {
     title: "IFEL Ask the Expert: AI Storytelling Techniques",
@@ -58,11 +59,18 @@ export const mediaItems: MediaItem[] = [
     date: "2026-02-26",
   },
   {
-    title: "Faulkner Automotive AI Presentation",
+    title: "Executive Forum of the Lehigh Valley: Beyond the Buzz, Real AI for Real Business",
     type: "talk",
     description:
-      "Invited presentation at DeSales University covering AI integration strategies for automotive dealership operations.",
+      "Presenter at the Executive Forum Signature Event at DeSales University, Center Valley, PA.",
     date: "2025-11-19",
+  },
+  {
+    title: "Faulkner Automotive Group AI Training",
+    type: "talk",
+    description:
+      "Hands-on AI workshop for leaders across the Faulkner Automotive Group dealerships.",
+    date: "2025-05-21",
   },
   {
     title: "Pharmageddon Original Soundtrack",

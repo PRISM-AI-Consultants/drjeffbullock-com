@@ -12,7 +12,7 @@ import { Mic, Users, Building2, Monitor, ArrowRight, Download, ShieldCheck } fro
 export const metadata: Metadata = {
   title: "Speaking",
   description:
-    "Book Dr. Jeff Bullock for keynotes and workshops on AI that actually works. Keynote speaker at PA SHRM in 2025 and 2026. Every talk includes a live AI build with volunteers from the audience. Based in Lehigh Valley, PA.",
+    "Book Dr. Jeff Bullock for keynotes and workshops on AI that actually works. Opening keynote at the PA SHRM State Conference in 2025 and 2026. Every talk includes a live AI build with volunteers from the audience. Based in Lehigh Valley, PA.",
   openGraph: { images: ["/images/speaking/pa-shrm-2026-keynote-gesture.jpg"] },
 };
 
@@ -24,13 +24,13 @@ const VIDEOS = {
 };
 
 const proofPoints = [
-  "Keynote speaker at PA SHRM, 2025 and 2026",
+  "Opening keynote at the PA SHRM State Conference, 2025 and 2026",
   "A live AI build on stage in every talk, using real problems from the room",
   "Doctor of Pharmacy, 18 years at CVS Health",
   "Founder of PRISM AI Consultants and co-founder of VersAssist",
 ];
 
-const stages = ["PA SHRM", "DeSales University", "Greater Lehigh Valley Chamber", "IFEL", "TSPN"];
+const stages = ["PA SHRM", "Lehigh University", "DeSales University", "Executive Forum of the Lehigh Valley", "Greater Lehigh Valley Chamber", "IFEL / Verizon"];
 
 const testimonials = [
   {
@@ -88,14 +88,29 @@ const formats = [
   { icon: Monitor, title: "Virtual", duration: "Any format", description: "The same live build, delivered to a remote or hybrid audience." },
 ];
 
+const upcomingEvents = [
+  { event: "High Center Nonprofit: Turning Data into Storytelling for Fundraising", date: "October 7, 2026", iso: "2026-10-07", venue: "S. Dale High Leadership Center, Lancaster, PA", type: "Panel" },
+  { event: "ALCA Mid-Atlantic 2026, General Session", date: "November 9, 2026", iso: "2026-11-09", venue: "Falls Church Marriott Fairview Park, VA", type: "General Session" },
+  { event: "McKinney Media Headshot Happy Hour", date: "November 19, 2026", iso: "2026-11-19", venue: "The Swiftwater, Pocono region, PA", type: "Talk" },
+  { event: "SEPA SHRM Chapter Meeting", date: "January 19, 2027", iso: "2027-01-19", venue: "Southeastern PA", type: "Talk" },
+];
+
 const pastEvents = [
   { event: "PA SHRM 2026 Annual Conference, Opening Keynote", date: "September 11, 2026", iso: "2026-09-11", venue: "Wyndham Lancaster Resort, Lancaster, PA", type: "Keynote" },
-  { event: "Lehigh Valley Business Summit", date: "April 30, 2026", iso: "2026-04-30", venue: "DeSales University, Center Valley, PA", type: "Keynote / Panel" },
-  { event: "IFEL Ask the Expert: AI Storytelling Techniques", date: "February 26, 2026", iso: "2026-02-26", venue: "IFEL (virtual)", type: "Workshop" },
-  { event: "IFEL Verizon Digital Small Business Readiness Workshop", date: "January 29, 2026", iso: "2026-01-29", venue: "IFEL (virtual)", type: "Workshop" },
-  { event: "Faulkner Automotive AI Presentation", date: "November 19, 2025", iso: "2025-11-19", venue: "DeSales University, Center Valley, PA", type: "Keynote" },
-  { event: "PA SHRM 2025 Annual Conference", date: "September 2025", iso: "2025-09", venue: "Pennsylvania SHRM State Conference", type: "Keynote" },
-  { event: "TSPN Keynote Discussion with Gerald Haman", date: "September 8, 2025", iso: "2025-09-08", venue: "TSPN (Zoom and YouTube)", type: "Keynote" },
+  { event: "The High Center (Elizabethtown College), KL2 Peer Group", date: "August 25, 2026", iso: "2026-08-25", venue: "Allentown, PA", type: "Workshop" },
+  { event: "Ideas to Income Summit: Build It Live With AI", date: "August 19, 2026", iso: "2026-08-19", venue: "Virtual", type: "Summit" },
+  { event: "Allentown Area Real Estate Investors Club", date: "June 17, 2026", iso: "2026-06-17", venue: "Allentown, PA", type: "Guest Speaker" },
+  { event: "Delta Sigma Theta, Collin County Alumni Chapter: Delta and AI", date: "May 4, 2026", iso: "2026-05-04", venue: "Virtual", type: "Panel" },
+  { event: "Lehigh Valley Business Summit: AI in Action", date: "April 30, 2026", iso: "2026-04-30", venue: "DeSales University, Center Valley, PA", type: "Panel" },
+  { event: "Zoellner Arts Center: AI in Arts and Culture", date: "April 28, 2026", iso: "2026-04-28", venue: "Lehigh University, Bethlehem, PA", type: "Talk and Panel" },
+  { event: "AABLC Masterclass: ROI from AI", date: "March 20, 2026", iso: "2026-03-20", venue: "Greater Lehigh Valley Chamber (virtual)", type: "Masterclass" },
+  { event: "Allentown School District College and Career Symposium", date: "March 10, 2026", iso: "2026-03-10", venue: "Muhlenberg College, Allentown, PA", type: "Panel" },
+  { event: "IFEL / Verizon AI Readiness Series", date: "January to April 2026", iso: "2026-01-29", venue: "Virtual (content, storytelling, and research sessions)", type: "Webinars" },
+  { event: "Executive Forum of the Lehigh Valley: Beyond the Buzz, Real AI for Real Business", date: "November 19, 2025", iso: "2025-11-19", venue: "DeSales University, Center Valley, PA", type: "Presenter" },
+  { event: "Lehigh University MBA AI Workshop", date: "October 13, 2025", iso: "2025-10-13", venue: "Lehigh University, Bethlehem, PA", type: "Workshop" },
+  { event: "PA SHRM 2025 State Conference, Opening Keynote", date: "September 12, 2025", iso: "2025-09-12", venue: "The Penn Stater, State College, PA", type: "Keynote" },
+  { event: "Faulkner Automotive Group AI Training", date: "May 21, 2025", iso: "2025-05-21", venue: "Downingtown, PA", type: "Workshop" },
+  { event: "Central Keystone Valley HR Professionals: AI Strategies for HR Leaders", date: "January 15, 2025", iso: "2025-01-15", venue: "Virtual", type: "Talk" },
 ];
 
 const photos = [
@@ -118,12 +133,20 @@ const jsonLd = {
       embedUrl: `https://www.youtube.com/embed/${VIDEOS.keynote}`,
       contentUrl: `https://www.youtube.com/watch?v=${VIDEOS.keynote}`,
     },
+    ...upcomingEvents.map((evt) => ({
+      "@type": "Event",
+      name: evt.event,
+      startDate: evt.iso,
+      eventStatus: "https://schema.org/EventScheduled",
+      performer: { "@type": "Person", name: "Dr. Jeff Bullock" },
+      location: { "@type": "Place", name: evt.venue },
+    })),
     ...pastEvents.map((evt) => ({
       "@type": "Event",
       name: evt.event,
       startDate: evt.iso,
       performer: { "@type": "Person", name: "Dr. Jeff Bullock" },
-      eventAttendanceMode: evt.venue.includes("virtual") || evt.venue.includes("Zoom")
+      eventAttendanceMode: evt.venue.toLowerCase().includes("virtual")
         ? "https://schema.org/OnlineEventAttendanceMode"
         : "https://schema.org/OfflineEventAttendanceMode",
       location: { "@type": "Place", name: evt.venue },
@@ -323,6 +346,18 @@ export default function SpeakingPage() {
               </div>
             </div>
             <div>
+              <h2 className="text-3xl font-extrabold tracking-tight">Coming up</h2>
+              <div className="mt-4 mb-10 space-y-3">
+                {upcomingEvents.map((event) => (
+                  <div key={event.event} className="flex items-start justify-between gap-4 rounded-[var(--radius-lg)] border border-accent/40 bg-accent/5 p-4">
+                    <div>
+                      <h3 className="text-sm font-bold">{event.event}</h3>
+                      <p className="mt-0.5 text-xs text-muted-foreground">{event.venue}, {event.date}</p>
+                    </div>
+                    <Badge variant="outline" className="flex-shrink-0">{event.type}</Badge>
+                  </div>
+                ))}
+              </div>
               <h2 className="text-3xl font-extrabold tracking-tight">Recent stages</h2>
               <div className="mt-4 space-y-3">
                 {pastEvents.map((event) => (
