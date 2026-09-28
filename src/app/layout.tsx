@@ -153,6 +153,10 @@ const personJsonLd = {
     "https://www.alignable.com/allentown-pa/prism-ai-consultants",
     "https://www.bizapedia.com/pa/prism-ai-consultants-llc.html",
     "https://valiantceo.com/closing-the-ai-implementation-gap-jeffrey-bullock-of-prism-ai-consultants-on-turning-spend-into-revenue/",
+    // Lehigh Valley Business, "2026 In the Lead Minority Owned Businesses",
+    // 2026-07-27. Verified 2026-09-28 by fetch (curl gets a Cloudflare 403,
+    // the page is real). Already linked from prismaiconsultants.com.
+    "https://lvb.com/prism-ai-consultants/",
   ],
   description:
     "PharmD turned AI implementation consultant, author of 16 published books, and CEO of PRISM AI Consultants in Allentown, Pennsylvania. Helps business owners implement AI operationally. Not a medical doctor.",
