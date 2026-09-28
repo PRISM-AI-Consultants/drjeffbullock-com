@@ -197,6 +197,15 @@ export default function RootLayout({
         <SiteFooter />
         <CommandPaletteWrapper />
         <AudioPlayer />
+        {/* AI assistant (talk or type). Sits above the AudioPlayer button (data-bottom). Served by prism-voice-live
+            on the VPS; edit ~/prism/voice-live/widget.js, not here. */}
+        <Script
+          src="https://voice.srv1030637.hstgr.cloud/live/widget.js"
+          strategy="afterInteractive"
+          data-site="drjeff"
+          data-theme="auto"
+          data-bottom="92"
+        />
       </body>
     </html>
   );
