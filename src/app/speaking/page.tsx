@@ -91,6 +91,8 @@ const formats = [
 const upcomingEvents = [
   { event: "High Center Nonprofit: Turning Data into Storytelling for Fundraising", date: "October 7, 2026", iso: "2026-10-07", venue: "S. Dale High Leadership Center, Lancaster, PA", type: "Panel" },
   { event: "ALCA Mid-Atlantic 2026, General Session", date: "November 9, 2026", iso: "2026-11-09", venue: "Falls Church Marriott Fairview Park, VA", type: "General Session" },
+  { event: "The High Center: Leadership Speaker Series", date: "November 17, 2026", iso: "2026-11-17", venue: "Kutztown University, Kutztown, PA", type: "Panel" },
+  { event: "Hangout For Art: The Art of Business, AI for Entrepreneurs", date: "November 19, 2026", iso: "2026-11-19", venue: "Hangout For Art, Allentown, PA", type: "Talk" },
   { event: "McKinney Media Headshot Happy Hour", date: "November 19, 2026", iso: "2026-11-19", venue: "The Swiftwater, Pocono region, PA", type: "Talk" },
   { event: "SEPA SHRM Chapter Meeting", date: "January 19, 2027", iso: "2027-01-19", venue: "Southeastern PA", type: "Talk" },
 ];
