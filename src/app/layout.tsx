@@ -70,6 +70,7 @@ const websiteJsonLd = {
     "The IP library and creator hub of Dr. Jeff Bullock. 16 published books, 15 games, 4 research frameworks, and an AI agent system with 34 autonomous agents.",
   author: {
     "@type": "Person",
+    "@id": "https://drjeffbullock.com/#person",
     name: "Dr. Jeff Bullock",
     url: "https://drjeffbullock.com/about",
   },
@@ -83,6 +84,10 @@ const websiteJsonLd = {
 const personJsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
+  // Entity IDs (2026-10-05). prismaiconsultants.com points its founder at this
+  // @id, and this Person points worksFor at PRISM's @id, so the two sites form
+  // one resolvable graph. Keep both IDs identical on both sites.
+  "@id": "https://drjeffbullock.com/#person",
   name: "Dr. Jeff Bullock",
   givenName: "Jeff",
   familyName: "Bullock",
@@ -91,8 +96,9 @@ const personJsonLd = {
   jobTitle: "CEO & Founder",
   worksFor: {
     "@type": "Organization",
+    "@id": "https://prismaiconsultants.com/#organization",
     name: "PRISM AI Consultants",
-    url: "https://www.prismaiconsultants.com",
+    url: "https://prismaiconsultants.com",
   },
   alumniOf: {
     "@type": "CollegeOrUniversity",
