@@ -38,13 +38,21 @@ export async function POST(req: NextRequest) {
 
     const resend = new Resend(apiKey);
 
-    await resend.emails.send({
+    // Resend returns { error } instead of throwing, so check it or a failed send looks like success.
+    const { error: sendError } = await resend.emails.send({
       from: "DrJeffBullock.com <contact@drjeffbullock.com>",
       to: "info@prismaiconsultants.com",
       replyTo: email,
       subject: `[Contact Form] ${subject || "General"} - ${name}`,
       text: `Name: ${name}\nEmail: ${email}\nSubject: ${subject || "General"}\n\n${message}`,
     });
+    if (sendError) {
+      console.error("Contact form send failed:", sendError);
+      return NextResponse.json(
+        { error: "We couldn't send that just now. Please email info@prismaiconsultants.com." },
+        { status: 502 }
+      );
+    }
 
     return NextResponse.json(
       { success: true, message: "Message sent successfully." },

@@ -69,7 +69,8 @@ export async function POST(req: NextRequest) {
 
     // Notify Jeff of new subscriber
     const listLine = listed ? "Added to GHL automatically." : "NOT added to GHL, add to your newsletter list by hand.";
-    await resend.emails.send({
+    // Resend returns { error } instead of throwing, so check it or a failed send looks like success.
+    const { error: sendError } = await resend.emails.send({
       from: "DrJeffBullock.com <contact@drjeffbullock.com>",
       to: "info@prismaiconsultants.com",
       subject: !cleanSource
@@ -83,6 +84,15 @@ export async function POST(req: NextRequest) {
           ? `New free download signup from DrJeffBullock.com:\n\nEmail: ${email}\nSource: ${cleanSource}\n\n${listLine}`
           : `New book waitlist signup from DrJeffBullock.com:\n\nEmail: ${email}\nBook: ${cleanSource}\n\nNotify this person when "${cleanSource}" releases. ${listLine}`,
     });
+    // Fail only if nothing captured the signup: no GHL contact AND no notification email.
+    if (sendError && !listed) {
+      console.error("Newsletter signup send failed:", sendError);
+      return NextResponse.json(
+        { error: "We couldn't save that just now. Please try again." },
+        { status: 502, headers: CORS }
+      );
+    }
+    if (sendError) console.error("Newsletter notify email failed (contact saved in GHL):", sendError);
 
     return NextResponse.json(
       { success: true, message: "Successfully subscribed to the newsletter." },
