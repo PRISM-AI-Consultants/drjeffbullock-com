@@ -1,7 +1,7 @@
 export interface Book {
   title: string;
   slug: string;
-  category: "fiction" | "non-fiction" | "short-story" | "novel";
+  category: "fiction" | "non-fiction" | "short-story" | "novel" | "childrens";
   status: "published" | "in-progress";
   coverImage?: string;
   description: string;

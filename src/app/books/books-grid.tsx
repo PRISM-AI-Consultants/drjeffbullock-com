@@ -7,7 +7,9 @@ import { ContentGrid } from "@/components/ui/content-grid";
 import { BookCard } from "@/components/content/book-card";
 import type { Book } from "@/lib/types";
 
-const categories = ["All", "Fiction", "Non-Fiction", "Novel", "Short Story"];
+const categories = ["All", "Fiction", "Non-Fiction", "Novel", "Short Story", "Children's"];
+
+const toCategory = (tag: string) => tag.toLowerCase().replace("'", "").replace(" ", "-");
 
 export function BooksGrid({ books }: { books: Book[] }) {
   const [activeTag, setActiveTag] = useState("All");
@@ -15,7 +17,7 @@ export function BooksGrid({ books }: { books: Book[] }) {
 
   const filtered = useMemo(() => {
     return books.filter((b) => {
-      const matchesTag = activeTag === "All" || b.category === activeTag.toLowerCase().replace(" ", "-");
+      const matchesTag = activeTag === "All" || b.category === toCategory(activeTag);
       const matchesSearch = !search || b.title.toLowerCase().includes(search.toLowerCase()) || b.description.toLowerCase().includes(search.toLowerCase());
       return matchesTag && matchesSearch;
     });

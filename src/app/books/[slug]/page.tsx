@@ -10,6 +10,7 @@ import { BookCover } from "@/components/ui/book-cover";
 import { MDXContent } from "@/components/content/mdx-content";
 import { NewsletterForm } from "@/components/ui/newsletter-form";
 import { ArrowLeft, ShoppingCart, Download, Headphones, Smartphone, BookOpen, Globe } from "lucide-react";
+import { categoryLabel } from "@/lib/utils";
 
 export function generateStaticParams() {
   return getBooks().map((b) => ({ slug: b.slug }));
@@ -58,7 +59,7 @@ export default async function BookPage({ params }: { params: Promise<{ slug: str
             {/* Book Info */}
             <div className="md:col-span-2">
               <div className="flex flex-wrap gap-2 mb-4">
-                <Badge variant="accent">{book.category}</Badge>
+                <Badge variant="accent">{categoryLabel(book.category)}</Badge>
                 {book.formats.map((f) => (
                   <Badge key={f} variant="outline">{f}</Badge>
                 ))}
@@ -184,7 +185,7 @@ export default async function BookPage({ params }: { params: Promise<{ slug: str
                     coverImage={b.coverImage}
                     className="mb-3 group-hover:shadow-md transition-shadow"
                   />
-                  <Badge className="mb-2">{b.category}</Badge>
+                  <Badge className="mb-2">{categoryLabel(b.category)}</Badge>
                   <h3 className="font-bold">{b.title}</h3>
                   <p className="mt-1 text-sm text-muted-foreground line-clamp-2">{b.description}</p>
                 </Link>

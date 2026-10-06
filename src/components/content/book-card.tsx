@@ -2,6 +2,7 @@ import { Card, CardHeader, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { BookCover } from "@/components/ui/book-cover";
 import type { Book } from "@/lib/types";
+import { categoryLabel } from "@/lib/utils";
 
 export function BookCard({ book }: { book: Book }) {
   return (
@@ -26,7 +27,7 @@ export function BookCard({ book }: { book: Book }) {
           )}
         </div>
         <div className="flex gap-2 mb-2 flex-wrap">
-          <Badge>{book.category}</Badge>
+          <Badge>{categoryLabel(book.category)}</Badge>
           {book.formats.map((f) => (
             <Badge key={f} variant="outline">{f}</Badge>
           ))}
