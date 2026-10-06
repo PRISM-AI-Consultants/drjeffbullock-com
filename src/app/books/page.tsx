@@ -7,7 +7,7 @@ import { BooksGrid } from "./books-grid";
 
 export const metadata: Metadata = {
   title: "Books",
-  description: "Books by Dr. Jeff Bullock - 16 published, 3 in progress. Fiction, non-fiction, and short stories spanning AI, learning science, historical fiction, horror, and more.",
+  description: "Books by Dr. Jeff Bullock. Fiction, non-fiction, short stories, and children's picture books spanning AI, learning science, historical fiction, horror, and more.",
   openGraph: { images: ["/images/og-books.jpg"] },
 };
 
@@ -39,7 +39,7 @@ export default function BooksPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }}
       />
-      <PageHeader title="Books" description={`${published} published, ${inProgress} in progress. Fiction, non-fiction, and short stories.`} />
+      <PageHeader title="Books" description={`${published} published, ${inProgress} in progress. Fiction, non-fiction, short stories, and children's books.`} />
       <Section>
         <Container size="xl">
           <BooksGrid books={books} />

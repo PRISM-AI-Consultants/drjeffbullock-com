@@ -19,11 +19,15 @@ export function BookCover({ title, category, coverImage, className }: BookCoverP
   if (coverImage) {
     return (
       <div className={cn("aspect-[3/4] rounded-[var(--radius-md)] overflow-hidden relative", className)}>
+        {/* Picture books are square: show the whole cover over a blurred fill instead of cropping it */}
+        {category === "childrens" && (
+          <Image src={coverImage} alt="" aria-hidden fill className="object-cover scale-125 blur-xl opacity-70" sizes="25vw" />
+        )}
         <Image
           src={coverImage}
           alt={`${title} book cover`}
           fill
-          className="object-cover"
+          className={category === "childrens" ? "object-contain" : "object-cover"}
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
         />
       </div>
