@@ -10,7 +10,7 @@ const faqs = [
   {
     question: "Who is Dr. Jeff Bullock?",
     answer:
-      "Dr. Jeff Bullock is a Doctor of Pharmacy (PharmD) from Xavier University of Louisiana who spent 18 years at CVS Health before founding PRISM AI Consultants in 2023. He is the author of 16 published books, creator of 15 browser-based games, producer of a 19-track concept album, and builder of an AI agent system with 34 autonomous agents. He is based in Lehigh Valley, Pennsylvania.",
+      "Dr. Jeff Bullock is a Doctor of Pharmacy (PharmD) from Xavier University of Louisiana who spent 18 years at CVS Health before founding PRISM AI Consultants in 2023. He is the author of 17 published books, creator of 18 browser-based games, producer of four albums and a game soundtrack on Spotify, and builder of an AI agent system with 34 autonomous agents. He is based in Lehigh Valley, Pennsylvania.",
   },
   {
     question: "What is PRISM AI Consultants?",
@@ -50,7 +50,7 @@ const faqs = [
   {
     question: "What is the Mansa Musa album?",
     answer:
-      '"Mansa Musa: More Than Gold" is a 19-track concept album exploring the legacy of Mansa Musa, the richest person in history. It was produced using AI-generated music and is available on Spotify. The album accompanies the novel MANSA, which tells the story through the eyes of treasury architect Sekou Kante.',
+      '"Mansa Musa: More Than Gold" is a 13-track concept album exploring the legacy of Mansa Musa, the richest person in history. It was produced using AI-generated music and is available on Spotify. The album accompanies the novel MANSA, which tells the story through the eyes of treasury architect Sekou Kante.',
   },
   {
     question: "What is Far Transfer about?",

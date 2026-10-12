@@ -5,9 +5,9 @@ export const mediaItems: MediaItem[] = [
     title: "Mansa Musa: More Than Gold",
     type: "music-album",
     description:
-      "A 19-track concept album exploring the legacy of Mansa Musa through original AI-generated music. Tracks span the journey from Timbuktu to Mecca and back. Companion to the novel MANSA.",
+      "A 13-track concept album exploring the legacy of Mansa Musa through original AI-generated music. Tracks span the journey from Timbuktu to Mecca and back. Companion to the novel MANSA.",
     date: "2026-01-17",
-    duration: "19 tracks",
+    duration: "13 tracks",
     spotifyUrl: "https://open.spotify.com/album/1iOSi2A5g4LUjSkvniwl4u",
   },
   {
@@ -76,7 +76,7 @@ export const mediaItems: MediaItem[] = [
     title: "Pharmageddon Original Soundtrack",
     type: "audio",
     description:
-      "5 original compositions created for the Pharmageddon game. Includes Morning Route, Rush Hour, Double Parked, Legend of the Block, and the title track.",
+      "The 5-track soundtrack EP for the Pharmageddon game: Pharmageddon, The Honda Civic, Wildin, Hard Mode and Code Red. On Spotify.",
     date: "2025-08-01",
   },
   {

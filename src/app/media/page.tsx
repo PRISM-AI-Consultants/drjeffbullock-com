@@ -20,21 +20,27 @@ export default function MediaPage() {
       {/* Films and music videos live on PRISM Studios */}
       <Section className="pb-0">
         <Container size="xl">
-          <a
-            href="https://prismstudios.app/watch/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group flex flex-col gap-2 rounded-[var(--radius-lg)] border border-border bg-card p-6 transition-colors hover:border-accent sm:flex-row sm:items-center sm:justify-between"
-          >
-            <div>
-              <Badge variant="accent" className="mb-2">Watch</Badge>
-              <h2 className="text-2xl font-extrabold tracking-tight">Films and music videos, made with AI</h2>
-              <p className="mt-1 text-sm text-muted-foreground">
-                Symbiont: Dyad, Own the Lot, Just Give Me Time and the full catalog, all in one place on PRISM Studios.
-              </p>
-            </div>
-            <span className="text-sm font-semibold text-accent group-hover:underline">Watch on PRISM Studios &rarr;</span>
-          </a>
+          <div className="grid gap-4 md:grid-cols-2">
+            {[
+              { href: "https://prismstudios.app/watch/", badge: "Watch", title: "Films and music videos, made with AI", body: "Symbiont: Dyad, Own the Lot, Just Give Me Time and the full catalog.", cta: "Watch on PRISM Studios" },
+              { href: "https://prismstudios.app/listen/", badge: "Listen", title: "Every album and soundtrack", body: "The Black Advantage, Mansa Musa, Salt and Wing, the Pharmageddon soundtrack and more, each linked to its book, game or film.", cta: "Listen on PRISM Studios" },
+            ].map((c) => (
+              <a
+                key={c.href}
+                href={c.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex flex-col justify-between gap-3 rounded-[var(--radius-lg)] border border-border bg-card p-6 transition-colors hover:border-accent"
+              >
+                <div>
+                  <Badge variant="accent" className="mb-2">{c.badge}</Badge>
+                  <h2 className="text-2xl font-extrabold tracking-tight">{c.title}</h2>
+                  <p className="mt-1 text-sm text-muted-foreground">{c.body}</p>
+                </div>
+                <span className="text-sm font-semibold text-accent group-hover:underline">{c.cta} &rarr;</span>
+              </a>
+            ))}
+          </div>
         </Container>
       </Section>
 
@@ -47,13 +53,13 @@ export default function MediaPage() {
               <Badge variant="accent" className="mb-4">Featured Album</Badge>
               <h2 className="text-3xl font-extrabold tracking-tight mb-4">Mansa Musa</h2>
               <p className="text-muted-foreground mb-4">
-                A 19-track concept album exploring the legacy of Mansa Musa - the richest person in history - through original AI-generated music. Tracks span the journey from Timbuktu to Mecca and back.
+                A 13-track concept album exploring the legacy of Mansa Musa - the richest person in history - through original AI-generated music. Tracks span the journey from Timbuktu to Mecca and back.
               </p>
               <div className="flex items-center gap-3 text-sm text-muted-foreground">
                 <Music className="h-4 w-4" />
-                <span>19 tracks</span>
+                <span>13 tracks</span>
                 <span className="text-border">|</span>
-                <span>Released January 2026</span>
+                <span>On Spotify</span>
               </div>
               <a
                 href="https://open.spotify.com/album/1iOSi2A5g4LUjSkvniwl4u"
@@ -103,13 +109,13 @@ export default function MediaPage() {
               </div>
               <div className="flex flex-wrap items-center gap-3 mt-6">
                 <a
-                  href="https://theblackadvantage.drjeffbullock.com"
+                  href="https://open.spotify.com/album/1SITtkJCopPZqSliMexlso"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-5 py-2.5 bg-foreground text-background font-semibold rounded-full text-sm hover:opacity-90 transition-opacity"
                 >
                   <Music className="h-4 w-4" />
-                  Listen to the Album
+                  Listen on Spotify
                 </a>
                 <a
                   href="/books/the-black-advantage"

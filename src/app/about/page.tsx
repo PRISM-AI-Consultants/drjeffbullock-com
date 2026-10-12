@@ -79,7 +79,7 @@ export default function AboutPage() {
                   I founded PRISM AI Consultants in June 2023 to help business leaders implement AI - not as a buzzword, but as a real operational tool. Since then, I have personally coached business leaders across more than 750 coaching sessions on making AI work for their specific situations.
                 </p>
                 <p>
-                  But this site is not about PRISM. This is my personal library, the proof of what happens when you use AI as a force multiplier across every creative and intellectual domain you care about. {bookCounts.published} published books, with {bookCounts.inProgress} more in progress. Fifteen playable games and interactive experiences. A 19-track concept album. Four original research frameworks. A sitcom pilot. Two companies. And an AI agent system with 34 autonomous agents.
+                  But this site is not about PRISM. This is my personal library, the proof of what happens when you use AI as a force multiplier across every creative and intellectual domain you care about. {bookCounts.published} published books, with {bookCounts.inProgress} more in progress. Eighteen playable games. Four albums and a game soundtrack on Spotify. Four original research frameworks. A sitcom pilot. Two companies. And an AI agent system with 34 autonomous agents.
                 </p>
                 <p>
                   I also serve as Chair of Engagement for the{" "}

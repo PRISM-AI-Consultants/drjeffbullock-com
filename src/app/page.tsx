@@ -79,7 +79,7 @@ const givingCanon = [
   { title: "Hacked for Good", kind: "The habit", sub: "Giving, made personal", cover: "/images/books/hacked-for-good-cover.jpg", href: "/books/hacked-for-good", status: "Summer 2026" },
   { title: "MANSA", kind: "The legend", sub: "A novel", cover: "/images/books/mansa-cover.jpg", href: "/books/mansa", status: "Aug 2026" },
   { title: "What You Don't Give Away", kind: "The future", sub: "A novel", cover: "/images/books/what-you-dont-give-away-cover.jpg", href: "/books/what-you-dont-give-away", status: "Aug 2026" },
-  { title: "Mansa Musa: More Than Gold", kind: "The album", sub: "19 tracks, live", cover: "/images/projects/mansa-musa-project-cover.jpg", href: "/media", status: "Live" },
+  { title: "Mansa Musa: More Than Gold", kind: "The album", sub: "13 tracks, on Spotify", cover: "/images/projects/mansa-musa-project-cover.jpg", href: "/media", status: "Live" },
 ];
 
 const testimonials = [
