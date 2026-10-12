@@ -27,7 +27,11 @@ export default function GamesPage() {
             <a href="https://prismstudios.app" target="_blank" rel="noopener noreferrer" className="font-medium text-foreground underline underline-offset-4">
               PRISM Studios
             </a>
-            , the arcade where new releases land first.
+            , the arcade where new releases land first. The films and music videos are there too, under{" "}
+            <a href="https://prismstudios.app/watch/" target="_blank" rel="noopener noreferrer" className="font-medium text-foreground underline underline-offset-4">
+              Watch
+            </a>
+            .
           </p>
           <ContentGrid columns={2}>
             {games.map((game) => (

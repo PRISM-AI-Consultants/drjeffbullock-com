@@ -17,6 +17,27 @@ export default function MediaPage() {
     <>
       <PageHeader title="Media" description="Talks, interviews, podcasts, music, and video." />
 
+      {/* Films and music videos live on PRISM Studios */}
+      <Section className="pb-0">
+        <Container size="xl">
+          <a
+            href="https://prismstudios.app/watch/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group flex flex-col gap-2 rounded-[var(--radius-lg)] border border-border bg-card p-6 transition-colors hover:border-accent sm:flex-row sm:items-center sm:justify-between"
+          >
+            <div>
+              <Badge variant="accent" className="mb-2">Watch</Badge>
+              <h2 className="text-2xl font-extrabold tracking-tight">Films and music videos, made with AI</h2>
+              <p className="mt-1 text-sm text-muted-foreground">
+                Symbiont: Dyad, Own the Lot, Just Give Me Time and the full catalog, all in one place on PRISM Studios.
+              </p>
+            </div>
+            <span className="text-sm font-semibold text-accent group-hover:underline">Watch on PRISM Studios &rarr;</span>
+          </a>
+        </Container>
+      </Section>
+
       {/* Featured Albums */}
       <Section>
         <Container size="xl">
