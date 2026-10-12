@@ -97,8 +97,8 @@ const upcomingEvents = [
   { event: "SEPA SHRM Chapter Meeting", date: "January 19, 2027", iso: "2027-01-19", venue: "Southeastern PA", type: "Talk" },
 ];
 
-const pastEvents = [
-  { event: "PA SHRM 2026 Annual Conference, Opening Keynote", date: "September 11, 2026", iso: "2026-09-11", venue: "Wyndham Lancaster Resort, Lancaster, PA", type: "Keynote" },
+const pastEvents: { event: string; date: string; iso: string; venue: string; type: string; url?: string; urlLabel?: string }[] = [
+  { event: "PA SHRM 2026 Annual Conference, Opening Keynote", date: "September 11, 2026", iso: "2026-09-11", venue: "Wyndham Lancaster Resort, Lancaster, PA", type: "Keynote", url: "https://pashrm.prismaiconsultants.com/", urlLabel: "Get the Monday Morning Kit from this keynote" },
   { event: "The High Center (Elizabethtown College), KL2 Peer Group", date: "August 25, 2026", iso: "2026-08-25", venue: "Allentown, PA", type: "Workshop" },
   { event: "Ideas to Income Summit: Build It Live With AI", date: "August 19, 2026", iso: "2026-08-19", venue: "Virtual", type: "Summit" },
   { event: "Allentown Area Real Estate Investors Club", date: "June 17, 2026", iso: "2026-06-17", venue: "Allentown, PA", type: "Guest Speaker" },
@@ -122,7 +122,8 @@ const photos = [
   { src: "/images/speaking/pa-shrm-2026-stage-crowd.jpg", alt: "The PA SHRM 2026 stage seen over the audience" },
 ];
 
-const jsonLd = {
+function buildJsonLd(upcoming: typeof upcomingEvents) {
+  return {
   "@context": "https://schema.org",
   "@graph": [
     {
@@ -135,7 +136,7 @@ const jsonLd = {
       embedUrl: `https://www.youtube.com/embed/${VIDEOS.keynote}`,
       contentUrl: `https://www.youtube.com/watch?v=${VIDEOS.keynote}`,
     },
-    ...upcomingEvents.map((evt) => ({
+    ...upcoming.map((evt) => ({
       "@type": "Event",
       name: evt.event,
       startDate: evt.iso,
@@ -154,10 +155,17 @@ const jsonLd = {
       location: { "@type": "Place", name: evt.venue },
     })),
   ],
-};
+  };
+}
+
+// Re-render daily so a passed date drops off "Coming up" without a redeploy.
+export const revalidate = 86400;
 
 export default function SpeakingPage() {
   const bookCounts = getBookCounts();
+  const today = new Date().toLocaleDateString("en-CA", { timeZone: "America/New_York" });
+  const upcoming = upcomingEvents.filter((e) => e.iso >= today);
+  const jsonLd = buildJsonLd(upcoming);
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
@@ -350,7 +358,7 @@ export default function SpeakingPage() {
             <div>
               <h2 className="text-3xl font-extrabold tracking-tight">Coming up</h2>
               <div className="mt-4 mb-10 space-y-3">
-                {upcomingEvents.map((event) => (
+                {upcoming.map((event) => (
                   <div key={event.event} className="flex items-start justify-between gap-4 rounded-[var(--radius-lg)] border border-accent/40 bg-accent/5 p-4">
                     <div>
                       <h3 className="text-sm font-bold">{event.event}</h3>
@@ -360,6 +368,13 @@ export default function SpeakingPage() {
                   </div>
                 ))}
               </div>
+              <p className="-mt-6 mb-10 text-sm text-muted-foreground">
+                Free live sessions from PRISM, open to anyone:{" "}
+                <a href="https://prismaiconsultants.com/events" target="_blank" rel="noopener noreferrer" className="font-medium text-accent hover:underline">
+                  see every PRISM event
+                </a>
+                .
+              </p>
               <h2 className="text-3xl font-extrabold tracking-tight">Recent stages</h2>
               <div className="mt-4 space-y-3">
                 {pastEvents.map((event) => (
@@ -367,6 +382,11 @@ export default function SpeakingPage() {
                     <div>
                       <h3 className="text-sm font-bold">{event.event}</h3>
                       <p className="mt-0.5 text-xs text-muted-foreground">{event.venue}, {event.date}</p>
+                      {event.url && (
+                        <a href={event.url} target="_blank" rel="noopener noreferrer" className="mt-1 inline-block text-xs font-medium text-accent hover:underline">
+                          {event.urlLabel ?? "Resources from this talk"}
+                        </a>
+                      )}
                     </div>
                     <Badge variant="outline" className="flex-shrink-0">{event.type}</Badge>
                   </div>
