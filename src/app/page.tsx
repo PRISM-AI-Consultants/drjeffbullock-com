@@ -262,7 +262,7 @@ export default async function HomePage() {
               />
             </div>
             <div>
-              <h2 className="font-display font-extrabold tracking-[-0.03em] text-[clamp(2rem,5vw,3.5rem)] leading-[0.97]">
+              <h2 className="font-display font-extrabold tracking-[-0.03em] text-[clamp(2rem,5vw,3.5rem)] leading-[0.97]" style={{ color: "var(--background)" }}>
                 What are we building?
               </h2>
               <p className="mt-6 font-serif text-[1.1rem] leading-relaxed text-background/75">
@@ -390,7 +390,7 @@ export default async function HomePage() {
               </div>
             </figure>
             <div>
-              <h2 className="font-display font-extrabold tracking-[-0.03em] text-[clamp(2rem,5vw,3.5rem)] leading-[0.97]">
+              <h2 className="font-display font-extrabold tracking-[-0.03em] text-[clamp(2rem,5vw,3.5rem)] leading-[0.97]" style={{ color: "var(--background)" }}>
                 The most powerful thing a man ever did was give his money away.
               </h2>
               <p className="mt-6 font-serif text-[1.1rem] leading-relaxed text-background/75">
