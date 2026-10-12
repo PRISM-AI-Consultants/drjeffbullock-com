@@ -242,6 +242,48 @@ export default async function HomePage() {
         </Container>
       </Section>
 
+      {/* ============ THE VISION FILM ============ */}
+      <Section id="vision" className="mt-20 md:mt-28 bg-foreground text-background scroll-mt-20">
+        <Container size="xl">
+          <div className="flex items-center gap-3 mb-6">
+            <span className="font-display text-sm font-semibold text-accent">▶</span>
+            <span className="h-px w-8 bg-accent" />
+            <span className="eyebrow text-background/50">The whole vision, in five minutes</span>
+          </div>
+          <div className="grid grid-cols-1 lg:grid-cols-[1.6fr_1fr] gap-10 lg:gap-14 items-center">
+            <div className="relative aspect-video overflow-hidden rounded-[var(--radius-md)] bg-background/10">
+              <iframe
+                className="absolute inset-0 h-full w-full"
+                src="https://www.youtube.com/embed/kYzsCgEEsjs?rel=0"
+                title="What Are We Building? A film about AI, opportunity and giving"
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              />
+            </div>
+            <div>
+              <h2 className="font-display font-extrabold tracking-[-0.03em] text-[clamp(2rem,5vw,3.5rem)] leading-[0.97]">
+                What are we building?
+              </h2>
+              <p className="mt-6 font-serif text-[1.1rem] leading-relaxed text-background/75">
+                Turn AI into human capability. Turn capability into opportunity. Turn opportunity into generosity at scale. Here is how PRISM, VersAssist, the Lehigh Valley goal and both dreams fit together.
+              </p>
+              <p className="mt-5 font-serif text-[1.02rem] leading-relaxed text-background/60">
+                Every frame is code: no cameras, no stock footage, no AI images. Narrated in my AI voice clone, scored with music from my own catalogue.
+              </p>
+              <a
+                href="https://youtu.be/kYzsCgEEsjs"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-7 inline-flex items-center gap-2 text-sm font-semibold text-accent hover:opacity-80 transition-opacity"
+              >
+                Watch on YouTube <ArrowRight className="h-4 w-4" />
+              </a>
+            </div>
+          </div>
+        </Container>
+      </Section>
+
       {/* ============ TWO DREAMS ============ */}
       <Section id="dreams" className="pt-20 md:pt-28">
         <Container size="xl">
@@ -302,10 +344,27 @@ export default async function HomePage() {
                 </a>
               </div>
             </div>
-            <blockquote className="font-serif italic text-xl md:text-2xl leading-relaxed text-foreground/70 border-l-2 border-accent pl-6">
-              Make giving as powerful as social media. Then point that machine at generosity.
-            </blockquote>
+            <figure>
+              <div className="relative aspect-video overflow-hidden rounded-[var(--radius-md)] bg-foreground">
+                <video
+                  className="absolute inset-0 h-full w-full"
+                  controls
+                  playsInline
+                  preload="none"
+                  poster="/videos/feed-the-feed-poster.jpg"
+                  aria-label="Feed the Feed, the Dream 1 anthem music video"
+                >
+                  <source src="/videos/feed-the-feed.mp4" type="video/mp4" />
+                </video>
+              </div>
+              <figcaption className="mt-3 text-sm text-muted-foreground">
+                <span className="font-semibold text-foreground">Feed the Feed</span>, the Dream 1 anthem. Song and video made with AI.
+              </figcaption>
+            </figure>
           </div>
+          <blockquote className="mt-12 font-serif italic text-xl md:text-2xl leading-relaxed text-foreground/70 border-l-2 border-accent pl-6 max-w-3xl">
+            Make giving as powerful as social media. Then point that machine at generosity.
+          </blockquote>
         </Container>
       </Section>
 
