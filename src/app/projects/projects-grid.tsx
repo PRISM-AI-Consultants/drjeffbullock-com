@@ -6,7 +6,7 @@ import { ContentGrid } from "@/components/ui/content-grid";
 import { ProjectCard } from "@/components/content/project-card";
 import type { Project } from "@/lib/types";
 
-const types = ["All", "Company", "Agent", "Platform", "Music", "Sitcom"];
+const types = ["All", "Company", "App", "Agent", "Platform", "Music", "Sitcom"];
 
 export function ProjectsGrid({ projects }: { projects: Project[] }) {
   const [activeTag, setActiveTag] = useState("All");
