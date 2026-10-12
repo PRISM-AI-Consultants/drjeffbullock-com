@@ -27,6 +27,9 @@ export const searchIndex: SearchItem[] = [
 
   // Games
   { title: "Pharmageddon", href: "/games/pharmageddon", type: "Game", description: "Survive the shift. A pharmacy sim built by a real pharmacist." },
+  { title: "The Architect", href: "/games/the-architect", type: "Game", description: "Survivors arcade. Draw gold blueprints to free a gray city." },
+  { title: "Counterpunch", href: "/games/counterpunch", type: "Game", description: "Sixty seconds of arcade boxing with an original soundtrack." },
+  { title: "The Leash", href: "/games/the-leash", type: "Game", description: "Co-op action from the novel Symbiont: Dyad." },
   { title: "Max the Flying Chicken", href: "/games/max-the-flying-chicken", type: "Game", description: "Help Max learn to fly! An educational platformer." },
 
   // Blog

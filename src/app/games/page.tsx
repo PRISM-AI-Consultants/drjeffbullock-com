@@ -8,7 +8,7 @@ import { GameCard } from "@/components/content/game-card";
 
 export const metadata: Metadata = {
   title: "Games",
-  description: "Playable games built by Dr. Jeff Bullock. 15 browser-based games including Pharmageddon, Max the Flying Chicken, and The Breadman.",
+  description: "Playable games built by Dr. Jeff Bullock. 19 browser-based games including The Architect, Counterpunch, Pharmageddon, and The Breadman.",
   openGraph: { images: ["/images/og-games.jpg"] },
 };
 
@@ -21,6 +21,13 @@ export default function GamesPage() {
         <Container size="xl">
           <p className="text-sm text-muted-foreground mb-8 max-w-2xl">
             Most games below are Progressive Web Apps (PWAs) - browser-based games you can install on your phone or desktop for offline play. No app store needed. Just open the link, tap &quot;Add to Home Screen,&quot; and play anywhere.
+          </p>
+          <p className="text-sm text-muted-foreground mb-8 max-w-2xl">
+            Every game lives on{" "}
+            <a href="https://prismstudios.app" target="_blank" rel="noopener noreferrer" className="font-medium text-foreground underline underline-offset-4">
+              PRISM Studios
+            </a>
+            , the arcade where new releases land first.
           </p>
           <ContentGrid columns={2}>
             {games.map((game) => (
