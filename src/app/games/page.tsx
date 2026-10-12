@@ -8,7 +8,7 @@ import { GameCard } from "@/components/content/game-card";
 
 export const metadata: Metadata = {
   title: "Games",
-  description: "Playable games built by Dr. Jeff Bullock. 19 browser-based games including The Architect, Counterpunch, Pharmageddon, and The Breadman.",
+  description: "Playable games built by Dr. Jeff Bullock. 16 browser-based games including The Architect, Counterpunch, Pharmageddon, and The Breadman.",
   openGraph: { images: ["/images/og-games.jpg"] },
 };
 

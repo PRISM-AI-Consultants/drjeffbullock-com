@@ -10,7 +10,7 @@ const faqs = [
   {
     question: "Who is Dr. Jeff Bullock?",
     answer:
-      "Dr. Jeff Bullock is a Doctor of Pharmacy (PharmD) from Xavier University of Louisiana who spent 18 years at CVS Health before founding PRISM AI Consultants in 2023. He is the author of 17 published books, creator of 18 browser-based games, producer of four albums and a game soundtrack on Spotify, and builder of an AI agent system with 34 autonomous agents. He is based in Lehigh Valley, Pennsylvania.",
+      "Dr. Jeff Bullock is a Doctor of Pharmacy (PharmD) from Xavier University of Louisiana who spent 18 years at CVS Health before founding PRISM AI Consultants in 2023. He is the author of 17 published books, creator of 16 browser-based games, producer of four albums and a game soundtrack on Spotify, and builder of an AI agent system with 34 autonomous agents. He is based in Lehigh Valley, Pennsylvania.",
   },
   {
     question: "What is PRISM AI Consultants?",
@@ -45,7 +45,7 @@ const faqs = [
   {
     question: "What games has Dr. Jeff Bullock created?",
     answer:
-      "Dr. Bullock has created 15 browser-based games including Pharmageddon (pharmacy sim), Max the Flying Chicken (educational platformer based on his daughter's book), The Breadman (rhythm game), Objection Blaster (sales training), and Grid Guardian (strategy defense). All games are playable for free at prismstudios.app.",
+      "Dr. Bullock has created 16 browser-based games including The Architect (survivors arcade), Pharmageddon (pharmacy sim), Counterpunch (arcade boxing), The Leash (co-op action from his novel Symbiont: Dyad), Max the Flying Chicken (educational platformer based on his daughter's book) and The Breadman (rhythm game). All games are playable for free at prismstudios.app.",
   },
   {
     question: "What is the Mansa Musa album?",
