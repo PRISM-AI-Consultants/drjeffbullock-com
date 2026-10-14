@@ -22,7 +22,7 @@ import {
 
 export const metadata: Metadata = {
   title: "About",
-  description: "Dr. Jeff Bullock, PharmD. 18 years at CVS Health, now CEO of PRISM AI Consultants and Chair of Engagement for the African American Business Leaders Council. Author of 16 published books. Builder of 17 games and an AI agent system with 34 autonomous agents. Based in Lehigh Valley, PA.",
+  description: "Dr. Jeff Bullock, PharmD. 18 years at CVS Health, now CEO of PRISM AI Consultants and Chair of Engagement for the African American Business Leaders Council. Author of 16 published books. Builder of 18 games and an AI agent system with 34 autonomous agents. Based in Lehigh Valley, PA.",
   openGraph: { images: ["/images/og-about.jpg"] },
 };
 
