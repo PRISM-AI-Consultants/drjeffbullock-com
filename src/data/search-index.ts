@@ -30,6 +30,7 @@ export const searchIndex: SearchItem[] = [
   { title: "The Architect", href: "/games/the-architect", type: "Game", description: "Survivors arcade. Draw gold blueprints to free a gray city." },
   { title: "Counterpunch", href: "/games/counterpunch", type: "Game", description: "Sixty seconds of arcade boxing with an original soundtrack." },
   { title: "Transcript Alchemy: Gold Rush", href: "/games/transcript-alchemy", type: "Game", description: "Mine what people really said, fuse it into gold, and catch the AI notes that invent things. From the book." },
+  { title: "Stay in the Salt", href: "/games/stay-in-the-salt", type: "Game", description: "Night-flight survival from the novel Salt and Wing." },
   { title: "One More Load", href: "/games/one-more-load", type: "Game", description: "Dispatch sim. Two trucks, the 2022 freight boom, and what the business really kept." },
   { title: "The Leash", href: "/games/the-leash", type: "Game", description: "Co-op action from the novel Symbiont: Dyad." },
   { title: "Max the Flying Chicken", href: "/games/max-the-flying-chicken", type: "Game", description: "Help Max learn to fly! An educational platformer." },
