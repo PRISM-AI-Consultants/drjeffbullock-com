@@ -49,6 +49,7 @@
     padding-left:22px;border-left:2px solid var(--gold)}
   .story .body p small{display:block;margin-top:8px;font-family:Inter,sans-serif;font-style:normal;font-size:13px;color:var(--muted);letter-spacing:.04em}
   @media (max-width:860px){ .story{grid-template-columns:1fr} .meter{right:14px} }
+  @media (max-width:600px){ .hint{bottom:clamp(120px,18vh,160px)} .skip{left:50%;right:auto;transform:translateX(-50%);bottom:clamp(70px,10vh,96px)} }
 </style>
 </head>
 <body data-page="quicksand">
@@ -196,7 +197,7 @@
       const y = surface + Math.sin(x*.013+t*1.4)*churn*.35 + Math.sin(x*.031-t*2.1)*churn*.2 - near*(6+depth*26);
       ctx.lineTo(x,y);
     }
-    ctx.lineTo(W,H); ctx.closePath();
+    ctx.lineTo(W, surface + Math.sin(W*.013+t*1.4)*churn*.35); ctx.lineTo(W,H); ctx.closePath();
     const sand = ctx.createLinearGradient(0,surface-30,0,H);
     sand.addColorStop(0,"rgba(201,160,82,.94)"); sand.addColorStop(.35,"rgba(120,88,40,.96)"); sand.addColorStop(1,"rgba(20,16,30,.99)");
     ctx.fillStyle = sand; ctx.fill();

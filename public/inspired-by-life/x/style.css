@@ -14,7 +14,7 @@ a{color:inherit}
 
 /* header */
 .top{position:fixed;inset:0 0 auto 0;z-index:30;display:flex;align-items:center;gap:18px;padding:14px var(--pad);
-  background:linear-gradient(var(--navy) 30%,transparent)}
+  background:rgba(0,3,33,.86);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 1px 0 rgba(246,246,255,.06)}
 .top .logo{height:46px;filter:invert(1);mix-blend-mode:screen;flex:none}
 .chapters{display:flex;gap:4px;margin-left:auto;list-style:none}
 .chapters a{display:block;text-decoration:none;font-family:Oswald,sans-serif;font-size:13px;letter-spacing:.14em;text-transform:uppercase;
