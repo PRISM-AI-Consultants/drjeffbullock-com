@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="brand-kit" content="the-tigers-edge">
+<title>The LIFE Process | Inspired by LIFE | Michael Tiger</title>
+<meta name="description" content="Learn. Inspire. Frame. Execute. Michael Tiger's LIFE process, walked through one real coaching story.">
+<meta property="og:title" content="LIFE: Learn, Inspire, Frame, Execute">
+<meta property="og:description" content="How inspiration becomes action. From Inspired by LIFE by Michael Tiger, PCC.">
+<meta property="og:image" content="https://drjeffbullock.com/inspired-by-life/poster.jpg">
+<meta property="og:url" content="https://drjeffbullock.com/inspired-by-life/life">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Oswald:wght@500;700&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/inspired-by-life/x/style.css">
+<style>
+  .hero{padding:clamp(120px,18vh,170px) var(--pad) 0;max-width:1380px;margin:0 auto}
+  .letters{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(6px,1.4vw,18px);margin-top:18px}
+  .letter{border:0;background:none;cursor:pointer;text-align:left;color:var(--ink);padding:0}
+  .letter .L{display:block;font-family:Oswald,sans-serif;font-weight:700;font-size:clamp(84px,17vw,250px);line-height:.85;
+    color:transparent;-webkit-text-stroke:2px rgba(246,246,255,.28);transition:color .6s var(--ease),-webkit-text-stroke-color .6s var(--ease),transform .6s var(--ease)}
+  .letter .w{display:block;font-family:Oswald,sans-serif;letter-spacing:.24em;text-transform:uppercase;font-size:clamp(11px,1.2vw,15px);color:var(--muted);margin-top:10px}
+  .letter.done .L{color:rgba(47,107,255,.85);-webkit-text-stroke-color:transparent}
+  .letter.on .L{color:var(--gold);-webkit-text-stroke-color:transparent;transform:translateY(-6px)}
+  .letter.on .w{color:var(--gold)}
+  .rail{height:3px;background:rgba(246,246,255,.1);margin-top:22px;position:relative;border-radius:3px}
+  .rail i{position:absolute;left:0;top:0;bottom:0;background:linear-gradient(90deg,var(--blue),var(--gold));border-radius:3px;transition:width .8s var(--ease)}
+
+  .panel{max-width:1380px;margin:clamp(30px,5vh,56px) auto 0;padding:0 var(--pad);display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(28px,6vw,96px);min-height:380px}
+  .q .k{font-family:Oswald,sans-serif;letter-spacing:.24em;font-size:12px;color:var(--gold);text-transform:uppercase}
+  .q h2{font-family:"Playfair Display",serif;font-style:italic;font-weight:400;font-size:clamp(30px,3.4vw,50px);line-height:1.15;margin-top:12px}
+  .beat p{font-size:clamp(17px,1.45vw,21px);line-height:1.7;color:#dde1f2;margin-bottom:18px}
+  .beat p.said{font-family:"Playfair Display",serif;font-style:italic;color:var(--ink);font-size:clamp(20px,1.8vw,26px)}
+  .beat p.said small{display:block;font:500 13px Inter,sans-serif;letter-spacing:.04em;color:var(--muted);margin-top:6px}
+  .fade{animation:fadeup .7s var(--ease) both}
+  @keyframes fadeup{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+  .ctrl{display:flex;gap:12px;margin-top:26px;flex-wrap:wrap}
+
+  .flip{perspective:1200px;width:min(520px,100%);height:210px;margin-top:6px;cursor:pointer;border:0;background:none;padding:0;color:var(--ink);text-align:left}
+  .flip .card{position:relative;width:100%;height:100%;transform-style:preserve-3d;transition:transform 1s var(--ease)}
+  .flip.turned .card{transform:rotateY(180deg)}
+  .flip .face{position:absolute;inset:0;backface-visibility:hidden;border-radius:6px;padding:26px 28px;display:flex;flex-direction:column;justify-content:space-between}
+  .flip .front{background:#1a1030;box-shadow:inset 0 0 0 1px rgba(255,98,64,.45)}
+  .flip .back{background:linear-gradient(135deg,#0e2a7a,#2f6bff);transform:rotateY(180deg);box-shadow:0 30px 60px -24px rgba(47,107,255,.7)}
+  .flip .tag{font-family:Oswald,sans-serif;letter-spacing:.24em;font-size:12px;text-transform:uppercase}
+  .flip .front .tag{color:#ff8a70}.flip .back .tag{color:var(--gold)}
+  .flip .big{font-family:Oswald,sans-serif;font-weight:700;font-size:clamp(26px,2.8vw,38px);text-transform:uppercase;line-height:1.05}
+  .flip .hint{font-size:13px;color:var(--muted)}
+  .flip .back .hint{color:#dce6ff}
+
+  .yours{max-width:1180px;margin:clamp(80px,13vh,140px) auto 0;padding:clamp(28px,4vw,48px);border-radius:6px;
+    background:linear-gradient(160deg,rgba(47,107,255,.14),rgba(242,193,78,.06));box-shadow:inset 0 0 0 1px rgba(246,246,255,.08)}
+  .yours h2{font-size:clamp(34px,4vw,58px)}
+  .yours h2 b{color:var(--gold)}
+  .yours > p{color:#cfd5ec;margin-top:10px;max-width:60ch;line-height:1.6}
+  .yours textarea{display:block;width:100%;margin-top:22px;min-height:90px;resize:vertical;font:500 17px/1.5 Inter,sans-serif;color:var(--ink);
+    background:rgba(0,3,33,.6);border:1px solid rgba(246,246,255,.18);border-radius:4px;padding:14px 16px}
+  .yours textarea:focus{outline:none;border-color:var(--gold)}
+  .prompts{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:22px}
+  .prompts div{background:rgba(0,3,33,.55);border-radius:4px;padding:16px}
+  .prompts b{font-family:Oswald,sans-serif;font-size:34px;color:var(--gold);display:block;line-height:1}
+  .prompts span{display:block;font-family:Oswald,sans-serif;letter-spacing:.18em;font-size:11px;color:var(--muted);text-transform:uppercase;margin-top:6px}
+  .prompts p{margin-top:10px;font-size:15px;line-height:1.5;color:#e4e7f5}
+  .prompts em{color:var(--gold);font-style:normal}
+  @media (max-width:900px){ .panel{grid-template-columns:1fr} .prompts{grid-template-columns:1fr 1fr} }
+</style>
+</head>
+<body data-page="life">
+<main class="page">
+  <section class="hero">
+    <div class="eyebrow">Chapter 03 · The process at the end of every chapter</div>
+    <div class="letters" role="tablist" aria-label="LIFE steps">
+      <button class="letter" role="tab" data-i="0"><span class="L">L</span><span class="w">Learn</span></button>
+      <button class="letter" role="tab" data-i="1"><span class="L">I</span><span class="w">Inspire</span></button>
+      <button class="letter" role="tab" data-i="2"><span class="L">F</span><span class="w">Frame</span></button>
+      <button class="letter" role="tab" data-i="3"><span class="L">E</span><span class="w">Execute</span></button>
+    </div>
+    <div class="rail"><i id="rail" style="width:0"></i></div>
+  </section>
+
+  <section class="panel" aria-live="polite">
+    <div class="q" id="q"></div>
+    <div class="beat" id="beat"></div>
+  </section>
+  <div style="max-width:1380px;margin:0 auto;padding:0 var(--pad)"><div class="ctrl" id="ctrl"></div></div>
+
+  <section class="yours reveal" style="margin-left:var(--pad);margin-right:var(--pad)">
+    <div class="eyebrow">Your turn</div>
+    <h2 class="display" style="margin-top:12px">Run your own challenge through <b>LIFE</b></h2>
+    <p>Type the challenge that's weighing on you. The four questions below fill in with it, so you can work through them on your next walk, drive, or practice.</p>
+    <textarea id="mine" placeholder="e.g. my team pushes back on every change" aria-label="Your challenge"></textarea>
+    <div class="prompts" id="prompts"></div>
+  </section>
+
+  <a class="next" href="/inspired-by-life/check" style="margin-top:clamp(70px,12vh,120px)">
+    <div><div class="k">Next · Chapter 04</div><div class="t">Your Leadership Check</div></div>
+    <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="#f2c14e" stroke-width="1.6" stroke-linecap="round"><path d="M4 12h16M14 6l6 6-6 6"/></svg>
+  </a>
+  <footer class="foot">
+    <div class="bookline"><img src="/inspired-by-life/x/cover.png" alt=""><span><b>Inspired by LIFE</b> is available now. <a href="https://michaeltiger.com/inspired-by-life">Order your copy</a></span></div>
+    <span>&copy; The Tiger's Edge, LLC · Experience by <a href="https://prismaiconsultants.com">PRISM AI Consultants</a></span>
+  </footer>
+</main>
+<script src="/inspired-by-life/x/shared.js"></script>
+<script>
+(function(){
+  const S = [
+    { k:"L · Learn", q:"What are you noticing, and what can you learn from it?",
+      b:`<p>A client was struggling with a team that was hard to work with. They were giving her real challenges, and she was starting to lose her patience.</p>
+         <p>Michael tries to understand clients as whole people, not just who they are at work. He learned she competes in equestrian. She works with horses all the time.</p>` },
+    { k:"I · Inspire", q:"What does that finding actually spark in you?",
+      b:`<p>So he asked her: if your horses were spooked and acting frantically, like some of the people on your team, what would you do?</p>
+         <p class="said">&ldquo;Are we still talking about business?&rdquo;<small>His client</small></p>
+         <p class="said">&ldquo;Yes.&rdquo;<small>Michael Tiger</small></p>` },
+    { k:"F · Frame", q:"How can I look at my own challenge differently?",
+      b:`<button class="flip" id="flip" type="button" aria-label="Flip the frame">
+           <div class="card">
+             <div class="face front"><span class="tag">The challenge</span><span class="big">A frantic, difficult team</span><span class="hint">Tap to reframe</span></div>
+             <div class="face back"><span class="tag">The opportunity</span><span class="big">Spooked horses who need me calm</span><span class="hint">Same team. Different frame.</span></div>
+           </div></button>
+         <p style="margin-top:22px">Framing is the F. Michael says it matters that much. The shift from challenge to opportunity changes what you do next.</p>` },
+    { k:"E · Execute", q:"What are you actually going to do with it?",
+      b:`<p>Spooked horses need you to stay calm, control your energy, and be patient. She brought that same energy and the same patience to her team.</p>
+         <p class="said">&ldquo;As you can imagine, it worked really, really well.&rdquo;<small>Michael Tiger</small></p>
+         <p>Execute is the bridge between inspiration and business results. Skip it, and everything else falls apart.</p>` }
+  ];
+  let i = -1;
+  const letters = [...document.querySelectorAll(".letter")];
+  function go(n){
+    i = Math.max(0, Math.min(3, n));
+    letters.forEach((l,j)=>{ l.classList.toggle("on", j===i); l.classList.toggle("done", j<i); l.setAttribute("aria-selected", String(j===i)); });
+    document.getElementById("rail").style.width = ((i+1)/4*100)+"%";
+    const q = document.getElementById("q"), b = document.getElementById("beat");
+    q.innerHTML = `<div class="fade"><div class="k">${S[i].k}</div><h2>${S[i].q}</h2></div>`;
+    b.innerHTML = `<div class="fade">${S[i].b}</div>`;
+    const flip = document.getElementById("flip");
+    if (flip) flip.addEventListener("click", ()=>flip.classList.toggle("turned"));
+    const c = document.getElementById("ctrl");
+    c.innerHTML = (i>0?`<button class="btn btn-ghost" id="prev" type="button">Back</button>`:"") +
+      (i<3?`<button class="btn btn-gold" id="nextstep" type="button">Next: ${["Inspire","Frame","Execute"][i]} <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>`
+          :`<a class="btn btn-gold" href="/inspired-by-life/check">Find your strongest pillar <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>`);
+    const p = document.getElementById("prev"), nx = document.getElementById("nextstep");
+    if (p) p.onclick = ()=>go(i-1);
+    if (nx) nx.onclick = ()=>go(i+1);
+    if (i===3) IBL.say("li_2");
+  }
+  letters.forEach(l=>l.addEventListener("click", ()=>go(+l.dataset.i)));
+  go(0);
+  setTimeout(()=>IBL.say("li_1"), 600);
+
+  const mine = document.getElementById("mine"), pr = document.getElementById("prompts");
+  function esc(s){ return s.replace(/[&<>"]/g, c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c])); }
+  function fillPrompts(){
+    const raw = mine.value.trim();
+    const c = raw ? `<em>${esc(raw.length>90?raw.slice(0,90)+"…":raw)}</em>` : "<em>your challenge</em>";
+    pr.innerHTML = `
+      <div><b>L</b><span>Learn</span><p>Where outside of work have you already handled something like ${c}?</p></div>
+      <div><b>I</b><span>Inspire</span><p>What did you do there that worked? What does it spark?</p></div>
+      <div><b>F</b><span>Frame</span><p>If ${c} were an opportunity instead of a threat, what would it be?</p></div>
+      <div><b>E</b><span>Execute</span><p>What is one thing you'll do differently this week?</p></div>`;
+  }
+  mine.addEventListener("input", fillPrompts); fillPrompts();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="brand-kit" content="the-tigers-edge">
+<title>The Three Pillars | Inspired by LIFE | Michael Tiger</title>
+<meta name="description" content="Adaptability, resilience, authenticity. Pull one out and see what breaks. An interactive chapter from Inspired by LIFE by Michael Tiger.">
+<meta property="og:title" content="The Three Pillars of Modern Leadership">
+<meta property="og:description" content="Pull one out and see what breaks. From Inspired by LIFE by Michael Tiger, PCC.">
+<meta property="og:image" content="https://drjeffbullock.com/inspired-by-life/poster.jpg">
+<meta property="og:url" content="https://drjeffbullock.com/inspired-by-life/pillars">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Oswald:wght@500;700&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/inspired-by-life/x/style.css">
+<style>
+  body{background:radial-gradient(70% 50% at 50% 0%,#0b1a5e 0%,var(--navy) 65%)}
+  .hero{padding:clamp(120px,18vh,170px) var(--pad) 10px;max-width:1380px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,5vw,80px);align-items:end}
+  .hero h1{font-size:clamp(48px,7vw,104px)}
+  .hero h1 b{color:var(--blue)}
+  .hero p{font-size:clamp(17px,1.4vw,20px);line-height:1.65;color:#d9ddf0;max-width:52ch}
+  .hero p b{color:var(--gold);font-weight:600}
+
+  .temple{max-width:1100px;margin:clamp(30px,6vh,70px) auto 0;padding:0 var(--pad)}
+  .rig{position:relative;height:clamp(360px,52vh,480px);perspective:1200px;overflow:hidden}
+  .beam{position:absolute;left:4%;right:4%;top:6%;height:clamp(54px,8vh,72px);border-radius:4px;transform-origin:50% 100%;
+    background:linear-gradient(180deg,#f6d98c,#f2c14e 45%,#b8862b);box-shadow:0 30px 60px -20px rgba(242,193,78,.45),inset 0 -6px 0 rgba(0,0,0,.18);
+    display:flex;align-items:center;justify-content:center;transition:transform 1s var(--ease),top 1s var(--ease),filter .6s}
+  .beam span{font-family:Oswald,sans-serif;font-weight:700;letter-spacing:.32em;color:var(--navy);font-size:clamp(16px,2vw,22px)}
+  .beam .crack{position:absolute;left:50%;top:0;bottom:0;width:3px;background:var(--navy);transform:scaleY(0);transition:transform .5s var(--ease) .3s}
+  .rig[data-state=mid] .beam .crack{transform:scaleY(1)}
+  .cols{position:absolute;left:4%;right:4%;top:calc(6% + clamp(54px,8vh,72px));bottom:12%;display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(18px,5vw,70px);padding:0 4%}
+  .col{position:relative;border:0;cursor:pointer;background:none;color:var(--ink);padding:0;display:flex;flex-direction:column;align-items:stretch;
+    transition:transform .9s var(--ease),opacity .9s var(--ease)}
+  .col .shaft{flex:1;border-radius:3px 3px 0 0;position:relative;overflow:hidden;
+    background:repeating-linear-gradient(90deg,rgba(255,255,255,.07) 0 10%,rgba(255,255,255,0) 10% 20%),linear-gradient(180deg,#2f6bff,#1844b8 70%,#0e2a7a);
+    box-shadow:inset 0 0 0 1px rgba(255,255,255,.12)}
+  .col .shaft::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(255,255,255,.18),transparent 30%,transparent 70%,rgba(0,0,0,.25))}
+  .col .base{height:14px;background:#0a1f66;border-radius:2px;margin:0 -10%}
+  .col .name{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%) rotate(-90deg);white-space:nowrap;font-family:Oswald,sans-serif;font-weight:700;
+    letter-spacing:.18em;font-size:clamp(15px,2.2vw,26px);text-transform:uppercase;color:#f6f6ff;z-index:2}
+  .col:hover .shaft,.col:focus-visible .shaft{box-shadow:inset 0 0 0 2px var(--gold)}
+  .col.out{transform:translateY(118%);opacity:.18}
+  .ground{position:absolute;left:0;right:0;bottom:12%;height:2px;background:linear-gradient(90deg,transparent,rgba(246,246,255,.35),transparent)}
+  .tip{text-align:center;margin-top:8px;color:var(--muted);font-size:14px}
+  .tip b{color:var(--gold);font-weight:600}
+
+  .verdict{max-width:900px;margin:clamp(26px,5vh,48px) auto 0;padding:0 var(--pad);text-align:center;min-height:190px}
+  .verdict .k{font-family:Oswald,sans-serif;letter-spacing:.24em;font-size:12px;color:var(--gold);text-transform:uppercase}
+  .verdict h2{font-family:"Playfair Display",serif;font-style:italic;font-weight:400;font-size:clamp(26px,3vw,40px);line-height:1.25;margin-top:12px}
+  .verdict p{color:#cfd5ec;font-size:clamp(16px,1.3vw,19px);line-height:1.65;margin-top:14px}
+  .verdict .swap{transition:opacity .35s ease}
+
+  .three{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,3vw,40px);max-width:1180px;margin:clamp(70px,12vh,130px) auto 0;padding:0 var(--pad)}
+  .three div{border-top:2px solid var(--blue);padding-top:18px}
+  .three h3{font-family:Oswald,sans-serif;font-size:clamp(22px,2.2vw,30px);text-transform:uppercase;letter-spacing:.04em}
+  .three p{margin-top:10px;color:#cfd5ec;line-height:1.6}
+  .three p.serif{color:var(--gold);font-size:19px}
+  @media (max-width:860px){ .hero{grid-template-columns:1fr} .three{grid-template-columns:1fr} }
+</style>
+</head>
+<body data-page="pillars">
+<main class="page">
+  <section class="hero">
+    <div><div class="eyebrow">Chapter 02</div><h1 class="display" style="margin-top:14px">The Three <b>Pillars</b></h1></div>
+    <p class="reveal">Research Michael drew on pointed to two capabilities future leaders will need most: <b>adaptability</b> and <b>resilience</b>. Writing the book, he felt something was missing underneath them. The third pillar is <b>authenticity</b>.</p>
+  </section>
+
+  <section class="temple">
+    <div class="rig" id="rig" data-state="all">
+      <div class="beam" id="beam"><span>LEADER</span><i class="crack"></i></div>
+      <div class="cols">
+        <button class="col" data-p="adapt" type="button" aria-pressed="false" aria-label="Pull out Adaptability"><div class="shaft"><span class="name">Adaptability</span></div><div class="base"></div></button>
+        <button class="col" data-p="resil" type="button" aria-pressed="false" aria-label="Pull out Resilience"><div class="shaft"><span class="name">Resilience</span></div><div class="base"></div></button>
+        <button class="col" data-p="auth" type="button" aria-pressed="false" aria-label="Pull out Authenticity"><div class="shaft"><span class="name">Authenticity</span></div><div class="base"></div></button>
+      </div>
+      <div class="ground"></div>
+    </div>
+    <p class="tip"><b>Tap a pillar</b> to pull it out. Tap again to put it back.</p>
+  </section>
+
+  <section class="verdict" aria-live="polite">
+    <div class="swap" id="vk"><div class="k">All three, together</div>
+      <h2>&ldquo;Adaptability will help a leader change. Resilience is going to help you recover. And authenticity will help keep you grounded.&rdquo;</h2>
+      <p>Michael Tiger</p></div>
+  </section>
+
+  <section class="three">
+    <div class="reveal"><h3>Adaptability</h3><p class="serif">Can I adjust when the situation changes?</p><p>Not a jump from A to Z. Small changes, made with enough grace and flexibility to keep up.</p></div>
+    <div class="reveal"><h3>Resilience</h3><p class="serif">Can I recover when it doesn't go as planned?</p><p>Things won't go as expected. It's the small changes, and how quickly you get back up, that make the difference.</p></div>
+    <div class="reveal"><h3>Authenticity</h3><p class="serif">Do I know what I won't compromise?</p><p>Not "this is who I am" as an excuse not to change. Knowing your values, what you'll flex on, and what you won't.</p></div>
+  </section>
+
+  <a class="next" href="/inspired-by-life/life" style="margin-top:clamp(70px,12vh,120px)">
+    <div><div class="k">Next · Chapter 03</div><div class="t">The LIFE Process</div></div>
+    <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="#f2c14e" stroke-width="1.6" stroke-linecap="round"><path d="M4 12h16M14 6l6 6-6 6"/></svg>
+  </a>
+  <footer class="foot">
+    <div class="bookline"><img src="/inspired-by-life/x/cover.png" alt=""><span><b>Inspired by LIFE</b> is available now. <a href="https://michaeltiger.com/inspired-by-life">Order your copy</a></span></div>
+    <span>&copy; The Tiger's Edge, LLC · Experience by <a href="https://prismaiconsultants.com">PRISM AI Consultants</a></span>
+  </footer>
+</main>
+<script src="/inspired-by-life/x/shared.js"></script>
+<script>
+(function(){
+  const rig = document.getElementById("rig"), beam = document.getElementById("beam"), vk = document.getElementById("vk");
+  const out = new Set();
+  const V = {
+    all: ["All three, together", "&ldquo;Adaptability will help a leader change. Resilience is going to help you recover. And authenticity will help keep you grounded.&rdquo;", "Michael Tiger"],
+    adapt: ["Without adaptability", "He knows who he is. He can take a hit. But he keeps leading the same way when things have clearly changed.", "At some point, resilience starts to look like stubbornness."],
+    auth: ["Without authenticity", "He can adjust constantly and handle the pressure. He just keeps moving.", "But what does he stand for? And how is that sustainable over a career?"],
+    resil: ["Without resilience", "He knows himself, and he can change.", "But the smallest setback sets him completely off course."],
+    many: ["Nothing holds", "One pillar can't carry a leader through this much change.", "They're interdependent. Each one balances the others."]
+  };
+  function render(){
+    let key = "all", tf = "none", top = "6%";
+    if (out.size===1){
+      key = [...out][0];
+      tf = key==="adapt" ? "rotate(-7deg) translateY(10px)" : key==="auth" ? "rotate(7deg) translateY(10px)" : "translateY(26px)";
+    } else if (out.size>=2){ key = "many"; tf = `rotate(${out.has("adapt")?-16:16}deg)`; top = "48%"; }
+    rig.dataset.state = out.size===1 && key==="resil" ? "mid" : out.size ? "broken" : "all";
+    beam.style.transform = tf; beam.style.top = top;
+    beam.style.filter = out.size ? "saturate(.7) brightness(.85)" : "none";
+    vk.style.opacity = 0;
+    setTimeout(()=>{ const v = V[key];
+      vk.innerHTML = `<div class="k">${v[0]}</div><h2>${v[1]}</h2><p>${v[2]}</p>`; vk.style.opacity = 1; }, 260);
+  }
+  let first = true;
+  document.querySelectorAll(".col").forEach(b=>b.addEventListener("click", ()=>{
+    const p = b.dataset.p;
+    if (out.has(p)) out.delete(p); else out.add(p);
+    b.classList.toggle("out", out.has(p)); b.setAttribute("aria-pressed", String(out.has(p)));
+    if (first){ IBL.say("pi_2"); first = false; }
+    render();
+  }));
+  setTimeout(()=>IBL.say("pi_1"), 700);
+})();
+</script>
+</body>
+</html>
