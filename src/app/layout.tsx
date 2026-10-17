@@ -216,6 +216,13 @@ export default function RootLayout({
           data-theme="auto"
           data-bottom="92"
         />
+        {/* Analytics: self-hosted Umami alongside GA4, so this site lands in the same weekly report as every PRISM property.
+            Guarded daily by ~/prism/analytics-audit/analytics_watch.py. */}
+        <Script
+          src="https://stats.prismaiconsultants.com/script.js"
+          strategy="afterInteractive"
+          data-website-id="d6166fe2-52ca-40c4-a4a1-610af0c48282"
+        />
       </body>
     </html>
   );
