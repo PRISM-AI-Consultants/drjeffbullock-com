@@ -21,6 +21,15 @@ const footerLinks = {
   ],
 };
 
+// One row on every PRISM property so visitors can always get to the others (2026-10-21).
+const familySites = [
+  { label: "PRISM AI Consultants", href: "https://prismaiconsultants.com" },
+  { label: "VersAssist", href: "https://www.versassists.com" },
+  { label: "PRISM Studios", href: "https://prismstudios.app" },
+  { label: "Build Universe", href: "https://builds.drjeffbullock.com" },
+  { label: "Book a call", href: "https://calendly.com/prismaiconsultants/introductory-call" },
+];
+
 export function SiteFooter() {
   return (
     <footer className="border-t border-border bg-muted/30">
@@ -144,7 +153,15 @@ export function SiteFooter() {
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-border flex flex-col sm:flex-row justify-between gap-4">
+        <nav aria-label="Our sites" className="mt-12 pt-6 border-t border-border flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-sm text-muted-foreground">
+          <span className="font-semibold text-foreground">Our sites</span>
+          {familySites.map((site) => (
+            <a key={site.href} href={site.href} className="transition-colors hover:text-foreground">
+              {site.label}
+            </a>
+          ))}
+        </nav>
+        <div className="mt-6 pt-8 border-t border-border flex flex-col sm:flex-row justify-between gap-4">
           <p className="text-xs text-muted-foreground">
             &copy; {new Date().getFullYear()} Dr. Jeff Bullock. All rights
             reserved.
