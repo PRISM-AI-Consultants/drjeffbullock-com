@@ -1,3 +1,4 @@
+import { getFacts } from "@/lib/facts";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -22,7 +23,7 @@ import {
 
 export const metadata: Metadata = {
   title: "About",
-  description: "Dr. Jeff Bullock, PharmD. 18 years at CVS Health, now CEO of PRISM AI Consultants and Chair of Engagement for the African American Business Leaders Council. Author of 16 published books. Builder of 20 games and an AI agent system with 34 autonomous agents. Based in Lehigh Valley, PA.",
+  description: "Dr. Jeff Bullock, PharmD. 18 years at CVS Health, now CEO of PRISM AI Consultants and Chair of Engagement for the African American Business Leaders Council. Author of 17 published books. Builder of 20 games and an AI agent system with 34 autonomous agents. Based in Lehigh Valley, PA.",
   openGraph: { images: ["/images/og-about.jpg"] },
 };
 
@@ -47,7 +48,8 @@ const socialLinks = [
   { label: "Skool Community", href: "https://www.skool.com/prism-ai-consultants" },
 ];
 
-export default function AboutPage() {
+export default async function AboutPage() {
+  const facts = await getFacts();
   const bookCounts = getBookCounts();
   return (
     <>
@@ -215,8 +217,8 @@ export default function AboutPage() {
               { href: "/media", label: "Media", desc: "Talks, music, shows" },
               { href: "/projects", label: "Projects", desc: "Companies and builds" },
               { href: "/faq", label: "FAQ", desc: "Common questions" },
-              { href: "/books", label: "Books", desc: "18 titles" },
-              { href: "/games", label: "Games", desc: "15 playable games" },
+              { href: "/books", label: "Books", desc: `${facts.books_titles} titles` },
+              { href: "/games", label: "Games", desc: `${facts.games_live} playable games` },
             ].map((item) => (
               <Link
                 key={item.href}

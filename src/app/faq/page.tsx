@@ -20,7 +20,7 @@ const faqs = [
   {
     question: "What books has Dr. Jeff Bullock written?",
     answer:
-      "Dr. Bullock has published 16 books across fiction and non-fiction, with 3 more in progress. Published titles include A Prompt's Tale (AI/prompt engineering), The Unburdening, The Inheritance, and The Compliant. Books in advanced editing include MANSA (historical fiction, 9.38/10), Far Transfer (learning science, 9.9/10), and 813 (horror thriller, 9.15/10). His catalog spans AI education, learning science, economic frameworks, historical fiction, horror, sci-fi, and manifestation fiction.",
+      "Dr. Bullock has published 17 books across fiction and non-fiction, with 3 more in progress. Published titles include Transcript Alchemy, The Black Advantage, A Prompt's Tale (AI/prompt engineering), MANSA (historical fiction), 813 (horror thriller), The Unburdening, The Inheritance, and The Compliant. In progress: Far Transfer (learning science), The Intelligence Loop, and El Asesor que Sí Puedes Pagar. His catalog spans AI education, learning science, economic frameworks, historical fiction, horror, sci-fi, and manifestation fiction.",
   },
   {
     question: "What is prompt engineering?",

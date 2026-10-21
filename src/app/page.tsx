@@ -1,3 +1,4 @@
+import { getFacts } from "@/lib/facts";
 import fs from "fs";
 import path from "path";
 import Link from "next/link";
@@ -55,22 +56,22 @@ const playbook = [
   },
 ];
 
-const proof = [
+const proofFor = (f: Record<string, string>) => [
   { text: "The Black Advantage, book and movement", serves: "Dream 2", href: "/books/the-black-advantage" },
   { text: "AABLC Chair of Engagement, and the Black-Owned Business Directory", serves: "Dream 2", href: "https://aablc.prismaiconsultants.com" },
   { text: "Daily Impact, the giving app, live", serves: "Dream 1", href: "https://dailyimpact.drjeffbullock.com" },
   { text: "PRISM AI Consultants", serves: "The engine", href: "https://www.prismaiconsultants.com" },
   { text: "VersAssist", serves: "The engine", href: "/versassist" },
-  { text: "Pharmageddon, Escape Velocity, and 20 games", serves: "Behavior change", href: "/games" },
-  { text: "Mansa Musa and 16 published books", serves: "The culture", href: "/books" },
+  { text: `Pharmageddon, Escape Velocity, and ${f.games_live} games`, serves: "Behavior change", href: "/games" },
+  { text: `Mansa Musa and ${f.books_published} published books`, serves: "The culture", href: "/books" },
   { text: "The research, from the Abundance Thesis to human performance", serves: "Best self", href: "/research" },
-  { text: "The Build Universe, 62 public builds in one map", serves: "How one person runs it all", href: "https://builds.drjeffbullock.com" },
+  { text: `The Build Universe, ${f.build_universe_public} public builds in one map`, serves: "How one person runs it all", href: "https://builds.drjeffbullock.com" },
 ];
 
-const flagships = [
+const flagshipsFor = (f: Record<string, string>) => [
   { name: "Mansa Musa", sub: "19-track concept album", href: "/media", label: "Album", cover: "/images/projects/mansa-musa-project-cover.jpg" },
   { name: "Honed", sub: "Training companion to Far Transfer", href: "https://gethoned.app", label: "App", external: true, cover: "/images/projects/honed-cover.jpg" },
-  { name: "Build Universe", sub: "62 builds, full portfolio", href: "https://builds.drjeffbullock.com", label: "Flagship", external: true, cover: "/images/projects/build-world-cover.jpg" },
+  { name: "Build Universe", sub: `${f.build_universe_public} builds, full portfolio`, href: "https://builds.drjeffbullock.com", label: "Flagship", external: true, cover: "/images/projects/build-world-cover.jpg" },
 ];
 
 // The giving canon: one idea, told across books, a novel, and an album. Statuses verified against content frontmatter.
@@ -126,6 +127,9 @@ function SectionLabel({ no, children }: { no: string; children: React.ReactNode 
 }
 
 export default async function HomePage() {
+  const facts = await getFacts();
+  const proof = proofFor(facts);
+  const flagships = flagshipsFor(facts);
   const events = await getEvents();
   const books = getBooks();
   const posts = getBlogPosts();
