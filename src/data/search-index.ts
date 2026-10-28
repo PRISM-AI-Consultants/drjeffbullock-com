@@ -33,6 +33,7 @@ export const searchIndex: SearchItem[] = [
   { title: "But If Not", href: "/games/but-if-not", type: "Game", description: "Bible rhythm game from Daniel 3 (KJV): keep Shadrach, Meshach and Abednego standing." },
   { title: "Stay in the Salt", href: "/games/stay-in-the-salt", type: "Game", description: "Night-flight survival from the novel Salt and Wing." },
   { title: "One More Load", href: "/games/one-more-load", type: "Game", description: "Dispatch sim. Two trucks, the 2022 freight boom, and what the business really kept." },
+  { title: "Fruit of the Spirit", href: "/games/fruit-of-the-spirit", type: "Game", description: "A daily Bible match-3 puzzle on Galatians 5:22-23." },
   { title: "The Leash", href: "/games/the-leash", type: "Game", description: "Co-op action from the novel Symbiont: Dyad." },
   { title: "Max the Flying Chicken", href: "/games/max-the-flying-chicken", type: "Game", description: "Help Max learn to fly! An educational platformer." },
 
