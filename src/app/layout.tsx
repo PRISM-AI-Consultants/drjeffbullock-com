@@ -20,7 +20,9 @@ const bricolage = Bricolage_Grotesque({
 const newsreader = Newsreader({
   variable: "--font-newsreader",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600"],
+  // Variable font (covers 300-600). Static weight lists broke the build 2026-11-03: Google now serves
+  // static Newsreader instances from fonts.gstatic.com/l/font?kit=...&skey=..., which Turbopack's
+  // next/font loader in Next 16.1.6 cannot resolve. The variable request still returns /s/ URLs.
   style: ["normal", "italic"],
 });
 

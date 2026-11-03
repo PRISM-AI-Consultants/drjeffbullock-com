@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import { getProjects, getProject } from "@/lib/content";
+import { getFacts } from "@/lib/facts";
 import { Container } from "@/components/ui/container";
 import { Section } from "@/components/ui/section";
 import { Badge } from "@/components/ui/badge";
@@ -32,6 +33,10 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
   const { slug } = await params;
   const project = getProject(slug);
   if (!project) notFound();
+  // Counts in project MDX are written as [[fact:key]] and filled from the shared facts feed
+  // (builds.drjeffbullock.com/facts.json), so a page never carries a typed stat that can drift.
+  const facts = await getFacts();
+  const body = project.content.replace(/\[\[fact:(\w+)\]\]/g, (m, k: string) => facts[k] ?? m);
 
   return (
     <Section className="pt-8">
@@ -94,7 +99,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
         )}
 
         <div className="mt-8 pt-8 border-t border-border">
-          <MDXContent source={project.content} />
+          <MDXContent source={body} />
         </div>
       </Container>
     </Section>

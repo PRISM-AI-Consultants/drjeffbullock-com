@@ -1,16 +1,20 @@
 import type { Metadata } from "next";
 import { getGames } from "@/lib/content";
+import { getFacts } from "@/lib/facts";
 import { PageHeader } from "@/components/ui/page-header";
 import { Container } from "@/components/ui/container";
 import { Section } from "@/components/ui/section";
 import { ContentGrid } from "@/components/ui/content-grid";
 import { GameCard } from "@/components/content/game-card";
 
-export const metadata: Metadata = {
-  title: "Games",
-  description: "Playable games built by Dr. Jeff Bullock. 16 browser-based games including The Architect, Counterpunch, Pharmageddon, and The Breadman.",
-  openGraph: { images: ["/images/og-games.jpg"] },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const facts = await getFacts();
+  return {
+    title: "Games",
+    description: `Playable games built by Dr. Jeff Bullock. ${facts.games_live} browser-based games including The Architect, Counterpunch, Pharmageddon, and The Breadman.`,
+    openGraph: { images: ["/images/og-games.jpg"] },
+  };
+}
 
 export default function GamesPage() {
   const games = getGames();

@@ -320,7 +320,7 @@ export default async function HomePage() {
       <Section id="give" className="border-t border-border">
         <Container size="xl">
           <SectionLabel no="→">Dream 1, live now</SectionLabel>
-          <div className="grid grid-cols-1 md:grid-cols-[1.3fr_1fr] gap-10 md:gap-16 items-center">
+          <div>
             <div>
               <h2 className="font-display font-extrabold tracking-[-0.03em] text-[clamp(2rem,5vw,3.5rem)] leading-[0.97] max-w-2xl">
                 The giving dream is already running. It is called Daily Impact.
@@ -348,23 +348,6 @@ export default async function HomePage() {
                 </a>
               </div>
             </div>
-            <figure>
-              <div className="relative aspect-video overflow-hidden rounded-[var(--radius-md)] bg-foreground">
-                <video
-                  className="absolute inset-0 h-full w-full"
-                  controls
-                  playsInline
-                  preload="none"
-                  poster="/videos/feed-the-feed-poster.jpg"
-                  aria-label="Feed the Feed, the Dream 1 anthem music video"
-                >
-                  <source src="/videos/feed-the-feed.mp4" type="video/mp4" />
-                </video>
-              </div>
-              <figcaption className="mt-3 text-sm text-muted-foreground">
-                <span className="font-semibold text-foreground">Feed the Feed</span>, the Dream 1 anthem. Song and video made with AI.
-              </figcaption>
-            </figure>
           </div>
           <blockquote className="mt-12 font-serif italic text-xl md:text-2xl leading-relaxed text-foreground/70 border-l-2 border-accent pl-6 max-w-3xl">
             Make giving as powerful as social media. Then point that machine at generosity.
