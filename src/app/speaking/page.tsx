@@ -88,11 +88,12 @@ const formats = [
   { icon: Monitor, title: "Virtual", duration: "Any format", description: "The same live build, delivered to a remote or hybrid audience." },
 ];
 
-const upcomingEvents: { event: string; date: string; iso: string; venue: string; type: string; url?: string; urlLabel?: string }[] = [
+// Ticketed events carry price (from the ticket page) and ticketsListed (the date this site first linked the tickets, commit 538399b), used for the Event offer in JSON-LD.
+const upcomingEvents: { event: string; date: string; iso: string; venue: string; type: string; url?: string; urlLabel?: string; price?: string; ticketsListed?: string }[] = [
   { event: "High Center Nonprofit: Turning Data into Storytelling for Fundraising", date: "October 7, 2026", iso: "2026-10-07", venue: "S. Dale High Leadership Center, Lancaster, PA", type: "Panel" },
   { event: "ALCA Mid-Atlantic 2026, General Session", date: "November 9, 2026", iso: "2026-11-09", venue: "Falls Church Marriott Fairview Park, VA", type: "General Session" },
   { event: "The High Center: Leadership Speaker Series", date: "November 17, 2026", iso: "2026-11-17", venue: "Kutztown University, Kutztown, PA", type: "Panel" },
-  { event: "Hangout For Art: The Art of Business, AI for Entrepreneurs", date: "November 19, 2026", iso: "2026-11-19", venue: "Hangout For Art, Allentown, PA", type: "Talk", url: "https://funathangoutforart.as.me/artofbus", urlLabel: "Get tickets ($35, 20 seats)" },
+  { event: "Hangout For Art: The Art of Business, AI for Entrepreneurs", date: "November 19, 2026", iso: "2026-11-19", venue: "Hangout For Art, Allentown, PA", type: "Talk", url: "https://funathangoutforart.as.me/artofbus", urlLabel: "Get tickets ($35, 20 seats)", price: "35.00", ticketsListed: "2026-10-20T15:22:07-04:00" },
   { event: "McKinney Media Headshot Happy Hour", date: "November 19, 2026", iso: "2026-11-19", venue: "The Swiftwater, Pocono region, PA", type: "Talk" },
   { event: "SEPA SHRM Chapter Meeting", date: "January 19, 2027", iso: "2027-01-19", venue: "Southeastern PA", type: "Talk" },
 ];
@@ -131,7 +132,7 @@ function buildJsonLd(upcoming: typeof upcomingEvents) {
       name: "Full Keynote: AI That Actually Works | PA SHRM 2026 | Dr. Jeff Bullock",
       description: "Dr. Jeff Bullock's opening keynote at the PA SHRM 2026 Annual Conference, including live AI builds with audience volunteers.",
       thumbnailUrl: `https://i.ytimg.com/vi/${VIDEOS.keynote}/hqdefault.jpg`,
-      uploadDate: "2026-09-26",
+      uploadDate: "2026-09-25T18:14:48-07:00",
       duration: "PT34M25S",
       embedUrl: `https://www.youtube.com/embed/${VIDEOS.keynote}`,
       contentUrl: `https://www.youtube.com/watch?v=${VIDEOS.keynote}`,
@@ -143,7 +144,19 @@ function buildJsonLd(upcoming: typeof upcomingEvents) {
       eventStatus: "https://schema.org/EventScheduled",
       performer: { "@type": "Person", name: "Dr. Jeff Bullock" },
       location: { "@type": "Place", name: evt.venue },
-      ...(evt.url ? { url: evt.url, offers: { "@type": "Offer", url: evt.url } } : {}),
+      ...(evt.url
+        ? {
+            url: evt.url,
+            offers: {
+              "@type": "Offer",
+              url: evt.url,
+              ...(evt.price
+                ? { price: evt.price, priceCurrency: "USD", availability: "https://schema.org/InStock" }
+                : {}),
+              ...(evt.ticketsListed ? { validFrom: evt.ticketsListed } : {}),
+            },
+          }
+        : {}),
     })),
     ...pastEvents.map((evt) => ({
       "@type": "Event",
