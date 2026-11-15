@@ -28,16 +28,36 @@ type VRExperience = {
 };
 
 const featured = {
-  title: "PRISM AI Innovation Hub - Philadelphia",
-  subtitle: "2nd Annual Philadelphia Business Summit & Expo",
+  title: "Salt and Wing: Eleven Forty-Seven",
+  subtitle: "A VR flight game from the novel",
   description:
-    "City of Philadelphia Department of Commerce. Mom Your Business. La Salle University. Six industry storefronts, real client results, scored to the original Suno anthem. Booth #5, Comms & Tech Zone.",
-  url: "https://vr.prismaiconsultants.com/philly/",
-  tags: ["WebXR", "Live Event", "3-Day Booth", "Booth #5"],
-  liveLabel: "May 17-19",
+    "Your arms are the wings. Hunt fruit bats and chain combos, dive to strike, break free of the sleeping, dodge the searchlights, and be home in the salt circle before sunrise. Five nights, three stars each. Plays in a Quest headset or in any browser.",
+  url: "https://vr.prismaiconsultants.com/salt-and-wing/flight.html",
+  tags: ["WebXR", "Game", "Quest 3", "Plays in browser"],
+  liveLabel: "New game",
 };
 
 const experiences: VRExperience[] = [
+  {
+    title: "Do Not Look at the Sky",
+    subtitle: "Salt and Wing, Chapter 8",
+    description:
+      "A seated, hands-only VR night on a rice paddy berm. You are Lieutenant Idris Reyes. Stay until she comes back.",
+    url: "https://vr.prismaiconsultants.com/salt-and-wing/",
+    tags: ["WebXR", "Story", "Hand Tracking"],
+    gradient: "from-slate-900 via-indigo-950 to-slate-900",
+    accent: "text-amber-200",
+  },
+  {
+    title: "PRISM AI Innovation Hub - Philadelphia",
+    subtitle: "2nd Annual Philadelphia Business Summit & Expo",
+    description:
+      "City of Philadelphia Department of Commerce. Mom Your Business. La Salle University. Six industry storefronts, real client results, scored to the original Suno anthem.",
+    url: "https://vr.prismaiconsultants.com/philly/",
+    tags: ["WebXR", "Live Event"],
+    gradient: "from-emerald-900 via-violet-900 to-slate-900",
+    accent: "text-emerald-300",
+  },
   {
     title: "Clean Room Training",
     subtitle: "LCCC Pharma Manufacturing",
@@ -148,7 +168,7 @@ export default function VRPage() {
         description="Put on a Meta Quest 3, or click any tile in your browser, and walk through what AI implementation actually feels like."
       />
 
-      {/* Featured: Philadelphia Business Summit */}
+      {/* Featured: Salt and Wing flight game */}
       <Section>
         <Container size="xl">
           <a
@@ -168,17 +188,13 @@ export default function VRPage() {
                       backgroundSize: "40px 40px",
                     }}
                   />
-                  <div className="relative text-center px-6">
-                    <div
-                      className="text-5xl md:text-6xl font-extrabold tracking-[0.2em] text-emerald-300"
-                      style={{ textShadow: "0 0 40px rgba(34,197,94,0.5)" }}
-                    >
-                      PHILLY
-                    </div>
-                    <div className="mt-3 text-xs font-semibold uppercase tracking-[0.2em] text-white/60">
-                      Independence to Innovation
-                    </div>
-                  </div>
+                  <div
+                    className="absolute inset-0 bg-cover bg-left"
+                    style={{
+                      backgroundImage:
+                        "url(https://vr.prismaiconsultants.com/salt-and-wing/og_flight.jpg)",
+                    }}
+                  />
                   <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-emerald-400/40 to-transparent" />
                 </div>
                 <div className="p-8 md:p-10 flex flex-col justify-center">
