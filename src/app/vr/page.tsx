@@ -222,7 +222,7 @@ export default function VRPage() {
                     ))}
                   </div>
                   <p className="mt-6 text-sm font-medium text-accent flex items-center gap-1">
-                    Walk the booth
+                    Play the game
                     <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                   </p>
                 </div>
