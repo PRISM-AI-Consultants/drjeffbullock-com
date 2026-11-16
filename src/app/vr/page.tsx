@@ -5,6 +5,9 @@ import { PageHeader } from "@/components/ui/page-header";
 import { Card, CardHeader, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ArrowUpRight, Headset } from "lucide-react";
+import { getHubFeed, VR_HUB, REVALIDATE, type HubCard } from "@/lib/vr-hub";
+
+export const revalidate = 600; // keep equal to REVALIDATE in lib/vr-hub.ts
 
 export const metadata: Metadata = {
   title: "Virtual Reality",
@@ -100,7 +103,7 @@ const experiences: VRExperience[] = [
   },
   {
     title: "Run the Loop",
-    subtitle: "Intelligence Loop Simulator (in testing)",
+    subtitle: "Intelligence Loop Simulator (Beta)",
     description:
       "Sling light down a gray block. Take the safe window or the bold one on every shot. Light the block and see your own Model, Courage, Update and Transfer.",
     url: "https://vr.prismaiconsultants.com/run-the-loop/",
@@ -160,7 +163,7 @@ const experiences: VRExperience[] = [
   },
 ];
 
-export default function VRPage() {
+function FallbackVRPage() {
   return (
     <>
       <PageHeader
@@ -311,6 +314,164 @@ export default function VRPage() {
               <span className="text-muted-foreground/40">|</span>
               <span>Bloom Post-Processing</span>
             </div>
+          </div>
+        </Container>
+      </Section>
+    </>
+  );
+}
+
+function Ribbon({ card }: { card: HubCard }) {
+  if (!card.ribbon) return null;
+  return (
+    <span
+      className={
+        card.ribbonPast
+          ? "absolute top-3 left-3 z-10 rounded-full bg-black/60 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-white/90 ring-1 ring-white/20 backdrop-blur"
+          : "absolute top-3 left-3 z-10 rounded-full bg-emerald-400 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-black"
+      }
+    >
+      {card.ribbon}
+    </span>
+  );
+}
+
+function HubCardTile({ card }: { card: HubCard }) {
+  return (
+    <a href={card.url} target="_blank" rel="noopener noreferrer" className="group block">
+      <Card className="h-full overflow-hidden flex flex-col">
+        <div className="relative aspect-[3/4] overflow-hidden bg-slate-900">
+          <Ribbon card={card} />
+          {card.image ? (
+            // eslint-disable-next-line @next/next/no-img-element
+            <img
+              src={card.image}
+              alt={card.imageAlt}
+              loading="lazy"
+              className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+            />
+          ) : (
+            <Headset className="absolute inset-0 m-auto h-10 w-10 text-accent opacity-80" />
+          )}
+        </div>
+        <CardHeader>
+          <h3 className="text-lg font-bold leading-tight">{card.title}</h3>
+          {card.sub && <p className="text-xs font-medium text-accent mt-1">{card.sub}</p>}
+        </CardHeader>
+        <CardContent className="flex-1 flex flex-col">
+          <p className="text-sm text-muted-foreground line-clamp-4">{card.description}</p>
+          {card.chips.length > 0 && (
+            <div className="mt-4 flex flex-wrap gap-1.5">
+              {card.chips.map((t) => (
+                <Badge key={t} variant="outline" className="text-[10px]">
+                  {t}
+                </Badge>
+              ))}
+            </div>
+          )}
+          <p className="mt-auto pt-4 text-xs font-medium text-accent flex items-center gap-1">
+            Open experience
+            <ArrowUpRight className="h-3 w-3 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+          </p>
+        </CardContent>
+      </Card>
+    </a>
+  );
+}
+
+export default async function VRPage() {
+  const feed = await getHubFeed();
+  if (!feed) return <FallbackVRPage />;
+  const all = feed.sections.flatMap((s) => s.cards);
+  const top = all.find((c) => c.kind === "feature") ?? all[0];
+  const checked = new Date(feed.fetchedAt).toLocaleString("en-US", {
+    timeZone: "America/New_York",
+    month: "short",
+    day: "numeric",
+    hour: "numeric",
+    minute: "2-digit",
+  });
+  return (
+    <>
+      <PageHeader
+        title="Step Inside the Work"
+        description="Put on a Meta Quest 3, or click any tile in your browser, and walk through what AI implementation actually feels like."
+      />
+
+      <Section>
+        <Container size="xl">
+          <a href={top.url} target="_blank" rel="noopener noreferrer" className="group block">
+            <Card variant="featured" className="overflow-hidden">
+              <div className="grid grid-cols-1 md:grid-cols-2">
+                <div className="relative aspect-[16/10] md:aspect-auto md:min-h-[360px] overflow-hidden bg-slate-900">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={top.image} alt={top.imageAlt} className="absolute inset-0 h-full w-full object-cover" />
+                </div>
+                <div className="p-8 md:p-10 flex flex-col justify-center">
+                  <div className="flex flex-wrap items-center gap-2 mb-4">
+                    {top.ribbon && (
+                      <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-500/15 px-2.5 py-1 text-xs font-bold uppercase tracking-wider text-emerald-400 ring-1 ring-emerald-500/30">
+                        <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                        {top.ribbon}
+                      </span>
+                    )}
+                    <Badge variant="accent">Featured</Badge>
+                  </div>
+                  <h2 className="text-2xl md:text-3xl font-extrabold tracking-tight leading-tight">{top.title}</h2>
+                  {top.sub && <p className="mt-2 text-sm font-medium text-accent">{top.sub}</p>}
+                  <p className="mt-4 text-muted-foreground leading-relaxed">{top.description}</p>
+                  <div className="mt-5 flex flex-wrap gap-2">
+                    {top.chips.map((t) => (
+                      <Badge key={t} variant="outline">
+                        {t}
+                      </Badge>
+                    ))}
+                  </div>
+                  <p className="mt-6 text-sm font-medium text-accent flex items-center gap-1">
+                    Play it
+                    <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                  </p>
+                </div>
+              </div>
+            </Card>
+          </a>
+        </Container>
+      </Section>
+
+      {feed.sections.map((sec) => {
+        const cards = sec.cards.filter((c) => c.url !== top.url);
+        if (!cards.length) return null;
+        return (
+          <Section key={sec.id} className="pt-0">
+            <Container size="xl">
+              <div className="mb-6">
+                {sec.kicker && (
+                  <p className="text-xs font-bold uppercase tracking-wider text-accent">{sec.kicker}</p>
+                )}
+                <h2 className="text-2xl md:text-3xl font-extrabold tracking-tight">{sec.heading}</h2>
+                {sec.intro && <p className="mt-2 text-sm text-muted-foreground max-w-2xl">{sec.intro}</p>}
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                {cards.map((c) => (
+                  <HubCardTile key={c.url} card={c} />
+                ))}
+              </div>
+            </Container>
+          </Section>
+        );
+      })}
+
+      <Section className="bg-muted/30">
+        <Container size="md">
+          <div className="text-center">
+            <h3 className="text-lg font-bold tracking-tight">How to view</h3>
+            <p className="mt-3 text-sm text-muted-foreground max-w-xl mx-auto leading-relaxed">
+              Every experience runs in any modern browser. For the full effect, put on a Meta Quest 3, open the
+              browser, and visit the link. No downloads, no app store.
+            </p>
+            <p className="mt-6 text-xs text-muted-foreground/80" data-vr-hub-sync={feed.fetchedAt}>
+              Live from the <a className="underline" href={VR_HUB}>PRISM VR hub</a> &middot; updated {checked} ET &middot; refreshes every {Math.round(REVALIDATE / 60)} minutes
+            </p>
           </div>
         </Container>
       </Section>
