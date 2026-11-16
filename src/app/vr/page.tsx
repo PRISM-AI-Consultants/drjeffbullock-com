@@ -99,11 +99,11 @@ const experiences: VRExperience[] = [
     accent: "text-indigo-300",
   },
   {
-    title: "The Architect",
-    subtitle: "Intelligence Loop Strategy Game",
+    title: "Run the Loop",
+    subtitle: "Intelligence Loop Simulator (in testing)",
     description:
-      "Build your tower. Survive the storm. A strategy game exploring the multiplicative power of Knowledge, Action, Adaptation, and Application.",
-    url: "https://vr.prismaiconsultants.com/intelligence-loop-demo.html",
+      "Sling light down a gray block. Take the safe window or the bold one on every shot. Light the block and see your own Model, Courage, Update and Transfer.",
+    url: "https://vr.prismaiconsultants.com/run-the-loop/",
     tags: ["WebXR", "Game", "Framework"],
     gradient: "from-purple-900 via-fuchsia-900 to-slate-900",
     accent: "text-fuchsia-300",
