@@ -6,6 +6,7 @@ import { SiteFooter } from "@/components/layout/site-footer";
 import { CommandPaletteWrapper } from "@/components/layout/command-palette-wrapper";
 import { AudioPlayer } from "@/components/ui/audio-player";
 import "./globals.css";
+import { getFacts } from "@/lib/facts";
 
 const GA_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
 
@@ -69,7 +70,7 @@ const websiteJsonLd = {
   name: "Dr. Jeff Bullock",
   url: "https://drjeffbullock.com",
   description:
-    "The IP library and creator hub of Dr. Jeff Bullock. 17 published books, 21 games, 4 research frameworks, and an AI agent system with 34 autonomous agents.",
+    "The IP library and creator hub of Dr. Jeff Bullock. 17 published books, 22 games, 4 research frameworks, and an AI agent system with 34 autonomous agents.",
   author: {
     "@type": "Person",
     "@id": "https://drjeffbullock.com/#person",
@@ -170,11 +171,17 @@ const personJsonLd = {
     "PharmD turned AI implementation consultant, author of 17 published books, and CEO of PRISM AI Consultants in Allentown, Pennsylvania. Helps business owners implement AI operationally. Not a medical doctor.",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // books and games come from the shared facts feed (2026-11-15, Jeff: "fix the game count")
+  const facts = await getFacts();
+  const siteJsonLd = {
+    ...websiteJsonLd,
+    description: `The IP library and creator hub of Dr. Jeff Bullock. ${facts.books_published} published books, ${facts.games_live} games, 4 research frameworks, and an AI agent system with 34 autonomous agents.`,
+  };
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
@@ -185,7 +192,7 @@ export default function RootLayout({
         />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(siteJsonLd) }}
         />
         <script
           type="application/ld+json"

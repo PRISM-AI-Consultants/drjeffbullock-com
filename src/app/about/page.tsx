@@ -21,11 +21,15 @@ import {
   Users,
 } from "lucide-react";
 
-export const metadata: Metadata = {
-  title: "About",
-  description: "Dr. Jeff Bullock, PharmD. 18 years at CVS Health, now CEO of PRISM AI Consultants and Chair of Engagement for the African American Business Leaders Council. Author of 17 published books. Builder of 21 games and an AI agent system with 34 autonomous agents. Based in Lehigh Valley, PA.",
-  openGraph: { images: ["/images/og-about.jpg"] },
-};
+// books and games come from the shared facts feed (2026-11-15, Jeff: "fix the game count")
+export async function generateMetadata(): Promise<Metadata> {
+  const facts = await getFacts();
+  return {
+    title: "About",
+    description: `Dr. Jeff Bullock, PharmD. 18 years at CVS Health, now CEO of PRISM AI Consultants and Chair of Engagement for the African American Business Leaders Council. Author of ${facts.books_published} published books. Builder of ${facts.games_live} games and an AI agent system with 34 autonomous agents. Based in Lehigh Valley, PA.`,
+    openGraph: { images: ["/images/og-about.jpg"] },
+  };
+}
 
 const timeline = [
   { year: "2008", icon: GraduationCap, title: "Doctor of Pharmacy", description: "Graduated from Xavier University of Louisiana with a Pharm.D." },
