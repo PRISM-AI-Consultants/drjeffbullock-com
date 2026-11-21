@@ -8,7 +8,7 @@ const FALLBACK: Record<string, string> = {
   client_builds: "150+",
   community_members: "650+",
   coaching_sessions: "750+",
-  games_live: "22",
+  games_live: "24",
   books_published: "17",
   books_titles: "20",
   build_universe_public: "72",
